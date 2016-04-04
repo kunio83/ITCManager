@@ -20,6 +20,15 @@ namespace DataAccess
                 
         }
 
+        public Persona GetPersonaById(int idPersona)
+        {
+            using (ctx = new ITC_DBPOwerEntities())
+            {
+                return ctx.Persona.FirstOrDefault(z => z.IdPersona == idPersona);
+            }
+
+        }
+
 
     }
 }

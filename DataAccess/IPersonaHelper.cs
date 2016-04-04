@@ -9,7 +9,9 @@ namespace DataAccess
 {
     interface IPersonaHelper
     {
-        //List<Persona> GetPersonas();
+        List<Persona> GetPersonas();
+
+        Persona GetPersonaById(int idPersona);
 
     }
 }

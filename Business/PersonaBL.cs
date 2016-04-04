@@ -17,5 +17,10 @@ namespace Bussiness
         {
             return helper.GetPersonas();
         }
+
+        public static Persona GetPersonaById(int idPersona)
+        {
+            return helper.GetPersonaById(idPersona); ;
+        }
     }
 }
