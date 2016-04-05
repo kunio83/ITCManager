@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ITC_DBPOwerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ITC_DBPOwerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CondicionEmpleado">
           <Key>
             <PropertyRef Name="IdCondicionEmpleado" />
@@ -62,6 +62,13 @@
           <Property Name="TelAlternativo" Type="nvarchar(max)" Nullable="false" />
           <Property Name="EstadoCivil" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Mail" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PruebaBorrarSet">
+          <Key>
+            <PropertyRef Name="IdPruebaBorrar" />
+          </Key>
+          <Property Name="IdPruebaBorrar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetallePruebaBorrar" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="RolAlumno">
           <Key>
@@ -206,6 +213,7 @@
           <EntitySet Name="Permiso" EntityType="Self.Permiso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PermisoAcceso" EntityType="Self.PermisoAcceso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PruebaBorrarSet" EntityType="Self.PruebaBorrarSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RolAlumno" EntityType="Self.RolAlumno" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RolEmpleado" EntityType="Self.RolEmpleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RolVendedor" EntityType="Self.RolVendedor" Schema="dbo" store:Type="Tables" />
@@ -246,8 +254,7 @@
             <End Role="Permiso" EntitySet="Permiso" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ITC_DBPOwerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -509,111 +516,126 @@
             <End Role="Persona" EntitySet="Persona" />
             <End Role="RolVendedor" EntitySet="RolVendedor" />
           </AssociationSet>
+          <EntitySet Name="PruebaBorrarSet" EntityType="ITC_DBPOwerModel.PruebaBorrar" />
         </EntityContainer>
+        <EntityType Name="PruebaBorrar">
+          <Key>
+            <PropertyRef Name="IdPruebaBorrar" />
+          </Key>
+          <Property Name="IdPruebaBorrar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetallePruebaBorrar" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ITC_DBPOwerModelStoreContainer" CdmEntityContainer="ITC_DBPOwerEntities">
-          <EntitySetMapping Name="CondicionEmpleado">
-            <EntityTypeMapping TypeName="ITC_DBPOwerModel.CondicionEmpleado">
-              <MappingFragment StoreEntitySet="CondicionEmpleado">
-                <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DetalleCondicionEmpleado">
-            <EntityTypeMapping TypeName="ITC_DBPOwerModel.DetalleCondicionEmpleado">
-              <MappingFragment StoreEntitySet="DetalleCondicionEmpleado">
-                <ScalarProperty Name="IdDetalleCondicionEmpleado" ColumnName="IdDetalleCondicionEmpleado" />
-                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EstadoAlumno">
-            <EntityTypeMapping TypeName="ITC_DBPOwerModel.EstadoAlumno">
-              <MappingFragment StoreEntitySet="EstadoAlumno">
-                <ScalarProperty Name="IdEstadoAlumno" ColumnName="IdEstadoAlumno" />
-                <ScalarProperty Name="DetalleEstadoAlumno" ColumnName="DetalleEstadoAlumno" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Permiso">
-            <EntityTypeMapping TypeName="ITC_DBPOwerModel.Permiso">
-              <MappingFragment StoreEntitySet="Permiso">
-                <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
-                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
-                <ScalarProperty Name="DetallePermiso" ColumnName="DetallePermiso" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PermisoAcceso">
-            <EntityTypeMapping TypeName="ITC_DBPOwerModel.PermisoAcceso">
-              <MappingFragment StoreEntitySet="PermisoAcceso">
-                <ScalarProperty Name="IdPermisoAcceso" ColumnName="IdPermisoAcceso" />
-                <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
-                <ScalarProperty Name="DetalleAcceso" ColumnName="DetalleAcceso" />
-                <ScalarProperty Name="PermisoActivo" ColumnName="PermisoActivo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Persona">
-            <EntityTypeMapping TypeName="ITC_DBPOwerModel.Persona">
-              <MappingFragment StoreEntitySet="Persona">
-                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
-                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
-                <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
-                <ScalarProperty Name="DNI" ColumnName="DNI" />
-                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-                <ScalarProperty Name="Barrio" ColumnName="Barrio" />
-                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
-                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-                <ScalarProperty Name="Celular" ColumnName="Celular" />
-                <ScalarProperty Name="CelCorp" ColumnName="CelCorp" />
-                <ScalarProperty Name="TelAlternativo" ColumnName="TelAlternativo" />
-                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
-                <ScalarProperty Name="Mail" ColumnName="Mail" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RolAlumno">
-            <EntityTypeMapping TypeName="ITC_DBPOwerModel.RolAlumno">
-              <MappingFragment StoreEntitySet="RolAlumno">
-                <ScalarProperty Name="IdRolAlumno" ColumnName="IdRolAlumno" />
-                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
-                <ScalarProperty Name="IdCapacitacion" ColumnName="IdCapacitacion" />
-                <ScalarProperty Name="IdInformeCiudadHorarios" ColumnName="IdInformeCiudadHorarios" />
-                <ScalarProperty Name="IdEstadoAlumno" ColumnName="IdEstadoAlumno" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RolEmpleado">
-            <EntityTypeMapping TypeName="ITC_DBPOwerModel.RolEmpleado">
-              <MappingFragment StoreEntitySet="RolEmpleado">
-                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
-                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
-                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
-                <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RolVendedor">
-            <EntityTypeMapping TypeName="ITC_DBPOwerModel.RolVendedor">
-              <MappingFragment StoreEntitySet="RolVendedor">
-                <ScalarProperty Name="IdRolVendedor" ColumnName="IdRolVendedor" />
-                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
-                <ScalarProperty Name="IdSubgerente" ColumnName="IdSubgerente" />
-                <ScalarProperty Name="IdGerente" ColumnName="IdGerente" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ITC_DBPOwerModelStoreContainer" CdmEntityContainer="ITC_DBPOwerEntities">
+    <EntitySetMapping Name="CondicionEmpleado">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.CondicionEmpleado)">
+        <MappingFragment StoreEntitySet="CondicionEmpleado">
+          <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleCondicionEmpleado">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.DetalleCondicionEmpleado)">
+        <MappingFragment StoreEntitySet="DetalleCondicionEmpleado">
+          <ScalarProperty Name="IdDetalleCondicionEmpleado" ColumnName="IdDetalleCondicionEmpleado" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoAlumno">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.EstadoAlumno)">
+        <MappingFragment StoreEntitySet="EstadoAlumno">
+          <ScalarProperty Name="IdEstadoAlumno" ColumnName="IdEstadoAlumno" />
+          <ScalarProperty Name="DetalleEstadoAlumno" ColumnName="DetalleEstadoAlumno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permiso">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Permiso)">
+        <MappingFragment StoreEntitySet="Permiso">
+          <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+          <ScalarProperty Name="DetallePermiso" ColumnName="DetallePermiso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermisoAcceso">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.PermisoAcceso)">
+        <MappingFragment StoreEntitySet="PermisoAcceso">
+          <ScalarProperty Name="IdPermisoAcceso" ColumnName="IdPermisoAcceso" />
+          <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
+          <ScalarProperty Name="DetalleAcceso" ColumnName="DetalleAcceso" />
+          <ScalarProperty Name="PermisoActivo" ColumnName="PermisoActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persona">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Persona)">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Barrio" ColumnName="Barrio" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="CelCorp" ColumnName="CelCorp" />
+          <ScalarProperty Name="TelAlternativo" ColumnName="TelAlternativo" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolAlumno">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolAlumno)">
+        <MappingFragment StoreEntitySet="RolAlumno">
+          <ScalarProperty Name="IdRolAlumno" ColumnName="IdRolAlumno" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="IdCapacitacion" ColumnName="IdCapacitacion" />
+          <ScalarProperty Name="IdInformeCiudadHorarios" ColumnName="IdInformeCiudadHorarios" />
+          <ScalarProperty Name="IdEstadoAlumno" ColumnName="IdEstadoAlumno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolEmpleado">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolEmpleado)">
+        <MappingFragment StoreEntitySet="RolEmpleado">
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+          <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolVendedor">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolVendedor)">
+        <MappingFragment StoreEntitySet="RolVendedor">
+          <ScalarProperty Name="IdRolVendedor" ColumnName="IdRolVendedor" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="IdSubgerente" ColumnName="IdSubgerente" />
+          <ScalarProperty Name="IdGerente" ColumnName="IdGerente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PruebaBorrarSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.PruebaBorrar)">
+        <MappingFragment StoreEntitySet="PruebaBorrarSet">
+          <ScalarProperty Name="IdPruebaBorrar" ColumnName="IdPruebaBorrar" />
+          <ScalarProperty Name="DetallePruebaBorrar" ColumnName="DetallePruebaBorrar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -627,7 +649,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

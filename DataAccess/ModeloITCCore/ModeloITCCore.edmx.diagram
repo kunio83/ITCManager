@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1">
+      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="98">
         <EntityTypeShape EntityType="ITC_DBPOwerModel.CondicionEmpleado" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.DetalleCondicionEmpleado" Width="1.5" PointX="4.75" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoAlumno" Width="1.5" PointX="4.5" PointY="3.875" IsExpanded="true" />
@@ -23,6 +23,7 @@
         <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolVendedor" ManuallyRouted="false" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolVendedor1" ManuallyRouted="false" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolVendedor2" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.PruebaBorrar" Width="1.5" PointX="7.5" PointY="2.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
