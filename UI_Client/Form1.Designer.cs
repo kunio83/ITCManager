@@ -77,8 +77,10 @@
             this.metroButton4.Location = new System.Drawing.Point(12, 24);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(231, 93);
+            this.metroButton4.Style = MetroFramework.MetroColorStyle.Green;
             this.metroButton4.TabIndex = 3;
             this.metroButton4.Text = "metroButton4";
+            this.metroButton4.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // metroComboBox1
             // 
