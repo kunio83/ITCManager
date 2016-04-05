@@ -24,6 +24,7 @@
         <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolVendedor1" ManuallyRouted="false" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolVendedor2" ManuallyRouted="false" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.PruebaBorrar" Width="1.5" PointX="7.5" PointY="2.25" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.DSCSCDS" Width="1.5" PointX="8.375" PointY="4.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

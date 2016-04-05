@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/04/2016 20:57:16
+-- Date Created: 04/04/2016 21:58:55
 -- Generated from EDMX file: C:\Users\ThinkPadW7\documents\visual studio 2015\Projects\ITCManager\DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 
@@ -17,8 +17,17 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoDetalleCondicionEmpleado]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetalleCondicionEmpleado] DROP CONSTRAINT [FK_RolEmpleadoDetalleCondicionEmpleado];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolAlumnoEstadoAlumno]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolAlumno] DROP CONSTRAINT [FK_RolAlumnoEstadoAlumno];
+GO
 IF OBJECT_ID(N'[dbo].[FK_PermisoPermisoAcceso]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PermisoAcceso] DROP CONSTRAINT [FK_PermisoPermisoAcceso];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoPermiso]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Permiso] DROP CONSTRAINT [FK_RolEmpleadoPermiso];
 GO
 IF OBJECT_ID(N'[dbo].[FK_PersonaRolAlumno]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RolAlumno] DROP CONSTRAINT [FK_PersonaRolAlumno];
@@ -34,15 +43,6 @@ IF OBJECT_ID(N'[dbo].[FK_PersonaRolVendedor1]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_PersonaRolVendedor2]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RolVendedor] DROP CONSTRAINT [FK_PersonaRolVendedor2];
-GO
-IF OBJECT_ID(N'[dbo].[FK_RolAlumnoEstadoAlumno]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[RolAlumno] DROP CONSTRAINT [FK_RolAlumnoEstadoAlumno];
-GO
-IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoDetalleCondicionEmpleado]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DetalleCondicionEmpleado] DROP CONSTRAINT [FK_RolEmpleadoDetalleCondicionEmpleado];
-GO
-IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoPermiso]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Permiso] DROP CONSTRAINT [FK_RolEmpleadoPermiso];
 GO
 
 -- --------------------------------------------------
@@ -75,6 +75,9 @@ IF OBJECT_ID(N'[dbo].[RolEmpleado]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[RolVendedor]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RolVendedor];
+GO
+IF OBJECT_ID(N'[dbo].[PruebaBorrarSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PruebaBorrarSet];
 GO
 
 -- --------------------------------------------------
@@ -174,6 +177,13 @@ CREATE TABLE [dbo].[PruebaBorrarSet] (
 );
 GO
 
+-- Creating table 'DSCSCDSSet'
+CREATE TABLE [dbo].[DSCSCDSSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [RFDGFDG] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -236,6 +246,12 @@ GO
 ALTER TABLE [dbo].[PruebaBorrarSet]
 ADD CONSTRAINT [PK_PruebaBorrarSet]
     PRIMARY KEY CLUSTERED ([IdPruebaBorrar] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'DSCSCDSSet'
+ALTER TABLE [dbo].[DSCSCDSSet]
+ADD CONSTRAINT [PK_DSCSCDSSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- --------------------------------------------------
