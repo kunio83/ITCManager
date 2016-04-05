@@ -35,5 +35,6 @@ namespace Entities
         public virtual DbSet<RolEmpleado> RolEmpleado { get; set; }
         public virtual DbSet<RolVendedor> RolVendedor { get; set; }
         public virtual DbSet<PruebaBorrar> PruebaBorrarSet { get; set; }
+        public virtual DbSet<DSCSCDS> DSCSCDSSet { get; set; }
     }
 }

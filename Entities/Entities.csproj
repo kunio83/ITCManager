@@ -47,6 +47,9 @@
     <Compile Include="DetalleCondicionEmpleado.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="DSCSCDS.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="EstadoAlumno.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
