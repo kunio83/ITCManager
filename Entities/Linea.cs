@@ -12,18 +12,20 @@ namespace Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class EstadoAlumno
+    public partial class Linea
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EstadoAlumno()
+        public Linea()
         {
-            this.RolAlumno = new HashSet<RolAlumno>();
+            this.LineaCiudad = new HashSet<LineaCiudad>();
+            this.LineaDocentes = new HashSet<LineaDocentes>();
         }
     
-        public int IdEstadoAlumno { get; set; }
-        public string DetalleEstadoAlumno { get; set; }
+        public int IdLinea { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolAlumno> RolAlumno { get; set; }
+        public virtual ICollection<LineaCiudad> LineaCiudad { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LineaDocentes> LineaDocentes { get; set; }
     }
 }

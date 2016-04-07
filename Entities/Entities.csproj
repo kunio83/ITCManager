@@ -40,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsignacionRecibo.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ciudad.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="CondicionEmpleado.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
@@ -47,10 +53,16 @@
     <Compile Include="DetalleCondicionEmpleado.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
-    <Compile Include="DSCSCDS.cs">
+    <Compile Include="EstadoAlumno.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
-    <Compile Include="EstadoAlumno.cs">
+    <Compile Include="Linea.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LineaCiudad.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LineaDocentes.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="ModeloITCCore.cs">
@@ -68,9 +80,6 @@
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PruebaBorrar.cs">
-      <DependentUpon>ModeloITCCore.tt</DependentUpon>
-    </Compile>
     <Compile Include="RolAlumno.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>

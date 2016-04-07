@@ -15,8 +15,11 @@
     <EntitySet Name="RolAlumno" EntityType="ITC_DBPOwerModel.Store.RolAlumno" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RolEmpleado" EntityType="ITC_DBPOwerModel.Store.RolEmpleado" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RolVendedor" EntityType="ITC_DBPOwerModel.Store.RolVendedor" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PruebaBorrarSet" EntityType="ITC_DBPOwerModel.Store.PruebaBorrarSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DSCSCDSSet" EntityType="ITC_DBPOwerModel.Store.DSCSCDSSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AsignacionReciboSet" EntityType="ITC_DBPOwerModel.Store.AsignacionReciboSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LineaSet" EntityType="ITC_DBPOwerModel.Store.LineaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LineaCiudadSet" EntityType="ITC_DBPOwerModel.Store.LineaCiudadSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CiudadSet" EntityType="ITC_DBPOwerModel.Store.CiudadSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LineaDocentesSet" EntityType="ITC_DBPOwerModel.Store.LineaDocentesSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_RolEmpleadoDetalleCondicionEmpleado" Association="ITC_DBPOwerModel.Store.FK_RolEmpleadoDetalleCondicionEmpleado">
       <End Role="RolEmpleado" EntitySet="RolEmpleado" />
       <End Role="DetalleCondicionEmpleado" EntitySet="DetalleCondicionEmpleado" />
@@ -52,6 +55,26 @@
     <AssociationSet Name="FK_PersonaRolVendedor2" Association="ITC_DBPOwerModel.Store.FK_PersonaRolVendedor2">
       <End Role="Persona" EntitySet="Persona" />
       <End Role="RolVendedor" EntitySet="RolVendedor" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaAsignacionRecibo" Association="ITC_DBPOwerModel.Store.PersonaAsignacionRecibo">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="AsignacionRecibo" EntitySet="AsignacionReciboSet" />
+    </AssociationSet>
+    <AssociationSet Name="LineaLineaCiudad" Association="ITC_DBPOwerModel.Store.LineaLineaCiudad">
+      <End Role="Linea" EntitySet="LineaSet" />
+      <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
+    </AssociationSet>
+    <AssociationSet Name="CiudadLineaCiudad" Association="ITC_DBPOwerModel.Store.CiudadLineaCiudad">
+      <End Role="Ciudad" EntitySet="CiudadSet" />
+      <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
+    </AssociationSet>
+    <AssociationSet Name="RolEmpleadoLineaDocentes" Association="ITC_DBPOwerModel.Store.RolEmpleadoLineaDocentes">
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+      <End Role="LineaDocentes" EntitySet="LineaDocentesSet" />
+    </AssociationSet>
+    <AssociationSet Name="LineaLineaDocentes" Association="ITC_DBPOwerModel.Store.LineaLineaDocentes">
+      <End Role="Linea" EntitySet="LineaSet" />
+      <End Role="LineaDocentes" EntitySet="LineaDocentesSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="CondicionEmpleado">
@@ -140,19 +163,46 @@
     <Property Name="IdSubgerente" Type="int" Nullable="false" />
     <Property Name="IdGerente" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="PruebaBorrarSet">
+  <EntityType Name="AsignacionReciboSet">
     <Key>
-      <PropertyRef Name="IdPruebaBorrar" />
+      <PropertyRef Name="IdAsignacionRecibo" />
     </Key>
-    <Property Name="IdPruebaBorrar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DetallePruebaBorrar" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdAsignacionRecibo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="NumRecibo" Type="int" Nullable="false" />
+    <Property Name="IdPersona" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="DSCSCDSSet">
+  <EntityType Name="LineaSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdLinea" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RFDGFDG" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdLinea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LineaCiudadSet">
+    <Key>
+      <PropertyRef Name="IdLineaCiudad" />
+    </Key>
+    <Property Name="IdLineaCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdLinea" Type="int" Nullable="false" />
+    <Property Name="IdCiudad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CiudadSet">
+    <Key>
+      <PropertyRef Name="IdCiudad" />
+    </Key>
+    <Property Name="IdCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesignacionCiudad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Localidad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Provincia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pais" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LineaDocentesSet">
+    <Key>
+      <PropertyRef Name="IdLineaDocente" />
+    </Key>
+    <Property Name="IdLineaDocente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdLinea" Type="int" Nullable="false" />
+    <Property Name="IdRolEmpleado" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_RolEmpleadoDetalleCondicionEmpleado">
     <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
@@ -262,6 +312,66 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="PersonaAsignacionRecibo">
+    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
+    <End Role="AsignacionRecibo" Type="ITC_DBPOwerModel.Store.AsignacionReciboSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="AsignacionRecibo">
+        <PropertyRef Name="IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LineaLineaCiudad">
+    <End Role="Linea" Type="ITC_DBPOwerModel.Store.LineaSet" Multiplicity="1" />
+    <End Role="LineaCiudad" Type="ITC_DBPOwerModel.Store.LineaCiudadSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Linea">
+        <PropertyRef Name="IdLinea" />
+      </Principal>
+      <Dependent Role="LineaCiudad">
+        <PropertyRef Name="IdLinea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CiudadLineaCiudad">
+    <End Role="Ciudad" Type="ITC_DBPOwerModel.Store.CiudadSet" Multiplicity="1" />
+    <End Role="LineaCiudad" Type="ITC_DBPOwerModel.Store.LineaCiudadSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudad">
+        <PropertyRef Name="IdCiudad" />
+      </Principal>
+      <Dependent Role="LineaCiudad">
+        <PropertyRef Name="IdCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolEmpleadoLineaDocentes">
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
+    <End Role="LineaDocentes" Type="ITC_DBPOwerModel.Store.LineaDocentesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="LineaDocentes">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LineaLineaDocentes">
+    <End Role="Linea" Type="ITC_DBPOwerModel.Store.LineaSet" Multiplicity="1" />
+    <End Role="LineaDocentes" Type="ITC_DBPOwerModel.Store.LineaDocentesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Linea">
+        <PropertyRef Name="IdLinea" />
+      </Principal>
+      <Dependent Role="LineaDocentes">
+        <PropertyRef Name="IdLinea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -333,6 +443,7 @@
           <NavigationProperty Name="RolVendedor" Relationship="Self.FK_PersonaRolVendedor" FromRole="Persona" ToRole="RolVendedor" />
           <NavigationProperty Name="RolVendedor1" Relationship="Self.FK_PersonaRolVendedor1" FromRole="Persona" ToRole="RolVendedor" />
           <NavigationProperty Name="RolVendedor2" Relationship="Self.FK_PersonaRolVendedor2" FromRole="Persona" ToRole="RolVendedor" />
+          <NavigationProperty Name="AsignacionRecibo" Relationship="ITC_DBPOwerModel.PersonaAsignacionRecibo" FromRole="Persona" ToRole="AsignacionRecibo" />
         </EntityType>
         <EntityType Name="RolAlumno">
           <Key>
@@ -357,6 +468,7 @@
           <NavigationProperty Name="DetalleCondicionEmpleado" Relationship="Self.FK_RolEmpleadoDetalleCondicionEmpleado" FromRole="RolEmpleado" ToRole="DetalleCondicionEmpleado" />
           <NavigationProperty Name="Permiso" Relationship="Self.FK_RolEmpleadoPermiso" FromRole="RolEmpleado" ToRole="Permiso" />
           <NavigationProperty Name="Persona" Relationship="Self.FK_PersonaRolEmpleado" FromRole="RolEmpleado" ToRole="Persona" />
+          <NavigationProperty Name="LineaDocentes" Relationship="ITC_DBPOwerModel.RolEmpleadoLineaDocentes" FromRole="RolEmpleado" ToRole="LineaDocentes" />
         </EntityType>
         <EntityType Name="RolVendedor">
           <Key>
@@ -524,23 +636,141 @@
             <End Role="Persona" EntitySet="Persona" />
             <End Role="RolVendedor" EntitySet="RolVendedor" />
           </AssociationSet>
-          <EntitySet Name="PruebaBorrarSet" EntityType="ITC_DBPOwerModel.PruebaBorrar" />
-          <EntitySet Name="DSCSCDSSet" EntityType="ITC_DBPOwerModel.DSCSCDS" />
+          <EntitySet Name="AsignacionReciboSet" EntityType="ITC_DBPOwerModel.AsignacionRecibo" />
+          <AssociationSet Name="PersonaAsignacionRecibo" Association="ITC_DBPOwerModel.PersonaAsignacionRecibo">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="AsignacionRecibo" EntitySet="AsignacionReciboSet" />
+          </AssociationSet>
+          <EntitySet Name="LineaSet" EntityType="ITC_DBPOwerModel.Linea" />
+          <EntitySet Name="LineaCiudadSet" EntityType="ITC_DBPOwerModel.LineaCiudad" />
+          <AssociationSet Name="LineaLineaCiudad" Association="ITC_DBPOwerModel.LineaLineaCiudad">
+            <End Role="Linea" EntitySet="LineaSet" />
+            <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
+          </AssociationSet>
+          <EntitySet Name="CiudadSet" EntityType="ITC_DBPOwerModel.Ciudad" />
+          <AssociationSet Name="CiudadLineaCiudad" Association="ITC_DBPOwerModel.CiudadLineaCiudad">
+            <End Role="Ciudad" EntitySet="CiudadSet" />
+            <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
+          </AssociationSet>
+          <EntitySet Name="LineaDocentesSet" EntityType="ITC_DBPOwerModel.LineaDocentes" />
+          <AssociationSet Name="RolEmpleadoLineaDocentes" Association="ITC_DBPOwerModel.RolEmpleadoLineaDocentes">
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+            <End Role="LineaDocentes" EntitySet="LineaDocentesSet" />
+          </AssociationSet>
+          <AssociationSet Name="LineaLineaDocentes" Association="ITC_DBPOwerModel.LineaLineaDocentes">
+            <End Role="Linea" EntitySet="LineaSet" />
+            <End Role="LineaDocentes" EntitySet="LineaDocentesSet" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="PruebaBorrar">
+        <EntityType Name="AsignacionRecibo">
           <Key>
-            <PropertyRef Name="IdPruebaBorrar" />
+            <PropertyRef Name="IdAsignacionRecibo" />
           </Key>
-          <Property Name="IdPruebaBorrar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DetallePruebaBorrar" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IdAsignacionRecibo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="NumRecibo" Type="Int32" Nullable="false" />
+          <Property Name="IdPersona" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.PersonaAsignacionRecibo" FromRole="AsignacionRecibo" ToRole="Persona" />
         </EntityType>
-        <EntityType Name="DSCSCDS">
+        <Association Name="PersonaAsignacionRecibo">
+          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.AsignacionRecibo" Role="AsignacionRecibo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="IdPersona" />
+            </Principal>
+            <Dependent Role="AsignacionRecibo">
+              <PropertyRef Name="IdPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Linea">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdLinea" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RFDGFDG" Type="String" Nullable="false" />
+          <Property Name="IdLinea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="LineaCiudad" Relationship="ITC_DBPOwerModel.LineaLineaCiudad" FromRole="Linea" ToRole="LineaCiudad" />
+          <NavigationProperty Name="LineaDocentes" Relationship="ITC_DBPOwerModel.LineaLineaDocentes" FromRole="Linea" ToRole="LineaDocentes" />
         </EntityType>
+        <EntityType Name="LineaCiudad">
+          <Key>
+            <PropertyRef Name="IdLineaCiudad" />
+          </Key>
+          <Property Name="IdLineaCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLinea" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Linea" Relationship="ITC_DBPOwerModel.LineaLineaCiudad" FromRole="LineaCiudad" ToRole="Linea" />
+          <Property Name="IdCiudad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ciudad" Relationship="ITC_DBPOwerModel.CiudadLineaCiudad" FromRole="LineaCiudad" ToRole="Ciudad" />
+        </EntityType>
+        <Association Name="LineaLineaCiudad">
+          <End Type="ITC_DBPOwerModel.Linea" Role="Linea" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.LineaCiudad" Role="LineaCiudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Linea">
+              <PropertyRef Name="IdLinea" />
+            </Principal>
+            <Dependent Role="LineaCiudad">
+              <PropertyRef Name="IdLinea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="IdCiudad" />
+          </Key>
+          <Property Name="IdCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DesignacionCiudad" Type="String" Nullable="false" />
+          <Property Name="Localidad" Type="String" Nullable="false" />
+          <Property Name="Provincia" Type="String" Nullable="false" />
+          <Property Name="Pais" Type="String" Nullable="false" />
+          <NavigationProperty Name="LineaCiudad" Relationship="ITC_DBPOwerModel.CiudadLineaCiudad" FromRole="Ciudad" ToRole="LineaCiudad" />
+        </EntityType>
+        <Association Name="CiudadLineaCiudad">
+          <End Type="ITC_DBPOwerModel.Ciudad" Role="Ciudad" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.LineaCiudad" Role="LineaCiudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="IdCiudad" />
+            </Principal>
+            <Dependent Role="LineaCiudad">
+              <PropertyRef Name="IdCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LineaDocentes">
+          <Key>
+            <PropertyRef Name="IdLineaDocente" />
+          </Key>
+          <Property Name="IdLineaDocente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLinea" Type="Int32" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.RolEmpleadoLineaDocentes" FromRole="LineaDocentes" ToRole="RolEmpleado" />
+          <NavigationProperty Name="Linea" Relationship="ITC_DBPOwerModel.LineaLineaDocentes" FromRole="LineaDocentes" ToRole="Linea" />
+        </EntityType>
+        <Association Name="RolEmpleadoLineaDocentes">
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.LineaDocentes" Role="LineaDocentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Principal>
+            <Dependent Role="LineaDocentes">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LineaLineaDocentes">
+          <End Type="ITC_DBPOwerModel.Linea" Role="Linea" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.LineaDocentes" Role="LineaDocentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Linea">
+              <PropertyRef Name="IdLinea" />
+            </Principal>
+            <Dependent Role="LineaDocentes">
+              <PropertyRef Name="IdLinea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -642,19 +872,49 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PruebaBorrarSet">
-      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.PruebaBorrar)">
-        <MappingFragment StoreEntitySet="PruebaBorrarSet">
-          <ScalarProperty Name="IdPruebaBorrar" ColumnName="IdPruebaBorrar" />
-          <ScalarProperty Name="DetallePruebaBorrar" ColumnName="DetallePruebaBorrar" />
+    <EntitySetMapping Name="AsignacionReciboSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.AsignacionRecibo)">
+        <MappingFragment StoreEntitySet="AsignacionReciboSet">
+          <ScalarProperty Name="IdAsignacionRecibo" ColumnName="IdAsignacionRecibo" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="NumRecibo" ColumnName="NumRecibo" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DSCSCDSSet">
-      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.DSCSCDS)">
-        <MappingFragment StoreEntitySet="DSCSCDSSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="RFDGFDG" ColumnName="RFDGFDG" />
+    <EntitySetMapping Name="LineaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Linea)">
+        <MappingFragment StoreEntitySet="LineaSet">
+          <ScalarProperty Name="IdLinea" ColumnName="IdLinea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LineaCiudadSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.LineaCiudad)">
+        <MappingFragment StoreEntitySet="LineaCiudadSet">
+          <ScalarProperty Name="IdLineaCiudad" ColumnName="IdLineaCiudad" />
+          <ScalarProperty Name="IdLinea" ColumnName="IdLinea" />
+          <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CiudadSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Ciudad)">
+        <MappingFragment StoreEntitySet="CiudadSet">
+          <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+          <ScalarProperty Name="DesignacionCiudad" ColumnName="DesignacionCiudad" />
+          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LineaDocentesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.LineaDocentes)">
+        <MappingFragment StoreEntitySet="LineaDocentesSet">
+          <ScalarProperty Name="IdLineaDocente" ColumnName="IdLineaDocente" />
+          <ScalarProperty Name="IdLinea" ColumnName="IdLinea" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

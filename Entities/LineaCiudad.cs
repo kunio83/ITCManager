@@ -12,15 +12,13 @@ namespace Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RolVendedor
+    public partial class LineaCiudad
     {
-        public int IdRolVendedor { get; set; }
-        public int IdPersona { get; set; }
-        public int IdSubgerente { get; set; }
-        public int IdGerente { get; set; }
+        public int IdLineaCiudad { get; set; }
+        public int IdLinea { get; set; }
+        public int IdCiudad { get; set; }
     
-        public virtual Persona Persona { get; set; }
-        public virtual Persona Persona1 { get; set; }
-        public virtual Persona Persona2 { get; set; }
+        public virtual Linea Linea { get; set; }
+        public virtual Ciudad Ciudad { get; set; }
     }
 }

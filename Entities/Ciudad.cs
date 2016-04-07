@@ -12,18 +12,21 @@ namespace Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class EstadoAlumno
+    public partial class Ciudad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EstadoAlumno()
+        public Ciudad()
         {
-            this.RolAlumno = new HashSet<RolAlumno>();
+            this.LineaCiudad = new HashSet<LineaCiudad>();
         }
     
-        public int IdEstadoAlumno { get; set; }
-        public string DetalleEstadoAlumno { get; set; }
+        public int IdCiudad { get; set; }
+        public string DesignacionCiudad { get; set; }
+        public string Localidad { get; set; }
+        public string Provincia { get; set; }
+        public string Pais { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolAlumno> RolAlumno { get; set; }
+        public virtual ICollection<LineaCiudad> LineaCiudad { get; set; }
     }
 }
