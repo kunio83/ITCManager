@@ -7,13 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ITCManager.Core.DataAccess
+namespace ITCManager.Core.Entities
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using ITCManager.Core.Entities;
-
     
     public partial class ITC_DBPOwerEntities : DbContext
     {

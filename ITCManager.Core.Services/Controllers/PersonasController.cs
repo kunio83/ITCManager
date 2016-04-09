@@ -11,10 +11,10 @@ namespace ITCManager.Core.Services.Controllers
 {
     public class PersonasController : ApiController
     {
-        public String Get(int id)
-        {
-            return ITCHelper.GetPersonaById(id).Nombres;
-        }
+        //public String Get(int id)
+        //{
+        //    return ITCHelper.GetPersonaById(id).Nombres;
+        //}
 
     }
 }

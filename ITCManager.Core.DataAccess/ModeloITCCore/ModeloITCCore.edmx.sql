@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/09/2016 16:09:27
+-- Date Created: 04/09/2016 17:29:52
 -- Generated from EDMX file: C:\Users\Ezequiel\Source\Repos\ITCManagerRepositorio\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 
@@ -77,6 +77,15 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_LocacionCiudadActivaLocaciones]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[CiudadActivaLocacionesSet] DROP CONSTRAINT [FK_LocacionCiudadActivaLocaciones];
 GO
+IF OBJECT_ID(N'[dbo].[FK_RolLocadorLocacionRolLocador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LocacionRolLocadorSet] DROP CONSTRAINT [FK_RolLocadorLocacionRolLocador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LocacionLocacionRolLocador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LocacionRolLocadorSet] DROP CONSTRAINT [FK_LocacionLocacionRolLocador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LocacionRolLocacionAlojamiento]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolLocacionAlojamientoSet] DROP CONSTRAINT [FK_LocacionRolLocacionAlojamiento];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -141,6 +150,12 @@ IF OBJECT_ID(N'[dbo].[LocacionSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[RolLocadorSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RolLocadorSet];
+GO
+IF OBJECT_ID(N'[dbo].[LocacionRolLocadorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[LocacionRolLocadorSet];
+GO
+IF OBJECT_ID(N'[dbo].[RolLocacionAlojamientoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RolLocacionAlojamientoSet];
 GO
 
 -- --------------------------------------------------

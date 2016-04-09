@@ -85,7 +85,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloITCCore.edmx</DependentUpon>
       <LastGenOutput>ModeloITCCore.Context.cs</LastGenOutput>
-      <CustomToolNamespace>Entities</CustomToolNamespace>
+      <CustomToolNamespace>ITCManager.Core.Entities</CustomToolNamespace>
     </Content>
     <Content Include="ModeloITCCore\ModeloITCCore.edmx.sql" />
   </ItemGroup>
