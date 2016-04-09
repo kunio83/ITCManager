@@ -38,6 +38,13 @@ namespace Entities
         public virtual DbSet<Linea> LineaSet { get; set; }
         public virtual DbSet<LineaCiudad> LineaCiudadSet { get; set; }
         public virtual DbSet<Ciudad> CiudadSet { get; set; }
-        public virtual DbSet<LineaDocentes> LineaDocentesSet { get; set; }
+        public virtual DbSet<Localidad> LocalidadSet { get; set; }
+        public virtual DbSet<RolCiudadEnProceso> RolCiudadEnProcesoSet { get; set; }
+        public virtual DbSet<RolCiudadActiva> RolCiudadActivaSet { get; set; }
+        public virtual DbSet<CiudadPersonal> CiudadPersonalSet { get; set; }
+        public virtual DbSet<CiudadActivaLocaciones> CiudadActivaLocacionesSet { get; set; }
+        public virtual DbSet<Locacion> LocacionSet { get; set; }
+        public virtual DbSet<RolLocacionAuspicio> RolLocacionAuspicioSet { get; set; }
+        public virtual DbSet<RolLocador> RolLocadorSet { get; set; }
     }
 }

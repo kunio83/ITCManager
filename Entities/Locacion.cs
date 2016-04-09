@@ -12,18 +12,20 @@ namespace Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RolCiudadActiva
+    public partial class Locacion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RolCiudadActiva()
+        public Locacion()
         {
             this.CiudadActivaLocaciones = new HashSet<CiudadActivaLocaciones>();
         }
     
-        public int IdRolCiudadActiva { get; set; }
-        public int IdCiudad { get; set; }
+        public int IdLocacion { get; set; }
+        public string DetalleLocacion { get; set; }
+        public string Direccion { get; set; }
+        public string Telefono { get; set; }
+        public string Observaciones { get; set; }
     
-        public virtual Ciudad Ciudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CiudadActivaLocaciones> CiudadActivaLocaciones { get; set; }
     }

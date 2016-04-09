@@ -23,6 +23,7 @@ namespace Entities
             this.RolVendedor1 = new HashSet<RolVendedor>();
             this.RolVendedor2 = new HashSet<RolVendedor>();
             this.AsignacionRecibo = new HashSet<AsignacionRecibo>();
+            this.RolLocador = new HashSet<RolLocador>();
         }
     
         public int IdPersona { get; set; }
@@ -35,7 +36,6 @@ namespace Entities
         public string Ciudad { get; set; }
         public string Provincia { get; set; }
         public string Celular { get; set; }
-        public string CelCorp { get; set; }
         public string TelAlternativo { get; set; }
         public string EstadoCivil { get; set; }
         public string Mail { get; set; }
@@ -52,5 +52,7 @@ namespace Entities
         public virtual ICollection<RolVendedor> RolVendedor2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AsignacionRecibo> AsignacionRecibo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RolLocador> RolLocador { get; set; }
     }
 }

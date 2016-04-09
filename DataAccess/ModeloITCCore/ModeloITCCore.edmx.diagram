@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="98">
+      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="80">
         <EntityTypeShape EntityType="ITC_DBPOwerModel.CondicionEmpleado" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.DetalleCondicionEmpleado" Width="1.5" PointX="4.875" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.DetalleCondicionEmpleado" Width="1.5" PointX="5" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoAlumno" Width="1.5" PointX="5.5" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Permiso" Width="1.5" PointX="4.5" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.PermisoAcceso" Width="1.5" PointX="6.625" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Persona" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolAlumno" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolEmpleado" Width="1.5" PointX="2.5" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolVendedor" Width="1.5" PointX="2.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolEmpleado" Width="1.5" PointX="2.625" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolVendedor" Width="1.5" PointX="2" PointY="10.125" IsExpanded="true" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_RolEmpleadoDetalleCondicionEmpleado" ManuallyRouted="false" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_RolAlumnoEstadoAlumno" ManuallyRouted="false" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_PermisoPermisoAcceso" ManuallyRouted="false" />
@@ -25,14 +25,27 @@
         <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolVendedor2" ManuallyRouted="false" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.AsignacionRecibo" Width="2" PointX="5.125" PointY="1.125" />
         <AssociationConnector Association="ITC_DBPOwerModel.PersonaAsignacionRecibo" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.Linea" Width="1.5" PointX="8.875" PointY="4.125" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.LineaCiudad" Width="1.5" PointX="10" PointY="6" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.Linea" Width="1.5" PointX="8.875" PointY="3.875" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.LineaCiudad" Width="1.5" PointX="11.25" PointY="5.5" />
         <AssociationConnector Association="ITC_DBPOwerModel.LineaLineaCiudad" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.Ciudad" Width="1.5" PointX="11.625" PointY="8.25" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.Ciudad" Width="1.5" PointX="12.625" PointY="8.25" />
         <AssociationConnector Association="ITC_DBPOwerModel.CiudadLineaCiudad" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.LineaDocentes" Width="1.5" PointX="6.875" PointY="5.625" />
-        <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoLineaDocentes" />
-        <AssociationConnector Association="ITC_DBPOwerModel.LineaLineaDocentes" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.Localidad" Width="1.5" PointX="15" PointY="9.375" />
+        <AssociationConnector Association="ITC_DBPOwerModel.LocalidadCiudad" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolCiudadEnProceso" Width="1.75" PointX="15.125" PointY="6.625" />
+        <AssociationConnector Association="ITC_DBPOwerModel.CiudadRolCiudadEnProceso" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolCiudadActiva" Width="1.5" PointX="9.75" PointY="10.625" />
+        <AssociationConnector Association="ITC_DBPOwerModel.CiudadRolCiudadActiva" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.CiudadPersonal" Width="1.5" PointX="8" PointY="6" />
+        <AssociationConnector Association="ITC_DBPOwerModel.LineaCiudadCiudadPersonal" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoCiudadPersonal" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.CiudadActivaLocaciones" Width="2.25" PointX="12.625" PointY="11.875" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolCiudadActivaCiudadActivaLocaciones" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.Locacion" Width="1.5" PointX="16.125" PointY="13.25" />
+        <AssociationConnector Association="ITC_DBPOwerModel.LocacionCiudadActivaLocaciones" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolLocacionAuspicio" Width="2" PointX="11.875" PointY="14.5" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolLocador" Width="1.5" PointX="4.25" PointY="11.5" />
+        <AssociationConnector Association="ITC_DBPOwerModel.PersonaRolLocador" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

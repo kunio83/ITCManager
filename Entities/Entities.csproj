@@ -46,6 +46,12 @@
     <Compile Include="Ciudad.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="CiudadActivaLocaciones.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CiudadPersonal.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="CondicionEmpleado.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
@@ -62,7 +68,10 @@
     <Compile Include="LineaCiudad.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
-    <Compile Include="LineaDocentes.cs">
+    <Compile Include="Locacion.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Localidad.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="ModeloITCCore.cs">
@@ -83,7 +92,19 @@
     <Compile Include="RolAlumno.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="RolCiudadActiva.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolCiudadEnProceso.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="RolEmpleado.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolLocacionAuspicio.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolLocador.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RolVendedor.cs">
