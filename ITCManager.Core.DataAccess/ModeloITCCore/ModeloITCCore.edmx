@@ -25,8 +25,9 @@
     <EntitySet Name="CiudadPersonalSet" EntityType="ITC_DBPOwerModel.Store.CiudadPersonalSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CiudadActivaLocacionesSet" EntityType="ITC_DBPOwerModel.Store.CiudadActivaLocacionesSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="LocacionSet" EntityType="ITC_DBPOwerModel.Store.LocacionSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RolLocacionAuspicioSet" EntityType="ITC_DBPOwerModel.Store.RolLocacionAuspicioSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RolLocadorSet" EntityType="ITC_DBPOwerModel.Store.RolLocadorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocacionRolLocadorSet" EntityType="ITC_DBPOwerModel.Store.LocacionRolLocadorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolLocacionAlojamientoSet" EntityType="ITC_DBPOwerModel.Store.RolLocacionAlojamientoSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_RolEmpleadoDetalleCondicionEmpleado" Association="ITC_DBPOwerModel.Store.FK_RolEmpleadoDetalleCondicionEmpleado">
       <End Role="RolEmpleado" EntitySet="RolEmpleado" />
       <End Role="DetalleCondicionEmpleado" EntitySet="DetalleCondicionEmpleado" />
@@ -106,6 +107,18 @@
     <AssociationSet Name="LocacionCiudadActivaLocaciones" Association="ITC_DBPOwerModel.Store.LocacionCiudadActivaLocaciones">
       <End Role="Locacion" EntitySet="LocacionSet" />
       <End Role="CiudadActivaLocaciones" EntitySet="CiudadActivaLocacionesSet" />
+    </AssociationSet>
+    <AssociationSet Name="RolLocadorLocacionRolLocador" Association="ITC_DBPOwerModel.Store.RolLocadorLocacionRolLocador">
+      <End Role="RolLocador" EntitySet="RolLocadorSet" />
+      <End Role="LocacionRolLocador" EntitySet="LocacionRolLocadorSet" />
+    </AssociationSet>
+    <AssociationSet Name="LocacionLocacionRolLocador" Association="ITC_DBPOwerModel.Store.LocacionLocacionRolLocador">
+      <End Role="Locacion" EntitySet="LocacionSet" />
+      <End Role="LocacionRolLocador" EntitySet="LocacionRolLocadorSet" />
+    </AssociationSet>
+    <AssociationSet Name="LocacionRolLocacionAlojamiento" Association="ITC_DBPOwerModel.Store.LocacionRolLocacionAlojamiento">
+      <End Role="Locacion" EntitySet="LocacionSet" />
+      <End Role="RolLocacionAlojamiento" EntitySet="RolLocacionAlojamientoSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="CondicionEmpleado">
@@ -279,12 +292,6 @@
     <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Observaciones" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="RolLocacionAuspicioSet">
-    <Key>
-      <PropertyRef Name="IdRolLocacionAuspicio" />
-    </Key>
-    <Property Name="IdRolLocacionAuspicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
   <EntityType Name="RolLocadorSet">
     <Key>
       <PropertyRef Name="IdRolLocador" />
@@ -292,6 +299,24 @@
     <Property Name="IdRolLocador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdPersona" Type="int" Nullable="false" />
     <Property Name="Condicion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocacionRolLocadorSet">
+    <Key>
+      <PropertyRef Name="IdLocacionRolLocador" />
+    </Key>
+    <Property Name="IdLocacionRolLocador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdLocacion" Type="int" Nullable="false" />
+    <Property Name="IdRolLocador" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolLocacionAlojamientoSet">
+    <Key>
+      <PropertyRef Name="IdRolLocacionAlojamiento" />
+    </Key>
+    <Property Name="IdRolLocacionAlojamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdLocacion" Type="int" Nullable="false" />
+    <Property Name="Dias" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CantDormitorios" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CantCamas" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="FK_RolEmpleadoDetalleCondicionEmpleado">
     <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
@@ -533,6 +558,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="RolLocadorLocacionRolLocador">
+    <End Role="RolLocador" Type="ITC_DBPOwerModel.Store.RolLocadorSet" Multiplicity="1" />
+    <End Role="LocacionRolLocador" Type="ITC_DBPOwerModel.Store.LocacionRolLocadorSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolLocador">
+        <PropertyRef Name="IdRolLocador" />
+      </Principal>
+      <Dependent Role="LocacionRolLocador">
+        <PropertyRef Name="IdRolLocador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocacionLocacionRolLocador">
+    <End Role="Locacion" Type="ITC_DBPOwerModel.Store.LocacionSet" Multiplicity="1" />
+    <End Role="LocacionRolLocador" Type="ITC_DBPOwerModel.Store.LocacionRolLocadorSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locacion">
+        <PropertyRef Name="IdLocacion" />
+      </Principal>
+      <Dependent Role="LocacionRolLocador">
+        <PropertyRef Name="IdLocacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocacionRolLocacionAlojamiento">
+    <End Role="Locacion" Type="ITC_DBPOwerModel.Store.LocacionSet" Multiplicity="1" />
+    <End Role="RolLocacionAlojamiento" Type="ITC_DBPOwerModel.Store.RolLocacionAlojamientoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locacion">
+        <PropertyRef Name="IdLocacion" />
+      </Principal>
+      <Dependent Role="RolLocacionAlojamiento">
+        <PropertyRef Name="IdLocacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -557,7 +618,6 @@
           <EntitySet Name="CiudadPersonalSet" EntityType="ITC_DBPOwerModel.CiudadPersonal" />
           <EntitySet Name="CiudadActivaLocacionesSet" EntityType="ITC_DBPOwerModel.CiudadActivaLocaciones" />
           <EntitySet Name="LocacionSet" EntityType="ITC_DBPOwerModel.Locacion" />
-          <EntitySet Name="RolLocacionAuspicioSet" EntityType="ITC_DBPOwerModel.RolLocacionAuspicio" />
           <EntitySet Name="RolLocadorSet" EntityType="ITC_DBPOwerModel.RolLocador" />
           <AssociationSet Name="FK_RolEmpleadoDetalleCondicionEmpleado" Association="ITC_DBPOwerModel.FK_RolEmpleadoDetalleCondicionEmpleado">
             <End Role="RolEmpleado" EntitySet="RolEmpleado" />
@@ -638,6 +698,20 @@
           <AssociationSet Name="LocacionCiudadActivaLocaciones" Association="ITC_DBPOwerModel.LocacionCiudadActivaLocaciones">
             <End Role="Locacion" EntitySet="LocacionSet" />
             <End Role="CiudadActivaLocaciones" EntitySet="CiudadActivaLocacionesSet" />
+          </AssociationSet>
+          <EntitySet Name="LocacionRolLocadorSet" EntityType="ITC_DBPOwerModel.LocacionRolLocador" />
+          <AssociationSet Name="RolLocadorLocacionRolLocador" Association="ITC_DBPOwerModel.RolLocadorLocacionRolLocador">
+            <End Role="RolLocador" EntitySet="RolLocadorSet" />
+            <End Role="LocacionRolLocador" EntitySet="LocacionRolLocadorSet" />
+          </AssociationSet>
+          <AssociationSet Name="LocacionLocacionRolLocador" Association="ITC_DBPOwerModel.LocacionLocacionRolLocador">
+            <End Role="Locacion" EntitySet="LocacionSet" />
+            <End Role="LocacionRolLocador" EntitySet="LocacionRolLocadorSet" />
+          </AssociationSet>
+          <EntitySet Name="RolLocacionAlojamientoSet" EntityType="ITC_DBPOwerModel.RolLocacionAlojamiento" />
+          <AssociationSet Name="LocacionRolLocacionAlojamiento" Association="ITC_DBPOwerModel.LocacionRolLocacionAlojamiento">
+            <End Role="Locacion" EntitySet="LocacionSet" />
+            <End Role="RolLocacionAlojamiento" EntitySet="RolLocacionAlojamientoSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="CondicionEmpleado">
@@ -849,12 +923,8 @@
           <Property Name="Telefono" Type="String" Nullable="false" />
           <Property Name="Observaciones" Type="String" Nullable="false" />
           <NavigationProperty Name="CiudadActivaLocaciones" Relationship="ITC_DBPOwerModel.LocacionCiudadActivaLocaciones" FromRole="Locacion" ToRole="CiudadActivaLocaciones" />
-        </EntityType>
-        <EntityType Name="RolLocacionAuspicio">
-          <Key>
-            <PropertyRef Name="IdRolLocacionAuspicio" />
-          </Key>
-          <Property Name="IdRolLocacionAuspicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="LocacionRolLocador" Relationship="ITC_DBPOwerModel.LocacionLocacionRolLocador" FromRole="Locacion" ToRole="LocacionRolLocador" />
+          <NavigationProperty Name="RolLocacionAlojamiento" Relationship="ITC_DBPOwerModel.LocacionRolLocacionAlojamiento" FromRole="Locacion" ToRole="RolLocacionAlojamiento" />
         </EntityType>
         <EntityType Name="RolLocador">
           <Key>
@@ -864,6 +934,7 @@
           <Property Name="IdPersona" Type="Int32" Nullable="false" />
           <Property Name="Condicion" Type="String" Nullable="false" />
           <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.PersonaRolLocador" FromRole="RolLocador" ToRole="Persona" />
+          <NavigationProperty Name="LocacionRolLocador" Relationship="ITC_DBPOwerModel.RolLocadorLocacionRolLocador" FromRole="RolLocador" ToRole="LocacionRolLocador" />
         </EntityType>
         <Association Name="FK_RolEmpleadoDetalleCondicionEmpleado">
           <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
@@ -1105,6 +1176,63 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="LocacionRolLocador">
+          <Key>
+            <PropertyRef Name="IdLocacionRolLocador" />
+          </Key>
+          <Property Name="IdLocacionRolLocador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLocacion" Type="Int32" Nullable="false" />
+          <Property Name="IdRolLocador" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RolLocador" Relationship="ITC_DBPOwerModel.RolLocadorLocacionRolLocador" FromRole="LocacionRolLocador" ToRole="RolLocador" />
+          <NavigationProperty Name="Locacion" Relationship="ITC_DBPOwerModel.LocacionLocacionRolLocador" FromRole="LocacionRolLocador" ToRole="Locacion" />
+        </EntityType>
+        <Association Name="RolLocadorLocacionRolLocador">
+          <End Type="ITC_DBPOwerModel.RolLocador" Role="RolLocador" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.LocacionRolLocador" Role="LocacionRolLocador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolLocador">
+              <PropertyRef Name="IdRolLocador" />
+            </Principal>
+            <Dependent Role="LocacionRolLocador">
+              <PropertyRef Name="IdRolLocador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LocacionLocacionRolLocador">
+          <End Type="ITC_DBPOwerModel.Locacion" Role="Locacion" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.LocacionRolLocador" Role="LocacionRolLocador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locacion">
+              <PropertyRef Name="IdLocacion" />
+            </Principal>
+            <Dependent Role="LocacionRolLocador">
+              <PropertyRef Name="IdLocacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RolLocacionAlojamiento">
+          <Key>
+            <PropertyRef Name="IdRolLocacionAlojamiento" />
+          </Key>
+          <Property Name="IdRolLocacionAlojamiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLocacion" Type="Int32" Nullable="false" />
+          <Property Name="Dias" Type="String" Nullable="false" />
+          <Property Name="CantDormitorios" Type="String" Nullable="false" />
+          <Property Name="CantCamas" Type="String" Nullable="false" />
+          <NavigationProperty Name="Locacion" Relationship="ITC_DBPOwerModel.LocacionRolLocacionAlojamiento" FromRole="RolLocacionAlojamiento" ToRole="Locacion" />
+        </EntityType>
+        <Association Name="LocacionRolLocacionAlojamiento">
+          <End Type="ITC_DBPOwerModel.Locacion" Role="Locacion" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolLocacionAlojamiento" Role="RolLocacionAlojamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locacion">
+              <PropertyRef Name="IdLocacion" />
+            </Principal>
+            <Dependent Role="RolLocacionAlojamiento">
+              <PropertyRef Name="IdLocacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1301,19 +1429,32 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="RolLocacionAuspicioSet">
-      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolLocacionAuspicio)">
-        <MappingFragment StoreEntitySet="RolLocacionAuspicioSet">
-          <ScalarProperty Name="IdRolLocacionAuspicio" ColumnName="IdRolLocacionAuspicio" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="RolLocadorSet">
       <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolLocador)">
         <MappingFragment StoreEntitySet="RolLocadorSet">
           <ScalarProperty Name="IdRolLocador" ColumnName="IdRolLocador" />
           <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
           <ScalarProperty Name="Condicion" ColumnName="Condicion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocacionRolLocadorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.LocacionRolLocador)">
+        <MappingFragment StoreEntitySet="LocacionRolLocadorSet">
+          <ScalarProperty Name="IdLocacionRolLocador" ColumnName="IdLocacionRolLocador" />
+          <ScalarProperty Name="IdLocacion" ColumnName="IdLocacion" />
+          <ScalarProperty Name="IdRolLocador" ColumnName="IdRolLocador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolLocacionAlojamientoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolLocacionAlojamiento)">
+        <MappingFragment StoreEntitySet="RolLocacionAlojamientoSet">
+          <ScalarProperty Name="IdRolLocacionAlojamiento" ColumnName="IdRolLocacionAlojamiento" />
+          <ScalarProperty Name="IdLocacion" ColumnName="IdLocacion" />
+          <ScalarProperty Name="Dias" ColumnName="Dias" />
+          <ScalarProperty Name="CantDormitorios" ColumnName="CantDormitorios" />
+          <ScalarProperty Name="CantCamas" ColumnName="CantCamas" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

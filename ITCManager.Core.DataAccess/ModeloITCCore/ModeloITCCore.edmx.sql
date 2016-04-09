@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/09/2016 14:19:34
--- Generated from EDMX file: C:\Users\ThinkPadW7\Documents\Visual Studio 2015\Projects\ITCManager\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
+-- Date Created: 04/09/2016 16:09:27
+-- Generated from EDMX file: C:\Users\Ezequiel\Source\Repos\ITCManagerRepositorio\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -138,9 +138,6 @@ IF OBJECT_ID(N'[dbo].[CiudadActivaLocacionesSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[LocacionSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[LocacionSet];
-GO
-IF OBJECT_ID(N'[dbo].[RolLocacionAuspicioSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[RolLocacionAuspicioSet];
 GO
 IF OBJECT_ID(N'[dbo].[RolLocadorSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RolLocadorSet];
@@ -321,17 +318,29 @@ CREATE TABLE [dbo].[LocacionSet] (
 );
 GO
 
--- Creating table 'RolLocacionAuspicioSet'
-CREATE TABLE [dbo].[RolLocacionAuspicioSet] (
-    [IdRolLocacionAuspicio] int IDENTITY(1,1) NOT NULL
-);
-GO
-
 -- Creating table 'RolLocadorSet'
 CREATE TABLE [dbo].[RolLocadorSet] (
     [IdRolLocador] int IDENTITY(1,1) NOT NULL,
     [IdPersona] int  NOT NULL,
     [Condicion] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'LocacionRolLocadorSet'
+CREATE TABLE [dbo].[LocacionRolLocadorSet] (
+    [IdLocacionRolLocador] int IDENTITY(1,1) NOT NULL,
+    [IdLocacion] int  NOT NULL,
+    [IdRolLocador] int  NOT NULL
+);
+GO
+
+-- Creating table 'RolLocacionAlojamientoSet'
+CREATE TABLE [dbo].[RolLocacionAlojamientoSet] (
+    [IdRolLocacionAlojamiento] int IDENTITY(1,1) NOT NULL,
+    [IdLocacion] int  NOT NULL,
+    [Dias] nvarchar(max)  NOT NULL,
+    [CantDormitorios] nvarchar(max)  NOT NULL,
+    [CantCamas] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -453,16 +462,22 @@ ADD CONSTRAINT [PK_LocacionSet]
     PRIMARY KEY CLUSTERED ([IdLocacion] ASC);
 GO
 
--- Creating primary key on [IdRolLocacionAuspicio] in table 'RolLocacionAuspicioSet'
-ALTER TABLE [dbo].[RolLocacionAuspicioSet]
-ADD CONSTRAINT [PK_RolLocacionAuspicioSet]
-    PRIMARY KEY CLUSTERED ([IdRolLocacionAuspicio] ASC);
-GO
-
 -- Creating primary key on [IdRolLocador] in table 'RolLocadorSet'
 ALTER TABLE [dbo].[RolLocadorSet]
 ADD CONSTRAINT [PK_RolLocadorSet]
     PRIMARY KEY CLUSTERED ([IdRolLocador] ASC);
+GO
+
+-- Creating primary key on [IdLocacionRolLocador] in table 'LocacionRolLocadorSet'
+ALTER TABLE [dbo].[LocacionRolLocadorSet]
+ADD CONSTRAINT [PK_LocacionRolLocadorSet]
+    PRIMARY KEY CLUSTERED ([IdLocacionRolLocador] ASC);
+GO
+
+-- Creating primary key on [IdRolLocacionAlojamiento] in table 'RolLocacionAlojamientoSet'
+ALTER TABLE [dbo].[RolLocacionAlojamientoSet]
+ADD CONSTRAINT [PK_RolLocacionAlojamientoSet]
+    PRIMARY KEY CLUSTERED ([IdRolLocacionAlojamiento] ASC);
 GO
 
 -- --------------------------------------------------
@@ -766,6 +781,51 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_LocacionCiudadActivaLocaciones'
 CREATE INDEX [IX_FK_LocacionCiudadActivaLocaciones]
 ON [dbo].[CiudadActivaLocacionesSet]
+    ([IdLocacion]);
+GO
+
+-- Creating foreign key on [IdRolLocador] in table 'LocacionRolLocadorSet'
+ALTER TABLE [dbo].[LocacionRolLocadorSet]
+ADD CONSTRAINT [FK_RolLocadorLocacionRolLocador]
+    FOREIGN KEY ([IdRolLocador])
+    REFERENCES [dbo].[RolLocadorSet]
+        ([IdRolLocador])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolLocadorLocacionRolLocador'
+CREATE INDEX [IX_FK_RolLocadorLocacionRolLocador]
+ON [dbo].[LocacionRolLocadorSet]
+    ([IdRolLocador]);
+GO
+
+-- Creating foreign key on [IdLocacion] in table 'LocacionRolLocadorSet'
+ALTER TABLE [dbo].[LocacionRolLocadorSet]
+ADD CONSTRAINT [FK_LocacionLocacionRolLocador]
+    FOREIGN KEY ([IdLocacion])
+    REFERENCES [dbo].[LocacionSet]
+        ([IdLocacion])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_LocacionLocacionRolLocador'
+CREATE INDEX [IX_FK_LocacionLocacionRolLocador]
+ON [dbo].[LocacionRolLocadorSet]
+    ([IdLocacion]);
+GO
+
+-- Creating foreign key on [IdLocacion] in table 'RolLocacionAlojamientoSet'
+ALTER TABLE [dbo].[RolLocacionAlojamientoSet]
+ADD CONSTRAINT [FK_LocacionRolLocacionAlojamiento]
+    FOREIGN KEY ([IdLocacion])
+    REFERENCES [dbo].[LocacionSet]
+        ([IdLocacion])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_LocacionRolLocacionAlojamiento'
+CREATE INDEX [IX_FK_LocacionRolLocacionAlojamiento]
+ON [dbo].[RolLocacionAlojamientoSet]
     ([IdLocacion]);
 GO
 

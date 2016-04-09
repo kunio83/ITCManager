@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="35">
+      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="101">
         <EntityTypeShape EntityType="ITC_DBPOwerModel.CondicionEmpleado" Width="1.5" PointX="7.25" PointY="11" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.DetalleCondicionEmpleado" Width="1.5" PointX="15" PointY="9.75" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoAlumno" Width="1.5" PointX="13.5" PointY="24.5" />
@@ -23,8 +23,7 @@
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolCiudadActiva" Width="1.5" PointX="15.75" PointY="19.5" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.CiudadPersonal" Width="1.5" PointX="18" PointY="9" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.CiudadActivaLocaciones" Width="1.5" PointX="18" PointY="19.5" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.Locacion" Width="1.5" PointX="15.75" PointY="22.375" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolLocacionAuspicio" Width="1.5" PointX="8.875" PointY="9.375" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.Locacion" Width="1.5" PointX="19.125" PointY="22.125" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolLocador" Width="1.5" PointX="12.75" PointY="21.25" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_RolEmpleadoDetalleCondicionEmpleado" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_RolAlumnoEstadoAlumno" />
@@ -46,6 +45,11 @@
         <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoCiudadPersonal" />
         <AssociationConnector Association="ITC_DBPOwerModel.RolCiudadActivaCiudadActivaLocaciones" />
         <AssociationConnector Association="ITC_DBPOwerModel.LocacionCiudadActivaLocaciones" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.LocacionRolLocador" Width="1.5" PointX="16.25" PointY="21.875" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolLocadorLocacionRolLocador" />
+        <AssociationConnector Association="ITC_DBPOwerModel.LocacionLocacionRolLocador" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolLocacionAlojamiento" Width="1.625" PointX="17.125" PointY="24.375" />
+        <AssociationConnector Association="ITC_DBPOwerModel.LocacionRolLocacionAlojamiento" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
