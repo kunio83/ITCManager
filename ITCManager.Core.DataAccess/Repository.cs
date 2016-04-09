@@ -8,7 +8,7 @@ using System.Data.Entity.Validation;
 
 namespace ITCManager.Core.DataAccess
 {
-    public class Repository<T> where T : BaseEntity
+    public class Repository<T> where T : class
     {
         private readonly ITC_DBPOwerEntities context;
         private IDbSet<T> entities;

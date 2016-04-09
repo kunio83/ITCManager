@@ -12,7 +12,7 @@ namespace ITCManager.Core.Business
     public static class ITCHelper
     {
         static private UnitOfWork unitOfWork = new UnitOfWork();
-        //static private Repository<Persona> personaRepository;
+        static private Repository<Persona> personaRepository;
 
         //public static Persona GetPersonaById(int id)
         //{
