@@ -17,6 +17,7 @@ namespace ITCManager.Core.DataAccess
         public Repository(ITC_DBPOwerEntities context)
         {
             this.context = context;
+            context.Configuration.ProxyCreationEnabled = false;
         }
 
         public T GetById(object id)
