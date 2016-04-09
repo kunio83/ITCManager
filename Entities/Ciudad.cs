@@ -18,15 +18,22 @@ namespace Entities
         public Ciudad()
         {
             this.LineaCiudad = new HashSet<LineaCiudad>();
+            this.RolCiudadEnProceso = new HashSet<RolCiudadEnProceso>();
+            this.RolCiudadActiva = new HashSet<RolCiudadActiva>();
         }
     
         public int IdCiudad { get; set; }
         public string DesignacionCiudad { get; set; }
-        public string Localidad { get; set; }
-        public string Provincia { get; set; }
-        public string Pais { get; set; }
+        public int IdLocalidad { get; set; }
+        public string PeriodoApertura { get; set; }
+        public string CantidadMeses { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LineaCiudad> LineaCiudad { get; set; }
+        public virtual Localidad Localidad { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RolCiudadEnProceso> RolCiudadEnProceso { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RolCiudadActiva> RolCiudadActiva { get; set; }
     }
 }

@@ -12,24 +12,20 @@ namespace Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RolEmpleado
+    public partial class Localidad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RolEmpleado()
+        public Localidad()
         {
-            this.DetalleCondicionEmpleado = new HashSet<DetalleCondicionEmpleado>();
-            this.Permiso = new HashSet<Permiso>();
+            this.Ciudad = new HashSet<Ciudad>();
         }
     
-        public int IdRolEmpleado { get; set; }
-        public int IdPersona { get; set; }
-        public string IdPuesto { get; set; }
-        public int IdCondicionEmpleado { get; set; }
+        public int IdLocalidad { get; set; }
+        public string NombreLocalidad { get; set; }
+        public string Provincia { get; set; }
+        public string Pais { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleCondicionEmpleado> DetalleCondicionEmpleado { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Permiso> Permiso { get; set; }
-        public virtual Persona Persona { get; set; }
+        public virtual ICollection<Ciudad> Ciudad { get; set; }
     }
 }

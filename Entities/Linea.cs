@@ -18,14 +18,11 @@ namespace Entities
         public Linea()
         {
             this.LineaCiudad = new HashSet<LineaCiudad>();
-            this.LineaDocentes = new HashSet<LineaDocentes>();
         }
     
         public int IdLinea { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LineaCiudad> LineaCiudad { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LineaDocentes> LineaDocentes { get; set; }
     }
 }
