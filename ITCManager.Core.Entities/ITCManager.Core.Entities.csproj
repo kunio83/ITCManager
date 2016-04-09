@@ -107,6 +107,9 @@
     <Compile Include="RolLocacionAlojamiento.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="RolLocacionSalon.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="RolLocador.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>

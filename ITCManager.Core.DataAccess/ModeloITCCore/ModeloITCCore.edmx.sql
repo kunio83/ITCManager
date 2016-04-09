@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/09/2016 17:29:52
+-- Date Created: 04/09/2016 17:40:15
 -- Generated from EDMX file: C:\Users\Ezequiel\Source\Repos\ITCManagerRepositorio\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 
@@ -359,6 +359,18 @@ CREATE TABLE [dbo].[RolLocacionAlojamientoSet] (
 );
 GO
 
+-- Creating table 'RolLocacionSalonSet'
+CREATE TABLE [dbo].[RolLocacionSalonSet] (
+    [IdRolLocacionSalon] int IDENTITY(1,1) NOT NULL,
+    [IdLocacion] int  NOT NULL,
+    [Tamaño] nvarchar(max)  NOT NULL,
+    [Mesas] nvarchar(max)  NOT NULL,
+    [Sillas] nvarchar(max)  NOT NULL,
+    [AireAcondicionado] nvarchar(max)  NOT NULL,
+    [Calefaccion] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -493,6 +505,12 @@ GO
 ALTER TABLE [dbo].[RolLocacionAlojamientoSet]
 ADD CONSTRAINT [PK_RolLocacionAlojamientoSet]
     PRIMARY KEY CLUSTERED ([IdRolLocacionAlojamiento] ASC);
+GO
+
+-- Creating primary key on [IdRolLocacionSalon] in table 'RolLocacionSalonSet'
+ALTER TABLE [dbo].[RolLocacionSalonSet]
+ADD CONSTRAINT [PK_RolLocacionSalonSet]
+    PRIMARY KEY CLUSTERED ([IdRolLocacionSalon] ASC);
 GO
 
 -- --------------------------------------------------
@@ -841,6 +859,21 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_LocacionRolLocacionAlojamiento'
 CREATE INDEX [IX_FK_LocacionRolLocacionAlojamiento]
 ON [dbo].[RolLocacionAlojamientoSet]
+    ([IdLocacion]);
+GO
+
+-- Creating foreign key on [IdLocacion] in table 'RolLocacionSalonSet'
+ALTER TABLE [dbo].[RolLocacionSalonSet]
+ADD CONSTRAINT [FK_LocacionRolLocacionSalon]
+    FOREIGN KEY ([IdLocacion])
+    REFERENCES [dbo].[LocacionSet]
+        ([IdLocacion])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_LocacionRolLocacionSalon'
+CREATE INDEX [IX_FK_LocacionRolLocacionSalon]
+ON [dbo].[RolLocacionSalonSet]
     ([IdLocacion]);
 GO
 

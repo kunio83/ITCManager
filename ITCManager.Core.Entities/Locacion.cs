@@ -20,6 +20,7 @@ namespace ITCManager.Core.Entities
             this.CiudadActivaLocaciones = new HashSet<CiudadActivaLocaciones>();
             this.LocacionRolLocador = new HashSet<LocacionRolLocador>();
             this.RolLocacionAlojamiento = new HashSet<RolLocacionAlojamiento>();
+            this.RolLocacionSalon = new HashSet<RolLocacionSalon>();
         }
     
         public int IdLocacion { get; set; }
@@ -34,5 +35,7 @@ namespace ITCManager.Core.Entities
         public virtual ICollection<LocacionRolLocador> LocacionRolLocador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RolLocacionAlojamiento> RolLocacionAlojamiento { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RolLocacionSalon> RolLocacionSalon { get; set; }
     }
 }

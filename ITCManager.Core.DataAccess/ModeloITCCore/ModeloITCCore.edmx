@@ -28,6 +28,7 @@
     <EntitySet Name="RolLocadorSet" EntityType="ITC_DBPOwerModel.Store.RolLocadorSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="LocacionRolLocadorSet" EntityType="ITC_DBPOwerModel.Store.LocacionRolLocadorSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RolLocacionAlojamientoSet" EntityType="ITC_DBPOwerModel.Store.RolLocacionAlojamientoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolLocacionSalonSet" EntityType="ITC_DBPOwerModel.Store.RolLocacionSalonSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_RolEmpleadoDetalleCondicionEmpleado" Association="ITC_DBPOwerModel.Store.FK_RolEmpleadoDetalleCondicionEmpleado">
       <End Role="RolEmpleado" EntitySet="RolEmpleado" />
       <End Role="DetalleCondicionEmpleado" EntitySet="DetalleCondicionEmpleado" />
@@ -119,6 +120,10 @@
     <AssociationSet Name="LocacionRolLocacionAlojamiento" Association="ITC_DBPOwerModel.Store.LocacionRolLocacionAlojamiento">
       <End Role="Locacion" EntitySet="LocacionSet" />
       <End Role="RolLocacionAlojamiento" EntitySet="RolLocacionAlojamientoSet" />
+    </AssociationSet>
+    <AssociationSet Name="LocacionRolLocacionSalon" Association="ITC_DBPOwerModel.Store.LocacionRolLocacionSalon">
+      <End Role="Locacion" EntitySet="LocacionSet" />
+      <End Role="RolLocacionSalon" EntitySet="RolLocacionSalonSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="CondicionEmpleado">
@@ -317,6 +322,18 @@
     <Property Name="Dias" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CantDormitorios" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CantCamas" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolLocacionSalonSet">
+    <Key>
+      <PropertyRef Name="IdRolLocacionSalon" />
+    </Key>
+    <Property Name="IdRolLocacionSalon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdLocacion" Type="int" Nullable="false" />
+    <Property Name="Tamaño" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mesas" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sillas" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AireAcondicionado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Calefaccion" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="FK_RolEmpleadoDetalleCondicionEmpleado">
     <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
@@ -594,6 +611,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="LocacionRolLocacionSalon">
+    <End Role="Locacion" Type="ITC_DBPOwerModel.Store.LocacionSet" Multiplicity="1" />
+    <End Role="RolLocacionSalon" Type="ITC_DBPOwerModel.Store.RolLocacionSalonSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locacion">
+        <PropertyRef Name="IdLocacion" />
+      </Principal>
+      <Dependent Role="RolLocacionSalon">
+        <PropertyRef Name="IdLocacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -712,6 +741,11 @@
           <AssociationSet Name="LocacionRolLocacionAlojamiento" Association="ITC_DBPOwerModel.LocacionRolLocacionAlojamiento">
             <End Role="Locacion" EntitySet="LocacionSet" />
             <End Role="RolLocacionAlojamiento" EntitySet="RolLocacionAlojamientoSet" />
+          </AssociationSet>
+          <EntitySet Name="RolLocacionSalonSet" EntityType="ITC_DBPOwerModel.RolLocacionSalon" />
+          <AssociationSet Name="LocacionRolLocacionSalon" Association="ITC_DBPOwerModel.LocacionRolLocacionSalon">
+            <End Role="Locacion" EntitySet="LocacionSet" />
+            <End Role="RolLocacionSalon" EntitySet="RolLocacionSalonSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="CondicionEmpleado">
@@ -925,6 +959,7 @@
           <NavigationProperty Name="CiudadActivaLocaciones" Relationship="ITC_DBPOwerModel.LocacionCiudadActivaLocaciones" FromRole="Locacion" ToRole="CiudadActivaLocaciones" />
           <NavigationProperty Name="LocacionRolLocador" Relationship="ITC_DBPOwerModel.LocacionLocacionRolLocador" FromRole="Locacion" ToRole="LocacionRolLocador" />
           <NavigationProperty Name="RolLocacionAlojamiento" Relationship="ITC_DBPOwerModel.LocacionRolLocacionAlojamiento" FromRole="Locacion" ToRole="RolLocacionAlojamiento" />
+          <NavigationProperty Name="RolLocacionSalon" Relationship="ITC_DBPOwerModel.LocacionRolLocacionSalon" FromRole="Locacion" ToRole="RolLocacionSalon" />
         </EntityType>
         <EntityType Name="RolLocador">
           <Key>
@@ -1233,6 +1268,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="RolLocacionSalon">
+          <Key>
+            <PropertyRef Name="IdRolLocacionSalon" />
+          </Key>
+          <Property Name="IdRolLocacionSalon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLocacion" Type="Int32" Nullable="false" />
+          <Property Name="Tamaño" Type="String" Nullable="false" />
+          <Property Name="Mesas" Type="String" Nullable="false" />
+          <Property Name="Sillas" Type="String" Nullable="false" />
+          <Property Name="AireAcondicionado" Type="String" Nullable="false" />
+          <Property Name="Calefaccion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Locacion" Relationship="ITC_DBPOwerModel.LocacionRolLocacionSalon" FromRole="RolLocacionSalon" ToRole="Locacion" />
+        </EntityType>
+        <Association Name="LocacionRolLocacionSalon">
+          <End Type="ITC_DBPOwerModel.Locacion" Role="Locacion" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolLocacionSalon" Role="RolLocacionSalon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locacion">
+              <PropertyRef Name="IdLocacion" />
+            </Principal>
+            <Dependent Role="RolLocacionSalon">
+              <PropertyRef Name="IdLocacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1455,6 +1515,19 @@
           <ScalarProperty Name="Dias" ColumnName="Dias" />
           <ScalarProperty Name="CantDormitorios" ColumnName="CantDormitorios" />
           <ScalarProperty Name="CantCamas" ColumnName="CantCamas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolLocacionSalonSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolLocacionSalon)">
+        <MappingFragment StoreEntitySet="RolLocacionSalonSet">
+          <ScalarProperty Name="IdRolLocacionSalon" ColumnName="IdRolLocacionSalon" />
+          <ScalarProperty Name="IdLocacion" ColumnName="IdLocacion" />
+          <ScalarProperty Name="Tamaño" ColumnName="Tamaño" />
+          <ScalarProperty Name="Mesas" ColumnName="Mesas" />
+          <ScalarProperty Name="Sillas" ColumnName="Sillas" />
+          <ScalarProperty Name="AireAcondicionado" ColumnName="AireAcondicionado" />
+          <ScalarProperty Name="Calefaccion" ColumnName="Calefaccion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

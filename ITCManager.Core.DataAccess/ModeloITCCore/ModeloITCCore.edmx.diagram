@@ -23,7 +23,7 @@
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolCiudadActiva" Width="1.5" PointX="15.75" PointY="19.5" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.CiudadPersonal" Width="1.5" PointX="18" PointY="9" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.CiudadActivaLocaciones" Width="1.5" PointX="18" PointY="19.5" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.Locacion" Width="1.5" PointX="19.125" PointY="22.125" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.Locacion" Width="1.5" PointX="19.625" PointY="22.25" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolLocador" Width="1.5" PointX="12.75" PointY="21.25" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_RolEmpleadoDetalleCondicionEmpleado" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_RolAlumnoEstadoAlumno" />
@@ -48,8 +48,10 @@
         <EntityTypeShape EntityType="ITC_DBPOwerModel.LocacionRolLocador" Width="1.5" PointX="16.25" PointY="21.875" />
         <AssociationConnector Association="ITC_DBPOwerModel.RolLocadorLocacionRolLocador" />
         <AssociationConnector Association="ITC_DBPOwerModel.LocacionLocacionRolLocador" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolLocacionAlojamiento" Width="1.625" PointX="17.125" PointY="24.375" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolLocacionAlojamiento" Width="1.625" PointX="17.375" PointY="24.5" />
         <AssociationConnector Association="ITC_DBPOwerModel.LocacionRolLocacionAlojamiento" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolLocacionSalon" Width="1.5" PointX="22.5" PointY="24.125" />
+        <AssociationConnector Association="ITC_DBPOwerModel.LocacionRolLocacionSalon" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

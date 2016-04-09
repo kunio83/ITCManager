@@ -48,5 +48,6 @@ namespace ITCManager.Core.Entities
         public virtual DbSet<RolLocador> RolLocadorSet { get; set; }
         public virtual DbSet<LocacionRolLocador> LocacionRolLocadorSet { get; set; }
         public virtual DbSet<RolLocacionAlojamiento> RolLocacionAlojamientoSet { get; set; }
+        public virtual DbSet<RolLocacionSalon> RolLocacionSalonSet { get; set; }
     }
 }
