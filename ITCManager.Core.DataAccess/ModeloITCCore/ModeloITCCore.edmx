@@ -1,0 +1,1342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ITC_DBPOwerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ITC_DBPOwerModelStoreContainer">
+    <EntitySet Name="CondicionEmpleado" EntityType="ITC_DBPOwerModel.Store.CondicionEmpleado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetalleCondicionEmpleado" EntityType="ITC_DBPOwerModel.Store.DetalleCondicionEmpleado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EstadoAlumno" EntityType="ITC_DBPOwerModel.Store.EstadoAlumno" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Permiso" EntityType="ITC_DBPOwerModel.Store.Permiso" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermisoAcceso" EntityType="ITC_DBPOwerModel.Store.PermisoAcceso" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Persona" EntityType="ITC_DBPOwerModel.Store.Persona" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolAlumno" EntityType="ITC_DBPOwerModel.Store.RolAlumno" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolEmpleado" EntityType="ITC_DBPOwerModel.Store.RolEmpleado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolVendedor" EntityType="ITC_DBPOwerModel.Store.RolVendedor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AsignacionReciboSet" EntityType="ITC_DBPOwerModel.Store.AsignacionReciboSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LineaSet" EntityType="ITC_DBPOwerModel.Store.LineaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LineaCiudadSet" EntityType="ITC_DBPOwerModel.Store.LineaCiudadSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CiudadSet" EntityType="ITC_DBPOwerModel.Store.CiudadSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocalidadSet" EntityType="ITC_DBPOwerModel.Store.LocalidadSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolCiudadEnProcesoSet" EntityType="ITC_DBPOwerModel.Store.RolCiudadEnProcesoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolCiudadActivaSet" EntityType="ITC_DBPOwerModel.Store.RolCiudadActivaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CiudadPersonalSet" EntityType="ITC_DBPOwerModel.Store.CiudadPersonalSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CiudadActivaLocacionesSet" EntityType="ITC_DBPOwerModel.Store.CiudadActivaLocacionesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocacionSet" EntityType="ITC_DBPOwerModel.Store.LocacionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolLocacionAuspicioSet" EntityType="ITC_DBPOwerModel.Store.RolLocacionAuspicioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolLocadorSet" EntityType="ITC_DBPOwerModel.Store.RolLocadorSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_RolEmpleadoDetalleCondicionEmpleado" Association="ITC_DBPOwerModel.Store.FK_RolEmpleadoDetalleCondicionEmpleado">
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+      <End Role="DetalleCondicionEmpleado" EntitySet="DetalleCondicionEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolAlumnoEstadoAlumno" Association="ITC_DBPOwerModel.Store.FK_RolAlumnoEstadoAlumno">
+      <End Role="EstadoAlumno" EntitySet="EstadoAlumno" />
+      <End Role="RolAlumno" EntitySet="RolAlumno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermisoPermisoAcceso" Association="ITC_DBPOwerModel.Store.FK_PermisoPermisoAcceso">
+      <End Role="Permiso" EntitySet="Permiso" />
+      <End Role="PermisoAcceso" EntitySet="PermisoAcceso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolEmpleadoPermiso" Association="ITC_DBPOwerModel.Store.FK_RolEmpleadoPermiso">
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+      <End Role="Permiso" EntitySet="Permiso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaRolAlumno" Association="ITC_DBPOwerModel.Store.FK_PersonaRolAlumno">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="RolAlumno" EntitySet="RolAlumno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaRolEmpleado" Association="ITC_DBPOwerModel.Store.FK_PersonaRolEmpleado">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaRolVendedor" Association="ITC_DBPOwerModel.Store.FK_PersonaRolVendedor">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="RolVendedor" EntitySet="RolVendedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaRolVendedor1" Association="ITC_DBPOwerModel.Store.FK_PersonaRolVendedor1">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="RolVendedor" EntitySet="RolVendedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaRolVendedor2" Association="ITC_DBPOwerModel.Store.FK_PersonaRolVendedor2">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="RolVendedor" EntitySet="RolVendedor" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaAsignacionRecibo" Association="ITC_DBPOwerModel.Store.PersonaAsignacionRecibo">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="AsignacionRecibo" EntitySet="AsignacionReciboSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaRolLocador" Association="ITC_DBPOwerModel.Store.PersonaRolLocador">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="RolLocador" EntitySet="RolLocadorSet" />
+    </AssociationSet>
+    <AssociationSet Name="LineaLineaCiudad" Association="ITC_DBPOwerModel.Store.LineaLineaCiudad">
+      <End Role="Linea" EntitySet="LineaSet" />
+      <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
+    </AssociationSet>
+    <AssociationSet Name="CiudadLineaCiudad" Association="ITC_DBPOwerModel.Store.CiudadLineaCiudad">
+      <End Role="Ciudad" EntitySet="CiudadSet" />
+      <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
+    </AssociationSet>
+    <AssociationSet Name="LocalidadCiudad" Association="ITC_DBPOwerModel.Store.LocalidadCiudad">
+      <End Role="Localidad" EntitySet="LocalidadSet" />
+      <End Role="Ciudad" EntitySet="CiudadSet" />
+    </AssociationSet>
+    <AssociationSet Name="CiudadRolCiudadEnProceso" Association="ITC_DBPOwerModel.Store.CiudadRolCiudadEnProceso">
+      <End Role="Ciudad" EntitySet="CiudadSet" />
+      <End Role="RolCiudadEnProceso" EntitySet="RolCiudadEnProcesoSet" />
+    </AssociationSet>
+    <AssociationSet Name="CiudadRolCiudadActiva" Association="ITC_DBPOwerModel.Store.CiudadRolCiudadActiva">
+      <End Role="Ciudad" EntitySet="CiudadSet" />
+      <End Role="RolCiudadActiva" EntitySet="RolCiudadActivaSet" />
+    </AssociationSet>
+    <AssociationSet Name="LineaCiudadCiudadPersonal" Association="ITC_DBPOwerModel.Store.LineaCiudadCiudadPersonal">
+      <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
+      <End Role="CiudadPersonal" EntitySet="CiudadPersonalSet" />
+    </AssociationSet>
+    <AssociationSet Name="RolEmpleadoCiudadPersonal" Association="ITC_DBPOwerModel.Store.RolEmpleadoCiudadPersonal">
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+      <End Role="CiudadPersonal" EntitySet="CiudadPersonalSet" />
+    </AssociationSet>
+    <AssociationSet Name="RolCiudadActivaCiudadActivaLocaciones" Association="ITC_DBPOwerModel.Store.RolCiudadActivaCiudadActivaLocaciones">
+      <End Role="RolCiudadActiva" EntitySet="RolCiudadActivaSet" />
+      <End Role="CiudadActivaLocaciones" EntitySet="CiudadActivaLocacionesSet" />
+    </AssociationSet>
+    <AssociationSet Name="LocacionCiudadActivaLocaciones" Association="ITC_DBPOwerModel.Store.LocacionCiudadActivaLocaciones">
+      <End Role="Locacion" EntitySet="LocacionSet" />
+      <End Role="CiudadActivaLocaciones" EntitySet="CiudadActivaLocacionesSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CondicionEmpleado">
+    <Key>
+      <PropertyRef Name="IdCondicionEmpleado" />
+    </Key>
+    <Property Name="IdCondicionEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleCondicionEmpleado">
+    <Key>
+      <PropertyRef Name="IdDetalleCondicionEmpleado" />
+    </Key>
+    <Property Name="IdDetalleCondicionEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRolEmpleado" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="IdCondicionEmpleado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstadoAlumno">
+    <Key>
+      <PropertyRef Name="IdEstadoAlumno" />
+    </Key>
+    <Property Name="IdEstadoAlumno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DetalleEstadoAlumno" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Permiso">
+    <Key>
+      <PropertyRef Name="IdPermiso" />
+    </Key>
+    <Property Name="IdPermiso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRolEmpleado" Type="int" Nullable="false" />
+    <Property Name="DetallePermiso" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PermisoAcceso">
+    <Key>
+      <PropertyRef Name="IdPermisoAcceso" />
+    </Key>
+    <Property Name="IdPermisoAcceso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPermiso" Type="int" Nullable="false" />
+    <Property Name="DetalleAcceso" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PermisoActivo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="IdPersona" />
+    </Key>
+    <Property Name="IdPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombres" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaNac" Type="datetime" Nullable="false" />
+    <Property Name="DNI" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Barrio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ciudad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Provincia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Celular" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TelAlternativo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EstadoCivil" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mail" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolAlumno">
+    <Key>
+      <PropertyRef Name="IdRolAlumno" />
+    </Key>
+    <Property Name="IdRolAlumno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPersona" Type="int" Nullable="false" />
+    <Property Name="IdCapacitacion" Type="int" Nullable="false" />
+    <Property Name="IdInformeCiudadHorarios" Type="int" Nullable="false" />
+    <Property Name="IdEstadoAlumno" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolEmpleado">
+    <Key>
+      <PropertyRef Name="IdRolEmpleado" />
+    </Key>
+    <Property Name="IdRolEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPersona" Type="int" Nullable="false" />
+    <Property Name="IdPuesto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdCondicionEmpleado" Type="int" Nullable="false" />
+    <Property Name="CelCorp" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolVendedor">
+    <Key>
+      <PropertyRef Name="IdRolVendedor" />
+    </Key>
+    <Property Name="IdRolVendedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPersona" Type="int" Nullable="false" />
+    <Property Name="IdSubgerente" Type="int" Nullable="false" />
+    <Property Name="IdGerente" Type="int" Nullable="false" />
+    <Property Name="CelCorp" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AsignacionReciboSet">
+    <Key>
+      <PropertyRef Name="IdAsignacionRecibo" />
+    </Key>
+    <Property Name="IdAsignacionRecibo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="NumRecibo" Type="int" Nullable="false" />
+    <Property Name="IdPersona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LineaSet">
+    <Key>
+      <PropertyRef Name="IdLinea" />
+    </Key>
+    <Property Name="IdLinea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LineaCiudadSet">
+    <Key>
+      <PropertyRef Name="IdLineaCiudad" />
+    </Key>
+    <Property Name="IdLineaCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdLinea" Type="int" Nullable="false" />
+    <Property Name="IdCiudad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CiudadSet">
+    <Key>
+      <PropertyRef Name="IdCiudad" />
+    </Key>
+    <Property Name="IdCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesignacionCiudad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdLocalidad" Type="int" Nullable="false" />
+    <Property Name="PeriodoApertura" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CantidadMeses" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocalidadSet">
+    <Key>
+      <PropertyRef Name="IdLocalidad" />
+    </Key>
+    <Property Name="IdLocalidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreLocalidad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Provincia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pais" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolCiudadEnProcesoSet">
+    <Key>
+      <PropertyRef Name="IdRolCiudadEnProceso" />
+    </Key>
+    <Property Name="IdRolCiudadEnProceso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCiudad" Type="int" Nullable="false" />
+    <Property Name="InformeCiudad" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolCiudadActivaSet">
+    <Key>
+      <PropertyRef Name="IdRolCiudadActiva" />
+    </Key>
+    <Property Name="IdRolCiudadActiva" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCiudad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CiudadPersonalSet">
+    <Key>
+      <PropertyRef Name="IdCiudadPersonal" />
+    </Key>
+    <Property Name="IdCiudadPersonal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdLineaCiudad" Type="int" Nullable="false" />
+    <Property Name="Periodo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdRolEmpleado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CiudadActivaLocacionesSet">
+    <Key>
+      <PropertyRef Name="IdCiudadActivaLocaciones" />
+    </Key>
+    <Property Name="IdCiudadActivaLocaciones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRolCiudadActiva" Type="int" Nullable="false" />
+    <Property Name="IdLocacion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocacionSet">
+    <Key>
+      <PropertyRef Name="IdLocacion" />
+    </Key>
+    <Property Name="IdLocacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DetalleLocacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Observaciones" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolLocacionAuspicioSet">
+    <Key>
+      <PropertyRef Name="IdRolLocacionAuspicio" />
+    </Key>
+    <Property Name="IdRolLocacionAuspicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolLocadorSet">
+    <Key>
+      <PropertyRef Name="IdRolLocador" />
+    </Key>
+    <Property Name="IdRolLocador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPersona" Type="int" Nullable="false" />
+    <Property Name="Condicion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_RolEmpleadoDetalleCondicionEmpleado">
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
+    <End Role="DetalleCondicionEmpleado" Type="ITC_DBPOwerModel.Store.DetalleCondicionEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="DetalleCondicionEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolAlumnoEstadoAlumno">
+    <End Role="EstadoAlumno" Type="ITC_DBPOwerModel.Store.EstadoAlumno" Multiplicity="1" />
+    <End Role="RolAlumno" Type="ITC_DBPOwerModel.Store.RolAlumno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoAlumno">
+        <PropertyRef Name="IdEstadoAlumno" />
+      </Principal>
+      <Dependent Role="RolAlumno">
+        <PropertyRef Name="IdEstadoAlumno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermisoPermisoAcceso">
+    <End Role="Permiso" Type="ITC_DBPOwerModel.Store.Permiso" Multiplicity="1" />
+    <End Role="PermisoAcceso" Type="ITC_DBPOwerModel.Store.PermisoAcceso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permiso">
+        <PropertyRef Name="IdPermiso" />
+      </Principal>
+      <Dependent Role="PermisoAcceso">
+        <PropertyRef Name="IdPermiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolEmpleadoPermiso">
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
+    <End Role="Permiso" Type="ITC_DBPOwerModel.Store.Permiso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="Permiso">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaRolAlumno">
+    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
+    <End Role="RolAlumno" Type="ITC_DBPOwerModel.Store.RolAlumno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="RolAlumno">
+        <PropertyRef Name="IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaRolEmpleado">
+    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="RolEmpleado">
+        <PropertyRef Name="IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaRolVendedor">
+    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
+    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="RolVendedor">
+        <PropertyRef Name="IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaRolVendedor1">
+    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
+    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="RolVendedor">
+        <PropertyRef Name="IdGerente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaRolVendedor2">
+    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
+    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="RolVendedor">
+        <PropertyRef Name="IdSubgerente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonaAsignacionRecibo">
+    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
+    <End Role="AsignacionRecibo" Type="ITC_DBPOwerModel.Store.AsignacionReciboSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="AsignacionRecibo">
+        <PropertyRef Name="IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonaRolLocador">
+    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
+    <End Role="RolLocador" Type="ITC_DBPOwerModel.Store.RolLocadorSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="RolLocador">
+        <PropertyRef Name="IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LineaLineaCiudad">
+    <End Role="Linea" Type="ITC_DBPOwerModel.Store.LineaSet" Multiplicity="1" />
+    <End Role="LineaCiudad" Type="ITC_DBPOwerModel.Store.LineaCiudadSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Linea">
+        <PropertyRef Name="IdLinea" />
+      </Principal>
+      <Dependent Role="LineaCiudad">
+        <PropertyRef Name="IdLinea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CiudadLineaCiudad">
+    <End Role="Ciudad" Type="ITC_DBPOwerModel.Store.CiudadSet" Multiplicity="1" />
+    <End Role="LineaCiudad" Type="ITC_DBPOwerModel.Store.LineaCiudadSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudad">
+        <PropertyRef Name="IdCiudad" />
+      </Principal>
+      <Dependent Role="LineaCiudad">
+        <PropertyRef Name="IdCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocalidadCiudad">
+    <End Role="Localidad" Type="ITC_DBPOwerModel.Store.LocalidadSet" Multiplicity="1" />
+    <End Role="Ciudad" Type="ITC_DBPOwerModel.Store.CiudadSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localidad">
+        <PropertyRef Name="IdLocalidad" />
+      </Principal>
+      <Dependent Role="Ciudad">
+        <PropertyRef Name="IdLocalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CiudadRolCiudadEnProceso">
+    <End Role="Ciudad" Type="ITC_DBPOwerModel.Store.CiudadSet" Multiplicity="1" />
+    <End Role="RolCiudadEnProceso" Type="ITC_DBPOwerModel.Store.RolCiudadEnProcesoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudad">
+        <PropertyRef Name="IdCiudad" />
+      </Principal>
+      <Dependent Role="RolCiudadEnProceso">
+        <PropertyRef Name="IdCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CiudadRolCiudadActiva">
+    <End Role="Ciudad" Type="ITC_DBPOwerModel.Store.CiudadSet" Multiplicity="1" />
+    <End Role="RolCiudadActiva" Type="ITC_DBPOwerModel.Store.RolCiudadActivaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudad">
+        <PropertyRef Name="IdCiudad" />
+      </Principal>
+      <Dependent Role="RolCiudadActiva">
+        <PropertyRef Name="IdCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LineaCiudadCiudadPersonal">
+    <End Role="LineaCiudad" Type="ITC_DBPOwerModel.Store.LineaCiudadSet" Multiplicity="1" />
+    <End Role="CiudadPersonal" Type="ITC_DBPOwerModel.Store.CiudadPersonalSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LineaCiudad">
+        <PropertyRef Name="IdLineaCiudad" />
+      </Principal>
+      <Dependent Role="CiudadPersonal">
+        <PropertyRef Name="IdLineaCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolEmpleadoCiudadPersonal">
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
+    <End Role="CiudadPersonal" Type="ITC_DBPOwerModel.Store.CiudadPersonalSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="CiudadPersonal">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolCiudadActivaCiudadActivaLocaciones">
+    <End Role="RolCiudadActiva" Type="ITC_DBPOwerModel.Store.RolCiudadActivaSet" Multiplicity="1" />
+    <End Role="CiudadActivaLocaciones" Type="ITC_DBPOwerModel.Store.CiudadActivaLocacionesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolCiudadActiva">
+        <PropertyRef Name="IdRolCiudadActiva" />
+      </Principal>
+      <Dependent Role="CiudadActivaLocaciones">
+        <PropertyRef Name="IdRolCiudadActiva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocacionCiudadActivaLocaciones">
+    <End Role="Locacion" Type="ITC_DBPOwerModel.Store.LocacionSet" Multiplicity="1" />
+    <End Role="CiudadActivaLocaciones" Type="ITC_DBPOwerModel.Store.CiudadActivaLocacionesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locacion">
+        <PropertyRef Name="IdLocacion" />
+      </Principal>
+      <Dependent Role="CiudadActivaLocaciones">
+        <PropertyRef Name="IdLocacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ITC_DBPOwerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ITC_DBPOwerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CondicionEmpleado" EntityType="ITC_DBPOwerModel.CondicionEmpleado" />
+          <EntitySet Name="DetalleCondicionEmpleado" EntityType="ITC_DBPOwerModel.DetalleCondicionEmpleado" />
+          <EntitySet Name="EstadoAlumno" EntityType="ITC_DBPOwerModel.EstadoAlumno" />
+          <EntitySet Name="Permiso" EntityType="ITC_DBPOwerModel.Permiso" />
+          <EntitySet Name="PermisoAcceso" EntityType="ITC_DBPOwerModel.PermisoAcceso" />
+          <EntitySet Name="Persona" EntityType="ITC_DBPOwerModel.Persona" />
+          <EntitySet Name="RolAlumno" EntityType="ITC_DBPOwerModel.RolAlumno" />
+          <EntitySet Name="RolEmpleado" EntityType="ITC_DBPOwerModel.RolEmpleado" />
+          <EntitySet Name="RolVendedor" EntityType="ITC_DBPOwerModel.RolVendedor" />
+          <EntitySet Name="AsignacionReciboSet" EntityType="ITC_DBPOwerModel.AsignacionRecibo" />
+          <EntitySet Name="LineaSet" EntityType="ITC_DBPOwerModel.Linea" />
+          <EntitySet Name="LineaCiudadSet" EntityType="ITC_DBPOwerModel.LineaCiudad" />
+          <EntitySet Name="CiudadSet" EntityType="ITC_DBPOwerModel.Ciudad" />
+          <EntitySet Name="LocalidadSet" EntityType="ITC_DBPOwerModel.Localidad" />
+          <EntitySet Name="RolCiudadEnProcesoSet" EntityType="ITC_DBPOwerModel.RolCiudadEnProceso" />
+          <EntitySet Name="RolCiudadActivaSet" EntityType="ITC_DBPOwerModel.RolCiudadActiva" />
+          <EntitySet Name="CiudadPersonalSet" EntityType="ITC_DBPOwerModel.CiudadPersonal" />
+          <EntitySet Name="CiudadActivaLocacionesSet" EntityType="ITC_DBPOwerModel.CiudadActivaLocaciones" />
+          <EntitySet Name="LocacionSet" EntityType="ITC_DBPOwerModel.Locacion" />
+          <EntitySet Name="RolLocacionAuspicioSet" EntityType="ITC_DBPOwerModel.RolLocacionAuspicio" />
+          <EntitySet Name="RolLocadorSet" EntityType="ITC_DBPOwerModel.RolLocador" />
+          <AssociationSet Name="FK_RolEmpleadoDetalleCondicionEmpleado" Association="ITC_DBPOwerModel.FK_RolEmpleadoDetalleCondicionEmpleado">
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+            <End Role="DetalleCondicionEmpleado" EntitySet="DetalleCondicionEmpleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolAlumnoEstadoAlumno" Association="ITC_DBPOwerModel.FK_RolAlumnoEstadoAlumno">
+            <End Role="EstadoAlumno" EntitySet="EstadoAlumno" />
+            <End Role="RolAlumno" EntitySet="RolAlumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermisoPermisoAcceso" Association="ITC_DBPOwerModel.FK_PermisoPermisoAcceso">
+            <End Role="Permiso" EntitySet="Permiso" />
+            <End Role="PermisoAcceso" EntitySet="PermisoAcceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolEmpleadoPermiso" Association="ITC_DBPOwerModel.FK_RolEmpleadoPermiso">
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+            <End Role="Permiso" EntitySet="Permiso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaRolAlumno" Association="ITC_DBPOwerModel.FK_PersonaRolAlumno">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="RolAlumno" EntitySet="RolAlumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaRolEmpleado" Association="ITC_DBPOwerModel.FK_PersonaRolEmpleado">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaRolVendedor" Association="ITC_DBPOwerModel.FK_PersonaRolVendedor">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="RolVendedor" EntitySet="RolVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaRolVendedor1" Association="ITC_DBPOwerModel.FK_PersonaRolVendedor1">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="RolVendedor" EntitySet="RolVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaRolVendedor2" Association="ITC_DBPOwerModel.FK_PersonaRolVendedor2">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="RolVendedor" EntitySet="RolVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaAsignacionRecibo" Association="ITC_DBPOwerModel.PersonaAsignacionRecibo">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="AsignacionRecibo" EntitySet="AsignacionReciboSet" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaRolLocador" Association="ITC_DBPOwerModel.PersonaRolLocador">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="RolLocador" EntitySet="RolLocadorSet" />
+          </AssociationSet>
+          <AssociationSet Name="LineaLineaCiudad" Association="ITC_DBPOwerModel.LineaLineaCiudad">
+            <End Role="Linea" EntitySet="LineaSet" />
+            <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
+          </AssociationSet>
+          <AssociationSet Name="CiudadLineaCiudad" Association="ITC_DBPOwerModel.CiudadLineaCiudad">
+            <End Role="Ciudad" EntitySet="CiudadSet" />
+            <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
+          </AssociationSet>
+          <AssociationSet Name="LocalidadCiudad" Association="ITC_DBPOwerModel.LocalidadCiudad">
+            <End Role="Localidad" EntitySet="LocalidadSet" />
+            <End Role="Ciudad" EntitySet="CiudadSet" />
+          </AssociationSet>
+          <AssociationSet Name="CiudadRolCiudadEnProceso" Association="ITC_DBPOwerModel.CiudadRolCiudadEnProceso">
+            <End Role="Ciudad" EntitySet="CiudadSet" />
+            <End Role="RolCiudadEnProceso" EntitySet="RolCiudadEnProcesoSet" />
+          </AssociationSet>
+          <AssociationSet Name="CiudadRolCiudadActiva" Association="ITC_DBPOwerModel.CiudadRolCiudadActiva">
+            <End Role="Ciudad" EntitySet="CiudadSet" />
+            <End Role="RolCiudadActiva" EntitySet="RolCiudadActivaSet" />
+          </AssociationSet>
+          <AssociationSet Name="LineaCiudadCiudadPersonal" Association="ITC_DBPOwerModel.LineaCiudadCiudadPersonal">
+            <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
+            <End Role="CiudadPersonal" EntitySet="CiudadPersonalSet" />
+          </AssociationSet>
+          <AssociationSet Name="RolEmpleadoCiudadPersonal" Association="ITC_DBPOwerModel.RolEmpleadoCiudadPersonal">
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+            <End Role="CiudadPersonal" EntitySet="CiudadPersonalSet" />
+          </AssociationSet>
+          <AssociationSet Name="RolCiudadActivaCiudadActivaLocaciones" Association="ITC_DBPOwerModel.RolCiudadActivaCiudadActivaLocaciones">
+            <End Role="RolCiudadActiva" EntitySet="RolCiudadActivaSet" />
+            <End Role="CiudadActivaLocaciones" EntitySet="CiudadActivaLocacionesSet" />
+          </AssociationSet>
+          <AssociationSet Name="LocacionCiudadActivaLocaciones" Association="ITC_DBPOwerModel.LocacionCiudadActivaLocaciones">
+            <End Role="Locacion" EntitySet="LocacionSet" />
+            <End Role="CiudadActivaLocaciones" EntitySet="CiudadActivaLocacionesSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CondicionEmpleado">
+          <Key>
+            <PropertyRef Name="IdCondicionEmpleado" />
+          </Key>
+          <Property Name="IdCondicionEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="DetalleCondicionEmpleado">
+          <Key>
+            <PropertyRef Name="IdDetalleCondicionEmpleado" />
+          </Key>
+          <Property Name="IdDetalleCondicionEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdCondicionEmpleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.FK_RolEmpleadoDetalleCondicionEmpleado" FromRole="DetalleCondicionEmpleado" ToRole="RolEmpleado" />
+        </EntityType>
+        <EntityType Name="EstadoAlumno">
+          <Key>
+            <PropertyRef Name="IdEstadoAlumno" />
+          </Key>
+          <Property Name="IdEstadoAlumno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleEstadoAlumno" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RolAlumno" Relationship="ITC_DBPOwerModel.FK_RolAlumnoEstadoAlumno" FromRole="EstadoAlumno" ToRole="RolAlumno" />
+        </EntityType>
+        <EntityType Name="Permiso">
+          <Key>
+            <PropertyRef Name="IdPermiso" />
+          </Key>
+          <Property Name="IdPermiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="DetallePermiso" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PermisoAcceso" Relationship="ITC_DBPOwerModel.FK_PermisoPermisoAcceso" FromRole="Permiso" ToRole="PermisoAcceso" />
+          <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.FK_RolEmpleadoPermiso" FromRole="Permiso" ToRole="RolEmpleado" />
+        </EntityType>
+        <EntityType Name="PermisoAcceso">
+          <Key>
+            <PropertyRef Name="IdPermisoAcceso" />
+          </Key>
+          <Property Name="IdPermisoAcceso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPermiso" Type="Int32" Nullable="false" />
+          <Property Name="DetalleAcceso" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PermisoActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Permiso" Relationship="ITC_DBPOwerModel.FK_PermisoPermisoAcceso" FromRole="PermisoAcceso" ToRole="Permiso" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="IdPersona" />
+          </Key>
+          <Property Name="IdPersona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nombres" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNac" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DNI" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Barrio" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ciudad" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Celular" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TelAlternativo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EstadoCivil" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RolAlumno" Relationship="ITC_DBPOwerModel.FK_PersonaRolAlumno" FromRole="Persona" ToRole="RolAlumno" />
+          <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.FK_PersonaRolEmpleado" FromRole="Persona" ToRole="RolEmpleado" />
+          <NavigationProperty Name="RolVendedor" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor" FromRole="Persona" ToRole="RolVendedor" />
+          <NavigationProperty Name="RolVendedor1" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor1" FromRole="Persona" ToRole="RolVendedor" />
+          <NavigationProperty Name="RolVendedor2" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor2" FromRole="Persona" ToRole="RolVendedor" />
+          <NavigationProperty Name="AsignacionRecibo" Relationship="ITC_DBPOwerModel.PersonaAsignacionRecibo" FromRole="Persona" ToRole="AsignacionRecibo" />
+          <NavigationProperty Name="RolLocador" Relationship="ITC_DBPOwerModel.PersonaRolLocador" FromRole="Persona" ToRole="RolLocador" />
+        </EntityType>
+        <EntityType Name="RolAlumno">
+          <Key>
+            <PropertyRef Name="IdRolAlumno" />
+          </Key>
+          <Property Name="IdRolAlumno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPersona" Type="Int32" Nullable="false" />
+          <Property Name="IdCapacitacion" Type="Int32" Nullable="false" />
+          <Property Name="IdInformeCiudadHorarios" Type="Int32" Nullable="false" />
+          <Property Name="IdEstadoAlumno" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EstadoAlumno" Relationship="ITC_DBPOwerModel.FK_RolAlumnoEstadoAlumno" FromRole="RolAlumno" ToRole="EstadoAlumno" />
+          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.FK_PersonaRolAlumno" FromRole="RolAlumno" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="RolEmpleado">
+          <Key>
+            <PropertyRef Name="IdRolEmpleado" />
+          </Key>
+          <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPersona" Type="Int32" Nullable="false" />
+          <Property Name="IdPuesto" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdCondicionEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="CelCorp" Type="String" Nullable="false" />
+          <NavigationProperty Name="DetalleCondicionEmpleado" Relationship="ITC_DBPOwerModel.FK_RolEmpleadoDetalleCondicionEmpleado" FromRole="RolEmpleado" ToRole="DetalleCondicionEmpleado" />
+          <NavigationProperty Name="Permiso" Relationship="ITC_DBPOwerModel.FK_RolEmpleadoPermiso" FromRole="RolEmpleado" ToRole="Permiso" />
+          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.FK_PersonaRolEmpleado" FromRole="RolEmpleado" ToRole="Persona" />
+          <NavigationProperty Name="CiudadPersonal" Relationship="ITC_DBPOwerModel.RolEmpleadoCiudadPersonal" FromRole="RolEmpleado" ToRole="CiudadPersonal" />
+        </EntityType>
+        <EntityType Name="RolVendedor">
+          <Key>
+            <PropertyRef Name="IdRolVendedor" />
+          </Key>
+          <Property Name="IdRolVendedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPersona" Type="Int32" Nullable="false" />
+          <Property Name="IdSubgerente" Type="Int32" Nullable="false" />
+          <Property Name="IdGerente" Type="Int32" Nullable="false" />
+          <Property Name="CelCorp" Type="String" Nullable="false" />
+          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor" FromRole="RolVendedor" ToRole="Persona" />
+          <NavigationProperty Name="Persona1" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor1" FromRole="RolVendedor" ToRole="Persona" />
+          <NavigationProperty Name="Persona2" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor2" FromRole="RolVendedor" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="AsignacionRecibo">
+          <Key>
+            <PropertyRef Name="IdAsignacionRecibo" />
+          </Key>
+          <Property Name="IdAsignacionRecibo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="NumRecibo" Type="Int32" Nullable="false" />
+          <Property Name="IdPersona" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.PersonaAsignacionRecibo" FromRole="AsignacionRecibo" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="Linea">
+          <Key>
+            <PropertyRef Name="IdLinea" />
+          </Key>
+          <Property Name="IdLinea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="LineaCiudad" Relationship="ITC_DBPOwerModel.LineaLineaCiudad" FromRole="Linea" ToRole="LineaCiudad" />
+        </EntityType>
+        <EntityType Name="LineaCiudad">
+          <Key>
+            <PropertyRef Name="IdLineaCiudad" />
+          </Key>
+          <Property Name="IdLineaCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLinea" Type="Int32" Nullable="false" />
+          <Property Name="IdCiudad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Linea" Relationship="ITC_DBPOwerModel.LineaLineaCiudad" FromRole="LineaCiudad" ToRole="Linea" />
+          <NavigationProperty Name="Ciudad" Relationship="ITC_DBPOwerModel.CiudadLineaCiudad" FromRole="LineaCiudad" ToRole="Ciudad" />
+          <NavigationProperty Name="CiudadPersonal" Relationship="ITC_DBPOwerModel.LineaCiudadCiudadPersonal" FromRole="LineaCiudad" ToRole="CiudadPersonal" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="IdCiudad" />
+          </Key>
+          <Property Name="IdCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DesignacionCiudad" Type="String" Nullable="false" />
+          <Property Name="IdLocalidad" Type="Int32" Nullable="false" />
+          <Property Name="PeriodoApertura" Type="String" Nullable="false" />
+          <Property Name="CantidadMeses" Type="String" Nullable="false" />
+          <NavigationProperty Name="LineaCiudad" Relationship="ITC_DBPOwerModel.CiudadLineaCiudad" FromRole="Ciudad" ToRole="LineaCiudad" />
+          <NavigationProperty Name="Localidad" Relationship="ITC_DBPOwerModel.LocalidadCiudad" FromRole="Ciudad" ToRole="Localidad" />
+          <NavigationProperty Name="RolCiudadEnProceso" Relationship="ITC_DBPOwerModel.CiudadRolCiudadEnProceso" FromRole="Ciudad" ToRole="RolCiudadEnProceso" />
+          <NavigationProperty Name="RolCiudadActiva" Relationship="ITC_DBPOwerModel.CiudadRolCiudadActiva" FromRole="Ciudad" ToRole="RolCiudadActiva" />
+        </EntityType>
+        <EntityType Name="Localidad">
+          <Key>
+            <PropertyRef Name="IdLocalidad" />
+          </Key>
+          <Property Name="IdLocalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreLocalidad" Type="String" Nullable="false" />
+          <Property Name="Provincia" Type="String" Nullable="false" />
+          <Property Name="Pais" Type="String" Nullable="false" />
+          <NavigationProperty Name="Ciudad" Relationship="ITC_DBPOwerModel.LocalidadCiudad" FromRole="Localidad" ToRole="Ciudad" />
+        </EntityType>
+        <EntityType Name="RolCiudadEnProceso">
+          <Key>
+            <PropertyRef Name="IdRolCiudadEnProceso" />
+          </Key>
+          <Property Name="IdRolCiudadEnProceso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCiudad" Type="Int32" Nullable="false" />
+          <Property Name="InformeCiudad" Type="String" Nullable="false" />
+          <NavigationProperty Name="Ciudad" Relationship="ITC_DBPOwerModel.CiudadRolCiudadEnProceso" FromRole="RolCiudadEnProceso" ToRole="Ciudad" />
+        </EntityType>
+        <EntityType Name="RolCiudadActiva">
+          <Key>
+            <PropertyRef Name="IdRolCiudadActiva" />
+          </Key>
+          <Property Name="IdRolCiudadActiva" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCiudad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ciudad" Relationship="ITC_DBPOwerModel.CiudadRolCiudadActiva" FromRole="RolCiudadActiva" ToRole="Ciudad" />
+          <NavigationProperty Name="CiudadActivaLocaciones" Relationship="ITC_DBPOwerModel.RolCiudadActivaCiudadActivaLocaciones" FromRole="RolCiudadActiva" ToRole="CiudadActivaLocaciones" />
+        </EntityType>
+        <EntityType Name="CiudadPersonal">
+          <Key>
+            <PropertyRef Name="IdCiudadPersonal" />
+          </Key>
+          <Property Name="IdCiudadPersonal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLineaCiudad" Type="Int32" Nullable="false" />
+          <Property Name="Periodo" Type="String" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LineaCiudad" Relationship="ITC_DBPOwerModel.LineaCiudadCiudadPersonal" FromRole="CiudadPersonal" ToRole="LineaCiudad" />
+          <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.RolEmpleadoCiudadPersonal" FromRole="CiudadPersonal" ToRole="RolEmpleado" />
+        </EntityType>
+        <EntityType Name="CiudadActivaLocaciones">
+          <Key>
+            <PropertyRef Name="IdCiudadActivaLocaciones" />
+          </Key>
+          <Property Name="IdCiudadActivaLocaciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolCiudadActiva" Type="Int32" Nullable="false" />
+          <Property Name="IdLocacion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RolCiudadActiva" Relationship="ITC_DBPOwerModel.RolCiudadActivaCiudadActivaLocaciones" FromRole="CiudadActivaLocaciones" ToRole="RolCiudadActiva" />
+          <NavigationProperty Name="Locacion" Relationship="ITC_DBPOwerModel.LocacionCiudadActivaLocaciones" FromRole="CiudadActivaLocaciones" ToRole="Locacion" />
+        </EntityType>
+        <EntityType Name="Locacion">
+          <Key>
+            <PropertyRef Name="IdLocacion" />
+          </Key>
+          <Property Name="IdLocacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleLocacion" Type="String" Nullable="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" />
+          <Property Name="Observaciones" Type="String" Nullable="false" />
+          <NavigationProperty Name="CiudadActivaLocaciones" Relationship="ITC_DBPOwerModel.LocacionCiudadActivaLocaciones" FromRole="Locacion" ToRole="CiudadActivaLocaciones" />
+        </EntityType>
+        <EntityType Name="RolLocacionAuspicio">
+          <Key>
+            <PropertyRef Name="IdRolLocacionAuspicio" />
+          </Key>
+          <Property Name="IdRolLocacionAuspicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="RolLocador">
+          <Key>
+            <PropertyRef Name="IdRolLocador" />
+          </Key>
+          <Property Name="IdRolLocador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPersona" Type="Int32" Nullable="false" />
+          <Property Name="Condicion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.PersonaRolLocador" FromRole="RolLocador" ToRole="Persona" />
+        </EntityType>
+        <Association Name="FK_RolEmpleadoDetalleCondicionEmpleado">
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.DetalleCondicionEmpleado" Role="DetalleCondicionEmpleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Principal>
+            <Dependent Role="DetalleCondicionEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolAlumnoEstadoAlumno">
+          <End Type="ITC_DBPOwerModel.EstadoAlumno" Role="EstadoAlumno" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolAlumno" Role="RolAlumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoAlumno">
+              <PropertyRef Name="IdEstadoAlumno" />
+            </Principal>
+            <Dependent Role="RolAlumno">
+              <PropertyRef Name="IdEstadoAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermisoPermisoAcceso">
+          <End Type="ITC_DBPOwerModel.Permiso" Role="Permiso" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.PermisoAcceso" Role="PermisoAcceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permiso">
+              <PropertyRef Name="IdPermiso" />
+            </Principal>
+            <Dependent Role="PermisoAcceso">
+              <PropertyRef Name="IdPermiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolEmpleadoPermiso">
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.Permiso" Role="Permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Principal>
+            <Dependent Role="Permiso">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaRolAlumno">
+          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolAlumno" Role="RolAlumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="IdPersona" />
+            </Principal>
+            <Dependent Role="RolAlumno">
+              <PropertyRef Name="IdPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaRolEmpleado">
+          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="IdPersona" />
+            </Principal>
+            <Dependent Role="RolEmpleado">
+              <PropertyRef Name="IdPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaRolVendedor">
+          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="IdPersona" />
+            </Principal>
+            <Dependent Role="RolVendedor">
+              <PropertyRef Name="IdPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaRolVendedor1">
+          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="IdPersona" />
+            </Principal>
+            <Dependent Role="RolVendedor">
+              <PropertyRef Name="IdGerente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaRolVendedor2">
+          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="IdPersona" />
+            </Principal>
+            <Dependent Role="RolVendedor">
+              <PropertyRef Name="IdSubgerente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonaAsignacionRecibo">
+          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.AsignacionRecibo" Role="AsignacionRecibo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="IdPersona" />
+            </Principal>
+            <Dependent Role="AsignacionRecibo">
+              <PropertyRef Name="IdPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonaRolLocador">
+          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolLocador" Role="RolLocador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="IdPersona" />
+            </Principal>
+            <Dependent Role="RolLocador">
+              <PropertyRef Name="IdPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LineaLineaCiudad">
+          <End Type="ITC_DBPOwerModel.Linea" Role="Linea" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.LineaCiudad" Role="LineaCiudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Linea">
+              <PropertyRef Name="IdLinea" />
+            </Principal>
+            <Dependent Role="LineaCiudad">
+              <PropertyRef Name="IdLinea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CiudadLineaCiudad">
+          <End Type="ITC_DBPOwerModel.Ciudad" Role="Ciudad" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.LineaCiudad" Role="LineaCiudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="IdCiudad" />
+            </Principal>
+            <Dependent Role="LineaCiudad">
+              <PropertyRef Name="IdCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LocalidadCiudad">
+          <End Type="ITC_DBPOwerModel.Localidad" Role="Localidad" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.Ciudad" Role="Ciudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidad">
+              <PropertyRef Name="IdLocalidad" />
+            </Principal>
+            <Dependent Role="Ciudad">
+              <PropertyRef Name="IdLocalidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CiudadRolCiudadEnProceso">
+          <End Type="ITC_DBPOwerModel.Ciudad" Role="Ciudad" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolCiudadEnProceso" Role="RolCiudadEnProceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="IdCiudad" />
+            </Principal>
+            <Dependent Role="RolCiudadEnProceso">
+              <PropertyRef Name="IdCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CiudadRolCiudadActiva">
+          <End Type="ITC_DBPOwerModel.Ciudad" Role="Ciudad" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolCiudadActiva" Role="RolCiudadActiva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="IdCiudad" />
+            </Principal>
+            <Dependent Role="RolCiudadActiva">
+              <PropertyRef Name="IdCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LineaCiudadCiudadPersonal">
+          <End Type="ITC_DBPOwerModel.LineaCiudad" Role="LineaCiudad" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.CiudadPersonal" Role="CiudadPersonal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LineaCiudad">
+              <PropertyRef Name="IdLineaCiudad" />
+            </Principal>
+            <Dependent Role="CiudadPersonal">
+              <PropertyRef Name="IdLineaCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RolEmpleadoCiudadPersonal">
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.CiudadPersonal" Role="CiudadPersonal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Principal>
+            <Dependent Role="CiudadPersonal">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RolCiudadActivaCiudadActivaLocaciones">
+          <End Type="ITC_DBPOwerModel.RolCiudadActiva" Role="RolCiudadActiva" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.CiudadActivaLocaciones" Role="CiudadActivaLocaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolCiudadActiva">
+              <PropertyRef Name="IdRolCiudadActiva" />
+            </Principal>
+            <Dependent Role="CiudadActivaLocaciones">
+              <PropertyRef Name="IdRolCiudadActiva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LocacionCiudadActivaLocaciones">
+          <End Type="ITC_DBPOwerModel.Locacion" Role="Locacion" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.CiudadActivaLocaciones" Role="CiudadActivaLocaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locacion">
+              <PropertyRef Name="IdLocacion" />
+            </Principal>
+            <Dependent Role="CiudadActivaLocaciones">
+              <PropertyRef Name="IdLocacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ITC_DBPOwerModelStoreContainer" CdmEntityContainer="ITC_DBPOwerEntities">
+    <EntitySetMapping Name="CondicionEmpleado">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.CondicionEmpleado)">
+        <MappingFragment StoreEntitySet="CondicionEmpleado">
+          <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleCondicionEmpleado">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.DetalleCondicionEmpleado)">
+        <MappingFragment StoreEntitySet="DetalleCondicionEmpleado">
+          <ScalarProperty Name="IdDetalleCondicionEmpleado" ColumnName="IdDetalleCondicionEmpleado" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoAlumno">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.EstadoAlumno)">
+        <MappingFragment StoreEntitySet="EstadoAlumno">
+          <ScalarProperty Name="IdEstadoAlumno" ColumnName="IdEstadoAlumno" />
+          <ScalarProperty Name="DetalleEstadoAlumno" ColumnName="DetalleEstadoAlumno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permiso">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Permiso)">
+        <MappingFragment StoreEntitySet="Permiso">
+          <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+          <ScalarProperty Name="DetallePermiso" ColumnName="DetallePermiso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermisoAcceso">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.PermisoAcceso)">
+        <MappingFragment StoreEntitySet="PermisoAcceso">
+          <ScalarProperty Name="IdPermisoAcceso" ColumnName="IdPermisoAcceso" />
+          <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
+          <ScalarProperty Name="DetalleAcceso" ColumnName="DetalleAcceso" />
+          <ScalarProperty Name="PermisoActivo" ColumnName="PermisoActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persona">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Persona)">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Barrio" ColumnName="Barrio" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="TelAlternativo" ColumnName="TelAlternativo" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolAlumno">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolAlumno)">
+        <MappingFragment StoreEntitySet="RolAlumno">
+          <ScalarProperty Name="IdRolAlumno" ColumnName="IdRolAlumno" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="IdCapacitacion" ColumnName="IdCapacitacion" />
+          <ScalarProperty Name="IdInformeCiudadHorarios" ColumnName="IdInformeCiudadHorarios" />
+          <ScalarProperty Name="IdEstadoAlumno" ColumnName="IdEstadoAlumno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolEmpleado">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolEmpleado)">
+        <MappingFragment StoreEntitySet="RolEmpleado">
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+          <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
+          <ScalarProperty Name="CelCorp" ColumnName="CelCorp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolVendedor">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolVendedor)">
+        <MappingFragment StoreEntitySet="RolVendedor">
+          <ScalarProperty Name="IdRolVendedor" ColumnName="IdRolVendedor" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="IdSubgerente" ColumnName="IdSubgerente" />
+          <ScalarProperty Name="IdGerente" ColumnName="IdGerente" />
+          <ScalarProperty Name="CelCorp" ColumnName="CelCorp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AsignacionReciboSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.AsignacionRecibo)">
+        <MappingFragment StoreEntitySet="AsignacionReciboSet">
+          <ScalarProperty Name="IdAsignacionRecibo" ColumnName="IdAsignacionRecibo" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="NumRecibo" ColumnName="NumRecibo" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LineaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Linea)">
+        <MappingFragment StoreEntitySet="LineaSet">
+          <ScalarProperty Name="IdLinea" ColumnName="IdLinea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LineaCiudadSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.LineaCiudad)">
+        <MappingFragment StoreEntitySet="LineaCiudadSet">
+          <ScalarProperty Name="IdLineaCiudad" ColumnName="IdLineaCiudad" />
+          <ScalarProperty Name="IdLinea" ColumnName="IdLinea" />
+          <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CiudadSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Ciudad)">
+        <MappingFragment StoreEntitySet="CiudadSet">
+          <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+          <ScalarProperty Name="DesignacionCiudad" ColumnName="DesignacionCiudad" />
+          <ScalarProperty Name="IdLocalidad" ColumnName="IdLocalidad" />
+          <ScalarProperty Name="PeriodoApertura" ColumnName="PeriodoApertura" />
+          <ScalarProperty Name="CantidadMeses" ColumnName="CantidadMeses" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocalidadSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Localidad)">
+        <MappingFragment StoreEntitySet="LocalidadSet">
+          <ScalarProperty Name="IdLocalidad" ColumnName="IdLocalidad" />
+          <ScalarProperty Name="NombreLocalidad" ColumnName="NombreLocalidad" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolCiudadEnProcesoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolCiudadEnProceso)">
+        <MappingFragment StoreEntitySet="RolCiudadEnProcesoSet">
+          <ScalarProperty Name="IdRolCiudadEnProceso" ColumnName="IdRolCiudadEnProceso" />
+          <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+          <ScalarProperty Name="InformeCiudad" ColumnName="InformeCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolCiudadActivaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolCiudadActiva)">
+        <MappingFragment StoreEntitySet="RolCiudadActivaSet">
+          <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+          <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CiudadPersonalSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.CiudadPersonal)">
+        <MappingFragment StoreEntitySet="CiudadPersonalSet">
+          <ScalarProperty Name="IdCiudadPersonal" ColumnName="IdCiudadPersonal" />
+          <ScalarProperty Name="IdLineaCiudad" ColumnName="IdLineaCiudad" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CiudadActivaLocacionesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.CiudadActivaLocaciones)">
+        <MappingFragment StoreEntitySet="CiudadActivaLocacionesSet">
+          <ScalarProperty Name="IdCiudadActivaLocaciones" ColumnName="IdCiudadActivaLocaciones" />
+          <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+          <ScalarProperty Name="IdLocacion" ColumnName="IdLocacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocacionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Locacion)">
+        <MappingFragment StoreEntitySet="LocacionSet">
+          <ScalarProperty Name="IdLocacion" ColumnName="IdLocacion" />
+          <ScalarProperty Name="DetalleLocacion" ColumnName="DetalleLocacion" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolLocacionAuspicioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolLocacionAuspicio)">
+        <MappingFragment StoreEntitySet="RolLocacionAuspicioSet">
+          <ScalarProperty Name="IdRolLocacionAuspicio" ColumnName="IdRolLocacionAuspicio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolLocadorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolLocador)">
+        <MappingFragment StoreEntitySet="RolLocadorSet">
+          <ScalarProperty Name="IdRolLocador" ColumnName="IdRolLocador" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="Condicion" ColumnName="Condicion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
