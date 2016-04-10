@@ -14,13 +14,23 @@ namespace ITCManager.Core.Entities
     
     public partial class RolAlumno
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public RolAlumno()
+        {
+            this.PlanVendedorAlumno = new HashSet<PlanVendedorAlumno>();
+        }
+    
         public int IdRolAlumno { get; set; }
         public int IdPersona { get; set; }
         public int IdCapacitacion { get; set; }
-        public int IdInformeCiudadHorarios { get; set; }
+        public int IdRolCiudadActivaHorario { get; set; }
         public int IdEstadoAlumno { get; set; }
     
         public virtual EstadoAlumno EstadoAlumno { get; set; }
         public virtual Persona Persona { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PlanVendedorAlumno> PlanVendedorAlumno { get; set; }
+        public virtual Capacitacion Capacitacion { get; set; }
+        public virtual RolCiudadActivaHorario RolCiudadActivaHorario { get; set; }
     }
 }

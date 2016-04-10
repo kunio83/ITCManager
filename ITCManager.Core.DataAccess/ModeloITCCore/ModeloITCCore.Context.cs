@@ -49,5 +49,18 @@ namespace ITCManager.Core.Entities
         public virtual DbSet<LocacionRolLocador> LocacionRolLocadorSet { get; set; }
         public virtual DbSet<RolLocacionAlojamiento> RolLocacionAlojamientoSet { get; set; }
         public virtual DbSet<RolLocacionSalon> RolLocacionSalonSet { get; set; }
+        public virtual DbSet<PlanBase> PlanBaseSet { get; set; }
+        public virtual DbSet<RolCiudadActivaPlan> RolCiudadActivaPlanSet { get; set; }
+        public virtual DbSet<PlanVendedorAlumno> PlanVendedorAlumnoSet { get; set; }
+        public virtual DbSet<Capacitacion> CapacitacionSet { get; set; }
+        public virtual DbSet<Horario> HorarioSet { get; set; }
+        public virtual DbSet<RolCiudadActivaHorario> RolCiudadActivaHorarioSet { get; set; }
+        public virtual DbSet<Dia> DiaSet { get; set; }
+        public virtual DbSet<RolCobrador> RolCobradorSet { get; set; }
+        public virtual DbSet<RendicionPersonaCiudad> RendicionPersonaCiudadSet { get; set; }
+        public virtual DbSet<EstadoRendicion> EstadoRendicionSet { get; set; }
+        public virtual DbSet<Pago> PagoSet { get; set; }
+        public virtual DbSet<FormaPago> FormaPagoSet { get; set; }
+        public virtual DbSet<PagoTarjeta> PagoTarjetaSet { get; set; }
     }
 }

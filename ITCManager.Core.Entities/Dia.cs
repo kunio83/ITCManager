@@ -12,24 +12,18 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RolVendedor
+    public partial class Dia
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RolVendedor()
+        public Dia()
         {
-            this.PlanVendedorAlumno = new HashSet<PlanVendedorAlumno>();
+            this.RolCiudadActivaHorario = new HashSet<RolCiudadActivaHorario>();
         }
     
-        public int IdRolVendedor { get; set; }
-        public int IdPersona { get; set; }
-        public int IdSubgerente { get; set; }
-        public int IdGerente { get; set; }
-        public string CelCorp { get; set; }
+        public int IdDia { get; set; }
+        public string DetalleDia { get; set; }
     
-        public virtual Persona Persona { get; set; }
-        public virtual Persona Persona1 { get; set; }
-        public virtual Persona Persona2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PlanVendedorAlumno> PlanVendedorAlumno { get; set; }
+        public virtual ICollection<RolCiudadActivaHorario> RolCiudadActivaHorario { get; set; }
     }
 }

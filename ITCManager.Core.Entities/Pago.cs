@@ -12,24 +12,23 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RolVendedor
+    public partial class Pago
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RolVendedor()
+        public Pago()
         {
-            this.PlanVendedorAlumno = new HashSet<PlanVendedorAlumno>();
+            this.PagoTarjeta = new HashSet<PagoTarjeta>();
         }
     
-        public int IdRolVendedor { get; set; }
-        public int IdPersona { get; set; }
-        public int IdSubgerente { get; set; }
-        public int IdGerente { get; set; }
-        public string CelCorp { get; set; }
+        public int IdPago { get; set; }
+        public int IdPlanVendedorAlumno { get; set; }
+        public string MontoPagado { get; set; }
+        public int IdFormaPago { get; set; }
+        public int IdItemPagado { get; set; }
     
-        public virtual Persona Persona { get; set; }
-        public virtual Persona Persona1 { get; set; }
-        public virtual Persona Persona2 { get; set; }
+        public virtual FormaPago FormaPago { get; set; }
+        public virtual PlanVendedorAlumno PlanVendedorAlumno { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PlanVendedorAlumno> PlanVendedorAlumno { get; set; }
+        public virtual ICollection<PagoTarjeta> PagoTarjeta { get; set; }
     }
 }

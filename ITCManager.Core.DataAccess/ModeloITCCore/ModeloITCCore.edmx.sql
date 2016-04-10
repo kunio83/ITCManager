@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/09/2016 17:40:15
+-- Date Created: 04/10/2016 18:19:51
 -- Generated from EDMX file: C:\Users\Ezequiel\Source\Repos\ITCManagerRepositorio\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 
@@ -86,6 +86,60 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_LocacionRolLocacionAlojamiento]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RolLocacionAlojamientoSet] DROP CONSTRAINT [FK_LocacionRolLocacionAlojamiento];
 GO
+IF OBJECT_ID(N'[dbo].[FK_LocacionRolLocacionSalon]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolLocacionSalonSet] DROP CONSTRAINT [FK_LocacionRolLocacionSalon];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PlanBaseRolCiudadActivaPlan]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolCiudadActivaPlanSet] DROP CONSTRAINT [FK_PlanBaseRolCiudadActivaPlan];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolCiudadActivaRolCiudadActivaPlan]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolCiudadActivaPlanSet] DROP CONSTRAINT [FK_RolCiudadActivaRolCiudadActivaPlan];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolAlumnoPlanVendedorAlumno]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PlanVendedorAlumnoSet] DROP CONSTRAINT [FK_RolAlumnoPlanVendedorAlumno];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolVendedorPlanVendedorAlumno]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PlanVendedorAlumnoSet] DROP CONSTRAINT [FK_RolVendedorPlanVendedorAlumno];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolCiudadActivaPlanPlanVendedorAlumno]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PlanVendedorAlumnoSet] DROP CONSTRAINT [FK_RolCiudadActivaPlanPlanVendedorAlumno];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CapacitacionRolAlumno]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolAlumno] DROP CONSTRAINT [FK_CapacitacionRolAlumno];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HorarioRolCiudadActivaHorario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolCiudadActivaHorarioSet] DROP CONSTRAINT [FK_HorarioRolCiudadActivaHorario];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DiaRolCiudadActivaHorario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolCiudadActivaHorarioSet] DROP CONSTRAINT [FK_DiaRolCiudadActivaHorario];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolCiudadActivaRolCiudadActivaHorario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolCiudadActivaHorarioSet] DROP CONSTRAINT [FK_RolCiudadActivaRolCiudadActivaHorario];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolCiudadActivaHorarioRolAlumno]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolAlumno] DROP CONSTRAINT [FK_RolCiudadActivaHorarioRolAlumno];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PersonaRolCobrador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolCobradorSet] DROP CONSTRAINT [FK_PersonaRolCobrador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EstadoRendicionRendicionCobradorCiudad]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RendicionPersonaCiudadSet] DROP CONSTRAINT [FK_EstadoRendicionRendicionCobradorCiudad];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolCiudadActivaRendicionCobradorCiudad]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RendicionPersonaCiudadSet] DROP CONSTRAINT [FK_RolCiudadActivaRendicionCobradorCiudad];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FormaPagoPago]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PagoSet] DROP CONSTRAINT [FK_FormaPagoPago];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PlanVendedorAlumnoPago]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PagoSet] DROP CONSTRAINT [FK_PlanVendedorAlumnoPago];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PagoPagoTarjeta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PagoTarjetaSet] DROP CONSTRAINT [FK_PagoPagoTarjeta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PersonaRendicionPersonaCiudad]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RendicionPersonaCiudadSet] DROP CONSTRAINT [FK_PersonaRendicionPersonaCiudad];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -157,6 +211,48 @@ GO
 IF OBJECT_ID(N'[dbo].[RolLocacionAlojamientoSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RolLocacionAlojamientoSet];
 GO
+IF OBJECT_ID(N'[dbo].[RolLocacionSalonSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RolLocacionSalonSet];
+GO
+IF OBJECT_ID(N'[dbo].[PlanBaseSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PlanBaseSet];
+GO
+IF OBJECT_ID(N'[dbo].[RolCiudadActivaPlanSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RolCiudadActivaPlanSet];
+GO
+IF OBJECT_ID(N'[dbo].[PlanVendedorAlumnoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PlanVendedorAlumnoSet];
+GO
+IF OBJECT_ID(N'[dbo].[CapacitacionSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CapacitacionSet];
+GO
+IF OBJECT_ID(N'[dbo].[HorarioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[HorarioSet];
+GO
+IF OBJECT_ID(N'[dbo].[RolCiudadActivaHorarioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RolCiudadActivaHorarioSet];
+GO
+IF OBJECT_ID(N'[dbo].[DiaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DiaSet];
+GO
+IF OBJECT_ID(N'[dbo].[RolCobradorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RolCobradorSet];
+GO
+IF OBJECT_ID(N'[dbo].[RendicionPersonaCiudadSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RendicionPersonaCiudadSet];
+GO
+IF OBJECT_ID(N'[dbo].[EstadoRendicionSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[EstadoRendicionSet];
+GO
+IF OBJECT_ID(N'[dbo].[PagoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PagoSet];
+GO
+IF OBJECT_ID(N'[dbo].[FormaPagoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FormaPagoSet];
+GO
+IF OBJECT_ID(N'[dbo].[PagoTarjetaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PagoTarjetaSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -224,7 +320,7 @@ CREATE TABLE [dbo].[RolAlumno] (
     [IdRolAlumno] int IDENTITY(1,1) NOT NULL,
     [IdPersona] int  NOT NULL,
     [IdCapacitacion] int  NOT NULL,
-    [IdInformeCiudadHorarios] int  NOT NULL,
+    [IdRolCiudadActivaHorario] int  NOT NULL,
     [IdEstadoAlumno] int  NOT NULL
 );
 GO
@@ -371,6 +467,129 @@ CREATE TABLE [dbo].[RolLocacionSalonSet] (
 );
 GO
 
+-- Creating table 'PlanBaseSet'
+CREATE TABLE [dbo].[PlanBaseSet] (
+    [IdPlanBase] int IDENTITY(1,1) NOT NULL,
+    [DetallePlanBase] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'RolCiudadActivaPlanSet'
+CREATE TABLE [dbo].[RolCiudadActivaPlanSet] (
+    [IdRolCiudadActivaPlan] int IDENTITY(1,1) NOT NULL,
+    [IdRolCiudadActiva] int  NOT NULL,
+    [IdPlanBase] int  NOT NULL,
+    [ValorMatricula] nvarchar(max)  NOT NULL,
+    [CantCuotas] nvarchar(max)  NOT NULL,
+    [ValorCuota] nvarchar(max)  NOT NULL,
+    [ValorDescuento] nvarchar(max)  NOT NULL,
+    [ValorCertificado] nvarchar(max)  NOT NULL,
+    [ComisionIda] nvarchar(max)  NOT NULL,
+    [ComisionVuelta] nvarchar(max)  NOT NULL,
+    [ComisionCertificado] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'PlanVendedorAlumnoSet'
+CREATE TABLE [dbo].[PlanVendedorAlumnoSet] (
+    [IdPlanVendedorAlumno] int IDENTITY(1,1) NOT NULL,
+    [IdRolCiudadActivaPlan] int  NOT NULL,
+    [IdRolAlumno] int  NOT NULL,
+    [IdRolVendedor] int  NOT NULL,
+    [ObservacionGerente] nvarchar(max)  NOT NULL,
+    [ObservacionOficinaBaires] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'CapacitacionSet'
+CREATE TABLE [dbo].[CapacitacionSet] (
+    [IdCapacitacion] int IDENTITY(1,1) NOT NULL,
+    [NombreCapacitacion] nvarchar(max)  NOT NULL,
+    [Temario] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'HorarioSet'
+CREATE TABLE [dbo].[HorarioSet] (
+    [IdHorario] int IDENTITY(1,1) NOT NULL,
+    [DetalleHorario] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'RolCiudadActivaHorarioSet'
+CREATE TABLE [dbo].[RolCiudadActivaHorarioSet] (
+    [IdRolCiudadActivaHorario] int IDENTITY(1,1) NOT NULL,
+    [IdDia] int  NOT NULL,
+    [IdHorario] int  NOT NULL,
+    [IdRolCiudadActiva] int  NOT NULL
+);
+GO
+
+-- Creating table 'DiaSet'
+CREATE TABLE [dbo].[DiaSet] (
+    [IdDia] int IDENTITY(1,1) NOT NULL,
+    [DetalleDia] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'RolCobradorSet'
+CREATE TABLE [dbo].[RolCobradorSet] (
+    [IdRolCobrador] int IDENTITY(1,1) NOT NULL,
+    [IdPersona] int  NOT NULL,
+    [CelCorp] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'RendicionPersonaCiudadSet'
+CREATE TABLE [dbo].[RendicionPersonaCiudadSet] (
+    [IdRendicionPersonaCiudad] int IDENTITY(1,1) NOT NULL,
+    [IdPersona] int  NOT NULL,
+    [IdRolCiudadActiva] int  NOT NULL,
+    [IdEstadoRendicion] int  NOT NULL
+);
+GO
+
+-- Creating table 'EstadoRendicionSet'
+CREATE TABLE [dbo].[EstadoRendicionSet] (
+    [IdEstadoRendicion] int IDENTITY(1,1) NOT NULL,
+    [DetalleEstadoRednicion] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'PagoSet'
+CREATE TABLE [dbo].[PagoSet] (
+    [IdPago] int IDENTITY(1,1) NOT NULL,
+    [IdPlanVendedorAlumno] int  NOT NULL,
+    [MontoPagado] nvarchar(max)  NOT NULL,
+    [IdFormaPago] int  NOT NULL,
+    [IdItemPagado] int  NOT NULL
+);
+GO
+
+-- Creating table 'FormaPagoSet'
+CREATE TABLE [dbo].[FormaPagoSet] (
+    [IdFormaPago] int IDENTITY(1,1) NOT NULL,
+    [DetalleFormaPago] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'PagoTarjetaSet'
+CREATE TABLE [dbo].[PagoTarjetaSet] (
+    [IdPagoTarjeta] int IDENTITY(1,1) NOT NULL,
+    [IdPago] int  NOT NULL,
+    [MontoAPagar] nvarchar(max)  NOT NULL,
+    [Cuotas] nvarchar(max)  NOT NULL,
+    [Recargo] nvarchar(max)  NOT NULL,
+    [MontoTotal] nvarchar(max)  NOT NULL,
+    [NumeroTarjeta] nvarchar(max)  NOT NULL,
+    [EmisorTarjeta] nvarchar(max)  NOT NULL,
+    [CodSeguridad] nvarchar(max)  NOT NULL,
+    [Vencimiento] nvarchar(max)  NOT NULL,
+    [TitularTarjeta] nvarchar(max)  NOT NULL,
+    [DNI] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -511,6 +730,84 @@ GO
 ALTER TABLE [dbo].[RolLocacionSalonSet]
 ADD CONSTRAINT [PK_RolLocacionSalonSet]
     PRIMARY KEY CLUSTERED ([IdRolLocacionSalon] ASC);
+GO
+
+-- Creating primary key on [IdPlanBase] in table 'PlanBaseSet'
+ALTER TABLE [dbo].[PlanBaseSet]
+ADD CONSTRAINT [PK_PlanBaseSet]
+    PRIMARY KEY CLUSTERED ([IdPlanBase] ASC);
+GO
+
+-- Creating primary key on [IdRolCiudadActivaPlan] in table 'RolCiudadActivaPlanSet'
+ALTER TABLE [dbo].[RolCiudadActivaPlanSet]
+ADD CONSTRAINT [PK_RolCiudadActivaPlanSet]
+    PRIMARY KEY CLUSTERED ([IdRolCiudadActivaPlan] ASC);
+GO
+
+-- Creating primary key on [IdPlanVendedorAlumno] in table 'PlanVendedorAlumnoSet'
+ALTER TABLE [dbo].[PlanVendedorAlumnoSet]
+ADD CONSTRAINT [PK_PlanVendedorAlumnoSet]
+    PRIMARY KEY CLUSTERED ([IdPlanVendedorAlumno] ASC);
+GO
+
+-- Creating primary key on [IdCapacitacion] in table 'CapacitacionSet'
+ALTER TABLE [dbo].[CapacitacionSet]
+ADD CONSTRAINT [PK_CapacitacionSet]
+    PRIMARY KEY CLUSTERED ([IdCapacitacion] ASC);
+GO
+
+-- Creating primary key on [IdHorario] in table 'HorarioSet'
+ALTER TABLE [dbo].[HorarioSet]
+ADD CONSTRAINT [PK_HorarioSet]
+    PRIMARY KEY CLUSTERED ([IdHorario] ASC);
+GO
+
+-- Creating primary key on [IdRolCiudadActivaHorario] in table 'RolCiudadActivaHorarioSet'
+ALTER TABLE [dbo].[RolCiudadActivaHorarioSet]
+ADD CONSTRAINT [PK_RolCiudadActivaHorarioSet]
+    PRIMARY KEY CLUSTERED ([IdRolCiudadActivaHorario] ASC);
+GO
+
+-- Creating primary key on [IdDia] in table 'DiaSet'
+ALTER TABLE [dbo].[DiaSet]
+ADD CONSTRAINT [PK_DiaSet]
+    PRIMARY KEY CLUSTERED ([IdDia] ASC);
+GO
+
+-- Creating primary key on [IdRolCobrador] in table 'RolCobradorSet'
+ALTER TABLE [dbo].[RolCobradorSet]
+ADD CONSTRAINT [PK_RolCobradorSet]
+    PRIMARY KEY CLUSTERED ([IdRolCobrador] ASC);
+GO
+
+-- Creating primary key on [IdRendicionPersonaCiudad] in table 'RendicionPersonaCiudadSet'
+ALTER TABLE [dbo].[RendicionPersonaCiudadSet]
+ADD CONSTRAINT [PK_RendicionPersonaCiudadSet]
+    PRIMARY KEY CLUSTERED ([IdRendicionPersonaCiudad] ASC);
+GO
+
+-- Creating primary key on [IdEstadoRendicion] in table 'EstadoRendicionSet'
+ALTER TABLE [dbo].[EstadoRendicionSet]
+ADD CONSTRAINT [PK_EstadoRendicionSet]
+    PRIMARY KEY CLUSTERED ([IdEstadoRendicion] ASC);
+GO
+
+-- Creating primary key on [IdPago] in table 'PagoSet'
+ALTER TABLE [dbo].[PagoSet]
+ADD CONSTRAINT [PK_PagoSet]
+    PRIMARY KEY CLUSTERED ([IdPago] ASC);
+GO
+
+-- Creating primary key on [IdFormaPago] in table 'FormaPagoSet'
+ALTER TABLE [dbo].[FormaPagoSet]
+ADD CONSTRAINT [PK_FormaPagoSet]
+    PRIMARY KEY CLUSTERED ([IdFormaPago] ASC);
+GO
+
+-- Creating primary key on [IdPagoTarjeta] in table 'PagoTarjetaSet'
+ALTER TABLE [dbo].[PagoTarjetaSet]
+ADD CONSTRAINT [PK_PagoTarjetaSet]
+    PRIMARY KEY CLUSTERED ([IdPagoTarjeta] ASC);
 GO
 
 -- --------------------------------------------------
@@ -875,6 +1172,261 @@ GO
 CREATE INDEX [IX_FK_LocacionRolLocacionSalon]
 ON [dbo].[RolLocacionSalonSet]
     ([IdLocacion]);
+GO
+
+-- Creating foreign key on [IdPlanBase] in table 'RolCiudadActivaPlanSet'
+ALTER TABLE [dbo].[RolCiudadActivaPlanSet]
+ADD CONSTRAINT [FK_PlanBaseRolCiudadActivaPlan]
+    FOREIGN KEY ([IdPlanBase])
+    REFERENCES [dbo].[PlanBaseSet]
+        ([IdPlanBase])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PlanBaseRolCiudadActivaPlan'
+CREATE INDEX [IX_FK_PlanBaseRolCiudadActivaPlan]
+ON [dbo].[RolCiudadActivaPlanSet]
+    ([IdPlanBase]);
+GO
+
+-- Creating foreign key on [IdRolCiudadActiva] in table 'RolCiudadActivaPlanSet'
+ALTER TABLE [dbo].[RolCiudadActivaPlanSet]
+ADD CONSTRAINT [FK_RolCiudadActivaRolCiudadActivaPlan]
+    FOREIGN KEY ([IdRolCiudadActiva])
+    REFERENCES [dbo].[RolCiudadActivaSet]
+        ([IdRolCiudadActiva])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolCiudadActivaRolCiudadActivaPlan'
+CREATE INDEX [IX_FK_RolCiudadActivaRolCiudadActivaPlan]
+ON [dbo].[RolCiudadActivaPlanSet]
+    ([IdRolCiudadActiva]);
+GO
+
+-- Creating foreign key on [IdRolAlumno] in table 'PlanVendedorAlumnoSet'
+ALTER TABLE [dbo].[PlanVendedorAlumnoSet]
+ADD CONSTRAINT [FK_RolAlumnoPlanVendedorAlumno]
+    FOREIGN KEY ([IdRolAlumno])
+    REFERENCES [dbo].[RolAlumno]
+        ([IdRolAlumno])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolAlumnoPlanVendedorAlumno'
+CREATE INDEX [IX_FK_RolAlumnoPlanVendedorAlumno]
+ON [dbo].[PlanVendedorAlumnoSet]
+    ([IdRolAlumno]);
+GO
+
+-- Creating foreign key on [IdRolVendedor] in table 'PlanVendedorAlumnoSet'
+ALTER TABLE [dbo].[PlanVendedorAlumnoSet]
+ADD CONSTRAINT [FK_RolVendedorPlanVendedorAlumno]
+    FOREIGN KEY ([IdRolVendedor])
+    REFERENCES [dbo].[RolVendedor]
+        ([IdRolVendedor])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolVendedorPlanVendedorAlumno'
+CREATE INDEX [IX_FK_RolVendedorPlanVendedorAlumno]
+ON [dbo].[PlanVendedorAlumnoSet]
+    ([IdRolVendedor]);
+GO
+
+-- Creating foreign key on [IdRolCiudadActivaPlan] in table 'PlanVendedorAlumnoSet'
+ALTER TABLE [dbo].[PlanVendedorAlumnoSet]
+ADD CONSTRAINT [FK_RolCiudadActivaPlanPlanVendedorAlumno]
+    FOREIGN KEY ([IdRolCiudadActivaPlan])
+    REFERENCES [dbo].[RolCiudadActivaPlanSet]
+        ([IdRolCiudadActivaPlan])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolCiudadActivaPlanPlanVendedorAlumno'
+CREATE INDEX [IX_FK_RolCiudadActivaPlanPlanVendedorAlumno]
+ON [dbo].[PlanVendedorAlumnoSet]
+    ([IdRolCiudadActivaPlan]);
+GO
+
+-- Creating foreign key on [IdCapacitacion] in table 'RolAlumno'
+ALTER TABLE [dbo].[RolAlumno]
+ADD CONSTRAINT [FK_CapacitacionRolAlumno]
+    FOREIGN KEY ([IdCapacitacion])
+    REFERENCES [dbo].[CapacitacionSet]
+        ([IdCapacitacion])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CapacitacionRolAlumno'
+CREATE INDEX [IX_FK_CapacitacionRolAlumno]
+ON [dbo].[RolAlumno]
+    ([IdCapacitacion]);
+GO
+
+-- Creating foreign key on [IdHorario] in table 'RolCiudadActivaHorarioSet'
+ALTER TABLE [dbo].[RolCiudadActivaHorarioSet]
+ADD CONSTRAINT [FK_HorarioRolCiudadActivaHorario]
+    FOREIGN KEY ([IdHorario])
+    REFERENCES [dbo].[HorarioSet]
+        ([IdHorario])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_HorarioRolCiudadActivaHorario'
+CREATE INDEX [IX_FK_HorarioRolCiudadActivaHorario]
+ON [dbo].[RolCiudadActivaHorarioSet]
+    ([IdHorario]);
+GO
+
+-- Creating foreign key on [IdDia] in table 'RolCiudadActivaHorarioSet'
+ALTER TABLE [dbo].[RolCiudadActivaHorarioSet]
+ADD CONSTRAINT [FK_DiaRolCiudadActivaHorario]
+    FOREIGN KEY ([IdDia])
+    REFERENCES [dbo].[DiaSet]
+        ([IdDia])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DiaRolCiudadActivaHorario'
+CREATE INDEX [IX_FK_DiaRolCiudadActivaHorario]
+ON [dbo].[RolCiudadActivaHorarioSet]
+    ([IdDia]);
+GO
+
+-- Creating foreign key on [IdRolCiudadActiva] in table 'RolCiudadActivaHorarioSet'
+ALTER TABLE [dbo].[RolCiudadActivaHorarioSet]
+ADD CONSTRAINT [FK_RolCiudadActivaRolCiudadActivaHorario]
+    FOREIGN KEY ([IdRolCiudadActiva])
+    REFERENCES [dbo].[RolCiudadActivaSet]
+        ([IdRolCiudadActiva])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolCiudadActivaRolCiudadActivaHorario'
+CREATE INDEX [IX_FK_RolCiudadActivaRolCiudadActivaHorario]
+ON [dbo].[RolCiudadActivaHorarioSet]
+    ([IdRolCiudadActiva]);
+GO
+
+-- Creating foreign key on [IdRolCiudadActivaHorario] in table 'RolAlumno'
+ALTER TABLE [dbo].[RolAlumno]
+ADD CONSTRAINT [FK_RolCiudadActivaHorarioRolAlumno]
+    FOREIGN KEY ([IdRolCiudadActivaHorario])
+    REFERENCES [dbo].[RolCiudadActivaHorarioSet]
+        ([IdRolCiudadActivaHorario])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolCiudadActivaHorarioRolAlumno'
+CREATE INDEX [IX_FK_RolCiudadActivaHorarioRolAlumno]
+ON [dbo].[RolAlumno]
+    ([IdRolCiudadActivaHorario]);
+GO
+
+-- Creating foreign key on [IdPersona] in table 'RolCobradorSet'
+ALTER TABLE [dbo].[RolCobradorSet]
+ADD CONSTRAINT [FK_PersonaRolCobrador]
+    FOREIGN KEY ([IdPersona])
+    REFERENCES [dbo].[Persona]
+        ([IdPersona])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PersonaRolCobrador'
+CREATE INDEX [IX_FK_PersonaRolCobrador]
+ON [dbo].[RolCobradorSet]
+    ([IdPersona]);
+GO
+
+-- Creating foreign key on [IdEstadoRendicion] in table 'RendicionPersonaCiudadSet'
+ALTER TABLE [dbo].[RendicionPersonaCiudadSet]
+ADD CONSTRAINT [FK_EstadoRendicionRendicionCobradorCiudad]
+    FOREIGN KEY ([IdEstadoRendicion])
+    REFERENCES [dbo].[EstadoRendicionSet]
+        ([IdEstadoRendicion])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_EstadoRendicionRendicionCobradorCiudad'
+CREATE INDEX [IX_FK_EstadoRendicionRendicionCobradorCiudad]
+ON [dbo].[RendicionPersonaCiudadSet]
+    ([IdEstadoRendicion]);
+GO
+
+-- Creating foreign key on [IdRolCiudadActiva] in table 'RendicionPersonaCiudadSet'
+ALTER TABLE [dbo].[RendicionPersonaCiudadSet]
+ADD CONSTRAINT [FK_RolCiudadActivaRendicionCobradorCiudad]
+    FOREIGN KEY ([IdRolCiudadActiva])
+    REFERENCES [dbo].[RolCiudadActivaSet]
+        ([IdRolCiudadActiva])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolCiudadActivaRendicionCobradorCiudad'
+CREATE INDEX [IX_FK_RolCiudadActivaRendicionCobradorCiudad]
+ON [dbo].[RendicionPersonaCiudadSet]
+    ([IdRolCiudadActiva]);
+GO
+
+-- Creating foreign key on [IdFormaPago] in table 'PagoSet'
+ALTER TABLE [dbo].[PagoSet]
+ADD CONSTRAINT [FK_FormaPagoPago]
+    FOREIGN KEY ([IdFormaPago])
+    REFERENCES [dbo].[FormaPagoSet]
+        ([IdFormaPago])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_FormaPagoPago'
+CREATE INDEX [IX_FK_FormaPagoPago]
+ON [dbo].[PagoSet]
+    ([IdFormaPago]);
+GO
+
+-- Creating foreign key on [IdPlanVendedorAlumno] in table 'PagoSet'
+ALTER TABLE [dbo].[PagoSet]
+ADD CONSTRAINT [FK_PlanVendedorAlumnoPago]
+    FOREIGN KEY ([IdPlanVendedorAlumno])
+    REFERENCES [dbo].[PlanVendedorAlumnoSet]
+        ([IdPlanVendedorAlumno])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PlanVendedorAlumnoPago'
+CREATE INDEX [IX_FK_PlanVendedorAlumnoPago]
+ON [dbo].[PagoSet]
+    ([IdPlanVendedorAlumno]);
+GO
+
+-- Creating foreign key on [IdPago] in table 'PagoTarjetaSet'
+ALTER TABLE [dbo].[PagoTarjetaSet]
+ADD CONSTRAINT [FK_PagoPagoTarjeta]
+    FOREIGN KEY ([IdPago])
+    REFERENCES [dbo].[PagoSet]
+        ([IdPago])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PagoPagoTarjeta'
+CREATE INDEX [IX_FK_PagoPagoTarjeta]
+ON [dbo].[PagoTarjetaSet]
+    ([IdPago]);
+GO
+
+-- Creating foreign key on [IdPersona] in table 'RendicionPersonaCiudadSet'
+ALTER TABLE [dbo].[RendicionPersonaCiudadSet]
+ADD CONSTRAINT [FK_PersonaRendicionPersonaCiudad]
+    FOREIGN KEY ([IdPersona])
+    REFERENCES [dbo].[Persona]
+        ([IdPersona])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PersonaRendicionPersonaCiudad'
+CREATE INDEX [IX_FK_PersonaRendicionPersonaCiudad]
+ON [dbo].[RendicionPersonaCiudadSet]
+    ([IdPersona]);
 GO
 
 -- --------------------------------------------------
