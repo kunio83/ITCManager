@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/09/2016 17:40:15
--- Generated from EDMX file: C:\Users\Ezequiel\Source\Repos\ITCManagerRepositorio\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
+-- Date Created: 04/10/2016 12:29:52
+-- Generated from EDMX file: C:\Users\ThinkPadW7\documents\visual studio 2015\Projects\ITCManager\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -86,6 +86,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_LocacionRolLocacionAlojamiento]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RolLocacionAlojamientoSet] DROP CONSTRAINT [FK_LocacionRolLocacionAlojamiento];
 GO
+IF OBJECT_ID(N'[dbo].[FK_LocacionRolLocacionSalon]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolLocacionSalonSet] DROP CONSTRAINT [FK_LocacionRolLocacionSalon];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -156,6 +159,9 @@ IF OBJECT_ID(N'[dbo].[LocacionRolLocadorSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[RolLocacionAlojamientoSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RolLocacionAlojamientoSet];
+GO
+IF OBJECT_ID(N'[dbo].[RolLocacionSalonSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RolLocacionSalonSet];
 GO
 
 -- --------------------------------------------------
