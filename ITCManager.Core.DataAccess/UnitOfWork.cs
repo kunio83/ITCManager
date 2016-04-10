@@ -45,7 +45,7 @@ namespace ITCManager.Core.DataAccess
             disposed = true;
         }
 
-        public Repository<T> Repository<T>() where T : BaseEntity
+        public Repository<T> Repository<T>() where T : class
         {
             if (repositories == null)
             {
