@@ -12,14 +12,18 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class AsignacionRecibo
+    public partial class Recibo
     {
-        public int IdAsignacionRecibo { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public int IdRecibo { get; set; }
-        public int IdPersona { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Recibo()
+        {
+            this.AsignacionRecibo = new HashSet<AsignacionRecibo>();
+        }
     
-        public virtual Persona Persona { get; set; }
-        public virtual Recibo Recibo { get; set; }
+        public int IdRecibo { get; set; }
+        public string Fecha { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AsignacionRecibo> AsignacionRecibo { get; set; }
     }
 }

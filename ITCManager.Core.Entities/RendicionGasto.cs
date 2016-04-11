@@ -12,26 +12,24 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PlanVendedorAlumno
+    public partial class RendicionGasto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PlanVendedorAlumno()
+        public RendicionGasto()
         {
-            this.Pago = new HashSet<Pago>();
+            this.GastoCheque = new HashSet<GastoCheque>();
         }
     
-        public int IdPlanVendedorAlumno { get; set; }
-        public string NroRecibo { get; set; }
-        public int IdRolCiudadActivaPlan { get; set; }
-        public int IdRolAlumno { get; set; }
-        public int IdRolVendedor { get; set; }
-        public string ObservacionGerente { get; set; }
-        public string ObservacionOficinaBaires { get; set; }
+        public int IdRendicionGasto { get; set; }
+        public int IdRendicionPersonaCiudad { get; set; }
+        public int IdGastoBase { get; set; }
+        public string Monto { get; set; }
+        public int IdFormaPago { get; set; }
     
-        public virtual RolAlumno RolAlumno { get; set; }
-        public virtual RolVendedor RolVendedor { get; set; }
-        public virtual RolCiudadActivaPlan RolCiudadActivaPlan { get; set; }
+        public virtual RendicionPersonaCiudad RendicionPersonaCiudad { get; set; }
+        public virtual GastoBase GastoBase { get; set; }
+        public virtual FormaPago FormaPago { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pago> Pago { get; set; }
+        public virtual ICollection<GastoCheque> GastoCheque { get; set; }
     }
 }

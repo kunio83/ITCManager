@@ -18,6 +18,7 @@ namespace ITCManager.Core.Entities
         public FormaPago()
         {
             this.Pago = new HashSet<Pago>();
+            this.RendicionGasto = new HashSet<RendicionGasto>();
         }
     
         public int IdFormaPago { get; set; }
@@ -25,5 +26,7 @@ namespace ITCManager.Core.Entities
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pago> Pago { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RendicionGasto> RendicionGasto { get; set; }
     }
 }

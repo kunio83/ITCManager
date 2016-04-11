@@ -40,11 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArmadoEquipo.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AsignacionCiudadEquipos.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="AsignacionRecibo.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Capacitacion.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cheque.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChequePropio.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="Ciudad.cs">
@@ -53,10 +65,37 @@
     <Compile Include="CiudadActivaLocaciones.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="CiudadEquipos.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="CiudadPersonal.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
-    <Compile Include="CondicionEmpleado.cs">
+    <Compile Include="CiudadProductos.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoeficTarjetas.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Compra.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompraPagoLocal.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CuentaBanco.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CuentaBancoTercero.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Deposito.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleArmadoEquipo.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleCompra.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="DetalleCondicionEmpleado.cs">
@@ -68,13 +107,52 @@
     <Compile Include="EstadoAlumno.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="EstadoAsignacionEquipo.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoCheque.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoCompra.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoDeposito.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoPagoTarjeta.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="EstadoRendicion.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoTransferencia.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoVenta.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="FormaPago.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormaPagoLocal.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoBase.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoCheque.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoLocal.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoLocalPagoLocal.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Horario.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemPagado.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="Linea.cs">
@@ -100,6 +178,24 @@
     <Compile Include="Pago.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="PagoCheque.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocal.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalCheque.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalChequePropio.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalTarjeta.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalTransferencia.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="PagoTarjeta.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -118,14 +214,38 @@
     <Compile Include="PlanVendedorAlumno.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Productos.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recibo.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionDeposito.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionGasto.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionPago.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="RendicionPersonaCiudad.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionVentaEquipo.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RolAlumno.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RolCiudadActiva.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolCiudadActivaGastos.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RolCiudadActivaHorario.cs">
@@ -153,6 +273,15 @@
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RolVendedor.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TarjetaPropia.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoCheque.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transferencia.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
   </ItemGroup>

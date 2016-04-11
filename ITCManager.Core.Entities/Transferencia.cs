@@ -12,26 +12,25 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PlanVendedorAlumno
+    public partial class Transferencia
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PlanVendedorAlumno()
+        public Transferencia()
         {
-            this.Pago = new HashSet<Pago>();
+            this.CompraTransferencia = new HashSet<PagoLocalTransferencia>();
         }
     
-        public int IdPlanVendedorAlumno { get; set; }
-        public string NroRecibo { get; set; }
-        public int IdRolCiudadActivaPlan { get; set; }
-        public int IdRolAlumno { get; set; }
-        public int IdRolVendedor { get; set; }
-        public string ObservacionGerente { get; set; }
-        public string ObservacionOficinaBaires { get; set; }
+        public int IdTransferencia { get; set; }
+        public int IdCuentaBanco { get; set; }
+        public int IdCuentaBancoTercero { get; set; }
+        public string Monto { get; set; }
+        public int IdEstadoTransferencia { get; set; }
+        public string Observaciones { get; set; }
     
-        public virtual RolAlumno RolAlumno { get; set; }
-        public virtual RolVendedor RolVendedor { get; set; }
-        public virtual RolCiudadActivaPlan RolCiudadActivaPlan { get; set; }
+        public virtual CuentaBanco CuentaBanco { get; set; }
+        public virtual CuentaBancoTercero CuentaBancoTercero { get; set; }
+        public virtual EstadoTransferencia EstadoTransferencia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pago> Pago { get; set; }
+        public virtual ICollection<PagoLocalTransferencia> CompraTransferencia { get; set; }
     }
 }

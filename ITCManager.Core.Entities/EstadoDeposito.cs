@@ -12,14 +12,18 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class AsignacionRecibo
+    public partial class EstadoDeposito
     {
-        public int IdAsignacionRecibo { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public int IdRecibo { get; set; }
-        public int IdPersona { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public EstadoDeposito()
+        {
+            this.Deposito = new HashSet<Deposito>();
+        }
     
-        public virtual Persona Persona { get; set; }
-        public virtual Recibo Recibo { get; set; }
+        public int IdEstadoDeposito { get; set; }
+        public string DetalleEstado { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Deposito> Deposito { get; set; }
     }
 }

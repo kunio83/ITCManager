@@ -12,29 +12,21 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RendicionPersonaCiudad
+    public partial class GastoBase
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RendicionPersonaCiudad()
+        public GastoBase()
         {
-            this.RendicionPago = new HashSet<RendicionPago>();
+            this.RolCiudadActivaGastos = new HashSet<RolCiudadActivaGastos>();
             this.RendicionGasto = new HashSet<RendicionGasto>();
-            this.RendicionDeposito = new HashSet<RendicionDeposito>();
         }
     
-        public int IdRendicionPersonaCiudad { get; set; }
-        public int IdPersona { get; set; }
-        public int IdRolCiudadActiva { get; set; }
-        public int IdEstadoRendicion { get; set; }
+        public int IdGastoBase { get; set; }
+        public string DetalleGastoBase { get; set; }
     
-        public virtual EstadoRendicion EstadoRendicion { get; set; }
-        public virtual RolCiudadActiva RolCiudadActiva { get; set; }
-        public virtual Persona Persona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionPago> RendicionPago { get; set; }
+        public virtual ICollection<RolCiudadActivaGastos> RolCiudadActivaGastos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RendicionGasto> RendicionGasto { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionDeposito> RendicionDeposito { get; set; }
     }
 }

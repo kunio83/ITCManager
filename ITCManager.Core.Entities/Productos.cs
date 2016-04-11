@@ -12,29 +12,28 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RendicionPersonaCiudad
+    public partial class Productos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RendicionPersonaCiudad()
+        public Productos()
         {
-            this.RendicionPago = new HashSet<RendicionPago>();
-            this.RendicionGasto = new HashSet<RendicionGasto>();
-            this.RendicionDeposito = new HashSet<RendicionDeposito>();
+            this.DetalleCompra = new HashSet<DetalleCompra>();
+            this.DetalleArmadoEquipo = new HashSet<DetalleArmadoEquipo>();
+            this.CiudadProductos = new HashSet<CiudadProductos>();
         }
     
-        public int IdRendicionPersonaCiudad { get; set; }
-        public int IdPersona { get; set; }
-        public int IdRolCiudadActiva { get; set; }
-        public int IdEstadoRendicion { get; set; }
+        public int IdProducto { get; set; }
+        public string DetalleProducto { get; set; }
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
+        public string Observaciones { get; set; }
+        public string TipoProducto { get; set; }
     
-        public virtual EstadoRendicion EstadoRendicion { get; set; }
-        public virtual RolCiudadActiva RolCiudadActiva { get; set; }
-        public virtual Persona Persona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionPago> RendicionPago { get; set; }
+        public virtual ICollection<DetalleCompra> DetalleCompra { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionGasto> RendicionGasto { get; set; }
+        public virtual ICollection<DetalleArmadoEquipo> DetalleArmadoEquipo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionDeposito> RendicionDeposito { get; set; }
+        public virtual ICollection<CiudadProductos> CiudadProductos { get; set; }
     }
 }

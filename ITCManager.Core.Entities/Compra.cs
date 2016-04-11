@@ -12,26 +12,25 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PlanVendedorAlumno
+    public partial class Compra
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PlanVendedorAlumno()
+        public Compra()
         {
-            this.Pago = new HashSet<Pago>();
+            this.DetalleCompra = new HashSet<DetalleCompra>();
+            this.CompraPagoLocal = new HashSet<CompraPagoLocal>();
         }
     
-        public int IdPlanVendedorAlumno { get; set; }
-        public string NroRecibo { get; set; }
-        public int IdRolCiudadActivaPlan { get; set; }
-        public int IdRolAlumno { get; set; }
-        public int IdRolVendedor { get; set; }
-        public string ObservacionGerente { get; set; }
-        public string ObservacionOficinaBaires { get; set; }
+        public int IdCompra { get; set; }
+        public string Fecha { get; set; }
+        public int IdProveedor { get; set; }
+        public int IdEstadoCompra { get; set; }
     
-        public virtual RolAlumno RolAlumno { get; set; }
-        public virtual RolVendedor RolVendedor { get; set; }
-        public virtual RolCiudadActivaPlan RolCiudadActivaPlan { get; set; }
+        public virtual EstadoCompra EstadoCompra { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pago> Pago { get; set; }
+        public virtual ICollection<DetalleCompra> DetalleCompra { get; set; }
+        public virtual Proveedor Proveedor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CompraPagoLocal> CompraPagoLocal { get; set; }
     }
 }

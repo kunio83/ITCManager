@@ -12,37 +12,34 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Pago
+    public partial class PagoLocal
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Pago()
+        public PagoLocal()
         {
-            this.PagoTarjeta = new HashSet<PagoTarjeta>();
-            this.RendicionPago = new HashSet<RendicionPago>();
-            this.PagoCheque = new HashSet<PagoCheque>();
-            this.PagoCheque1 = new HashSet<PagoCheque>();
-            this.RendicionVentaEquipo = new HashSet<RendicionVentaEquipo>();
+            this.CompraTransferencia = new HashSet<PagoLocalTransferencia>();
+            this.PagoLocalChequePropio = new HashSet<PagoLocalChequePropio>();
+            this.PagoLocalTarjeta = new HashSet<PagoLocalTarjeta>();
+            this.PagoLocalCheque = new HashSet<PagoLocalCheque>();
+            this.CompraPagoLocal = new HashSet<CompraPagoLocal>();
+            this.GastoLocalPagoLocal = new HashSet<GastoLocalPagoLocal>();
         }
     
-        public int IdPago { get; set; }
-        public int IdPlanVendedorAlumno { get; set; }
-        public string MontoPagado { get; set; }
-        public int IdFormaPago { get; set; }
-        public int IdItemPagado { get; set; }
-        public string NroRecibo { get; set; }
+        public int IdPagoLocal { get; set; }
+        public int IdFormaPagoLocal { get; set; }
     
-        public virtual FormaPago FormaPago { get; set; }
-        public virtual PlanVendedorAlumno PlanVendedorAlumno { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoTarjeta> PagoTarjeta { get; set; }
-        public virtual ItemPagado ItemPagado { get; set; }
+        public virtual ICollection<PagoLocalTransferencia> CompraTransferencia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionPago> RendicionPago { get; set; }
+        public virtual ICollection<PagoLocalChequePropio> PagoLocalChequePropio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoCheque> PagoCheque { get; set; }
+        public virtual ICollection<PagoLocalTarjeta> PagoLocalTarjeta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoCheque> PagoCheque1 { get; set; }
+        public virtual ICollection<PagoLocalCheque> PagoLocalCheque { get; set; }
+        public virtual FormaPagoLocal FormaPagoLocal { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionVentaEquipo> RendicionVentaEquipo { get; set; }
+        public virtual ICollection<CompraPagoLocal> CompraPagoLocal { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GastoLocalPagoLocal> GastoLocalPagoLocal { get; set; }
     }
 }
