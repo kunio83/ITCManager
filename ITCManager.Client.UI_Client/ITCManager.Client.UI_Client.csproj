@@ -96,6 +96,12 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITCManager.Client.Business_Client\ITCManager.Client.Business_Client.csproj">
+      <Project>{44139de2-d223-46fa-b58d-7d4b38f9c1c1}</Project>
+      <Name>ITCManager.Client.Business_Client</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

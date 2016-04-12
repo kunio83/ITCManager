@@ -7,8 +7,8 @@
     <ProjectGuid>{44139DE2-D223-46FA-B58D-7D4B38F9C1C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Business_Client</RootNamespace>
-    <AssemblyName>Business_Client</AssemblyName>
+    <RootNamespace>ITCManager.Client.Business_Client</RootNamespace>
+    <AssemblyName>ITCManager.Client.Business_Client</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,6 +42,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITCManager.Client.DataAccess_Client\ITCManager.Client.DataAccess_Client.csproj">
+      <Project>{347d8efb-add9-49d2-b878-eadcc1ff3cd9}</Project>
+      <Name>ITCManager.Client.DataAccess_Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

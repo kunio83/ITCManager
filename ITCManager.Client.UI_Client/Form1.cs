@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ITCManager.Client.Business;
 
 namespace UI
 {
@@ -21,6 +22,16 @@ namespace UI
         private void metroComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            Class1.conectar();
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Class1.GetNombreById(2));
         }
     }
 }
