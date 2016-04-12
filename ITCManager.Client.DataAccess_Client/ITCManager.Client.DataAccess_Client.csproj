@@ -42,7 +42,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="SQLite.NET">
-      <HintPath>..\..\..\..\ITC System\Source\SQLLite\SQLite.NET.dll</HintPath>
+      <HintPath>.\SQLite.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
