@@ -26,6 +26,7 @@ namespace ITCManager.Core.Entities
             this.RolLocador = new HashSet<RolLocador>();
             this.RolCobrador = new HashSet<RolCobrador>();
             this.RendicionPersonaCiudad = new HashSet<RendicionPersonaCiudad>();
+            this.Deposito = new HashSet<Deposito>();
         }
     
         public int IdPersona { get; set; }
@@ -60,5 +61,7 @@ namespace ITCManager.Core.Entities
         public virtual ICollection<RolCobrador> RolCobrador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RendicionPersonaCiudad> RendicionPersonaCiudad { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Deposito> Deposito { get; set; }
     }
 }

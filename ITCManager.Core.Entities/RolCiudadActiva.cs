@@ -21,6 +21,8 @@ namespace ITCManager.Core.Entities
             this.RolCiudadActivaPlan = new HashSet<RolCiudadActivaPlan>();
             this.RolCiudadActivaHorario = new HashSet<RolCiudadActivaHorario>();
             this.RendicionCobradorCiudad = new HashSet<RendicionPersonaCiudad>();
+            this.RolCiudadActivaGastos = new HashSet<RolCiudadActivaGastos>();
+            this.AsignacionCiudadEquipos = new HashSet<AsignacionCiudadEquipos>();
         }
     
         public int IdRolCiudadActiva { get; set; }
@@ -35,5 +37,9 @@ namespace ITCManager.Core.Entities
         public virtual ICollection<RolCiudadActivaHorario> RolCiudadActivaHorario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RendicionPersonaCiudad> RendicionCobradorCiudad { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RolCiudadActivaGastos> RolCiudadActivaGastos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AsignacionCiudadEquipos> AsignacionCiudadEquipos { get; set; }
     }
 }

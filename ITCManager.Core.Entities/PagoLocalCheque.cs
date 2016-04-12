@@ -12,14 +12,13 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class AsignacionRecibo
+    public partial class PagoLocalCheque
     {
-        public int IdAsignacionRecibo { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public int IdRecibo { get; set; }
-        public int IdPersona { get; set; }
+        public int IdPagoLocalCheque { get; set; }
+        public int IdPagoLocal { get; set; }
+        public int IdCheque { get; set; }
     
-        public virtual Persona Persona { get; set; }
-        public virtual Recibo Recibo { get; set; }
+        public virtual Cheque Cheque { get; set; }
+        public virtual PagoLocal PagoLocal { get; set; }
     }
 }

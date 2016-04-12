@@ -12,29 +12,33 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RendicionPersonaCiudad
+    public partial class Cheque
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RendicionPersonaCiudad()
+        public Cheque()
         {
-            this.RendicionPago = new HashSet<RendicionPago>();
-            this.RendicionGasto = new HashSet<RendicionGasto>();
-            this.RendicionDeposito = new HashSet<RendicionDeposito>();
+            this.PagoCheque = new HashSet<PagoCheque>();
+            this.GastoCheque = new HashSet<GastoCheque>();
+            this.CompraCheque = new HashSet<PagoLocalCheque>();
         }
     
-        public int IdRendicionPersonaCiudad { get; set; }
-        public int IdPersona { get; set; }
-        public int IdRolCiudadActiva { get; set; }
-        public int IdEstadoRendicion { get; set; }
+        public int IdCheque { get; set; }
+        public string Banco { get; set; }
+        public string Titular { get; set; }
+        public string NroCheque { get; set; }
+        public string FechaEmision { get; set; }
+        public string FechaPago { get; set; }
+        public string Monto { get; set; }
+        public int IdTipoCheque { get; set; }
+        public int IdEstadoCheque { get; set; }
     
-        public virtual EstadoRendicion EstadoRendicion { get; set; }
-        public virtual RolCiudadActiva RolCiudadActiva { get; set; }
-        public virtual Persona Persona { get; set; }
+        public virtual TipoCheque TipoCheque { get; set; }
+        public virtual EstadoCheque EstadoCheque { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionPago> RendicionPago { get; set; }
+        public virtual ICollection<PagoCheque> PagoCheque { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionGasto> RendicionGasto { get; set; }
+        public virtual ICollection<GastoCheque> GastoCheque { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionDeposito> RendicionDeposito { get; set; }
+        public virtual ICollection<PagoLocalCheque> CompraCheque { get; set; }
     }
 }

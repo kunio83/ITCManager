@@ -17,7 +17,7 @@ namespace ITCManager.Core.Entities
         public int IdPagoTarjeta { get; set; }
         public int IdPago { get; set; }
         public string MontoAPagar { get; set; }
-        public string Cuotas { get; set; }
+        public int IdCuotas { get; set; }
         public string Recargo { get; set; }
         public string MontoTotal { get; set; }
         public string NumeroTarjeta { get; set; }
@@ -26,7 +26,11 @@ namespace ITCManager.Core.Entities
         public string Vencimiento { get; set; }
         public string TitularTarjeta { get; set; }
         public string DNI { get; set; }
+        public string CodAut { get; set; }
+        public int IdEstadoPagoTarjeta { get; set; }
     
         public virtual Pago Pago { get; set; }
+        public virtual EstadoPagoTarjeta EstadoPagoTarjeta { get; set; }
+        public virtual CoeficTarjetas CoeficTarjetas { get; set; }
     }
 }
