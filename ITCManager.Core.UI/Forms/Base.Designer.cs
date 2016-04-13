@@ -1,6 +1,6 @@
-﻿namespace ITCManager.Client.UI_Client
+﻿namespace ITCManager.Core.UI.Forms
 {
-    partial class Form1
+    partial class Base
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // Base
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 472);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(826, 519);
+            this.Name = "Base";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Base";
             this.ResumeLayout(false);
 
         }

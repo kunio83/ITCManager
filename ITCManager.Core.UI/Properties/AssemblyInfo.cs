@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ITCManager.Client.UI_Client")]
+[assembly: AssemblyTitle("ITCManager.Core.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ITCManager.Client.UI_Client")]
+[assembly: AssemblyProduct("ITCManager.Core.UI")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7ec73a84-cf3b-49f3-b375-a7d82aec6a6f")]
+[assembly: Guid("c6d20198-1f3c-4aed-b71c-be3ca783a323")]
 
 // Version information for an assembly consists of the following four values:
 //

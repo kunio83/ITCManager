@@ -6,14 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Windows.Forms;
-using MetroFramework.Forms;
+using System.Windows.Forms;
 
-namespace ITCManager.Client.UI_Client
+namespace ITCManager.Core.UI.Forms
 {
-    public partial class Form1 : MetroForm
+    public partial class Principal : Base
     {
-        public Form1()
+        public Principal()
         {
             InitializeComponent();
         }

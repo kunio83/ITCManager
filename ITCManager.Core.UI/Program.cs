@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ITCManager.Client.UI_Client
+namespace ITCManager.Core.UI
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace ITCManager.Client.UI_Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Forms.Contenedor());
         }
     }
 }
