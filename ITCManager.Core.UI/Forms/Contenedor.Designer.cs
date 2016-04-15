@@ -33,6 +33,7 @@
             this.comenzarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.principalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.comenzarToolStripMenuItem});
+            this.comenzarToolStripMenuItem,
+            this.mostrarFormToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(956, 24);
@@ -67,16 +69,23 @@
             // principalToolStripMenuItem
             // 
             this.principalToolStripMenuItem.Name = "principalToolStripMenuItem";
-            this.principalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.principalToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.principalToolStripMenuItem.Text = "Principal";
             this.principalToolStripMenuItem.Click += new System.EventHandler(this.principalToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // mostrarFormToolStripMenuItem
+            // 
+            this.mostrarFormToolStripMenuItem.Name = "mostrarFormToolStripMenuItem";
+            this.mostrarFormToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.mostrarFormToolStripMenuItem.Text = "MostrarForm";
+            this.mostrarFormToolStripMenuItem.Click += new System.EventHandler(this.mostrarFormToolStripMenuItem_Click);
             // 
             // Contenedor
             // 
@@ -87,7 +96,8 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "Contenedor";
-            this.Text = "Form1";
+            this.Text = "Inicio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -101,6 +111,7 @@
         private System.Windows.Forms.ToolStripMenuItem comenzarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem principalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mostrarFormToolStripMenuItem;
     }
 }
 

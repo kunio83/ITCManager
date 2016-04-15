@@ -25,8 +25,23 @@ namespace ITCManager.Core.UI.Forms
 
         private void principalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f3 = FormManager.Current.CreateForm<Principal>(this);
-            f3.Show();
+            FormRepository<Principal>.Open(this);
+        }
+
+        private void mostrarFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //borrar esto, solo muestra los nombres de los formularios
+            var ctrls = Application.OpenForms;
+            string text = "";
+            int cont = 0;
+            foreach (var c in ctrls)
+            {
+                if (c is Form)
+                {
+                    text += ((Form)c).Name + "#" + cont++ + " \n\r";
+                }
+            }
+            MessageBox.Show(text);
         }
     }
 }

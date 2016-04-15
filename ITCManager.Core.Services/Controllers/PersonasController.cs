@@ -13,7 +13,8 @@ namespace ITCManager.Core.Services.Controllers
     {
         public Persona Get(int id)
         {
-            return ITCHelper.GetPersonaById(id);
+            // return ITCHelper.GetPersonaById(id);
+            return null;
         }
 
     }

@@ -16,7 +16,9 @@ namespace ITCManager.Core.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Contenedor());
+            Application.Run(new Forms.Login());
+
+            
         }
     }
 }
