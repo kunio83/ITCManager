@@ -28,21 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.bottomBar1 = new ITCManager.Core.UI.Forms.Controles.BottomBar();
             this.SuspendLayout();
+            // 
+            // bottomBar1
+            // 
+            this.bottomBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottomBar1.Location = new System.Drawing.Point(20, 456);
+            this.bottomBar1.Name = "bottomBar1";
+            this.bottomBar1.Size = new System.Drawing.Size(786, 43);
+            this.bottomBar1.TabIndex = 0;
             // 
             // Base
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(826, 519);
+            this.Controls.Add(this.bottomBar1);
             this.Name = "Base";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Style = MetroFramework.MetroColorStyle.Blue;
             this.Text = "Base";
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Base_FormClosing);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Controles.BottomBar bottomBar1;
     }
 }
