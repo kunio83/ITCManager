@@ -20,5 +20,18 @@ namespace ITCManager.Core.Business
             result = personaRepository.Table.FirstOrDefault(z => z.DNI == dni.Trim());
             return result;
         }
+
+        public static List<Persona> GetAll()
+        {
+            List<Persona> result;
+            personaRepository = unitOfWork.Repository<Persona>();
+            result = personaRepository.Table.ToList<Persona>();
+            return result;
+        }
+
+        public static void Save(Persona persona)
+        {
+            personaRepository.Update(persona);
+        }
     }
 }

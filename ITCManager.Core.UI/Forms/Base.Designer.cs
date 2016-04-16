@@ -34,9 +34,9 @@
             // bottomBar1
             // 
             this.bottomBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottomBar1.Location = new System.Drawing.Point(20, 456);
+            this.bottomBar1.Location = new System.Drawing.Point(20, 457);
             this.bottomBar1.Name = "bottomBar1";
-            this.bottomBar1.Size = new System.Drawing.Size(786, 43);
+            this.bottomBar1.Size = new System.Drawing.Size(786, 42);
             this.bottomBar1.TabIndex = 0;
             // 
             // Base

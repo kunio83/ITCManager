@@ -45,6 +45,7 @@
             this.lblMsj.TabIndex = 3;
             this.lblMsj.Text = "Aqui va algun text de indicacion";
             this.lblMsj.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.lblMsj.Visible = false;
             // 
             // pcbLogo
             // 
@@ -66,6 +67,7 @@
             this.mpbProgress.Style = MetroFramework.MetroColorStyle.Blue;
             this.mpbProgress.TabIndex = 2;
             this.mpbProgress.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.mpbProgress.Visible = false;
             // 
             // BottomBar
             // 

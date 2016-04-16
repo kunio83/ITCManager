@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Portal")]
+[assembly: AssemblyProduct("ITCManager.Core.Portal")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7c7ec4cb-4ec2-4a57-9af7-fee7cd9041b4")]
+[assembly: Guid("75213aaf-ae68-44b3-9ac2-57a70c6c4fc5")]
 
 // Version information for an assembly consists of the following four values:
 //

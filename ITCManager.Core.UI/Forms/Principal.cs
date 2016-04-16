@@ -16,5 +16,10 @@ namespace ITCManager.Core.UI.Forms
         {
             InitializeComponent();
         }
+
+        private void mtiCargarDatos_Click(object sender, EventArgs e)
+        {
+            FormRepository<frmCargaDatos>.Open(this.MdiParent);
+        }
     }
 }

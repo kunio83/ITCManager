@@ -34,7 +34,7 @@
             this.metroTile5 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.mtiCargarDatos = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.tabHerram = new MetroFramework.Controls.MetroTabPage();
             this.tabConfig = new MetroFramework.Controls.MetroTabPage();
@@ -61,7 +61,7 @@
             this.mtp.Controls.Add(this.metroTile5);
             this.mtp.Controls.Add(this.metroTile4);
             this.mtp.Controls.Add(this.metroTile3);
-            this.mtp.Controls.Add(this.metroTile2);
+            this.mtp.Controls.Add(this.mtiCargarDatos);
             this.mtp.Controls.Add(this.metroTile1);
             this.mtp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.mtp.HorizontalScrollbarBarColor = true;
@@ -118,16 +118,19 @@
             this.metroTile3.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile3.UseTileImage = true;
             // 
-            // metroTile2
+            // mtiCargarDatos
             // 
-            this.metroTile2.Location = new System.Drawing.Point(35, 208);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(150, 150);
-            this.metroTile2.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile2.TabIndex = 3;
-            this.metroTile2.Text = "metroTile2";
-            this.metroTile2.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTile2.UseTileImage = true;
+            this.mtiCargarDatos.Location = new System.Drawing.Point(35, 208);
+            this.mtiCargarDatos.Name = "mtiCargarDatos";
+            this.mtiCargarDatos.Size = new System.Drawing.Size(150, 150);
+            this.mtiCargarDatos.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtiCargarDatos.TabIndex = 3;
+            this.mtiCargarDatos.Text = "Cargar Datos";
+            this.mtiCargarDatos.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.mtiCargarDatos.TileImage = global::ITCManager.Core.UI.Properties.Resources._1460763548_database;
+            this.mtiCargarDatos.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mtiCargarDatos.UseTileImage = true;
+            this.mtiCargarDatos.Click += new System.EventHandler(this.mtiCargarDatos_Click);
             // 
             // metroTile1
             // 
@@ -138,7 +141,7 @@
             this.metroTile1.TabIndex = 2;
             this.metroTile1.Text = "metroTile1";
             this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTile1.TileImage = global::ITCManager.Core.UI.Properties.Resources._1460756788_student;
+            this.metroTile1.TileImage = global::ITCManager.Core.UI.Properties.Resources._1460763318_student;
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.UseTileImage = true;
             // 
@@ -193,7 +196,7 @@
         private MetroFramework.Controls.MetroTile metroTile5;
         private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroTile metroTile3;
-        private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroTile mtiCargarDatos;
         private MetroFramework.Controls.MetroTile metroTile1;
     }
 }

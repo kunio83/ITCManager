@@ -83,6 +83,26 @@ namespace ITCManager.Core.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1460763318_student {
+            get {
+                object obj = ResourceManager.GetObject("1460763318_student", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1460763548_database {
+            get {
+                object obj = ResourceManager.GetObject("1460763548_database", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HORIZONTAL_PNG {
             get {
                 object obj = ResourceManager.GetObject("HORIZONTAL PNG", resourceCulture);

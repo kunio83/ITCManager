@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Portal
+namespace ITCManager.Core.Portal
 {
     public class FilterConfig
     {
