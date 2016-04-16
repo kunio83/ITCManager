@@ -17,9 +17,9 @@ namespace ITCManager.Core.Entities
         public int IdAsignacionRecibo { get; set; }
         public System.DateTime Fecha { get; set; }
         public int IdRecibo { get; set; }
-        public int IdPersona { get; set; }
+        public int IdRolEmpleado { get; set; }
     
-        public virtual Persona Persona { get; set; }
         public virtual Recibo Recibo { get; set; }
+        public virtual RolEmpleado RolEmpleado { get; set; }
     }
 }

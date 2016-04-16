@@ -12,13 +12,11 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RendicionPago
+    public partial class RolDocente
     {
-        public int IdRendicionPago { get; set; }
-        public int IdRendicionEmpleadoCiudad { get; set; }
-        public int IdPago { get; set; }
+        public int IdRolDocente { get; set; }
+        public int IdRolEmpleado { get; set; }
     
-        public virtual RendicionPersonaCiudad RendicionPersonaCiudad { get; set; }
-        public virtual Pago Pago { get; set; }
+        public virtual RolEmpleado RolEmpleado { get; set; }
     }
 }

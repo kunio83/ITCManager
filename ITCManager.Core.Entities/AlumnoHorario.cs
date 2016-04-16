@@ -12,13 +12,14 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class DetalleCondicionEmpleado
+    public partial class AlumnoHorario
     {
-        public int IdDetalleCondicionEmpleado { get; set; }
-        public int IdRolEmpleado { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public int IdCondicionEmpleado { get; set; }
+        public int IdAlumnoHorario { get; set; }
+        public int IdRolAlumno { get; set; }
+        public int IdRolCiudadActivaHorario { get; set; }
+        public string TipoHorario { get; set; }
     
-        public virtual RolEmpleado RolEmpleado { get; set; }
+        public virtual RolCiudadActivaHorario RolCiudadActivaHorario { get; set; }
+        public virtual RolAlumno RolAlumno { get; set; }
     }
 }

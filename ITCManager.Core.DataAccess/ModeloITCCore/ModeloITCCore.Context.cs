@@ -26,7 +26,7 @@ namespace ITCManager.Core.Entities
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<DetalleCondicionEmpleado> DetalleCondicionEmpleado { get; set; }
+        public virtual DbSet<RolEmpleadoCondicion> DetalleCondicionEmpleado { get; set; }
         public virtual DbSet<EstadoAlumno> EstadoAlumno { get; set; }
         public virtual DbSet<Permiso> Permiso { get; set; }
         public virtual DbSet<PermisoAcceso> PermisoAcceso { get; set; }
@@ -55,7 +55,6 @@ namespace ITCManager.Core.Entities
         public virtual DbSet<Horario> HorarioSet { get; set; }
         public virtual DbSet<RolCiudadActivaHorario> RolCiudadActivaHorarioSet { get; set; }
         public virtual DbSet<Dia> DiaSet { get; set; }
-        public virtual DbSet<RolCobrador> RolCobradorSet { get; set; }
         public virtual DbSet<RendicionPersonaCiudad> RendicionPersonaCiudadSet { get; set; }
         public virtual DbSet<EstadoRendicion> EstadoRendicionSet { get; set; }
         public virtual DbSet<Pago> PagoSet { get; set; }
@@ -105,5 +104,8 @@ namespace ITCManager.Core.Entities
         public virtual DbSet<CompraPagoLocal> CompraPagoLocalSet { get; set; }
         public virtual DbSet<GastoLocal> GastoLocalSet { get; set; }
         public virtual DbSet<GastoLocalPagoLocal> GastoLocalPagoLocalSet { get; set; }
+        public virtual DbSet<CondicionEmpleado> CondicionEmpleadoSet { get; set; }
+        public virtual DbSet<RolDocente> RolDocenteSet { get; set; }
+        public virtual DbSet<AlumnoHorario> AlumnoHorarioSet { get; set; }
     }
 }

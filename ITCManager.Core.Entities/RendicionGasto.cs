@@ -21,7 +21,7 @@ namespace ITCManager.Core.Entities
         }
     
         public int IdRendicionGasto { get; set; }
-        public int IdRendicionPersonaCiudad { get; set; }
+        public int IdRendicionEmpleadoCiudad { get; set; }
         public int IdGastoBase { get; set; }
         public string Monto { get; set; }
         public int IdFormaPago { get; set; }

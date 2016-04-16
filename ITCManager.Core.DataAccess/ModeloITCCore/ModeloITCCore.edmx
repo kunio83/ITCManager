@@ -35,7 +35,6 @@
     <EntitySet Name="HorarioSet" EntityType="ITC_DBPOwerModel.Store.HorarioSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RolCiudadActivaHorarioSet" EntityType="ITC_DBPOwerModel.Store.RolCiudadActivaHorarioSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DiaSet" EntityType="ITC_DBPOwerModel.Store.DiaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RolCobradorSet" EntityType="ITC_DBPOwerModel.Store.RolCobradorSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RendicionPersonaCiudadSet" EntityType="ITC_DBPOwerModel.Store.RendicionPersonaCiudadSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="EstadoRendicionSet" EntityType="ITC_DBPOwerModel.Store.EstadoRendicionSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PagoSet" EntityType="ITC_DBPOwerModel.Store.PagoSet" store:Type="Tables" Schema="dbo" />
@@ -85,6 +84,9 @@
     <EntitySet Name="CompraPagoLocalSet" EntityType="ITC_DBPOwerModel.Store.CompraPagoLocalSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="GastoLocalSet" EntityType="ITC_DBPOwerModel.Store.GastoLocalSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="GastoLocalPagoLocalSet" EntityType="ITC_DBPOwerModel.Store.GastoLocalPagoLocalSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CondicionEmpleadoSet" EntityType="ITC_DBPOwerModel.Store.CondicionEmpleadoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolDocenteSet" EntityType="ITC_DBPOwerModel.Store.RolDocenteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AlumnoHorarioSet" EntityType="ITC_DBPOwerModel.Store.AlumnoHorarioSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_RolEmpleadoDetalleCondicionEmpleado" Association="ITC_DBPOwerModel.Store.FK_RolEmpleadoDetalleCondicionEmpleado">
       <End Role="RolEmpleado" EntitySet="RolEmpleado" />
       <End Role="DetalleCondicionEmpleado" EntitySet="DetalleCondicionEmpleado" />
@@ -101,29 +103,9 @@
       <End Role="RolEmpleado" EntitySet="RolEmpleado" />
       <End Role="Permiso" EntitySet="Permiso" />
     </AssociationSet>
-    <AssociationSet Name="FK_PersonaRolAlumno" Association="ITC_DBPOwerModel.Store.FK_PersonaRolAlumno">
-      <End Role="Persona" EntitySet="Persona" />
-      <End Role="RolAlumno" EntitySet="RolAlumno" />
-    </AssociationSet>
     <AssociationSet Name="FK_PersonaRolEmpleado" Association="ITC_DBPOwerModel.Store.FK_PersonaRolEmpleado">
       <End Role="Persona" EntitySet="Persona" />
       <End Role="RolEmpleado" EntitySet="RolEmpleado" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PersonaRolVendedor" Association="ITC_DBPOwerModel.Store.FK_PersonaRolVendedor">
-      <End Role="Persona" EntitySet="Persona" />
-      <End Role="RolVendedor" EntitySet="RolVendedor" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PersonaRolVendedor1" Association="ITC_DBPOwerModel.Store.FK_PersonaRolVendedor1">
-      <End Role="Persona" EntitySet="Persona" />
-      <End Role="RolVendedor" EntitySet="RolVendedor" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PersonaRolVendedor2" Association="ITC_DBPOwerModel.Store.FK_PersonaRolVendedor2">
-      <End Role="Persona" EntitySet="Persona" />
-      <End Role="RolVendedor" EntitySet="RolVendedor" />
-    </AssociationSet>
-    <AssociationSet Name="PersonaAsignacionRecibo" Association="ITC_DBPOwerModel.Store.PersonaAsignacionRecibo">
-      <End Role="Persona" EntitySet="Persona" />
-      <End Role="AsignacionRecibo" EntitySet="AsignacionReciboSet" />
     </AssociationSet>
     <AssociationSet Name="PersonaRolLocador" Association="ITC_DBPOwerModel.Store.PersonaRolLocador">
       <End Role="Persona" EntitySet="Persona" />
@@ -217,14 +199,6 @@
       <End Role="RolCiudadActiva" EntitySet="RolCiudadActivaSet" />
       <End Role="RolCiudadActivaHorario" EntitySet="RolCiudadActivaHorarioSet" />
     </AssociationSet>
-    <AssociationSet Name="RolCiudadActivaHorarioRolAlumno" Association="ITC_DBPOwerModel.Store.RolCiudadActivaHorarioRolAlumno">
-      <End Role="RolCiudadActivaHorario" EntitySet="RolCiudadActivaHorarioSet" />
-      <End Role="RolAlumno" EntitySet="RolAlumno" />
-    </AssociationSet>
-    <AssociationSet Name="PersonaRolCobrador" Association="ITC_DBPOwerModel.Store.PersonaRolCobrador">
-      <End Role="Persona" EntitySet="Persona" />
-      <End Role="RolCobrador" EntitySet="RolCobradorSet" />
-    </AssociationSet>
     <AssociationSet Name="EstadoRendicionRendicionCobradorCiudad" Association="ITC_DBPOwerModel.Store.EstadoRendicionRendicionCobradorCiudad">
       <End Role="EstadoRendicion" EntitySet="EstadoRendicionSet" />
       <End Role="RendicionCobradorCiudad" EntitySet="RendicionPersonaCiudadSet" />
@@ -244,10 +218,6 @@
     <AssociationSet Name="PagoPagoTarjeta" Association="ITC_DBPOwerModel.Store.PagoPagoTarjeta">
       <End Role="Pago" EntitySet="PagoSet" />
       <End Role="PagoTarjeta" EntitySet="PagoTarjetaSet" />
-    </AssociationSet>
-    <AssociationSet Name="PersonaRendicionPersonaCiudad" Association="ITC_DBPOwerModel.Store.PersonaRendicionPersonaCiudad">
-      <End Role="Persona" EntitySet="Persona" />
-      <End Role="RendicionPersonaCiudad" EntitySet="RendicionPersonaCiudadSet" />
     </AssociationSet>
     <AssociationSet Name="ItemPagadoPago" Association="ITC_DBPOwerModel.Store.ItemPagadoPago">
       <End Role="ItemPagado" EntitySet="ItemPagadoSet" />
@@ -469,15 +439,56 @@
       <End Role="PagoLocal" EntitySet="PagoLocalSet" />
       <End Role="GastoLocalPagoLocal" EntitySet="GastoLocalPagoLocalSet" />
     </AssociationSet>
+    <AssociationSet Name="RolEmpleadoRolVendedor" Association="ITC_DBPOwerModel.Store.RolEmpleadoRolVendedor">
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+      <End Role="RolVendedor" EntitySet="RolVendedor" />
+    </AssociationSet>
+    <AssociationSet Name="RolEmpleadoRolVendedor1" Association="ITC_DBPOwerModel.Store.RolEmpleadoRolVendedor1">
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+      <End Role="RolVendedor" EntitySet="RolVendedor" />
+    </AssociationSet>
+    <AssociationSet Name="RolEmpleadoRolVendedor2" Association="ITC_DBPOwerModel.Store.RolEmpleadoRolVendedor2">
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+      <End Role="RolVendedor" EntitySet="RolVendedor" />
+    </AssociationSet>
+    <AssociationSet Name="RolEmpleadoAsignacionRecibo" Association="ITC_DBPOwerModel.Store.RolEmpleadoAsignacionRecibo">
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+      <End Role="AsignacionRecibo" EntitySet="AsignacionReciboSet" />
+    </AssociationSet>
+    <AssociationSet Name="RolEmpleadoRendicionPersonaCiudad" Association="ITC_DBPOwerModel.Store.RolEmpleadoRendicionPersonaCiudad">
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+      <End Role="RendicionPersonaCiudad" EntitySet="RendicionPersonaCiudadSet" />
+    </AssociationSet>
+    <AssociationSet Name="CondicionEmpleadoRolEmpleadoCondicion" Association="ITC_DBPOwerModel.Store.CondicionEmpleadoRolEmpleadoCondicion">
+      <End Role="CondicionEmpleado" EntitySet="CondicionEmpleadoSet" />
+      <End Role="RolEmpleadoCondicion" EntitySet="DetalleCondicionEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="RolEmpleadoRolDocente" Association="ITC_DBPOwerModel.Store.RolEmpleadoRolDocente">
+      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+      <End Role="RolDocente" EntitySet="RolDocenteSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaRolAlumno" Association="ITC_DBPOwerModel.Store.PersonaRolAlumno">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="RolAlumno" EntitySet="RolAlumno" />
+    </AssociationSet>
+    <AssociationSet Name="RolCiudadActivaHorarioAlumnoHorario" Association="ITC_DBPOwerModel.Store.RolCiudadActivaHorarioAlumnoHorario">
+      <End Role="RolCiudadActivaHorario" EntitySet="RolCiudadActivaHorarioSet" />
+      <End Role="AlumnoHorario" EntitySet="AlumnoHorarioSet" />
+    </AssociationSet>
+    <AssociationSet Name="RolAlumnoAlumnoHorario" Association="ITC_DBPOwerModel.Store.RolAlumnoAlumnoHorario">
+      <End Role="RolAlumno" EntitySet="RolAlumno" />
+      <End Role="AlumnoHorario" EntitySet="AlumnoHorarioSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="DetalleCondicionEmpleado">
     <Key>
-      <PropertyRef Name="IdDetalleCondicionEmpleado" />
+      <PropertyRef Name="IdRolEmpleadoCondicion" />
     </Key>
-    <Property Name="IdDetalleCondicionEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRolEmpleadoCondicion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdRolEmpleado" Type="int" Nullable="false" />
     <Property Name="Fecha" Type="datetime" Nullable="false" />
     <Property Name="IdCondicionEmpleado" Type="int" Nullable="false" />
+    <Property Name="MontoCondicion" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="EstadoAlumno">
     <Key>
@@ -528,7 +539,6 @@
     <Property Name="IdRolAlumno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdPersona" Type="int" Nullable="false" />
     <Property Name="IdCapacitacion" Type="int" Nullable="false" />
-    <Property Name="IdRolCiudadActivaHorario" Type="int" Nullable="false" />
     <Property Name="IdEstadoAlumno" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RolEmpleado">
@@ -538,18 +548,18 @@
     <Property Name="IdRolEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdPersona" Type="int" Nullable="false" />
     <Property Name="IdPuesto" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="IdCondicionEmpleado" Type="int" Nullable="false" />
     <Property Name="CelCorp" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Contraseña" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="RolVendedor">
     <Key>
       <PropertyRef Name="IdRolVendedor" />
     </Key>
     <Property Name="IdRolVendedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdPersona" Type="int" Nullable="false" />
+    <Property Name="IdRolEmpleado" Type="int" Nullable="false" />
     <Property Name="IdSubgerente" Type="int" Nullable="false" />
     <Property Name="IdGerente" Type="int" Nullable="false" />
-    <Property Name="CelCorp" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="AsignacionReciboSet">
     <Key>
@@ -558,7 +568,7 @@
     <Property Name="IdAsignacionRecibo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Fecha" Type="datetime" Nullable="false" />
     <Property Name="IdRecibo" Type="int" Nullable="false" />
-    <Property Name="IdPersona" Type="int" Nullable="false" />
+    <Property Name="IdRolEmpleado" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="LineaSet">
     <Key>
@@ -739,20 +749,12 @@
     <Property Name="IdDia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DetalleDia" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="RolCobradorSet">
-    <Key>
-      <PropertyRef Name="IdRolCobrador" />
-    </Key>
-    <Property Name="IdRolCobrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdPersona" Type="int" Nullable="false" />
-    <Property Name="CelCorp" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
   <EntityType Name="RendicionPersonaCiudadSet">
     <Key>
-      <PropertyRef Name="IdRendicionPersonaCiudad" />
+      <PropertyRef Name="IdRendicionEmpleadoCiudad" />
     </Key>
-    <Property Name="IdRendicionPersonaCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdPersona" Type="int" Nullable="false" />
+    <Property Name="IdRendicionEmpleadoCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRolEmpleado" Type="int" Nullable="false" />
     <Property Name="IdRolCiudadActiva" Type="int" Nullable="false" />
     <Property Name="IdEstadoRendicion" Type="int" Nullable="false" />
   </EntityType>
@@ -812,7 +814,7 @@
       <PropertyRef Name="IdRendicionPago" />
     </Key>
     <Property Name="IdRendicionPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdRendicionPersonaCiudad" Type="int" Nullable="false" />
+    <Property Name="IdRendicionEmpleadoCiudad" Type="int" Nullable="false" />
     <Property Name="IdPago" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="GastoBaseSet">
@@ -837,7 +839,7 @@
       <PropertyRef Name="IdRendicionGasto" />
     </Key>
     <Property Name="IdRendicionGasto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdRendicionPersonaCiudad" Type="int" Nullable="false" />
+    <Property Name="IdRendicionEmpleadoCiudad" Type="int" Nullable="false" />
     <Property Name="IdGastoBase" Type="int" Nullable="false" />
     <Property Name="Monto" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IdFormaPago" Type="int" Nullable="false" />
@@ -847,7 +849,7 @@
       <PropertyRef Name="IdRendicionDeposito" />
     </Key>
     <Property Name="IdRendicionDeposito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdRendicionPersonaCiudad" Type="int" Nullable="false" />
+    <Property Name="IdRendicionEmpleadoCiudad" Type="int" Nullable="false" />
     <Property Name="IdDeposito" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="DepositoSet">
@@ -1188,6 +1190,29 @@
     <Property Name="IdGastoLocal" Type="int" Nullable="false" />
     <Property Name="IdPagoLocal" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="CondicionEmpleadoSet">
+    <Key>
+      <PropertyRef Name="IdCondicionEmpleado" />
+    </Key>
+    <Property Name="IdCondicionEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DetalleCOndicionEmpleado" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolDocenteSet">
+    <Key>
+      <PropertyRef Name="IdRolDocente" />
+    </Key>
+    <Property Name="IdRolDocente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRolEmpleado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AlumnoHorarioSet">
+    <Key>
+      <PropertyRef Name="IdAlumnoHorario" />
+    </Key>
+    <Property Name="IdAlumnoHorario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRolAlumno" Type="int" Nullable="false" />
+    <Property Name="IdRolCiudadActivaHorario" Type="int" Nullable="false" />
+    <Property Name="TipoHorario" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <Association Name="FK_RolEmpleadoDetalleCondicionEmpleado">
     <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
     <End Role="DetalleCondicionEmpleado" Type="ITC_DBPOwerModel.Store.DetalleCondicionEmpleado" Multiplicity="*" />
@@ -1236,18 +1261,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PersonaRolAlumno">
-    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
-    <End Role="RolAlumno" Type="ITC_DBPOwerModel.Store.RolAlumno" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Persona">
-        <PropertyRef Name="IdPersona" />
-      </Principal>
-      <Dependent Role="RolAlumno">
-        <PropertyRef Name="IdPersona" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_PersonaRolEmpleado">
     <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
     <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="*" />
@@ -1256,54 +1269,6 @@
         <PropertyRef Name="IdPersona" />
       </Principal>
       <Dependent Role="RolEmpleado">
-        <PropertyRef Name="IdPersona" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PersonaRolVendedor">
-    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
-    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Persona">
-        <PropertyRef Name="IdPersona" />
-      </Principal>
-      <Dependent Role="RolVendedor">
-        <PropertyRef Name="IdPersona" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PersonaRolVendedor1">
-    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
-    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Persona">
-        <PropertyRef Name="IdPersona" />
-      </Principal>
-      <Dependent Role="RolVendedor">
-        <PropertyRef Name="IdGerente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PersonaRolVendedor2">
-    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
-    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Persona">
-        <PropertyRef Name="IdPersona" />
-      </Principal>
-      <Dependent Role="RolVendedor">
-        <PropertyRef Name="IdSubgerente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PersonaAsignacionRecibo">
-    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
-    <End Role="AsignacionRecibo" Type="ITC_DBPOwerModel.Store.AsignacionReciboSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Persona">
-        <PropertyRef Name="IdPersona" />
-      </Principal>
-      <Dependent Role="AsignacionRecibo">
         <PropertyRef Name="IdPersona" />
       </Dependent>
     </ReferentialConstraint>
@@ -1584,30 +1549,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="RolCiudadActivaHorarioRolAlumno">
-    <End Role="RolCiudadActivaHorario" Type="ITC_DBPOwerModel.Store.RolCiudadActivaHorarioSet" Multiplicity="1" />
-    <End Role="RolAlumno" Type="ITC_DBPOwerModel.Store.RolAlumno" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="RolCiudadActivaHorario">
-        <PropertyRef Name="IdRolCiudadActivaHorario" />
-      </Principal>
-      <Dependent Role="RolAlumno">
-        <PropertyRef Name="IdRolCiudadActivaHorario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PersonaRolCobrador">
-    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
-    <End Role="RolCobrador" Type="ITC_DBPOwerModel.Store.RolCobradorSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Persona">
-        <PropertyRef Name="IdPersona" />
-      </Principal>
-      <Dependent Role="RolCobrador">
-        <PropertyRef Name="IdPersona" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="EstadoRendicionRendicionCobradorCiudad">
     <End Role="EstadoRendicion" Type="ITC_DBPOwerModel.Store.EstadoRendicionSet" Multiplicity="1" />
     <End Role="RendicionCobradorCiudad" Type="ITC_DBPOwerModel.Store.RendicionPersonaCiudadSet" Multiplicity="*" />
@@ -1668,18 +1609,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PersonaRendicionPersonaCiudad">
-    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
-    <End Role="RendicionPersonaCiudad" Type="ITC_DBPOwerModel.Store.RendicionPersonaCiudadSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Persona">
-        <PropertyRef Name="IdPersona" />
-      </Principal>
-      <Dependent Role="RendicionPersonaCiudad">
-        <PropertyRef Name="IdPersona" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ItemPagadoPago">
     <End Role="ItemPagado" Type="ITC_DBPOwerModel.Store.ItemPagadoSet" Multiplicity="1" />
     <End Role="Pago" Type="ITC_DBPOwerModel.Store.PagoSet" Multiplicity="*" />
@@ -1697,10 +1626,10 @@
     <End Role="RendicionPago" Type="ITC_DBPOwerModel.Store.RendicionPagoSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="RendicionPersonaCiudad">
-        <PropertyRef Name="IdRendicionPersonaCiudad" />
+        <PropertyRef Name="IdRendicionEmpleadoCiudad" />
       </Principal>
       <Dependent Role="RendicionPago">
-        <PropertyRef Name="IdRendicionPersonaCiudad" />
+        <PropertyRef Name="IdRendicionEmpleadoCiudad" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1745,10 +1674,10 @@
     <End Role="RendicionGasto" Type="ITC_DBPOwerModel.Store.RendicionGastoSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="RendicionPersonaCiudad">
-        <PropertyRef Name="IdRendicionPersonaCiudad" />
+        <PropertyRef Name="IdRendicionEmpleadoCiudad" />
       </Principal>
       <Dependent Role="RendicionGasto">
-        <PropertyRef Name="IdRendicionPersonaCiudad" />
+        <PropertyRef Name="IdRendicionEmpleadoCiudad" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1769,10 +1698,10 @@
     <End Role="RendicionDeposito" Type="ITC_DBPOwerModel.Store.RendicionDepositoSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="RendicionPersonaCiudad">
-        <PropertyRef Name="IdRendicionPersonaCiudad" />
+        <PropertyRef Name="IdRendicionEmpleadoCiudad" />
       </Principal>
       <Dependent Role="RendicionDeposito">
-        <PropertyRef Name="IdRendicionPersonaCiudad" />
+        <PropertyRef Name="IdRendicionEmpleadoCiudad" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2340,12 +2269,132 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="RolEmpleadoRolVendedor">
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
+    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="RolVendedor">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolEmpleadoRolVendedor1">
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
+    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="RolVendedor">
+        <PropertyRef Name="IdSubgerente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolEmpleadoRolVendedor2">
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
+    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="RolVendedor">
+        <PropertyRef Name="IdGerente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolEmpleadoAsignacionRecibo">
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
+    <End Role="AsignacionRecibo" Type="ITC_DBPOwerModel.Store.AsignacionReciboSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="AsignacionRecibo">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolEmpleadoRendicionPersonaCiudad">
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
+    <End Role="RendicionPersonaCiudad" Type="ITC_DBPOwerModel.Store.RendicionPersonaCiudadSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="RendicionPersonaCiudad">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CondicionEmpleadoRolEmpleadoCondicion">
+    <End Role="CondicionEmpleado" Type="ITC_DBPOwerModel.Store.CondicionEmpleadoSet" Multiplicity="1" />
+    <End Role="RolEmpleadoCondicion" Type="ITC_DBPOwerModel.Store.DetalleCondicionEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CondicionEmpleado">
+        <PropertyRef Name="IdCondicionEmpleado" />
+      </Principal>
+      <Dependent Role="RolEmpleadoCondicion">
+        <PropertyRef Name="IdCondicionEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolEmpleadoRolDocente">
+    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
+    <End Role="RolDocente" Type="ITC_DBPOwerModel.Store.RolDocenteSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolEmpleado">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="RolDocente">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonaRolAlumno">
+    <End Role="Persona" Type="ITC_DBPOwerModel.Store.Persona" Multiplicity="1" />
+    <End Role="RolAlumno" Type="ITC_DBPOwerModel.Store.RolAlumno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="RolAlumno">
+        <PropertyRef Name="IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolCiudadActivaHorarioAlumnoHorario">
+    <End Role="RolCiudadActivaHorario" Type="ITC_DBPOwerModel.Store.RolCiudadActivaHorarioSet" Multiplicity="1" />
+    <End Role="AlumnoHorario" Type="ITC_DBPOwerModel.Store.AlumnoHorarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolCiudadActivaHorario">
+        <PropertyRef Name="IdRolCiudadActivaHorario" />
+      </Principal>
+      <Dependent Role="AlumnoHorario">
+        <PropertyRef Name="IdRolCiudadActivaHorario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolAlumnoAlumnoHorario">
+    <End Role="RolAlumno" Type="ITC_DBPOwerModel.Store.RolAlumno" Multiplicity="1" />
+    <End Role="AlumnoHorario" Type="ITC_DBPOwerModel.Store.AlumnoHorarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RolAlumno">
+        <PropertyRef Name="IdRolAlumno" />
+      </Principal>
+      <Dependent Role="AlumnoHorario">
+        <PropertyRef Name="IdRolAlumno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ITC_DBPOwerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ITC_DBPOwerEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="DetalleCondicionEmpleado" EntityType="ITC_DBPOwerModel.DetalleCondicionEmpleado" />
+          <EntitySet Name="DetalleCondicionEmpleado" EntityType="ITC_DBPOwerModel.RolEmpleadoCondicion" />
           <EntitySet Name="EstadoAlumno" EntityType="ITC_DBPOwerModel.EstadoAlumno" />
           <EntitySet Name="Permiso" EntityType="ITC_DBPOwerModel.Permiso" />
           <EntitySet Name="PermisoAcceso" EntityType="ITC_DBPOwerModel.PermisoAcceso" />
@@ -2380,29 +2429,9 @@
             <End Role="RolEmpleado" EntitySet="RolEmpleado" />
             <End Role="Permiso" EntitySet="Permiso" />
           </AssociationSet>
-          <AssociationSet Name="FK_PersonaRolAlumno" Association="ITC_DBPOwerModel.FK_PersonaRolAlumno">
-            <End Role="Persona" EntitySet="Persona" />
-            <End Role="RolAlumno" EntitySet="RolAlumno" />
-          </AssociationSet>
           <AssociationSet Name="FK_PersonaRolEmpleado" Association="ITC_DBPOwerModel.FK_PersonaRolEmpleado">
             <End Role="Persona" EntitySet="Persona" />
             <End Role="RolEmpleado" EntitySet="RolEmpleado" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersonaRolVendedor" Association="ITC_DBPOwerModel.FK_PersonaRolVendedor">
-            <End Role="Persona" EntitySet="Persona" />
-            <End Role="RolVendedor" EntitySet="RolVendedor" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersonaRolVendedor1" Association="ITC_DBPOwerModel.FK_PersonaRolVendedor1">
-            <End Role="Persona" EntitySet="Persona" />
-            <End Role="RolVendedor" EntitySet="RolVendedor" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersonaRolVendedor2" Association="ITC_DBPOwerModel.FK_PersonaRolVendedor2">
-            <End Role="Persona" EntitySet="Persona" />
-            <End Role="RolVendedor" EntitySet="RolVendedor" />
-          </AssociationSet>
-          <AssociationSet Name="PersonaAsignacionRecibo" Association="ITC_DBPOwerModel.PersonaAsignacionRecibo">
-            <End Role="Persona" EntitySet="Persona" />
-            <End Role="AsignacionRecibo" EntitySet="AsignacionReciboSet" />
           </AssociationSet>
           <AssociationSet Name="PersonaRolLocador" Association="ITC_DBPOwerModel.PersonaRolLocador">
             <End Role="Persona" EntitySet="Persona" />
@@ -2506,15 +2535,6 @@
             <End Role="RolCiudadActiva" EntitySet="RolCiudadActivaSet" />
             <End Role="RolCiudadActivaHorario" EntitySet="RolCiudadActivaHorarioSet" />
           </AssociationSet>
-          <AssociationSet Name="RolCiudadActivaHorarioRolAlumno" Association="ITC_DBPOwerModel.RolCiudadActivaHorarioRolAlumno">
-            <End Role="RolCiudadActivaHorario" EntitySet="RolCiudadActivaHorarioSet" />
-            <End Role="RolAlumno" EntitySet="RolAlumno" />
-          </AssociationSet>
-          <EntitySet Name="RolCobradorSet" EntityType="ITC_DBPOwerModel.RolCobrador" />
-          <AssociationSet Name="PersonaRolCobrador" Association="ITC_DBPOwerModel.PersonaRolCobrador">
-            <End Role="Persona" EntitySet="Persona" />
-            <End Role="RolCobrador" EntitySet="RolCobradorSet" />
-          </AssociationSet>
           <EntitySet Name="RendicionPersonaCiudadSet" EntityType="ITC_DBPOwerModel.RendicionPersonaCiudad" />
           <EntitySet Name="EstadoRendicionSet" EntityType="ITC_DBPOwerModel.EstadoRendicion" />
           <AssociationSet Name="EstadoRendicionRendicionCobradorCiudad" Association="ITC_DBPOwerModel.EstadoRendicionRendicionCobradorCiudad">
@@ -2539,10 +2559,6 @@
           <AssociationSet Name="PagoPagoTarjeta" Association="ITC_DBPOwerModel.PagoPagoTarjeta">
             <End Role="Pago" EntitySet="PagoSet" />
             <End Role="PagoTarjeta" EntitySet="PagoTarjetaSet" />
-          </AssociationSet>
-          <AssociationSet Name="PersonaRendicionPersonaCiudad" Association="ITC_DBPOwerModel.PersonaRendicionPersonaCiudad">
-            <End Role="Persona" EntitySet="Persona" />
-            <End Role="RendicionPersonaCiudad" EntitySet="RendicionPersonaCiudadSet" />
           </AssociationSet>
           <EntitySet Name="ItemPagadoSet" EntityType="ITC_DBPOwerModel.ItemPagado" />
           <AssociationSet Name="ItemPagadoPago" Association="ITC_DBPOwerModel.ItemPagadoPago">
@@ -2808,23 +2824,76 @@
             <End Role="PagoLocal" EntitySet="PagoLocalSet" />
             <End Role="GastoLocalPagoLocal" EntitySet="GastoLocalPagoLocalSet" />
           </AssociationSet>
+          <AssociationSet Name="RolEmpleadoRolVendedor" Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor">
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+            <End Role="RolVendedor" EntitySet="RolVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="RolEmpleadoRolVendedor1" Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor1">
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+            <End Role="RolVendedor" EntitySet="RolVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="RolEmpleadoRolVendedor2" Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor2">
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+            <End Role="RolVendedor" EntitySet="RolVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="RolEmpleadoAsignacionRecibo" Association="ITC_DBPOwerModel.RolEmpleadoAsignacionRecibo">
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+            <End Role="AsignacionRecibo" EntitySet="AsignacionReciboSet" />
+          </AssociationSet>
+          <AssociationSet Name="RolEmpleadoRendicionPersonaCiudad" Association="ITC_DBPOwerModel.RolEmpleadoRendicionPersonaCiudad">
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+            <End Role="RendicionPersonaCiudad" EntitySet="RendicionPersonaCiudadSet" />
+          </AssociationSet>
+          <EntitySet Name="CondicionEmpleadoSet" EntityType="ITC_DBPOwerModel.CondicionEmpleado" />
+          <AssociationSet Name="CondicionEmpleadoRolEmpleadoCondicion" Association="ITC_DBPOwerModel.CondicionEmpleadoRolEmpleadoCondicion">
+            <End Role="CondicionEmpleado" EntitySet="CondicionEmpleadoSet" />
+            <End Role="RolEmpleadoCondicion" EntitySet="DetalleCondicionEmpleado" />
+          </AssociationSet>
+          <EntitySet Name="RolDocenteSet" EntityType="ITC_DBPOwerModel.RolDocente" />
+          <AssociationSet Name="RolEmpleadoRolDocente" Association="ITC_DBPOwerModel.RolEmpleadoRolDocente">
+            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
+            <End Role="RolDocente" EntitySet="RolDocenteSet" />
+          </AssociationSet>
+          <EntitySet Name="AlumnoHorarioSet" EntityType="ITC_DBPOwerModel.AlumnoHorario" />
+          <AssociationSet Name="PersonaRolAlumno" Association="ITC_DBPOwerModel.PersonaRolAlumno">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="RolAlumno" EntitySet="RolAlumno" />
+          </AssociationSet>
+          <AssociationSet Name="RolCiudadActivaHorarioAlumnoHorario" Association="ITC_DBPOwerModel.RolCiudadActivaHorarioAlumnoHorario">
+            <End Role="RolCiudadActivaHorario" EntitySet="RolCiudadActivaHorarioSet" />
+            <End Role="AlumnoHorario" EntitySet="AlumnoHorarioSet" />
+          </AssociationSet>
+          <AssociationSet Name="RolAlumnoAlumnoHorario" Association="ITC_DBPOwerModel.RolAlumnoAlumnoHorario">
+            <End Role="RolAlumno" EntitySet="RolAlumno" />
+            <End Role="AlumnoHorario" EntitySet="AlumnoHorarioSet" />
+          </AssociationSet>
           </EntityContainer>
-        <EntityType Name="DetalleCondicionEmpleado">
+        <EntityType Name="RolEmpleadoCondicion">
           <Key>
-            <PropertyRef Name="IdDetalleCondicionEmpleado" />
+            <PropertyRef Name="IdRolEmpleadoCondicion" />
           </Key>
-          <Property Name="IdDetalleCondicionEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleadoCondicion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="IdCondicionEmpleado" Type="Int32" Nullable="false" />
           <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.FK_RolEmpleadoDetalleCondicionEmpleado" FromRole="DetalleCondicionEmpleado" ToRole="RolEmpleado" />
+          <Property Name="MontoCondicion" Type="String" Nullable="false" >
+            <Documentation>
+              <Summary>Valor seguro Monotr</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="CondicionEmpleado" Relationship="ITC_DBPOwerModel.CondicionEmpleadoRolEmpleadoCondicion" FromRole="RolEmpleadoCondicion" ToRole="CondicionEmpleado" />
         </EntityType>
         <EntityType Name="EstadoAlumno">
           <Key>
             <PropertyRef Name="IdEstadoAlumno" />
           </Key>
           <Property Name="IdEstadoAlumno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DetalleEstadoAlumno" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DetalleEstadoAlumno" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" >
+            <Documentation>
+              <Summary>REGULAR/ADICIONAL/CAIDA</Summary>
+            </Documentation>
+          </Property>
           <NavigationProperty Name="RolAlumno" Relationship="ITC_DBPOwerModel.FK_RolAlumnoEstadoAlumno" FromRole="EstadoAlumno" ToRole="RolAlumno" />
         </EntityType>
         <EntityType Name="Permiso">
@@ -2864,16 +2933,10 @@
           <Property Name="TelAlternativo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="EstadoCivil" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Mail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RolAlumno" Relationship="ITC_DBPOwerModel.FK_PersonaRolAlumno" FromRole="Persona" ToRole="RolAlumno" />
           <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.FK_PersonaRolEmpleado" FromRole="Persona" ToRole="RolEmpleado" />
-          <NavigationProperty Name="RolVendedor" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor" FromRole="Persona" ToRole="RolVendedor" />
-          <NavigationProperty Name="RolVendedor1" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor1" FromRole="Persona" ToRole="RolVendedor" />
-          <NavigationProperty Name="RolVendedor2" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor2" FromRole="Persona" ToRole="RolVendedor" />
-          <NavigationProperty Name="AsignacionRecibo" Relationship="ITC_DBPOwerModel.PersonaAsignacionRecibo" FromRole="Persona" ToRole="AsignacionRecibo" />
           <NavigationProperty Name="RolLocador" Relationship="ITC_DBPOwerModel.PersonaRolLocador" FromRole="Persona" ToRole="RolLocador" />
-          <NavigationProperty Name="RolCobrador" Relationship="ITC_DBPOwerModel.PersonaRolCobrador" FromRole="Persona" ToRole="RolCobrador" />
-          <NavigationProperty Name="RendicionPersonaCiudad" Relationship="ITC_DBPOwerModel.PersonaRendicionPersonaCiudad" FromRole="Persona" ToRole="RendicionPersonaCiudad" />
           <NavigationProperty Name="Deposito" Relationship="ITC_DBPOwerModel.PersonaDeposito" FromRole="Persona" ToRole="Deposito" />
+          <NavigationProperty Name="RolAlumno" Relationship="ITC_DBPOwerModel.PersonaRolAlumno" FromRole="Persona" ToRole="RolAlumno" />
         </EntityType>
         <EntityType Name="RolAlumno">
           <Key>
@@ -2882,13 +2945,12 @@
           <Property Name="IdRolAlumno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdPersona" Type="Int32" Nullable="false" />
           <Property Name="IdCapacitacion" Type="Int32" Nullable="false" />
-          <Property Name="IdRolCiudadActivaHorario" Type="Int32" Nullable="false" />
           <Property Name="IdEstadoAlumno" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EstadoAlumno" Relationship="ITC_DBPOwerModel.FK_RolAlumnoEstadoAlumno" FromRole="RolAlumno" ToRole="EstadoAlumno" />
-          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.FK_PersonaRolAlumno" FromRole="RolAlumno" ToRole="Persona" />
           <NavigationProperty Name="PlanVendedorAlumno" Relationship="ITC_DBPOwerModel.RolAlumnoPlanVendedorAlumno" FromRole="RolAlumno" ToRole="PlanVendedorAlumno" />
           <NavigationProperty Name="Capacitacion" Relationship="ITC_DBPOwerModel.CapacitacionRolAlumno" FromRole="RolAlumno" ToRole="Capacitacion" />
-          <NavigationProperty Name="RolCiudadActivaHorario" Relationship="ITC_DBPOwerModel.RolCiudadActivaHorarioRolAlumno" FromRole="RolAlumno" ToRole="RolCiudadActivaHorario" />
+          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.PersonaRolAlumno" FromRole="RolAlumno" ToRole="Persona" />
+          <NavigationProperty Name="AlumnoHorario" Relationship="ITC_DBPOwerModel.RolAlumnoAlumnoHorario" FromRole="RolAlumno" ToRole="AlumnoHorario" />
         </EntityType>
         <EntityType Name="RolEmpleado">
           <Key>
@@ -2897,26 +2959,32 @@
           <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdPersona" Type="Int32" Nullable="false" />
           <Property Name="IdPuesto" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IdCondicionEmpleado" Type="Int32" Nullable="false" />
           <Property Name="CelCorp" Type="String" Nullable="false" />
           <NavigationProperty Name="DetalleCondicionEmpleado" Relationship="ITC_DBPOwerModel.FK_RolEmpleadoDetalleCondicionEmpleado" FromRole="RolEmpleado" ToRole="DetalleCondicionEmpleado" />
           <NavigationProperty Name="Permiso" Relationship="ITC_DBPOwerModel.FK_RolEmpleadoPermiso" FromRole="RolEmpleado" ToRole="Permiso" />
           <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.FK_PersonaRolEmpleado" FromRole="RolEmpleado" ToRole="Persona" />
           <NavigationProperty Name="CiudadPersonal" Relationship="ITC_DBPOwerModel.RolEmpleadoCiudadPersonal" FromRole="RolEmpleado" ToRole="CiudadPersonal" />
+          <NavigationProperty Name="RolVendedor" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor" FromRole="RolEmpleado" ToRole="RolVendedor" />
+          <NavigationProperty Name="RolVendedor1" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor1" FromRole="RolEmpleado" ToRole="RolVendedor" />
+          <NavigationProperty Name="RolVendedor2" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor2" FromRole="RolEmpleado" ToRole="RolVendedor" />
+          <NavigationProperty Name="AsignacionRecibo" Relationship="ITC_DBPOwerModel.RolEmpleadoAsignacionRecibo" FromRole="RolEmpleado" ToRole="AsignacionRecibo" />
+          <NavigationProperty Name="RendicionPersonaCiudad" Relationship="ITC_DBPOwerModel.RolEmpleadoRendicionPersonaCiudad" FromRole="RolEmpleado" ToRole="RendicionPersonaCiudad" />
+          <NavigationProperty Name="RolDocente" Relationship="ITC_DBPOwerModel.RolEmpleadoRolDocente" FromRole="RolEmpleado" ToRole="RolDocente" />
+          <Property Name="Usuario" Type="String" Nullable="false" />
+          <Property Name="Contraseña" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="RolVendedor">
           <Key>
             <PropertyRef Name="IdRolVendedor" />
           </Key>
           <Property Name="IdRolVendedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPersona" Type="Int32" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" />
           <Property Name="IdSubgerente" Type="Int32" Nullable="false" />
           <Property Name="IdGerente" Type="Int32" Nullable="false" />
-          <Property Name="CelCorp" Type="String" Nullable="false" />
-          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor" FromRole="RolVendedor" ToRole="Persona" />
-          <NavigationProperty Name="Persona1" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor1" FromRole="RolVendedor" ToRole="Persona" />
-          <NavigationProperty Name="Persona2" Relationship="ITC_DBPOwerModel.FK_PersonaRolVendedor2" FromRole="RolVendedor" ToRole="Persona" />
           <NavigationProperty Name="PlanVendedorAlumno" Relationship="ITC_DBPOwerModel.RolVendedorPlanVendedorAlumno" FromRole="RolVendedor" ToRole="PlanVendedorAlumno" />
+          <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor" FromRole="RolVendedor" ToRole="RolEmpleado" />
+          <NavigationProperty Name="RolEmpleado1" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor1" FromRole="RolVendedor" ToRole="RolEmpleado" />
+          <NavigationProperty Name="RolEmpleado2" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor2" FromRole="RolVendedor" ToRole="RolEmpleado" />
         </EntityType>
         <EntityType Name="AsignacionRecibo">
           <Key>
@@ -2925,9 +2993,9 @@
           <Property Name="IdAsignacionRecibo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" />
           <Property Name="IdRecibo" Type="Int32" Nullable="false" />
-          <Property Name="IdPersona" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.PersonaAsignacionRecibo" FromRole="AsignacionRecibo" ToRole="Persona" />
+          <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Recibo" Relationship="ITC_DBPOwerModel.ReciboAsignacionRecibo" FromRole="AsignacionRecibo" ToRole="Recibo" />
+          <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.RolEmpleadoAsignacionRecibo" FromRole="AsignacionRecibo" ToRole="RolEmpleado" />
         </EntityType>
         <EntityType Name="Linea">
           <Key>
@@ -3041,7 +3109,7 @@
         </EntityType>
         <Association Name="FK_RolEmpleadoDetalleCondicionEmpleado">
           <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.DetalleCondicionEmpleado" Role="DetalleCondicionEmpleado" Multiplicity="*" />
+          <End Type="ITC_DBPOwerModel.RolEmpleadoCondicion" Role="DetalleCondicionEmpleado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RolEmpleado">
               <PropertyRef Name="IdRolEmpleado" />
@@ -3087,18 +3155,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PersonaRolAlumno">
-          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.RolAlumno" Role="RolAlumno" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Persona">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="RolAlumno">
-              <PropertyRef Name="IdPersona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PersonaRolEmpleado">
           <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
           <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="*" />
@@ -3107,54 +3163,6 @@
               <PropertyRef Name="IdPersona" />
             </Principal>
             <Dependent Role="RolEmpleado">
-              <PropertyRef Name="IdPersona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersonaRolVendedor">
-          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Persona">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="RolVendedor">
-              <PropertyRef Name="IdPersona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersonaRolVendedor1">
-          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Persona">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="RolVendedor">
-              <PropertyRef Name="IdGerente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersonaRolVendedor2">
-          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Persona">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="RolVendedor">
-              <PropertyRef Name="IdSubgerente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="PersonaAsignacionRecibo">
-          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.AsignacionRecibo" Role="AsignacionRecibo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Persona">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="AsignacionRecibo">
               <PropertyRef Name="IdPersona" />
             </Dependent>
           </ReferentialConstraint>
@@ -3492,7 +3500,7 @@
           <NavigationProperty Name="Horario" Relationship="ITC_DBPOwerModel.HorarioRolCiudadActivaHorario" FromRole="RolCiudadActivaHorario" ToRole="Horario" />
           <NavigationProperty Name="Dia" Relationship="ITC_DBPOwerModel.DiaRolCiudadActivaHorario" FromRole="RolCiudadActivaHorario" ToRole="Dia" />
           <NavigationProperty Name="RolCiudadActiva" Relationship="ITC_DBPOwerModel.RolCiudadActivaRolCiudadActivaHorario" FromRole="RolCiudadActivaHorario" ToRole="RolCiudadActiva" />
-          <NavigationProperty Name="RolAlumno" Relationship="ITC_DBPOwerModel.RolCiudadActivaHorarioRolAlumno" FromRole="RolCiudadActivaHorario" ToRole="RolAlumno" />
+          <NavigationProperty Name="AlumnoHorario" Relationship="ITC_DBPOwerModel.RolCiudadActivaHorarioAlumnoHorario" FromRole="RolCiudadActivaHorario" ToRole="AlumnoHorario" />
         </EntityType>
         <EntityType Name="Dia">
           <Key>
@@ -3550,53 +3558,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="RolCiudadActivaHorarioRolAlumno">
-          <End Type="ITC_DBPOwerModel.RolCiudadActivaHorario" Role="RolCiudadActivaHorario" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.RolAlumno" Role="RolAlumno" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RolCiudadActivaHorario">
-              <PropertyRef Name="IdRolCiudadActivaHorario" />
-            </Principal>
-            <Dependent Role="RolAlumno">
-              <PropertyRef Name="IdRolCiudadActivaHorario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="RolCobrador">
-          <Key>
-            <PropertyRef Name="IdRolCobrador" />
-          </Key>
-          <Property Name="IdRolCobrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPersona" Type="Int32" Nullable="false" />
-          <Property Name="CelCorp" Type="String" Nullable="false" />
-          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.PersonaRolCobrador" FromRole="RolCobrador" ToRole="Persona" />
-        </EntityType>
-        <Association Name="PersonaRolCobrador">
-          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.RolCobrador" Role="RolCobrador" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Persona">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="RolCobrador">
-              <PropertyRef Name="IdPersona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="RendicionPersonaCiudad">
           <Key>
-            <PropertyRef Name="IdRendicionPersonaCiudad" />
+            <PropertyRef Name="IdRendicionEmpleadoCiudad" />
           </Key>
-          <Property Name="IdRendicionPersonaCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPersona" Type="Int32" Nullable="false" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" />
           <Property Name="IdRolCiudadActiva" Type="Int32" Nullable="false" />
           <Property Name="IdEstadoRendicion" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EstadoRendicion" Relationship="ITC_DBPOwerModel.EstadoRendicionRendicionCobradorCiudad" FromRole="RendicionCobradorCiudad" ToRole="EstadoRendicion" />
           <NavigationProperty Name="RolCiudadActiva" Relationship="ITC_DBPOwerModel.RolCiudadActivaRendicionCobradorCiudad" FromRole="RendicionCobradorCiudad" ToRole="RolCiudadActiva" />
-          <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.PersonaRendicionPersonaCiudad" FromRole="RendicionPersonaCiudad" ToRole="Persona" />
           <NavigationProperty Name="RendicionPago" Relationship="ITC_DBPOwerModel.RendicionPersonaCiudadRendicionPago" FromRole="RendicionPersonaCiudad" ToRole="RendicionPago" />
           <NavigationProperty Name="RendicionGasto" Relationship="ITC_DBPOwerModel.RendicionPersonaCiudadRendicionGasto" FromRole="RendicionPersonaCiudad" ToRole="RendicionGasto" />
           <NavigationProperty Name="RendicionDeposito" Relationship="ITC_DBPOwerModel.RendicionPersonaCiudadRendicionDeposito" FromRole="RendicionPersonaCiudad" ToRole="RendicionDeposito" />
+          <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.RolEmpleadoRendicionPersonaCiudad" FromRole="RendicionPersonaCiudad" ToRole="RolEmpleado" />
         </EntityType>
         <EntityType Name="EstadoRendicion">
           <Key>
@@ -3716,18 +3691,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="PersonaRendicionPersonaCiudad">
-          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.RendicionPersonaCiudad" Role="RendicionPersonaCiudad" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Persona">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="RendicionPersonaCiudad">
-              <PropertyRef Name="IdPersona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="ItemPagado">
           <Key>
             <PropertyRef Name="IdItemPagado" />
@@ -3753,7 +3716,7 @@
             <PropertyRef Name="IdRendicionPago" />
           </Key>
           <Property Name="IdRendicionPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdRendicionPersonaCiudad" Type="Int32" Nullable="false" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="Int32" Nullable="false" />
           <Property Name="IdPago" Type="Int32" Nullable="false" />
           <NavigationProperty Name="RendicionPersonaCiudad" Relationship="ITC_DBPOwerModel.RendicionPersonaCiudadRendicionPago" FromRole="RendicionPago" ToRole="RendicionPersonaCiudad" />
           <NavigationProperty Name="Pago" Relationship="ITC_DBPOwerModel.PagoRendicionPago" FromRole="RendicionPago" ToRole="Pago" />
@@ -3763,10 +3726,10 @@
           <End Type="ITC_DBPOwerModel.RendicionPago" Role="RendicionPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RendicionPersonaCiudad">
-              <PropertyRef Name="IdRendicionPersonaCiudad" />
+              <PropertyRef Name="IdRendicionEmpleadoCiudad" />
             </Principal>
             <Dependent Role="RendicionPago">
-              <PropertyRef Name="IdRendicionPersonaCiudad" />
+              <PropertyRef Name="IdRendicionEmpleadoCiudad" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3832,7 +3795,7 @@
             <PropertyRef Name="IdRendicionGasto" />
           </Key>
           <Property Name="IdRendicionGasto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdRendicionPersonaCiudad" Type="Int32" Nullable="false" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="Int32" Nullable="false" />
           <NavigationProperty Name="RendicionPersonaCiudad" Relationship="ITC_DBPOwerModel.RendicionPersonaCiudadRendicionGasto" FromRole="RendicionGasto" ToRole="RendicionPersonaCiudad" />
           <Property Name="IdGastoBase" Type="Int32" Nullable="false" />
           <Property Name="Monto" Type="String" Nullable="false" />
@@ -3846,10 +3809,10 @@
           <End Type="ITC_DBPOwerModel.RendicionGasto" Role="RendicionGasto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RendicionPersonaCiudad">
-              <PropertyRef Name="IdRendicionPersonaCiudad" />
+              <PropertyRef Name="IdRendicionEmpleadoCiudad" />
             </Principal>
             <Dependent Role="RendicionGasto">
-              <PropertyRef Name="IdRendicionPersonaCiudad" />
+              <PropertyRef Name="IdRendicionEmpleadoCiudad" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3870,7 +3833,7 @@
             <PropertyRef Name="IdRendicionDeposito" />
           </Key>
           <Property Name="IdRendicionDeposito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdRendicionPersonaCiudad" Type="Int32" Nullable="false" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="Int32" Nullable="false" />
           <NavigationProperty Name="RendicionPersonaCiudad" Relationship="ITC_DBPOwerModel.RendicionPersonaCiudadRendicionDeposito" FromRole="RendicionDeposito" ToRole="RendicionPersonaCiudad" />
           <Property Name="IdDeposito" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Deposito" Relationship="ITC_DBPOwerModel.DepositoRendicionDeposito" FromRole="RendicionDeposito" ToRole="Deposito" />
@@ -3880,10 +3843,10 @@
           <End Type="ITC_DBPOwerModel.RendicionDeposito" Role="RendicionDeposito" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RendicionPersonaCiudad">
-              <PropertyRef Name="IdRendicionPersonaCiudad" />
+              <PropertyRef Name="IdRendicionEmpleadoCiudad" />
             </Principal>
             <Dependent Role="RendicionDeposito">
-              <PropertyRef Name="IdRendicionPersonaCiudad" />
+              <PropertyRef Name="IdRendicionEmpleadoCiudad" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4890,6 +4853,157 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="RolEmpleadoRolVendedor">
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Principal>
+            <Dependent Role="RolVendedor">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RolEmpleadoRolVendedor1">
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Principal>
+            <Dependent Role="RolVendedor">
+              <PropertyRef Name="IdSubgerente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RolEmpleadoRolVendedor2">
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Principal>
+            <Dependent Role="RolVendedor">
+              <PropertyRef Name="IdGerente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RolEmpleadoAsignacionRecibo">
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.AsignacionRecibo" Role="AsignacionRecibo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Principal>
+            <Dependent Role="AsignacionRecibo">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RolEmpleadoRendicionPersonaCiudad">
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RendicionPersonaCiudad" Role="RendicionPersonaCiudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Principal>
+            <Dependent Role="RendicionPersonaCiudad">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CondicionEmpleado">
+          <Key>
+            <PropertyRef Name="IdCondicionEmpleado" />
+          </Key>
+          <Property Name="IdCondicionEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleCOndicionEmpleado" Type="String" Nullable="false" />
+          <NavigationProperty Name="RolEmpleadoCondicion" Relationship="ITC_DBPOwerModel.CondicionEmpleadoRolEmpleadoCondicion" FromRole="CondicionEmpleado" ToRole="RolEmpleadoCondicion" />
+        </EntityType>
+        <Association Name="CondicionEmpleadoRolEmpleadoCondicion">
+          <End Type="ITC_DBPOwerModel.CondicionEmpleado" Role="CondicionEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolEmpleadoCondicion" Role="RolEmpleadoCondicion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CondicionEmpleado">
+              <PropertyRef Name="IdCondicionEmpleado" />
+            </Principal>
+            <Dependent Role="RolEmpleadoCondicion">
+              <PropertyRef Name="IdCondicionEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RolDocente">
+          <Key>
+            <PropertyRef Name="IdRolDocente" />
+          </Key>
+          <Property Name="IdRolDocente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.RolEmpleadoRolDocente" FromRole="RolDocente" ToRole="RolEmpleado" />
+        </EntityType>
+        <Association Name="RolEmpleadoRolDocente">
+          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolDocente" Role="RolDocente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolEmpleado">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Principal>
+            <Dependent Role="RolDocente">
+              <PropertyRef Name="IdRolEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AlumnoHorario">
+          <Key>
+            <PropertyRef Name="IdAlumnoHorario" />
+          </Key>
+          <Property Name="IdAlumnoHorario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolAlumno" Type="Int32" Nullable="false" />
+          <Property Name="IdRolCiudadActivaHorario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RolCiudadActivaHorario" Relationship="ITC_DBPOwerModel.RolCiudadActivaHorarioAlumnoHorario" FromRole="AlumnoHorario" ToRole="RolCiudadActivaHorario" />
+          <NavigationProperty Name="RolAlumno" Relationship="ITC_DBPOwerModel.RolAlumnoAlumnoHorario" FromRole="AlumnoHorario" ToRole="RolAlumno" />
+          <Property Name="TipoHorario" Type="String" Nullable="false" >
+            <Documentation>
+              <Summary>PRINCIPAL/ROTATIVO</Summary>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <Association Name="PersonaRolAlumno">
+          <End Type="ITC_DBPOwerModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.RolAlumno" Role="RolAlumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="IdPersona" />
+            </Principal>
+            <Dependent Role="RolAlumno">
+              <PropertyRef Name="IdPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RolCiudadActivaHorarioAlumnoHorario">
+          <End Type="ITC_DBPOwerModel.RolCiudadActivaHorario" Role="RolCiudadActivaHorario" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.AlumnoHorario" Role="AlumnoHorario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolCiudadActivaHorario">
+              <PropertyRef Name="IdRolCiudadActivaHorario" />
+            </Principal>
+            <Dependent Role="AlumnoHorario">
+              <PropertyRef Name="IdRolCiudadActivaHorario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RolAlumnoAlumnoHorario">
+          <End Type="ITC_DBPOwerModel.RolAlumno" Role="RolAlumno" Multiplicity="1" />
+          <End Type="ITC_DBPOwerModel.AlumnoHorario" Role="AlumnoHorario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RolAlumno">
+              <PropertyRef Name="IdRolAlumno" />
+            </Principal>
+            <Dependent Role="AlumnoHorario">
+              <PropertyRef Name="IdRolAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4897,12 +5011,13 @@
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ITC_DBPOwerModelStoreContainer" CdmEntityContainer="ITC_DBPOwerEntities">
     <EntitySetMapping Name="DetalleCondicionEmpleado">
-      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.DetalleCondicionEmpleado)">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolEmpleadoCondicion)">
         <MappingFragment StoreEntitySet="DetalleCondicionEmpleado">
-          <ScalarProperty Name="IdDetalleCondicionEmpleado" ColumnName="IdDetalleCondicionEmpleado" />
+          <ScalarProperty Name="IdRolEmpleadoCondicion" ColumnName="IdRolEmpleadoCondicion" />
           <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
+          <ScalarProperty Name="MontoCondicion" ColumnName="MontoCondicion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -4958,7 +5073,6 @@
           <ScalarProperty Name="IdRolAlumno" ColumnName="IdRolAlumno" />
           <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
           <ScalarProperty Name="IdCapacitacion" ColumnName="IdCapacitacion" />
-          <ScalarProperty Name="IdRolCiudadActivaHorario" ColumnName="IdRolCiudadActivaHorario" />
           <ScalarProperty Name="IdEstadoAlumno" ColumnName="IdEstadoAlumno" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -4969,8 +5083,9 @@
           <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
           <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
           <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
-          <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
           <ScalarProperty Name="CelCorp" ColumnName="CelCorp" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -4978,10 +5093,9 @@
       <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolVendedor)">
         <MappingFragment StoreEntitySet="RolVendedor">
           <ScalarProperty Name="IdRolVendedor" ColumnName="IdRolVendedor" />
-          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
           <ScalarProperty Name="IdSubgerente" ColumnName="IdSubgerente" />
           <ScalarProperty Name="IdGerente" ColumnName="IdGerente" />
-          <ScalarProperty Name="CelCorp" ColumnName="CelCorp" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -4991,7 +5105,7 @@
           <ScalarProperty Name="IdAsignacionRecibo" ColumnName="IdAsignacionRecibo" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="IdRecibo" ColumnName="IdRecibo" />
-          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -5194,20 +5308,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="RolCobradorSet">
-      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolCobrador)">
-        <MappingFragment StoreEntitySet="RolCobradorSet">
-          <ScalarProperty Name="IdRolCobrador" ColumnName="IdRolCobrador" />
-          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
-          <ScalarProperty Name="CelCorp" ColumnName="CelCorp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="RendicionPersonaCiudadSet">
       <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RendicionPersonaCiudad)">
         <MappingFragment StoreEntitySet="RendicionPersonaCiudadSet">
-          <ScalarProperty Name="IdRendicionPersonaCiudad" ColumnName="IdRendicionPersonaCiudad" />
-          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="IdRendicionEmpleadoCiudad" ColumnName="IdRendicionEmpleadoCiudad" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
           <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
           <ScalarProperty Name="IdEstadoRendicion" ColumnName="IdEstadoRendicion" />
         </MappingFragment>
@@ -5273,7 +5378,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RendicionPago)">
         <MappingFragment StoreEntitySet="RendicionPagoSet">
           <ScalarProperty Name="IdRendicionPago" ColumnName="IdRendicionPago" />
-          <ScalarProperty Name="IdRendicionPersonaCiudad" ColumnName="IdRendicionPersonaCiudad" />
+          <ScalarProperty Name="IdRendicionEmpleadoCiudad" ColumnName="IdRendicionEmpleadoCiudad" />
           <ScalarProperty Name="IdPago" ColumnName="IdPago" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -5301,7 +5406,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RendicionGasto)">
         <MappingFragment StoreEntitySet="RendicionGastoSet">
           <ScalarProperty Name="IdRendicionGasto" ColumnName="IdRendicionGasto" />
-          <ScalarProperty Name="IdRendicionPersonaCiudad" ColumnName="IdRendicionPersonaCiudad" />
+          <ScalarProperty Name="IdRendicionEmpleadoCiudad" ColumnName="IdRendicionEmpleadoCiudad" />
           <ScalarProperty Name="IdGastoBase" ColumnName="IdGastoBase" />
           <ScalarProperty Name="Monto" ColumnName="Monto" />
           <ScalarProperty Name="IdFormaPago" ColumnName="IdFormaPago" />
@@ -5312,7 +5417,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RendicionDeposito)">
         <MappingFragment StoreEntitySet="RendicionDepositoSet">
           <ScalarProperty Name="IdRendicionDeposito" ColumnName="IdRendicionDeposito" />
-          <ScalarProperty Name="IdRendicionPersonaCiudad" ColumnName="IdRendicionPersonaCiudad" />
+          <ScalarProperty Name="IdRendicionEmpleadoCiudad" ColumnName="IdRendicionEmpleadoCiudad" />
           <ScalarProperty Name="IdDeposito" ColumnName="IdDeposito" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -5690,6 +5795,32 @@
           <ScalarProperty Name="IdGastoLocalPagoLocal" ColumnName="IdGastoLocalPagoLocal" />
           <ScalarProperty Name="IdGastoLocal" ColumnName="IdGastoLocal" />
           <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CondicionEmpleadoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.CondicionEmpleado)">
+        <MappingFragment StoreEntitySet="CondicionEmpleadoSet">
+          <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
+          <ScalarProperty Name="DetalleCOndicionEmpleado" ColumnName="DetalleCOndicionEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolDocenteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.RolDocente)">
+        <MappingFragment StoreEntitySet="RolDocenteSet">
+          <ScalarProperty Name="IdRolDocente" ColumnName="IdRolDocente" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlumnoHorarioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.AlumnoHorario)">
+        <MappingFragment StoreEntitySet="AlumnoHorarioSet">
+          <ScalarProperty Name="IdAlumnoHorario" ColumnName="IdAlumnoHorario" />
+          <ScalarProperty Name="IdRolAlumno" ColumnName="IdRolAlumno" />
+          <ScalarProperty Name="IdRolCiudadActivaHorario" ColumnName="IdRolCiudadActivaHorario" />
+          <ScalarProperty Name="TipoHorario" ColumnName="TipoHorario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

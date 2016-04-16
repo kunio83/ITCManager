@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="27">
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.DetalleCondicionEmpleado" Width="1.5" PointX="43" PointY="12.75" FillColor="255, 128, 128" />
+      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolEmpleadoCondicion" Width="2.75" PointX="43.375" PointY="11.75" FillColor="255, 128, 128" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoAlumno" Width="1.5" PointX="33.75" PointY="21.375" FillColor="255, 128, 128" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.Permiso" Width="1.5" PointX="43" PointY="15.5" FillColor="255, 128, 128" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.PermisoAcceso" Width="1.5" PointX="45.25" PointY="15.5" FillColor="255, 128, 128" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.Persona" Width="1.5" PointX="38.5" PointY="13.875" FillColor="192, 0, 0" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.Permiso" Width="1.5" PointX="43" PointY="15.625" FillColor="255, 128, 128" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.PermisoAcceso" Width="1.5" PointX="45" PointY="15" FillColor="255, 128, 128" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.Persona" Width="1.5" PointX="38.375" PointY="13.75" FillColor="192, 0, 0" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolAlumno" Width="2.375" PointX="30.125" PointY="19.75" FillColor="192, 0, 0" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolEmpleado" Width="1.5" PointX="40.75" PointY="13.75" FillColor="192, 0, 0" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolVendedor" Width="1.5" PointX="28.625" PointY="15.5" FillColor="192, 0, 0" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.AsignacionRecibo" Width="1.875" PointX="33.25" PointY="13.625" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolEmpleado" Width="1.75" PointX="40.75" PointY="13.875" FillColor="192, 0, 0" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolVendedor" Width="1.5" PointX="29.25" PointY="15.625" FillColor="192, 0, 0" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.AsignacionRecibo" Width="1.875" PointX="38.125" PointY="10.875" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Linea" Width="1.5" PointX="47.5" PointY="16.75" FillColor="255, 255, 128" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.LineaCiudad" Width="1.5" PointX="49.75" PointY="17.5" FillColor="255, 255, 128" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Ciudad" Width="1.5" PointX="46.875" PointY="18.5" FillColor="Yellow" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Localidad" Width="1.5" PointX="49.625" PointY="20.125" FillColor="255, 255, 128" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolCiudadEnProceso" Width="2.375" PointX="43.375" PointY="18.25" FillColor="Yellow" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolCiudadEnProceso" Width="2.375" PointX="43.75" PointY="18.125" FillColor="Yellow" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolCiudadActiva" Width="1.75" PointX="40.25" PointY="19.375" FillColor="Yellow" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.CiudadPersonal" Width="1.5" PointX="48" PointY="13.625" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.CiudadPersonal" Width="1.5" PointX="47.75" PointY="13.625" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.CiudadActivaLocaciones" Width="2" PointX="46" PointY="22.5" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Locacion" Width="1.5" PointX="47.625" PointY="25.25" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolLocador" Width="1.5" PointX="42.125" PointY="23" FillColor="192, 0, 0" />
@@ -28,12 +28,7 @@
         <AssociationConnector Association="ITC_DBPOwerModel.FK_RolAlumnoEstadoAlumno" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_PermisoPermisoAcceso" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_RolEmpleadoPermiso" />
-        <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolAlumno" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolEmpleado" />
-        <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolVendedor" />
-        <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolVendedor1" />
-        <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolVendedor2" />
-        <AssociationConnector Association="ITC_DBPOwerModel.PersonaAsignacionRecibo" />
         <AssociationConnector Association="ITC_DBPOwerModel.PersonaRolLocador" />
         <AssociationConnector Association="ITC_DBPOwerModel.LineaLineaCiudad" />
         <AssociationConnector Association="ITC_DBPOwerModel.CiudadLineaCiudad" />
@@ -67,11 +62,8 @@
         <AssociationConnector Association="ITC_DBPOwerModel.HorarioRolCiudadActivaHorario" />
         <AssociationConnector Association="ITC_DBPOwerModel.DiaRolCiudadActivaHorario" />
         <AssociationConnector Association="ITC_DBPOwerModel.RolCiudadActivaRolCiudadActivaHorario" />
-        <AssociationConnector Association="ITC_DBPOwerModel.RolCiudadActivaHorarioRolAlumno" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolCobrador" Width="1.5" PointX="40.875" PointY="17.125" FillColor="192, 0, 0" />
-        <AssociationConnector Association="ITC_DBPOwerModel.PersonaRolCobrador" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.RendicionPersonaCiudad" Width="2.25" PointX="24.875" PointY="21.5" FillColor="Purple" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoRendicion" Width="1.875" PointX="21.875" PointY="20.625" FillColor="Violet" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RendicionPersonaCiudad" Width="2.25" PointX="24.875" PointY="21.625" FillColor="Purple" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoRendicion" Width="1.875" PointX="23.25" PointY="19.125" FillColor="Violet" />
         <AssociationConnector Association="ITC_DBPOwerModel.EstadoRendicionRendicionCobradorCiudad" />
         <AssociationConnector Association="ITC_DBPOwerModel.RolCiudadActivaRendicionCobradorCiudad" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Pago" Width="1.5" PointX="24" PointY="25.375" FillColor="Purple" />
@@ -80,7 +72,6 @@
         <AssociationConnector Association="ITC_DBPOwerModel.PlanVendedorAlumnoPago" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.PagoTarjeta" Width="1.625" PointX="29.25" PointY="27.375" FillColor="192, 0, 192" />
         <AssociationConnector Association="ITC_DBPOwerModel.PagoPagoTarjeta" />
-        <AssociationConnector Association="ITC_DBPOwerModel.PersonaRendicionPersonaCiudad" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.ItemPagado" Width="1.5" PointX="20.625" PointY="26.875" FillColor="Violet" />
         <AssociationConnector Association="ITC_DBPOwerModel.ItemPagadoPago" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RendicionPago" Width="2.375" PointX="21.375" PointY="23" FillColor="Purple" />
@@ -93,7 +84,7 @@
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RendicionGasto" Width="2" PointX="27.125" PointY="33.375" FillColor="Purple" />
         <AssociationConnector Association="ITC_DBPOwerModel.RendicionPersonaCiudadRendicionGasto" />
         <AssociationConnector Association="ITC_DBPOwerModel.GastoBaseRendicionGasto" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.RendicionDeposito" Width="2.625" PointX="25.5" PointY="29.125" FillColor="Purple" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RendicionDeposito" Width="2.625" PointX="26" PointY="29.125" FillColor="Purple" />
         <AssociationConnector Association="ITC_DBPOwerModel.RendicionPersonaCiudadRendicionDeposito" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Deposito" Width="2.125" PointX="29.5" PointY="32" FillColor="192, 0, 192" />
         <AssociationConnector Association="ITC_DBPOwerModel.DepositoRendicionDeposito" />
@@ -101,13 +92,7 @@
         <AssociationConnector Association="ITC_DBPOwerModel.CuentaBancoDeposito" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoDeposito" Width="2.125" PointX="30.25" PointY="35.625" FillColor="Violet" />
         <AssociationConnector Association="ITC_DBPOwerModel.EstadoDepositoDeposito" />
-        <AssociationConnector Association="ITC_DBPOwerModel.PersonaDeposito" ManuallyRouted="true" >
-          <ConnectorPoint PointX="38.5" PointY="16.597076972503896" />
-          <ConnectorPoint PointX="38.125" PointY="19.692865085737189" />
-          <ConnectorPoint PointX="38.125" PointY="31.462283573473261" />
-          <ConnectorPoint PointX="32" PointY="31.462283573473261" />
-          <ConnectorPoint PointX="32" PointY="31.625" />
-          <ConnectorPoint PointX="31.625" PointY="32" />
+        <AssociationConnector Association="ITC_DBPOwerModel.PersonaDeposito" ManuallyRouted="false" >
         </AssociationConnector>
         <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoPagoTarjeta" Width="1.5" PointX="31.75" PointY="29.625" FillColor="Violet" />
         <AssociationConnector Association="ITC_DBPOwerModel.EstadoPagoTarjetaPagoTarjeta" />
@@ -159,18 +144,18 @@
         <AssociationConnector Association="ITC_DBPOwerModel.PagoRendicionVentaEquipo" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoVenta" Width="1.5" PointX="25.875" PointY="37.125" FillColor="255, 128, 255" />
         <AssociationConnector Association="ITC_DBPOwerModel.EstadoVentaRendicionVentaEquipo" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.Recibo" Width="1.5" PointX="30.25" PointY="12.5" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.Recibo" Width="1.5" PointX="35" PointY="11.25" />
         <AssociationConnector Association="ITC_DBPOwerModel.ReciboAsignacionRecibo" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.ChequePropio" Width="1.875" PointX="44.5" PointY="35.375" FillColor="0, 192, 0" />
         <AssociationConnector Association="ITC_DBPOwerModel.CuentaBancoChequePropio" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.PagoLocalChequePropio" Width="1.875" PointX="47.375" PointY="35" FillColor="0, 192, 0" />
         <AssociationConnector Association="ITC_DBPOwerModel.ChequePropioCompraChequePropio" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.FormaPagoLocal" Width="1.5" PointX="58.875" PointY="29.5" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.FormaPagoLocal" Width="1.5" PointX="57.375" PointY="28" FillColor="0, 192, 0" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.CuentaBancoTercero" Width="2.5" PointX="55.5" PointY="36.875" FillColor="0, 192, 0" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Transferencia" Width="1.875" PointX="52.75" PointY="37.25" FillColor="Green" />
         <AssociationConnector Association="ITC_DBPOwerModel.CuentaBancoTransferencia" />
         <AssociationConnector Association="ITC_DBPOwerModel.CuentaBancoTerceroTransferencia" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoTransferencia" Width="1.5" PointX="50.375" PointY="37.125" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoTransferencia" Width="1.5" PointX="50.625" PointY="36.875" FillColor="0, 192, 0" />
         <AssociationConnector Association="ITC_DBPOwerModel.EstadoTransferenciaTransferencia" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.PagoLocalTransferencia" Width="2.375" PointX="56.5" PointY="33.75" FillColor="0, 192, 0" />
         <AssociationConnector Association="ITC_DBPOwerModel.TransferenciaCompraTransferencia" />
@@ -188,6 +173,20 @@
         <EntityTypeShape EntityType="ITC_DBPOwerModel.GastoLocalPagoLocal" Width="2.125" PointX="56" PointY="25.625" FillColor="0, 192, 0" />
         <AssociationConnector Association="ITC_DBPOwerModel.GastoLocalGastoLocalPagoLocal" />
         <AssociationConnector Association="ITC_DBPOwerModel.PagoLocalGastoLocalPagoLocal" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor1" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor2" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoAsignacionRecibo" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoRendicionPersonaCiudad" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.CondicionEmpleado" Width="1.5" PointX="46.75" PointY="11.5" FillColor="255, 128, 128" />
+        <AssociationConnector Association="ITC_DBPOwerModel.CondicionEmpleadoRolEmpleadoCondicion" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.RolDocente" Width="1.5" PointX="31.875" PointY="14.125" FillColor="192, 0, 0" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoRolDocente" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.AlumnoHorario" Width="2" PointX="25.875" PointY="16" FillColor="255, 128, 0" />
+        <AssociationConnector Association="ITC_DBPOwerModel.PersonaRolAlumno" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolCiudadActivaHorarioAlumnoHorario" />
+        <AssociationConnector Association="ITC_DBPOwerModel.RolAlumnoAlumnoHorario" />
+        <EntityTypeShape EntityType="ITC_DBPOwerModel.AlumnoPresentismo" Width="1.5" PointX="20.25" PointY="20.125" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

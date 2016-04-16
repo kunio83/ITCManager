@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnoHorario.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="ArmadoEquipo.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -83,6 +86,9 @@
     <Compile Include="CompraPagoLocal.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="CondicionEmpleado.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="CuentaBanco.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -96,9 +102,6 @@
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="DetalleCompra.cs">
-      <DependentUpon>ModeloITCCore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DetalleCondicionEmpleado.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="Dia.cs">
@@ -257,10 +260,13 @@
     <Compile Include="RolCiudadEnProceso.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
-    <Compile Include="RolCobrador.cs">
+    <Compile Include="RolDocente.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RolEmpleado.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolEmpleadoCondicion.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RolLocacionAlojamiento.cs">
