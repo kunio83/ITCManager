@@ -12,12 +12,15 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class RolCobrador
+    public partial class RolEmpleadoCondicion
     {
-        public int IdRolCobrador { get; set; }
-        public int IdPersona { get; set; }
-        public string CelCorp { get; set; }
+        public int IdRolEmpleadoCondicion { get; set; }
+        public int IdRolEmpleado { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public int IdCondicionEmpleado { get; set; }
+        public string MontoCondicion { get; set; }
     
-        public virtual Persona Persona { get; set; }
+        public virtual RolEmpleado RolEmpleado { get; set; }
+        public virtual CondicionEmpleado CondicionEmpleado { get; set; }
     }
 }

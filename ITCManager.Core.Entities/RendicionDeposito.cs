@@ -15,7 +15,7 @@ namespace ITCManager.Core.Entities
     public partial class RendicionDeposito
     {
         public int IdRendicionDeposito { get; set; }
-        public int IdRendicionPersonaCiudad { get; set; }
+        public int IdRendicionEmpleadoCiudad { get; set; }
         public int IdDeposito { get; set; }
     
         public virtual RendicionPersonaCiudad RendicionPersonaCiudad { get; set; }

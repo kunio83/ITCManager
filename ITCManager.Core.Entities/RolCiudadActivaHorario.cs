@@ -17,7 +17,7 @@ namespace ITCManager.Core.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RolCiudadActivaHorario()
         {
-            this.RolAlumno = new HashSet<RolAlumno>();
+            this.AlumnoHorario = new HashSet<AlumnoHorario>();
         }
     
         public int IdRolCiudadActivaHorario { get; set; }
@@ -29,6 +29,6 @@ namespace ITCManager.Core.Entities
         public virtual Dia Dia { get; set; }
         public virtual RolCiudadActiva RolCiudadActiva { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolAlumno> RolAlumno { get; set; }
+        public virtual ICollection<AlumnoHorario> AlumnoHorario { get; set; }
     }
 }
