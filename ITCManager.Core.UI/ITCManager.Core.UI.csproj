@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingSouceHelper.cs" />
     <Compile Include="Forms\Base.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,12 +86,20 @@
     <Compile Include="Forms\Controles\BottomBar.Designer.cs">
       <DependentUpon>BottomBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Controles\miTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controles\miTextBox.Designer.cs">
+      <DependentUpon>miTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmCargaDatos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmCargaDatos.Designer.cs">
       <DependentUpon>frmCargaDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CargaDatosHelper.cs" />
+    <Compile Include="Forms\ICargaDatosHelper.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controles\BottomBar.resx">
       <DependentUpon>BottomBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controles\miTextBox.resx">
+      <DependentUpon>miTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCargaDatos.resx">
       <DependentUpon>frmCargaDatos.cs</DependentUpon>
@@ -152,87 +164,6 @@
       <DependentUpon>ITC_DBPOwerDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.ArmadoEquipo.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.AsignacionCiudadEquipos.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.AsignacionRecibo.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.BaseEntity.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Capacitacion.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Cheque.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.ChequePropio.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Ciudad.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.CiudadActivaLocaciones.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.CiudadEquipos.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.CiudadPersonal.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.CiudadProductos.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.CoeficTarjetas.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Compra.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.CompraPagoLocal.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.CuentaBanco.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.CuentaBancoTercero.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Deposito.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.DetalleArmadoEquipo.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.DetalleCompra.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.DetalleCondicionEmpleado.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Dia.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.EntityRepository.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.EstadoAlumno.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.EstadoAsignacionEquipo.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.EstadoCheque.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.EstadoCompra.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.EstadoDeposito.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.EstadoPagoTarjeta.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.EstadoRendicion.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.EstadoTransferencia.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.EstadoVenta.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.FormaPago.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.FormaPagoLocal.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.GastoBase.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.GastoCheque.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.GastoLocal.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.GastoLocalPagoLocal.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Horario.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.ItemPagado.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Linea.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.LineaCiudad.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Locacion.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.LocacionRolLocador.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Localidad.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Pago.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.PagoCheque.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.PagoLocal.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.PagoLocalCheque.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.PagoLocalChequePropio.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.PagoLocalTarjeta.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.PagoLocalTransferencia.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.PagoTarjeta.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Permiso.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.PermisoAcceso.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Persona.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.PlanBase.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.PlanVendedorAlumno.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Productos.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Proveedor.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Recibo.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RendicionDeposito.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RendicionGasto.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RendicionPago.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RendicionPersonaCiudad.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RendicionVentaEquipo.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolAlumno.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolCiudadActiva.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolCiudadActivaGastos.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolCiudadActivaHorario.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolCiudadActivaPlan.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolCiudadEnProceso.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolCobrador.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolEmpleado.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolLocacionAlojamiento.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolLocacionSalon.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolLocador.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.RolVendedor.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.TarjetaPropia.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.TipoCheque.datasource" />
-    <None Include="Properties\DataSources\ITCManager.Core.Entities.Transferencia.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

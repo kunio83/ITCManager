@@ -18,50 +18,68 @@ namespace ITCManager.Core.UI.Forms
         public frmCargaDatos()
         {
             InitializeComponent();
-            cargaInicio();
-
-
         }
 
-        void cargaInicio()
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            cargarDataGrid();
+            mtabCargaDatos.SelectTab(tabFormu);
+        }
+
+        void cargarTabCargaDatos()
+        {
+            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.Persona' table. You can move, or remove it, as needed.
+            //this.entityTableAdapter.Fill(this.iTC_DBPOwerDataSet.Persona);
+            //// TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.Persona' table. You can move, or remove it, as needed.
+            //this.entityTableAdapter.Fill(this.iTC_DBPOwerDataSet.Persona);
+        }
+
+        private void frmCargaDatos_Load(object sender, EventArgs e)
         {
             mtabCargaDatos.SelectTab("tabSelect");
-            cargarCombo();
+            cargarComboTablas();
         }
 
-        void cargarCombo()
+        private void personaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            //this.entityBindingSource.EndEdit();
+            //this.tableAdapterManager.UpdateAll(this.iTC_DBPOwerDataSet);
+
+        }
+
+        private void cargarComboTablas()
         {
             cmbTablas.DataSource = EntityRepository.GetAllEntities();
             cmbTablas.DisplayMember = "Name";
         }
 
-        private void mtabCargaDatos_TabIndexChanged(object sender, EventArgs e)
+        private void cargarDataGrid()
         {
+            //Verifico el nombre por las pinches terminaciones SET hasta que los saquemos
+            var tablaActual = getNombreTablaActual();
+            var dataSet = BindingSouceHelper.ObtenerDataSet(tablaActual, iTC_DBPOwerDataSet);
+            var tableAdapter = BindingSouceHelper.ObtenerTableAdapter(tablaActual + "TableAdapter", tableAdapterManager1);
+
+            bindingSource1.DataSource = dataSet;
+            dgvDatos.DataSource = bindingSource1;
+            bindingNavigator1.BindingSource = bindingSource1;
+            BindingSouceHelper.FillTableAdapter(tablaActual, tableAdapter, iTC_DBPOwerDataSet);
+
+            dgvDatos.Refresh();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private String getNombreTablaActual()
         {
-            cargarTabFormulario();
-        }
+            var selected = cmbTablas.Text;
 
-        private void cargarTabFormulario()
-        {
-            var selectedType = (Type)cmbTablas.SelectedItem;
-            var entity = Activator.CreateInstance(selectedType);
-            mtabCargaDatos.SelectTab(tabFormu);
-            cargarDatosDataGrid(entity);
-        }
+            if (iTC_DBPOwerDataSet.Tables.Contains(selected))
+                return selected;
+            else if (iTC_DBPOwerDataSet.Tables.Contains(selected + "Set"))
+                return selected + "Set";
 
-        private void cargarDatosDataGrid(Object entity)
-        {
-            var dataSource = new BindingList<Persona>(RolHelper.GetPersonaEmpleados().ToList());
-            dgvCarga.DataSource = dataSource;
-            dgvCarga.Refresh();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            return String.Empty;
         }
     }
 }
