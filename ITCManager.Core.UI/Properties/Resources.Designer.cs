@@ -103,6 +103,16 @@ namespace ITCManager.Core.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnSave_Image {
+            get {
+                object obj = ResourceManager.GetObject("btnSave.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HORIZONTAL_PNG {
             get {
                 object obj = ResourceManager.GetObject("HORIZONTAL PNG", resourceCulture);

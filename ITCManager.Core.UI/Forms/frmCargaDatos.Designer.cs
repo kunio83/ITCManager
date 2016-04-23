@@ -38,7 +38,7 @@
             this.tabFormu = new MetroFramework.Controls.MetroTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -50,19 +50,20 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.iTC_DBPOwerDataSet = new ITCManager.Core.UI.ITC_DBPOwerDataSet();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager1 = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
+            this.tableAdapterManager = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mtabCargaDatos.SuspendLayout();
             this.tabSelect.SuspendLayout();
             this.tabFormu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
+            this.bindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mtabCargaDatos
@@ -130,10 +131,7 @@
             // 
             // tabFormu
             // 
-            this.tabFormu.AutoScroll = true;
             this.tabFormu.Controls.Add(this.tableLayoutPanel1);
-            this.tabFormu.HorizontalScrollbar = true;
-            this.tabFormu.HorizontalScrollbarBarColor = true;
             this.tabFormu.Location = new System.Drawing.Point(4, 35);
             this.tabFormu.Name = "tabFormu";
             this.tabFormu.Size = new System.Drawing.Size(978, 497);
@@ -141,17 +139,16 @@
             this.tabFormu.TabIndex = 1;
             this.tabFormu.Text = "Formulario";
             this.tabFormu.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.tabFormu.VerticalScrollbar = true;
-            this.tabFormu.VerticalScrollbarBarColor = true;
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.Controls.Add(this.dgvDatos, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.bindingNavigator1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bindingNavigator, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -171,13 +168,13 @@
             this.dgvDatos.Size = new System.Drawing.Size(874, 426);
             this.dgvDatos.TabIndex = 0;
             // 
-            // bindingNavigator1
+            // bindingNavigator
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -188,17 +185,18 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(48, 14);
-            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(880, 25);
-            this.bindingNavigator1.TabIndex = 1;
-            this.bindingNavigator1.Text = "bindingNavigator1";
+            this.bindingNavigatorDeleteItem,
+            this.btnSave});
+            this.bindingNavigator.Location = new System.Drawing.Point(48, 14);
+            this.bindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator.Name = "bindingNavigator";
+            this.bindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator.Size = new System.Drawing.Size(880, 25);
+            this.bindingNavigator.TabIndex = 1;
+            this.bindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -285,6 +283,16 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // btnSave
+            // 
+            this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSave.Image = global::ITCManager.Core.UI.Properties.Resources.btnSave_Image;
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(23, 22);
+            this.btnSave.Text = "toolStripButton1";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // metroTabPage3
             // 
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
@@ -302,92 +310,92 @@
             this.iTC_DBPOwerDataSet.DataSetName = "ITC_DBPOwerDataSet";
             this.iTC_DBPOwerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tableAdapterManager1
+            // tableAdapterManager
             // 
-            this.tableAdapterManager1.AlumnoHorarioSetTableAdapter = null;
-            this.tableAdapterManager1.ArmadoEquipoSetTableAdapter = null;
-            this.tableAdapterManager1.AsignacionCiudadEquiposSetTableAdapter = null;
-            this.tableAdapterManager1.AsignacionReciboSetTableAdapter = null;
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.CapacitacionSetTableAdapter = null;
-            this.tableAdapterManager1.ChequePropioSetTableAdapter = null;
-            this.tableAdapterManager1.ChequeSetTableAdapter = null;
-            this.tableAdapterManager1.CiudadActivaLocacionesSetTableAdapter = null;
-            this.tableAdapterManager1.CiudadEquiposSetTableAdapter = null;
-            this.tableAdapterManager1.CiudadPersonalSetTableAdapter = null;
-            this.tableAdapterManager1.CiudadProductosSetTableAdapter = null;
-            this.tableAdapterManager1.CiudadSetTableAdapter = null;
-            this.tableAdapterManager1.CoeficTarjetasSetTableAdapter = null;
-            this.tableAdapterManager1.CompraPagoLocalSetTableAdapter = null;
-            this.tableAdapterManager1.CompraSetTableAdapter = null;
-            this.tableAdapterManager1.CondicionEmpleadoSetTableAdapter = null;
-            this.tableAdapterManager1.Connection = null;
-            this.tableAdapterManager1.CuentaBancoSetTableAdapter = null;
-            this.tableAdapterManager1.CuentaBancoTerceroSetTableAdapter = null;
-            this.tableAdapterManager1.DepositoSetTableAdapter = null;
-            this.tableAdapterManager1.DetalleArmadoEquipoSetTableAdapter = null;
-            this.tableAdapterManager1.DetalleCompraSetTableAdapter = null;
-            this.tableAdapterManager1.DetalleCondicionEmpleadoTableAdapter = null;
-            this.tableAdapterManager1.DiaSetTableAdapter = null;
-            this.tableAdapterManager1.EstadoAlumnoTableAdapter = null;
-            this.tableAdapterManager1.EstadoAsignacionEquipoSetTableAdapter = null;
-            this.tableAdapterManager1.EstadoChequeSetTableAdapter = null;
-            this.tableAdapterManager1.EstadoCompraSetTableAdapter = null;
-            this.tableAdapterManager1.EstadoDepositoSetTableAdapter = null;
-            this.tableAdapterManager1.EstadoPagoTarjetaSetTableAdapter = null;
-            this.tableAdapterManager1.EstadoRendicionSetTableAdapter = null;
-            this.tableAdapterManager1.EstadoTransferenciaSetTableAdapter = null;
-            this.tableAdapterManager1.EstadoVentaSetTableAdapter = null;
-            this.tableAdapterManager1.FormaPagoLocalSetTableAdapter = null;
-            this.tableAdapterManager1.FormaPagoSetTableAdapter = null;
-            this.tableAdapterManager1.GastoBaseSetTableAdapter = null;
-            this.tableAdapterManager1.GastoChequeSetTableAdapter = null;
-            this.tableAdapterManager1.GastoLocalPagoLocalSetTableAdapter = null;
-            this.tableAdapterManager1.GastoLocalSetTableAdapter = null;
-            this.tableAdapterManager1.HorarioSetTableAdapter = null;
-            this.tableAdapterManager1.ItemPagadoSetTableAdapter = null;
-            this.tableAdapterManager1.LineaCiudadSetTableAdapter = null;
-            this.tableAdapterManager1.LineaSetTableAdapter = null;
-            this.tableAdapterManager1.LocacionRolLocadorSetTableAdapter = null;
-            this.tableAdapterManager1.LocacionSetTableAdapter = null;
-            this.tableAdapterManager1.LocalidadSetTableAdapter = null;
-            this.tableAdapterManager1.PagoChequeSetTableAdapter = null;
-            this.tableAdapterManager1.PagoLocalChequePropioSetTableAdapter = null;
-            this.tableAdapterManager1.PagoLocalChequeSetTableAdapter = null;
-            this.tableAdapterManager1.PagoLocalSetTableAdapter = null;
-            this.tableAdapterManager1.PagoLocalTarjetaSetTableAdapter = null;
-            this.tableAdapterManager1.PagoLocalTransferenciaSetTableAdapter = null;
-            this.tableAdapterManager1.PagoSetTableAdapter = null;
-            this.tableAdapterManager1.PagoTarjetaSetTableAdapter = null;
-            this.tableAdapterManager1.PermisoAccesoTableAdapter = null;
-            this.tableAdapterManager1.PermisoTableAdapter = null;
-            this.tableAdapterManager1.PersonaTableAdapter = null;
-            this.tableAdapterManager1.PlanBaseSetTableAdapter = null;
-            this.tableAdapterManager1.PlanVendedorAlumnoSetTableAdapter = null;
-            this.tableAdapterManager1.ProductosSetTableAdapter = null;
-            this.tableAdapterManager1.ProveedorSetTableAdapter = null;
-            this.tableAdapterManager1.ReciboSetTableAdapter = null;
-            this.tableAdapterManager1.RendicionDepositoSetTableAdapter = null;
-            this.tableAdapterManager1.RendicionGastoSetTableAdapter = null;
-            this.tableAdapterManager1.RendicionPagoSetTableAdapter = null;
-            this.tableAdapterManager1.RendicionPersonaCiudadSetTableAdapter = null;
-            this.tableAdapterManager1.RendicionVentaEquipoSetTableAdapter = null;
-            this.tableAdapterManager1.RolAlumnoTableAdapter = null;
-            this.tableAdapterManager1.RolCiudadActivaGastosSetTableAdapter = null;
-            this.tableAdapterManager1.RolCiudadActivaHorarioSetTableAdapter = null;
-            this.tableAdapterManager1.RolCiudadActivaPlanSetTableAdapter = null;
-            this.tableAdapterManager1.RolCiudadActivaSetTableAdapter = null;
-            this.tableAdapterManager1.RolCiudadEnProcesoSetTableAdapter = null;
-            this.tableAdapterManager1.RolDocenteSetTableAdapter = null;
-            this.tableAdapterManager1.RolEmpleadoTableAdapter = null;
-            this.tableAdapterManager1.RolLocacionAlojamientoSetTableAdapter = null;
-            this.tableAdapterManager1.RolLocacionSalonSetTableAdapter = null;
-            this.tableAdapterManager1.RolLocadorSetTableAdapter = null;
-            this.tableAdapterManager1.RolVendedorTableAdapter = null;
-            this.tableAdapterManager1.TarjetaPropiaSetTableAdapter = null;
-            this.tableAdapterManager1.TipoChequeSetTableAdapter = null;
-            this.tableAdapterManager1.TransferenciaSetTableAdapter = null;
-            this.tableAdapterManager1.UpdateOrder = ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.AlumnoHorarioSetTableAdapter = null;
+            this.tableAdapterManager.ArmadoEquipoSetTableAdapter = null;
+            this.tableAdapterManager.AsignacionCiudadEquiposSetTableAdapter = null;
+            this.tableAdapterManager.AsignacionReciboSetTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CapacitacionSetTableAdapter = null;
+            this.tableAdapterManager.ChequePropioSetTableAdapter = null;
+            this.tableAdapterManager.ChequeSetTableAdapter = null;
+            this.tableAdapterManager.CiudadActivaLocacionesSetTableAdapter = null;
+            this.tableAdapterManager.CiudadEquiposSetTableAdapter = null;
+            this.tableAdapterManager.CiudadPersonalSetTableAdapter = null;
+            this.tableAdapterManager.CiudadProductosSetTableAdapter = null;
+            this.tableAdapterManager.CiudadSetTableAdapter = null;
+            this.tableAdapterManager.CoeficTarjetasSetTableAdapter = null;
+            this.tableAdapterManager.CompraPagoLocalSetTableAdapter = null;
+            this.tableAdapterManager.CompraSetTableAdapter = null;
+            this.tableAdapterManager.CondicionEmpleadoSetTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.CuentaBancoSetTableAdapter = null;
+            this.tableAdapterManager.CuentaBancoTerceroSetTableAdapter = null;
+            this.tableAdapterManager.DepositoSetTableAdapter = null;
+            this.tableAdapterManager.DetalleArmadoEquipoSetTableAdapter = null;
+            this.tableAdapterManager.DetalleCompraSetTableAdapter = null;
+            this.tableAdapterManager.DetalleCondicionEmpleadoTableAdapter = null;
+            this.tableAdapterManager.DiaSetTableAdapter = null;
+            this.tableAdapterManager.EstadoAlumnoTableAdapter = null;
+            this.tableAdapterManager.EstadoAsignacionEquipoSetTableAdapter = null;
+            this.tableAdapterManager.EstadoChequeSetTableAdapter = null;
+            this.tableAdapterManager.EstadoCompraSetTableAdapter = null;
+            this.tableAdapterManager.EstadoDepositoSetTableAdapter = null;
+            this.tableAdapterManager.EstadoPagoTarjetaSetTableAdapter = null;
+            this.tableAdapterManager.EstadoRendicionSetTableAdapter = null;
+            this.tableAdapterManager.EstadoTransferenciaSetTableAdapter = null;
+            this.tableAdapterManager.EstadoVentaSetTableAdapter = null;
+            this.tableAdapterManager.FormaPagoLocalSetTableAdapter = null;
+            this.tableAdapterManager.FormaPagoSetTableAdapter = null;
+            this.tableAdapterManager.GastoBaseSetTableAdapter = null;
+            this.tableAdapterManager.GastoChequeSetTableAdapter = null;
+            this.tableAdapterManager.GastoLocalPagoLocalSetTableAdapter = null;
+            this.tableAdapterManager.GastoLocalSetTableAdapter = null;
+            this.tableAdapterManager.HorarioSetTableAdapter = null;
+            this.tableAdapterManager.ItemPagadoSetTableAdapter = null;
+            this.tableAdapterManager.LineaCiudadSetTableAdapter = null;
+            this.tableAdapterManager.LineaSetTableAdapter = null;
+            this.tableAdapterManager.LocacionRolLocadorSetTableAdapter = null;
+            this.tableAdapterManager.LocacionSetTableAdapter = null;
+            this.tableAdapterManager.LocalidadSetTableAdapter = null;
+            this.tableAdapterManager.PagoChequeSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalChequePropioSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalChequeSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalTarjetaSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalTransferenciaSetTableAdapter = null;
+            this.tableAdapterManager.PagoSetTableAdapter = null;
+            this.tableAdapterManager.PagoTarjetaSetTableAdapter = null;
+            this.tableAdapterManager.PermisoAccesoTableAdapter = null;
+            this.tableAdapterManager.PermisoTableAdapter = null;
+            this.tableAdapterManager.PersonaTableAdapter = null;
+            this.tableAdapterManager.PlanBaseSetTableAdapter = null;
+            this.tableAdapterManager.PlanVendedorAlumnoSetTableAdapter = null;
+            this.tableAdapterManager.ProductosSetTableAdapter = null;
+            this.tableAdapterManager.ProveedorSetTableAdapter = null;
+            this.tableAdapterManager.ReciboSetTableAdapter = null;
+            this.tableAdapterManager.RendicionDepositoSetTableAdapter = null;
+            this.tableAdapterManager.RendicionGastoSetTableAdapter = null;
+            this.tableAdapterManager.RendicionPagoSetTableAdapter = null;
+            this.tableAdapterManager.RendicionPersonaCiudadSetTableAdapter = null;
+            this.tableAdapterManager.RendicionVentaEquipoSetTableAdapter = null;
+            this.tableAdapterManager.RolAlumnoTableAdapter = null;
+            this.tableAdapterManager.RolCiudadActivaGastosSetTableAdapter = null;
+            this.tableAdapterManager.RolCiudadActivaHorarioSetTableAdapter = null;
+            this.tableAdapterManager.RolCiudadActivaPlanSetTableAdapter = null;
+            this.tableAdapterManager.RolCiudadActivaSetTableAdapter = null;
+            this.tableAdapterManager.RolCiudadEnProcesoSetTableAdapter = null;
+            this.tableAdapterManager.RolDocenteSetTableAdapter = null;
+            this.tableAdapterManager.RolEmpleadoTableAdapter = null;
+            this.tableAdapterManager.RolLocacionAlojamientoSetTableAdapter = null;
+            this.tableAdapterManager.RolLocacionSalonSetTableAdapter = null;
+            this.tableAdapterManager.RolLocadorSetTableAdapter = null;
+            this.tableAdapterManager.RolVendedorTableAdapter = null;
+            this.tableAdapterManager.TarjetaPropiaSetTableAdapter = null;
+            this.tableAdapterManager.TipoChequeSetTableAdapter = null;
+            this.tableAdapterManager.TransferenciaSetTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // frmCargaDatos
             // 
@@ -408,11 +416,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
+            this.bindingNavigator.ResumeLayout(false);
+            this.bindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,7 +437,7 @@
         internal ITC_DBPOwerDataSet iTC_DBPOwerDataSet;
         internal System.Windows.Forms.DataGridView dgvDatos;
         internal MetroFramework.Controls.MetroComboBox cmbTablas;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.BindingNavigator bindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -441,7 +449,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private ITC_DBPOwerDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.BindingSource bindingSource;
+        private ITC_DBPOwerDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ToolStripButton btnSave;
     }
 }

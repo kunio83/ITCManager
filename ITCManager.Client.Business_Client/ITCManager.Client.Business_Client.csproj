@@ -48,6 +48,10 @@
       <Project>{347d8efb-add9-49d2-b878-eadcc1ff3cd9}</Project>
       <Name>ITCManager.Client.DataAccess_Client</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ITCManager.Client.Entities_Client\ITCManager.Client.Entities_Client.csproj">
+      <Project>{973a863b-d7be-4473-94fd-130cc78b1a65}</Project>
+      <Name>ITCManager.Client.Entities_Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

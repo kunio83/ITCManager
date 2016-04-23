@@ -60,11 +60,11 @@ namespace ITCManager.Core.UI.Forms
             //Verifico el nombre por las pinches terminaciones SET hasta que los saquemos
             var tablaActual = getNombreTablaActual();
             var dataSet = BindingSouceHelper.ObtenerDataSet(tablaActual, iTC_DBPOwerDataSet);
-            var tableAdapter = BindingSouceHelper.ObtenerTableAdapter(tablaActual + "TableAdapter", tableAdapterManager1);
+            var tableAdapter = BindingSouceHelper.ObtenerTableAdapter(tablaActual + "TableAdapter", tableAdapterManager);
 
-            bindingSource1.DataSource = dataSet;
-            dgvDatos.DataSource = bindingSource1;
-            bindingNavigator1.BindingSource = bindingSource1;
+            bindingSource.DataSource = dataSet;
+            dgvDatos.DataSource = bindingSource;
+            bindingNavigator.BindingSource = bindingSource;
             BindingSouceHelper.FillTableAdapter(tablaActual, tableAdapter, iTC_DBPOwerDataSet);
 
             dgvDatos.Refresh();
@@ -80,6 +80,13 @@ namespace ITCManager.Core.UI.Forms
                 return selected + "Set";
 
             return String.Empty;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            bindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(this.iTC_DBPOwerDataSet);
         }
     }
 }
