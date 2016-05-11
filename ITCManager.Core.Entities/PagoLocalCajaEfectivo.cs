@@ -12,13 +12,15 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PagoLocalTransferencia
+    public partial class PagoLocalCajaEfectivo
     {
-        public int IdPagoLocalTransferencia { get; set; }
+        public int IdPagoLocalCajaEfectivo { get; set; }
         public int IdPagoLocal { get; set; }
-        public int IdTransferencia { get; set; }
+        public string FechaPagoCajaEfectivo { get; set; }
+        public string Monto { get; set; }
+        public int IdCajaEfectivo { get; set; }
     
-        public virtual Transferencia Transferencia { get; set; }
         public virtual PagoLocal PagoLocal { get; set; }
+        public virtual CajaEfectivo CajaEfectivo { get; set; }
     }
 }

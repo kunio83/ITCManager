@@ -12,18 +12,19 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class FormaPagoLocal
+    public partial class Puesto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public FormaPagoLocal()
+        public Puesto()
         {
-            this.PagoLocal = new HashSet<PagoLocal>();
+            this.RolEmpleado = new HashSet<RolEmpleado>();
         }
     
-        public int IdFormaPagoLocal { get; set; }
-        public string DetalleFormaPagoLocal { get; set; }
+        public int IdPuesto { get; set; }
+        public string DetallePuesto { get; set; }
+        public decimal SueldoBasico { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocal> PagoLocal { get; set; }
+        public virtual ICollection<RolEmpleado> RolEmpleado { get; set; }
     }
 }

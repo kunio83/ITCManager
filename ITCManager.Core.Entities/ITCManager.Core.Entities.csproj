@@ -53,6 +53,9 @@
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="CajaEfectivo.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Capacitacion.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -71,6 +74,9 @@
     <Compile Include="CiudadEquipos.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="CiudadFechasHorarios.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="CiudadPersonal.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -81,9 +87,6 @@
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="Compra.cs">
-      <DependentUpon>ModeloITCCore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CompraPagoLocal.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="CondicionEmpleado.cs">
@@ -108,6 +111,12 @@
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityRepository.cs" />
+    <Compile Include="Envio.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioCiudadEquipos.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="EstadoAlumno.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -150,9 +159,6 @@
     <Compile Include="GastoLocal.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
-    <Compile Include="GastoLocalPagoLocal.cs">
-      <DependentUpon>ModeloITCCore.tt</DependentUpon>
-    </Compile>
     <Compile Include="Horario.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -179,6 +185,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="MovimientoInternoEfectivo.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pago.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -188,10 +197,16 @@
     <Compile Include="PagoLocal.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="PagoLocalCajaEfectivo.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="PagoLocalCheque.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="PagoLocalChequePropio.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalEnvio.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="PagoLocalTarjeta.cs">
@@ -225,6 +240,9 @@
     <Compile Include="Proveedor.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Puesto.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Recibo.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -244,6 +262,12 @@
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RolAlumno.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolAlumnoPracticas.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolAlumnoPresentismo.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RolCiudadActiva.cs">

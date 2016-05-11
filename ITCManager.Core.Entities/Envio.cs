@@ -12,27 +12,34 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class AsignacionCiudadEquipos
+    public partial class Envio
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AsignacionCiudadEquipos()
+        public Envio()
         {
-            this.CiudadEquipos = new HashSet<CiudadEquipos>();
-            this.CiudadProductos = new HashSet<CiudadProductos>();
             this.EnvioCiudadEquipos = new HashSet<EnvioCiudadEquipos>();
         }
     
-        public int IdAsignacionCiudadEquipo { get; set; }
-        public string Fecha { get; set; }
+        public int IdEnvio { get; set; }
+        public string FechaSolicitudEnvío { get; set; }
+        public string FechaSalidaEnvío { get; set; }
+        public string FechaEstimadaRecepción { get; set; }
+        public int IdProveedor { get; set; }
+        public string TipoRetiroEnvio { get; set; }
+        public string TipoEntregaEnvio { get; set; }
+        public string CantidadBultos { get; set; }
+        public string CiudadOrigenEnvio { get; set; }
+        public string CiudadDestinoEnvio { get; set; }
         public int IdRolCiudadActiva { get; set; }
-        public int IdEstadoAsignacionEquipo { get; set; }
+        public string Remitente { get; set; }
+        public string Destinatarios { get; set; }
+        public string TipoPago { get; set; }
+        public string Monto { get; set; }
+        public string EstadoEnvio { get; set; }
+        public string Observaciones { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadEquipos> CiudadEquipos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadProductos> CiudadProductos { get; set; }
+        public virtual Proveedor Proveedor { get; set; }
         public virtual RolCiudadActiva RolCiudadActiva { get; set; }
-        public virtual EstadoAsignacionEquipo EstadoAsignacionEquipo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EnvioCiudadEquipos> EnvioCiudadEquipos { get; set; }
     }

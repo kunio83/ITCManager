@@ -12,21 +12,24 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class GastoBase
+    public partial class CajaEfectivo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GastoBase()
+        public CajaEfectivo()
         {
-            this.RolCiudadActivaGastos = new HashSet<RolCiudadActivaGastos>();
-            this.RendicionGasto = new HashSet<RendicionGasto>();
+            this.MovimientoInternoEfectivo = new HashSet<MovimientoInternoEfectivo>();
+            this.MovimientoInternoEfectivo1 = new HashSet<MovimientoInternoEfectivo>();
+            this.PagoLocalCajaEfectivo = new HashSet<PagoLocalCajaEfectivo>();
         }
     
-        public int IdGastoBase { get; set; }
-        public string DetalleGastoBase { get; set; }
+        public int IdCajaEfectivo { get; set; }
+        public string DetalleCajaEfectivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolCiudadActivaGastos> RolCiudadActivaGastos { get; set; }
+        public virtual ICollection<MovimientoInternoEfectivo> MovimientoInternoEfectivo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionGasto> RendicionGasto { get; set; }
+        public virtual ICollection<MovimientoInternoEfectivo> MovimientoInternoEfectivo1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PagoLocalCajaEfectivo> PagoLocalCajaEfectivo { get; set; }
     }
 }
