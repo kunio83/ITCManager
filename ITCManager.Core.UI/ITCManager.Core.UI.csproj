@@ -92,12 +92,6 @@
     <Compile Include="Forms\Controles\miTextBox.Designer.cs">
       <DependentUpon>miTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmCargaDatos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,9 +132,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controles\miTextBox.resx">
       <DependentUpon>miTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCargaDatos.resx">
       <DependentUpon>frmCargaDatos.cs</DependentUpon>
@@ -188,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\1462954651_close_window.png" />
+    <None Include="Resources\1462339101_add_property.png" />
+    <None Include="Resources\1462338823_add_property.png" />
     <None Include="Resources\btnSave.Image.png" />
     <None Include="Resources\1460763548_database.png" />
     <None Include="Resources\1460763318_student.png" />

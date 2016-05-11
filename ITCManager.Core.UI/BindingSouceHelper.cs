@@ -17,7 +17,7 @@ namespace ITCManager.Core.UI
             var result = new Object();
             foreach (Type t in tManager.GetType().Assembly.GetTypes())
             {
-                if (t.Name.Contains(tableAdapter) && t.Name != "TableAdapterManager")
+                if (t.Name.Equals(tableAdapter) && t.Name != "TableAdapterManager")
                 {
                     object adapter = Activator.CreateInstance(t);
                     PropertyInfo pi = tManager.GetType().GetProperty(adapter.GetType().Name);

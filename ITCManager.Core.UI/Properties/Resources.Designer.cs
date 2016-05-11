@@ -103,6 +103,36 @@ namespace ITCManager.Core.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1462338823_add_property {
+            get {
+                object obj = ResourceManager.GetObject("1462338823_add_property", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1462339101_add_property {
+            get {
+                object obj = ResourceManager.GetObject("1462339101_add_property", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1462954651_close_window {
+            get {
+                object obj = ResourceManager.GetObject("1462954651_close_window", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnSave_Image {
             get {
                 object obj = ResourceManager.GetObject("btnSave.Image", resourceCulture);

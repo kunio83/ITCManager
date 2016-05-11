@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MetroFramework.Forms;
 using MetroFramework.Controls;
+using System.Windows.Forms;
 using ITCManager.Core.Entities;
 using ITCManager.Core.Business;
 
@@ -15,78 +16,33 @@ namespace ITCManager.Core.UI.Forms
 {
     public partial class frmCargaDatos : Base
     {
+        internal CargaDatosHelper _helper;
+
         public frmCargaDatos()
         {
             InitializeComponent();
         }
 
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            cargarDataGrid();
-            mtabCargaDatos.SelectTab(tabFormu);
-        }
-
-        void cargarTabCargaDatos()
-        {
-            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.Persona' table. You can move, or remove it, as needed.
-            //this.entityTableAdapter.Fill(this.iTC_DBPOwerDataSet.Persona);
-            //// TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.Persona' table. You can move, or remove it, as needed.
-            //this.entityTableAdapter.Fill(this.iTC_DBPOwerDataSet.Persona);
-        }
-
         private void frmCargaDatos_Load(object sender, EventArgs e)
         {
-            mtabCargaDatos.SelectTab("tabSelect");
-            cargarComboTablas();
+            this._helper = new CargaDatosHelper(this,iTC_DBPOwerDataSet);
+            _helper.cargarComboTablas();
         }
 
-        private void personaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void mtileAgregarGrid_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            //this.entityBindingSource.EndEdit();
-            //this.tableAdapterManager.UpdateAll(this.iTC_DBPOwerDataSet);
+            String nombreTabla = this._helper.getNombreTablaActual();
 
+            if (!mtabCargaDatos.TabPages.ContainsKey("mtp" + nombreTabla))
+                this._helper.armarNuevoTabPage(nombreTabla);
+
+            mtabCargaDatos.SelectTab("mtp" + nombreTabla);
         }
 
-        private void cargarComboTablas()
+        private void mtEliminar_Click(object sender, EventArgs e)
         {
-            cmbTablas.DataSource = EntityRepository.GetAllEntities();
-            cmbTablas.DisplayMember = "Name";
-        }
-
-        private void cargarDataGrid()
-        {
-            //Verifico el nombre por las pinches terminaciones SET hasta que los saquemos
-            var tablaActual = getNombreTablaActual();
-            var dataSet = BindingSouceHelper.ObtenerDataSet(tablaActual, iTC_DBPOwerDataSet);
-            var tableAdapter = BindingSouceHelper.ObtenerTableAdapter(tablaActual + "TableAdapter", tableAdapterManager);
-
-            bindingSource.DataSource = dataSet;
-            dgvDatos.DataSource = bindingSource;
-            bindingNavigator.BindingSource = bindingSource;
-            BindingSouceHelper.FillTableAdapter(tablaActual, tableAdapter, iTC_DBPOwerDataSet);
-
-            dgvDatos.Refresh();
-        }
-
-        private String getNombreTablaActual()
-        {
-            var selected = cmbTablas.Text;
-
-            if (iTC_DBPOwerDataSet.Tables.Contains(selected))
-                return selected;
-            else if (iTC_DBPOwerDataSet.Tables.Contains(selected + "Set"))
-                return selected + "Set";
-
-            return String.Empty;
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            bindingSource.EndEdit();
-            tableAdapterManager.UpdateAll(this.iTC_DBPOwerDataSet);
+            if(mtabCargaDatos.SelectedTab != null)
+                mtabCargaDatos.TabPages.Remove(mtabCargaDatos.SelectedTab);
         }
     }
 }
