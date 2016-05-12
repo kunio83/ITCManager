@@ -50,7 +50,14 @@ namespace ITCManager.Core.UI
 
         public static Object ObtenerDataSet(String nombreDs, ITC_DBPOwerDataSet itcDs)
         {
-            return itcDs.GetType().GetProperty(nombreDs).GetValue(itcDs, null);
+            try
+            {
+                return itcDs.GetType().GetProperty(nombreDs).GetValue(itcDs, null);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
