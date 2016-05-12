@@ -12,13 +12,13 @@ namespace ITCManager.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PagoCheque
+    public partial class ValeFinanciacion
     {
-        public int IdPagoCheque { get; set; }
-        public int IdPago { get; set; }
-        public int IdCheque { get; set; }
+        public int IdValeFinanciacion { get; set; }
+        public int IdVale { get; set; }
+        public string Monto { get; set; }
+        public string PeriodoDescuento { get; set; }
     
-        public virtual Pago Pago { get; set; }
-        public virtual Cheque Cheque { get; set; }
+        public virtual Vale Vale { get; set; }
     }
 }

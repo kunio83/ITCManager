@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/11/2016 19:17:59
+-- Date Created: 05/11/2016 20:41:15
 -- Generated from EDMX file: C:\Users\Ezequiel\Source\Repos\ITCManagerRepositorio\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 
@@ -166,9 +166,6 @@ IF OBJECT_ID(N'[dbo].[FK_EstadoChequeCheque]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_FormaPagoRendicionGasto]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RendicionGastoSet] DROP CONSTRAINT [FK_FormaPagoRendicionGasto];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PagoPagoCheque1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PagoChequeSet] DROP CONSTRAINT [FK_PagoPagoCheque1];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ChequePagoCheque]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PagoChequeSet] DROP CONSTRAINT [FK_ChequePagoCheque];
@@ -346,6 +343,9 @@ IF OBJECT_ID(N'[dbo].[FK_CajaEfectivoPagoLocalCajaEfectivo]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_PuestoRolEmpleado]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RolEmpleado] DROP CONSTRAINT [FK_PuestoRolEmpleado];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoVale]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ValeSet] DROP CONSTRAINT [FK_RolEmpleadoVale];
 GO
 
 -- --------------------------------------------------
@@ -618,6 +618,9 @@ IF OBJECT_ID(N'[dbo].[CajaEfectivoSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[PuestoSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PuestoSet];
+GO
+IF OBJECT_ID(N'[dbo].[ValeSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ValeSet];
 GO
 
 -- --------------------------------------------------
@@ -988,7 +991,8 @@ CREATE TABLE [dbo].[RendicionGastoSet] (
     [IdRendicionEmpleadoCiudad] int  NOT NULL,
     [IdGastoBase] int  NOT NULL,
     [Monto] nvarchar(max)  NOT NULL,
-    [IdFormaPago] int  NOT NULL
+    [IdFormaPago] int  NOT NULL,
+    [Observaciones] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -1452,6 +1456,58 @@ CREATE TABLE [dbo].[PuestoSet] (
     [IdPuesto] int IDENTITY(1,1) NOT NULL,
     [DetallePuesto] nvarchar(max)  NOT NULL,
     [SueldoBasico] decimal(18,0)  NOT NULL
+);
+GO
+
+-- Creating table 'ValeSet'
+CREATE TABLE [dbo].[ValeSet] (
+    [IdVale] int IDENTITY(1,1) NOT NULL,
+    [Fecha] nvarchar(max)  NOT NULL,
+    [IdRolEmpleado] int  NOT NULL,
+    [Monto] nvarchar(max)  NOT NULL,
+    [Observaciones] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'SueldoPagoSet'
+CREATE TABLE [dbo].[SueldoPagoSet] (
+    [IdSueldoPago] int IDENTITY(1,1) NOT NULL,
+    [IdRolEmpleado] int  NOT NULL,
+    [Periodo] nvarchar(max)  NOT NULL,
+    [Monto] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'RendicionValeSet'
+CREATE TABLE [dbo].[RendicionValeSet] (
+    [IdRendicionVale] int IDENTITY(1,1) NOT NULL,
+    [IdRendicionEmpleadoCiudad] int  NOT NULL,
+    [IdVale] int  NOT NULL
+);
+GO
+
+-- Creating table 'ValeFinanciacionSet'
+CREATE TABLE [dbo].[ValeFinanciacionSet] (
+    [IdValeFinanciacion] int IDENTITY(1,1) NOT NULL,
+    [IdVale] int  NOT NULL,
+    [Monto] nvarchar(max)  NOT NULL,
+    [PeriodoDescuento] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'PagoLocalSueldoSet'
+CREATE TABLE [dbo].[PagoLocalSueldoSet] (
+    [IdPagoLocalSueldo] int IDENTITY(1,1) NOT NULL,
+    [IdSueldoPago] int  NOT NULL,
+    [IdPagoLocal] int  NOT NULL
+);
+GO
+
+-- Creating table 'RendicionSueldoSet'
+CREATE TABLE [dbo].[RendicionSueldoSet] (
+    [IdRendicionSueldo] int IDENTITY(1,1) NOT NULL,
+    [IdRendicionEmpleadoCiudad] int  NOT NULL,
+    [IdSueldoPago] int  NOT NULL
 );
 GO
 
@@ -1991,6 +2047,42 @@ GO
 ALTER TABLE [dbo].[PuestoSet]
 ADD CONSTRAINT [PK_PuestoSet]
     PRIMARY KEY CLUSTERED ([IdPuesto] ASC);
+GO
+
+-- Creating primary key on [IdVale] in table 'ValeSet'
+ALTER TABLE [dbo].[ValeSet]
+ADD CONSTRAINT [PK_ValeSet]
+    PRIMARY KEY CLUSTERED ([IdVale] ASC);
+GO
+
+-- Creating primary key on [IdSueldoPago] in table 'SueldoPagoSet'
+ALTER TABLE [dbo].[SueldoPagoSet]
+ADD CONSTRAINT [PK_SueldoPagoSet]
+    PRIMARY KEY CLUSTERED ([IdSueldoPago] ASC);
+GO
+
+-- Creating primary key on [IdRendicionVale] in table 'RendicionValeSet'
+ALTER TABLE [dbo].[RendicionValeSet]
+ADD CONSTRAINT [PK_RendicionValeSet]
+    PRIMARY KEY CLUSTERED ([IdRendicionVale] ASC);
+GO
+
+-- Creating primary key on [IdValeFinanciacion] in table 'ValeFinanciacionSet'
+ALTER TABLE [dbo].[ValeFinanciacionSet]
+ADD CONSTRAINT [PK_ValeFinanciacionSet]
+    PRIMARY KEY CLUSTERED ([IdValeFinanciacion] ASC);
+GO
+
+-- Creating primary key on [IdPagoLocalSueldo] in table 'PagoLocalSueldoSet'
+ALTER TABLE [dbo].[PagoLocalSueldoSet]
+ADD CONSTRAINT [PK_PagoLocalSueldoSet]
+    PRIMARY KEY CLUSTERED ([IdPagoLocalSueldo] ASC);
+GO
+
+-- Creating primary key on [IdRendicionSueldo] in table 'RendicionSueldoSet'
+ALTER TABLE [dbo].[RendicionSueldoSet]
+ADD CONSTRAINT [PK_RendicionSueldoSet]
+    PRIMARY KEY CLUSTERED ([IdRendicionSueldo] ASC);
 GO
 
 -- --------------------------------------------------
@@ -2745,21 +2837,6 @@ GO
 CREATE INDEX [IX_FK_FormaPagoRendicionGasto]
 ON [dbo].[RendicionGastoSet]
     ([IdFormaPago]);
-GO
-
--- Creating foreign key on [IdPago] in table 'PagoChequeSet'
-ALTER TABLE [dbo].[PagoChequeSet]
-ADD CONSTRAINT [FK_PagoPagoCheque1]
-    FOREIGN KEY ([IdPago])
-    REFERENCES [dbo].[PagoSet]
-        ([IdPago])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PagoPagoCheque1'
-CREATE INDEX [IX_FK_PagoPagoCheque1]
-ON [dbo].[PagoChequeSet]
-    ([IdPago]);
 GO
 
 -- Creating foreign key on [IdCheque] in table 'PagoChequeSet'
@@ -3645,6 +3722,141 @@ GO
 CREATE INDEX [IX_FK_PuestoRolEmpleado]
 ON [dbo].[RolEmpleado]
     ([IdPuesto]);
+GO
+
+-- Creating foreign key on [IdRolEmpleado] in table 'ValeSet'
+ALTER TABLE [dbo].[ValeSet]
+ADD CONSTRAINT [FK_RolEmpleadoVale]
+    FOREIGN KEY ([IdRolEmpleado])
+    REFERENCES [dbo].[RolEmpleado]
+        ([IdRolEmpleado])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolEmpleadoVale'
+CREATE INDEX [IX_FK_RolEmpleadoVale]
+ON [dbo].[ValeSet]
+    ([IdRolEmpleado]);
+GO
+
+-- Creating foreign key on [IdRolEmpleado] in table 'SueldoPagoSet'
+ALTER TABLE [dbo].[SueldoPagoSet]
+ADD CONSTRAINT [FK_RolEmpleadoSueldoTransferencia]
+    FOREIGN KEY ([IdRolEmpleado])
+    REFERENCES [dbo].[RolEmpleado]
+        ([IdRolEmpleado])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolEmpleadoSueldoTransferencia'
+CREATE INDEX [IX_FK_RolEmpleadoSueldoTransferencia]
+ON [dbo].[SueldoPagoSet]
+    ([IdRolEmpleado]);
+GO
+
+-- Creating foreign key on [IdRendicionEmpleadoCiudad] in table 'RendicionValeSet'
+ALTER TABLE [dbo].[RendicionValeSet]
+ADD CONSTRAINT [FK_RendicionPersonaCiudadRendicionVale]
+    FOREIGN KEY ([IdRendicionEmpleadoCiudad])
+    REFERENCES [dbo].[RendicionPersonaCiudadSet]
+        ([IdRendicionEmpleadoCiudad])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RendicionPersonaCiudadRendicionVale'
+CREATE INDEX [IX_FK_RendicionPersonaCiudadRendicionVale]
+ON [dbo].[RendicionValeSet]
+    ([IdRendicionEmpleadoCiudad]);
+GO
+
+-- Creating foreign key on [IdVale] in table 'RendicionValeSet'
+ALTER TABLE [dbo].[RendicionValeSet]
+ADD CONSTRAINT [FK_ValeRendicionVale]
+    FOREIGN KEY ([IdVale])
+    REFERENCES [dbo].[ValeSet]
+        ([IdVale])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ValeRendicionVale'
+CREATE INDEX [IX_FK_ValeRendicionVale]
+ON [dbo].[RendicionValeSet]
+    ([IdVale]);
+GO
+
+-- Creating foreign key on [IdVale] in table 'ValeFinanciacionSet'
+ALTER TABLE [dbo].[ValeFinanciacionSet]
+ADD CONSTRAINT [FK_ValeValeFinanciacion]
+    FOREIGN KEY ([IdVale])
+    REFERENCES [dbo].[ValeSet]
+        ([IdVale])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ValeValeFinanciacion'
+CREATE INDEX [IX_FK_ValeValeFinanciacion]
+ON [dbo].[ValeFinanciacionSet]
+    ([IdVale]);
+GO
+
+-- Creating foreign key on [IdSueldoPago] in table 'PagoLocalSueldoSet'
+ALTER TABLE [dbo].[PagoLocalSueldoSet]
+ADD CONSTRAINT [FK_SueldoPagoPagoLocalSueldo]
+    FOREIGN KEY ([IdSueldoPago])
+    REFERENCES [dbo].[SueldoPagoSet]
+        ([IdSueldoPago])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SueldoPagoPagoLocalSueldo'
+CREATE INDEX [IX_FK_SueldoPagoPagoLocalSueldo]
+ON [dbo].[PagoLocalSueldoSet]
+    ([IdSueldoPago]);
+GO
+
+-- Creating foreign key on [IdPagoLocal] in table 'PagoLocalSueldoSet'
+ALTER TABLE [dbo].[PagoLocalSueldoSet]
+ADD CONSTRAINT [FK_PagoLocalPagoLocalSueldo]
+    FOREIGN KEY ([IdPagoLocal])
+    REFERENCES [dbo].[PagoLocalSet]
+        ([IdPagoLocal])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PagoLocalPagoLocalSueldo'
+CREATE INDEX [IX_FK_PagoLocalPagoLocalSueldo]
+ON [dbo].[PagoLocalSueldoSet]
+    ([IdPagoLocal]);
+GO
+
+-- Creating foreign key on [IdRendicionEmpleadoCiudad] in table 'RendicionSueldoSet'
+ALTER TABLE [dbo].[RendicionSueldoSet]
+ADD CONSTRAINT [FK_RendicionPersonaCiudadRendicionSueldo]
+    FOREIGN KEY ([IdRendicionEmpleadoCiudad])
+    REFERENCES [dbo].[RendicionPersonaCiudadSet]
+        ([IdRendicionEmpleadoCiudad])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RendicionPersonaCiudadRendicionSueldo'
+CREATE INDEX [IX_FK_RendicionPersonaCiudadRendicionSueldo]
+ON [dbo].[RendicionSueldoSet]
+    ([IdRendicionEmpleadoCiudad]);
+GO
+
+-- Creating foreign key on [IdSueldoPago] in table 'RendicionSueldoSet'
+ALTER TABLE [dbo].[RendicionSueldoSet]
+ADD CONSTRAINT [FK_SueldoPagoRendicionSueldo]
+    FOREIGN KEY ([IdSueldoPago])
+    REFERENCES [dbo].[SueldoPagoSet]
+        ([IdSueldoPago])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SueldoPagoRendicionSueldo'
+CREATE INDEX [IX_FK_SueldoPagoRendicionSueldo]
+ON [dbo].[RendicionSueldoSet]
+    ([IdSueldoPago]);
 GO
 
 -- --------------------------------------------------

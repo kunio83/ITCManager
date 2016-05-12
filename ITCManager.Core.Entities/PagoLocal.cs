@@ -25,6 +25,7 @@ namespace ITCManager.Core.Entities
             this.Compra = new HashSet<Compra>();
             this.PagoLocalCajaEfectivo = new HashSet<PagoLocalCajaEfectivo>();
             this.PagoLocalEnvio = new HashSet<PagoLocalEnvio>();
+            this.PagoLocalSueldo = new HashSet<PagoLocalSueldo>();
         }
     
         public int IdPagoLocal { get; set; }
@@ -48,5 +49,7 @@ namespace ITCManager.Core.Entities
         public virtual ICollection<PagoLocalCajaEfectivo> PagoLocalCajaEfectivo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PagoLocalEnvio> PagoLocalEnvio { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PagoLocalSueldo> PagoLocalSueldo { get; set; }
     }
 }

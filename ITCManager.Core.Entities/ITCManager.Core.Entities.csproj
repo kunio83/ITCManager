@@ -209,6 +209,9 @@
     <Compile Include="PagoLocalEnvio.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="PagoLocalSueldo.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="PagoLocalTarjeta.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -256,6 +259,12 @@
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RendicionPersonaCiudad.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionSueldo.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionVale.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RendicionVentaEquipo.cs">
@@ -306,6 +315,9 @@
     <Compile Include="RolVendedor.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="SueldoPago.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="TarjetaPropia.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -313,6 +325,12 @@
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="Transferencia.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vale.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ValeFinanciacion.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
   </ItemGroup>
