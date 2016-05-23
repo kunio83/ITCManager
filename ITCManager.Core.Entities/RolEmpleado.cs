@@ -26,6 +26,8 @@ namespace ITCManager.Core.Entities
             this.AsignacionRecibo = new HashSet<AsignacionRecibo>();
             this.RendicionPersonaCiudad = new HashSet<RendicionPersonaCiudad>();
             this.RolDocente = new HashSet<RolDocente>();
+            this.Vale = new HashSet<Vale>();
+            this.SueldoTransferencia = new HashSet<SueldoPago>();
         }
     
         public int IdRolEmpleado { get; set; }
@@ -56,5 +58,9 @@ namespace ITCManager.Core.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RolDocente> RolDocente { get; set; }
         public virtual Puesto Puesto { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Vale> Vale { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SueldoPago> SueldoTransferencia { get; set; }
     }
 }

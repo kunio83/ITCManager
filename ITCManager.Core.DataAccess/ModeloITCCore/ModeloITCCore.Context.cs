@@ -115,5 +115,11 @@ namespace ITCManager.Core.Entities
         public virtual DbSet<PagoLocalEnvio> PagoLocalEnvioSet { get; set; }
         public virtual DbSet<CajaEfectivo> CajaEfectivoSet { get; set; }
         public virtual DbSet<Puesto> PuestoSet { get; set; }
+        public virtual DbSet<Vale> ValeSet { get; set; }
+        public virtual DbSet<SueldoPago> SueldoPagoSet { get; set; }
+        public virtual DbSet<RendicionVale> RendicionValeSet { get; set; }
+        public virtual DbSet<ValeFinanciacion> ValeFinanciacionSet { get; set; }
+        public virtual DbSet<PagoLocalSueldo> PagoLocalSueldoSet { get; set; }
+        public virtual DbSet<RendicionSueldo> RendicionSueldoSet { get; set; }
     }
 }

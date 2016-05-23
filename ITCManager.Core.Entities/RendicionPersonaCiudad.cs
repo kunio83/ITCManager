@@ -20,6 +20,8 @@ namespace ITCManager.Core.Entities
             this.RendicionPago = new HashSet<RendicionPago>();
             this.RendicionGasto = new HashSet<RendicionGasto>();
             this.RendicionDeposito = new HashSet<RendicionDeposito>();
+            this.RendicionVale = new HashSet<RendicionVale>();
+            this.RendicionSueldo = new HashSet<RendicionSueldo>();
         }
     
         public int IdRendicionEmpleadoCiudad { get; set; }
@@ -36,5 +38,9 @@ namespace ITCManager.Core.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RendicionDeposito> RendicionDeposito { get; set; }
         public virtual RolEmpleado RolEmpleado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RendicionVale> RendicionVale { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RendicionSueldo> RendicionSueldo { get; set; }
     }
 }

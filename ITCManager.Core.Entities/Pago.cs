@@ -20,7 +20,6 @@ namespace ITCManager.Core.Entities
             this.PagoTarjeta = new HashSet<PagoTarjeta>();
             this.RendicionPago = new HashSet<RendicionPago>();
             this.PagoCheque = new HashSet<PagoCheque>();
-            this.PagoCheque1 = new HashSet<PagoCheque>();
             this.RendicionVentaEquipo = new HashSet<RendicionVentaEquipo>();
         }
     
@@ -40,8 +39,6 @@ namespace ITCManager.Core.Entities
         public virtual ICollection<RendicionPago> RendicionPago { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PagoCheque> PagoCheque { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoCheque> PagoCheque1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RendicionVentaEquipo> RendicionVentaEquipo { get; set; }
     }
