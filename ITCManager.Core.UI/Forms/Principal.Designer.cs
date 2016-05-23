@@ -33,11 +33,11 @@
             this.metroTile6 = new MetroFramework.Controls.MetroTile();
             this.metroTile5 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
+            this.tabHerram = new MetroFramework.Controls.MetroTabPage();
+            this.tabConfig = new MetroFramework.Controls.MetroTabPage();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.mtiCargarDatos = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.tabHerram = new MetroFramework.Controls.MetroTabPage();
-            this.tabConfig = new MetroFramework.Controls.MetroTabPage();
             this.tabInicio.SuspendLayout();
             this.mtp.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             this.tabInicio.Location = new System.Drawing.Point(20, 60);
             this.tabInicio.Name = "tabInicio";
             this.tabInicio.SelectedIndex = 0;
-            this.tabInicio.Size = new System.Drawing.Size(955, 465);
+            this.tabInicio.Size = new System.Drawing.Size(955, 500);
             this.tabInicio.TabIndex = 1;
             this.tabInicio.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -67,7 +67,7 @@
             this.mtp.HorizontalScrollbarBarColor = true;
             this.mtp.Location = new System.Drawing.Point(4, 35);
             this.mtp.Name = "mtp";
-            this.mtp.Size = new System.Drawing.Size(947, 426);
+            this.mtp.Size = new System.Drawing.Size(947, 461);
             this.mtp.Style = MetroFramework.MetroColorStyle.Blue;
             this.mtp.TabIndex = 0;
             this.mtp.Text = "Inicio";
@@ -107,6 +107,30 @@
             this.metroTile4.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile4.UseTileImage = true;
             // 
+            // tabHerram
+            // 
+            this.tabHerram.HorizontalScrollbarBarColor = true;
+            this.tabHerram.Location = new System.Drawing.Point(4, 35);
+            this.tabHerram.Name = "tabHerram";
+            this.tabHerram.Size = new System.Drawing.Size(947, 461);
+            this.tabHerram.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tabHerram.TabIndex = 1;
+            this.tabHerram.Text = "Herramientas";
+            this.tabHerram.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabHerram.VerticalScrollbarBarColor = true;
+            // 
+            // tabConfig
+            // 
+            this.tabConfig.HorizontalScrollbarBarColor = true;
+            this.tabConfig.Location = new System.Drawing.Point(4, 35);
+            this.tabConfig.Name = "tabConfig";
+            this.tabConfig.Size = new System.Drawing.Size(947, 461);
+            this.tabConfig.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tabConfig.TabIndex = 2;
+            this.tabConfig.Text = "Configuración";
+            this.tabConfig.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabConfig.VerticalScrollbarBarColor = true;
+            // 
             // metroTile3
             // 
             this.metroTile3.Location = new System.Drawing.Point(191, 52);
@@ -116,14 +140,17 @@
             this.metroTile3.TabIndex = 4;
             this.metroTile3.Text = "metroTile3";
             this.metroTile3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTile3.TileImage = global::ITCManager.Core.UI.Properties.Resources._1460619074_conference_call;
+            this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile3.UseTileImage = true;
+            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
             // mtiCargarDatos
             // 
             this.mtiCargarDatos.Location = new System.Drawing.Point(35, 208);
             this.mtiCargarDatos.Name = "mtiCargarDatos";
             this.mtiCargarDatos.Size = new System.Drawing.Size(150, 150);
-            this.mtiCargarDatos.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtiCargarDatos.Style = MetroFramework.MetroColorStyle.Red;
             this.mtiCargarDatos.TabIndex = 3;
             this.mtiCargarDatos.Text = "Cargar Datos";
             this.mtiCargarDatos.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -144,30 +171,6 @@
             this.metroTile1.TileImage = global::ITCManager.Core.UI.Properties.Resources._1460763318_student;
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.UseTileImage = true;
-            // 
-            // tabHerram
-            // 
-            this.tabHerram.HorizontalScrollbarBarColor = true;
-            this.tabHerram.Location = new System.Drawing.Point(4, 35);
-            this.tabHerram.Name = "tabHerram";
-            this.tabHerram.Size = new System.Drawing.Size(947, 426);
-            this.tabHerram.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tabHerram.TabIndex = 1;
-            this.tabHerram.Text = "Herramientas";
-            this.tabHerram.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.tabHerram.VerticalScrollbarBarColor = true;
-            // 
-            // tabConfig
-            // 
-            this.tabConfig.HorizontalScrollbarBarColor = true;
-            this.tabConfig.Location = new System.Drawing.Point(4, 35);
-            this.tabConfig.Name = "tabConfig";
-            this.tabConfig.Size = new System.Drawing.Size(947, 426);
-            this.tabConfig.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tabConfig.TabIndex = 2;
-            this.tabConfig.Text = "Configuración";
-            this.tabConfig.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.tabConfig.VerticalScrollbarBarColor = true;
             // 
             // Principal
             // 

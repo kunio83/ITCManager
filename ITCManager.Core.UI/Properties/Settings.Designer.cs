@@ -26,11 +26,33 @@ namespace ITCManager.Core.UI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THINKPADW7-PC\\SQLEXPRESS;Initial Catalog=ITC_DBPOwer;Integrated Secur" +
-            "ity=True;MultipleActiveResultSets=True;Application Name=EntityFramework")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.12\\LAVENCIDA;Initial Catalog=ITC_DBPOwer;Integrated Securit" +
+            "y=True;MultipleActiveResultSets=True;Application Name=EntityFramework")]
         public string ITC_DBPOwerConnectionString {
             get {
                 return ((string)(this["ITC_DBPOwerConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.12\\lavencida;Initial Catalog=ITC_DBPOwer;Persist Security I" +
+            "nfo=True;User ID=marcos;Password=Passw0rd")]
+        public string ITC_DBPOwerConnecString {
+            get {
+                return ((string)(this["ITC_DBPOwerConnecString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.12\\lavencida;Persist Security Info=True;User ID=marcos;Pass" +
+            "word=Passw0rd")]
+        public string ConStrLAVENCIDA {
+            get {
+                return ((string)(this["ConStrLAVENCIDA"]));
             }
         }
     }

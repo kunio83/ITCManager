@@ -13,6 +13,14 @@ namespace ITCManager.Core.Business
         static private UnitOfWork unitOfWork = new UnitOfWork();
         static private Repository<Persona> personaRepository;
 
+        public static Persona GetPersonaById(int idPersona)
+        {
+            Persona result;
+            personaRepository = unitOfWork.Repository<Persona>();
+            result = personaRepository.GetById(idPersona);
+            return result;
+        }
+
         public static Persona GetPersonaByDni(string dni)
         {
             Persona result;

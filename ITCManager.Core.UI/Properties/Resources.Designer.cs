@@ -63,6 +63,16 @@ namespace ITCManager.Core.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1460619074_conference_call {
+            get {
+                object obj = ResourceManager.GetObject("1460619074_conference_call", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1460619161_multiply {
             get {
                 object obj = ResourceManager.GetObject("1460619161_multiply", resourceCulture);
@@ -126,6 +136,16 @@ namespace ITCManager.Core.UI.Properties {
         internal static System.Drawing.Bitmap _1462954651_close_window {
             get {
                 object obj = ResourceManager.GetObject("1462954651_close_window", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1463636823_conference {
+            get {
+                object obj = ResourceManager.GetObject("1463636823_conference", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

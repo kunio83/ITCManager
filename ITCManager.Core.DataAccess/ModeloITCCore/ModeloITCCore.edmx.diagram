@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="18">
+      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="82">
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolEmpleadoCondicion" Width="2.75" PointX="43.875" PointY="11.75" FillColor="255, 128, 128" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoAlumno" Width="1.5" PointX="33.625" PointY="21.375" FillColor="255, 128, 128" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Permiso" Width="1.5" PointX="43" PointY="15.625" FillColor="255, 128, 128" />

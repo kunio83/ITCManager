@@ -19,7 +19,13 @@ namespace ITCManager.Core.UI.Forms
 
         private void mtiCargarDatos_Click(object sender, EventArgs e)
         {
-            FormRepository<frmCargaDatos>.Open(this.MdiParent);
+            FormRepository<FrmCargaDatos>.Open(this.MdiParent);
+            
+        }
+
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            FormRepository<FrmCargaPersonal>.Open(this.MdiParent);
         }
     }
 }

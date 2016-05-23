@@ -86,27 +86,25 @@
     <Compile Include="Forms\Controles\BottomBar.Designer.cs">
       <DependentUpon>BottomBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Controles\miTextBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Controles\miTextBox.Designer.cs">
-      <DependentUpon>miTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmCargaDatos.cs">
+    <Compile Include="Forms\FrmCargaPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmCargaDatos.Designer.cs">
-      <DependentUpon>frmCargaDatos.cs</DependentUpon>
+    <Compile Include="Forms\FrmCargaPersonal.Designer.cs">
+      <DependentUpon>FrmCargaPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCargaDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCargaDatos.Designer.cs">
+      <DependentUpon>FrmCargaDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CargaDatosHelper.cs" />
-    <Compile Include="Forms\ICargaDatosHelper.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormRepo.cs" />
     <Compile Include="Forms\FormRepository.cs" />
     <Compile Include="Forms\Principal.cs">
       <SubType>Form</SubType>
@@ -130,11 +128,11 @@
     <EmbeddedResource Include="Forms\Controles\BottomBar.resx">
       <DependentUpon>BottomBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Controles\miTextBox.resx">
-      <DependentUpon>miTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmCargaPersonal.resx">
+      <DependentUpon>FrmCargaPersonal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmCargaDatos.resx">
-      <DependentUpon>frmCargaDatos.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmCargaDatos.resx">
+      <DependentUpon>FrmCargaDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -179,6 +177,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\1460619074_conference_call.png" />
+    <None Include="Resources\1463636823_conference.png" />
     <None Include="Resources\1462954651_close_window.png" />
     <None Include="Resources\1462339101_add_property.png" />
     <None Include="Resources\1462338823_add_property.png" />

@@ -124,6 +124,9 @@
   <data name="1460619161_multiply" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1460619161_multiply.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1463636823_conference" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1463636823_conference.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1460756788_student" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1460756788_student.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +135,9 @@
   </data>
   <data name="HORIZONTAL PNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HORIZONTAL PNG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1462954651_close_window" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1462954651_close_window.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnSave.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSave.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,7 +148,7 @@
   <data name="1460763548_database" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1460763548_database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1462954651_close_window" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1462954651_close_window.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1460619074_conference_call" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1460619074_conference_call.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

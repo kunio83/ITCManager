@@ -14,13 +14,26 @@ using ITCManager.Core.Business;
 
 namespace ITCManager.Core.UI.Forms
 {
-    public partial class frmCargaDatos : Base
+    public partial class FrmCargaDatos : Base
     {
         internal CargaDatosHelper _helper;
 
-        public frmCargaDatos()
+        public FrmCargaDatos()
         {
             InitializeComponent();
+        }
+
+        public FrmCargaDatos(params Object[] args)
+        {
+            InitializeComponent();
+            this._helper = new CargaDatosHelper(this, iTC_DBPOwerDataSet);
+            _helper.cargarComboTablas();
+            if (args.Count() > 0)
+            {
+                String nombreTabla = args[0].ToString();
+                cmbTablas.Text = nombreTabla;
+                mtileAgregarGrid_Click(null, null);
+            }
         }
 
         private void frmCargaDatos_Load(object sender, EventArgs e)

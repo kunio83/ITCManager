@@ -1,6 +1,6 @@
 ﻿namespace ITCManager.Core.UI.Forms
 {
-    partial class frmCargaDatos
+    partial class FrmCargaDatos
     {
         /// <summary>
         /// Required designer variable.
@@ -14,7 +14,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCargaDatos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCargaDatos));
             this.cmbTablas = new MetroFramework.Controls.MetroComboBox();
             this.iTC_DBPOwerDataSet = new ITCManager.Core.UI.ITC_DBPOwerDataSet();
             this.tableAdapterManager = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
@@ -73,7 +73,7 @@
             this.tableAdapterManager.CiudadProductosSetTableAdapter = null;
             this.tableAdapterManager.CiudadSetTableAdapter = null;
             this.tableAdapterManager.CoeficTarjetasSetTableAdapter = null;
-            this.tableAdapterManager.CompraPagoLocalSetTableAdapter = null;
+            //this.tableAdapterManager.CompraPagoLocalSetTableAdapter = null;
             this.tableAdapterManager.CompraSetTableAdapter = null;
             this.tableAdapterManager.CondicionEmpleadoSetTableAdapter = null;
             this.tableAdapterManager.Connection = null;
@@ -97,7 +97,7 @@
             this.tableAdapterManager.FormaPagoSetTableAdapter = null;
             this.tableAdapterManager.GastoBaseSetTableAdapter = null;
             this.tableAdapterManager.GastoChequeSetTableAdapter = null;
-            this.tableAdapterManager.GastoLocalPagoLocalSetTableAdapter = null;
+            //this.tableAdapterManager.GastoLocalPagoLocalSetTableAdapter = null;
             this.tableAdapterManager.GastoLocalSetTableAdapter = null;
             this.tableAdapterManager.HorarioSetTableAdapter = null;
             this.tableAdapterManager.ItemPagadoSetTableAdapter = null;

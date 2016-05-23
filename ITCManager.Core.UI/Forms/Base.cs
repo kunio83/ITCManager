@@ -33,5 +33,9 @@ namespace ITCManager.Core.UI.Forms
             }
         }
 
+        private void Base_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

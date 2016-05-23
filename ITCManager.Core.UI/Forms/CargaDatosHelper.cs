@@ -13,7 +13,7 @@ using ITCManager.Core.UI;
 
 namespace ITCManager.Core.UI.Forms
 {
-    public class CargaDatosHelper //: //ICargaDatosHelper
+    public class CargaDatosHelper
     {
         MetroForm _frmCargaDatos;
         ITC_DBPOwerDataSet _dbDataSet;
@@ -118,7 +118,7 @@ namespace ITCManager.Core.UI.Forms
 
         private BindingNavigator getNewBindingNavigator(String nombre)
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCargaDatos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCargaDatos));
             this._components = new System.ComponentModel.Container();
             BindingNavigator bindingNavigator = new System.Windows.Forms.BindingNavigator(this._components);
             ToolStripButton bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();

@@ -51,9 +51,9 @@
             // 
             this.pcbLogo.Dock = System.Windows.Forms.DockStyle.Right;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
-            this.pcbLogo.Location = new System.Drawing.Point(646, 0);
+            this.pcbLogo.Location = new System.Drawing.Point(671, 0);
             this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(145, 43);
+            this.pcbLogo.Size = new System.Drawing.Size(120, 21);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbLogo.TabIndex = 0;
             this.pcbLogo.TabStop = false;
@@ -63,7 +63,7 @@
             this.mpbProgress.Dock = System.Windows.Forms.DockStyle.Left;
             this.mpbProgress.Location = new System.Drawing.Point(0, 0);
             this.mpbProgress.Name = "mpbProgress";
-            this.mpbProgress.Size = new System.Drawing.Size(145, 43);
+            this.mpbProgress.Size = new System.Drawing.Size(145, 21);
             this.mpbProgress.Style = MetroFramework.MetroColorStyle.Blue;
             this.mpbProgress.TabIndex = 2;
             this.mpbProgress.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -77,7 +77,7 @@
             this.Controls.Add(this.mpbProgress);
             this.Controls.Add(this.lblMsj);
             this.Name = "BottomBar";
-            this.Size = new System.Drawing.Size(791, 43);
+            this.Size = new System.Drawing.Size(791, 21);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
