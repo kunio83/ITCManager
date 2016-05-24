@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.comenzarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.principalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,23 +36,16 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // metroTile1
-            // 
-            this.metroTile1.Location = new System.Drawing.Point(20, 27);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(123, 30);
-            this.metroTile1.TabIndex = 3;
-            this.metroTile1.Text = "ITC Manager";
-            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // menuStrip1
             // 
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.comenzarToolStripMenuItem,
             this.mostrarFormToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(20, 60);
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStrip1.Location = new System.Drawing.Point(10, 30);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(956, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(976, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,12 +83,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(996, 605);
-            this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.menuStrip1);
+            this.DisplayHeader = false;
             this.IsMdiContainer = true;
             this.Name = "Contenedor";
+            this.Padding = new System.Windows.Forms.Padding(10, 30, 10, 10);
+            this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.Flat;
+            this.Style = MetroFramework.MetroColorStyle.Blue;
             this.Text = "Inicio";
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -106,7 +104,6 @@
         }
 
         #endregion
-        private MetroFramework.Controls.MetroTile metroTile1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem comenzarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem principalToolStripMenuItem;

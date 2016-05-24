@@ -23,18 +23,15 @@ namespace ITCManager.Core.UI.Forms
             this.Validate();
             this.personaBindingSource.EndEdit();
             this.rolEmpleadoBindingSource.EndEdit();
-            this.rolEmpleadoTableAdapter.Update(iTC_DBPOwerDataSet.RolEmpleado);
-            this.rolVendedorTableAdapter.Update(iTC_DBPOwerDataSet.RolVendedor);
+            this.rolVendedorBindingSource.EndEdit();
+            //this.rolEmpleadoTableAdapter.Update(iTC_DBPOwerDataSet.RolEmpleado);
+            //this.rolVendedorTableAdapter.Update(iTC_DBPOwerDataSet.RolVendedor);
             this.tableAdapterManager.UpdateAll(this.iTC_DBPOwerDataSet);
 
         }
 
         private void FrmCargaPersonal_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolVendedor' table. You can move, or remove it, as needed.
-            this.rolVendedorTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolVendedor);
-            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolVendedor' table. You can move, or remove it, as needed.
-            this.rolVendedorTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolVendedor);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolVendedor' table. You can move, or remove it, as needed.
             this.rolVendedorTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolVendedor);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.PuestoSet' table. You can move, or remove it, as needed.
@@ -48,18 +45,21 @@ namespace ITCManager.Core.UI.Forms
 
         private void rolEmpleadoDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == rolEmpleadoDataGridView.Columns["dataGridViewTextBoxColumn3"].Index)
+            if (e.Button == MouseButtons.Right)
             {
-                if (contextMenu == null)
+                if (e.ColumnIndex == rolEmpleadoDataGridView.Columns["dataGridViewTextBoxColumn3"].Index)
                 {
-                    contextMenu = new ContextMenu();
-                    MenuItem item = new MenuItem("Editar Valores");
-                    item.Click += Item_Click;
-                    contextMenu.MenuItems.Add(item);
-                }
-                if (e.Button == MouseButtons.Right)
-                {
-                    contextMenu.Show(rolEmpleadoDataGridView, e.Location);
+                    if (contextMenu == null)
+                    {
+                        contextMenu = new ContextMenu();
+                        MenuItem item = new MenuItem("Editar Valores");
+                        item.Click += Item_Click;
+                        contextMenu.MenuItems.Add(item);
+                    }
+                    else
+                    {
+                        contextMenu.Show(rolEmpleadoDataGridView, e.Location);
+                    }
                 }
             }
         }

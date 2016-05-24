@@ -25,6 +25,9 @@ namespace ITCManager.Core.UI.Forms
                 frm.StartPosition = FormStartPosition.Manual;
                 frm.Location = new Point(mdiParent.Location.X + (mdiParent.Width - frm.Width) / 2,
                                             mdiParent.Location.Y + (mdiParent.Height - frm.Height) / 2);
+                frm.WindowState = FormWindowState.Maximized;
+                frm.ControlBox = true;
+
             }
         }
 

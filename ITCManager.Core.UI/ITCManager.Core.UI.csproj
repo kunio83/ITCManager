@@ -177,6 +177,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\LOGO BCO VERT png.png" />
+    <None Include="Resources\ISO BLANCO PNG.png" />
     <None Include="Resources\1460619074_conference_call.png" />
     <None Include="Resources\1463636823_conference.png" />
     <None Include="Resources\1462954651_close_window.png" />

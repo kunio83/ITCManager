@@ -323,6 +323,7 @@
             this.tableAdapterManager.PagoLocalChequeSetTableAdapter = null;
             this.tableAdapterManager.PagoLocalEnvioSetTableAdapter = null;
             this.tableAdapterManager.PagoLocalSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalSueldoSetTableAdapter = null;
             this.tableAdapterManager.PagoLocalTarjetaSetTableAdapter = null;
             this.tableAdapterManager.PagoLocalTransferenciaSetTableAdapter = null;
             this.tableAdapterManager.PagoSetTableAdapter = null;
@@ -340,6 +341,8 @@
             this.tableAdapterManager.RendicionGastoSetTableAdapter = null;
             this.tableAdapterManager.RendicionPagoSetTableAdapter = null;
             this.tableAdapterManager.RendicionPersonaCiudadSetTableAdapter = null;
+            this.tableAdapterManager.RendicionSueldoSetTableAdapter = null;
+            this.tableAdapterManager.RendicionValeSetTableAdapter = null;
             this.tableAdapterManager.RendicionVentaEquipoSetTableAdapter = null;
             this.tableAdapterManager.RolAlumnoPracticasSetTableAdapter = null;
             this.tableAdapterManager.RolAlumnoPresentismoSetTableAdapter = null;
@@ -355,10 +358,13 @@
             this.tableAdapterManager.RolLocacionSalonSetTableAdapter = null;
             this.tableAdapterManager.RolLocadorSetTableAdapter = null;
             this.tableAdapterManager.RolVendedorTableAdapter = null;
+            this.tableAdapterManager.SueldoPagoSetTableAdapter = null;
             this.tableAdapterManager.TarjetaPropiaSetTableAdapter = null;
             this.tableAdapterManager.TipoChequeSetTableAdapter = null;
             this.tableAdapterManager.TransferenciaSetTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValeFinanciacionSetTableAdapter = null;
+            this.tableAdapterManager.ValeSetTableAdapter = null;
             // 
             // personaBindingNavigator
             // 
