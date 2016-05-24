@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/11/2016 20:41:15
--- Generated from EDMX file: C:\Users\Ezequiel\Source\Repos\ITCManagerRepositorio\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
+-- Date Created: 05/23/2016 23:52:49
+-- Generated from EDMX file: C:\Users\ThinkPadW7\Documents\Visual Studio 2015\Projects\ITCManager\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -347,6 +347,30 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoVale]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ValeSet] DROP CONSTRAINT [FK_RolEmpleadoVale];
 GO
+IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoSueldoTransferencia]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SueldoPagoSet] DROP CONSTRAINT [FK_RolEmpleadoSueldoTransferencia];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RendicionPersonaCiudadRendicionVale]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RendicionValeSet] DROP CONSTRAINT [FK_RendicionPersonaCiudadRendicionVale];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ValeRendicionVale]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RendicionValeSet] DROP CONSTRAINT [FK_ValeRendicionVale];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ValeValeFinanciacion]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ValeFinanciacionSet] DROP CONSTRAINT [FK_ValeValeFinanciacion];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SueldoPagoPagoLocalSueldo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PagoLocalSueldoSet] DROP CONSTRAINT [FK_SueldoPagoPagoLocalSueldo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PagoLocalPagoLocalSueldo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PagoLocalSueldoSet] DROP CONSTRAINT [FK_PagoLocalPagoLocalSueldo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RendicionPersonaCiudadRendicionSueldo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RendicionSueldoSet] DROP CONSTRAINT [FK_RendicionPersonaCiudadRendicionSueldo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SueldoPagoRendicionSueldo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RendicionSueldoSet] DROP CONSTRAINT [FK_SueldoPagoRendicionSueldo];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -621,6 +645,21 @@ IF OBJECT_ID(N'[dbo].[PuestoSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[ValeSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ValeSet];
+GO
+IF OBJECT_ID(N'[dbo].[SueldoPagoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SueldoPagoSet];
+GO
+IF OBJECT_ID(N'[dbo].[RendicionValeSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RendicionValeSet];
+GO
+IF OBJECT_ID(N'[dbo].[ValeFinanciacionSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ValeFinanciacionSet];
+GO
+IF OBJECT_ID(N'[dbo].[PagoLocalSueldoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PagoLocalSueldoSet];
+GO
+IF OBJECT_ID(N'[dbo].[RendicionSueldoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RendicionSueldoSet];
 GO
 
 -- --------------------------------------------------
@@ -3347,36 +3386,6 @@ GO
 CREATE INDEX [IX_FK_RolEmpleadoRolVendedor]
 ON [dbo].[RolVendedor]
     ([IdRolEmpleado]);
-GO
-
--- Creating foreign key on [IdSubgerente] in table 'RolVendedor'
-ALTER TABLE [dbo].[RolVendedor]
-ADD CONSTRAINT [FK_RolEmpleadoRolVendedor1]
-    FOREIGN KEY ([IdSubgerente])
-    REFERENCES [dbo].[RolEmpleado]
-        ([IdRolEmpleado])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_RolEmpleadoRolVendedor1'
-CREATE INDEX [IX_FK_RolEmpleadoRolVendedor1]
-ON [dbo].[RolVendedor]
-    ([IdSubgerente]);
-GO
-
--- Creating foreign key on [IdGerente] in table 'RolVendedor'
-ALTER TABLE [dbo].[RolVendedor]
-ADD CONSTRAINT [FK_RolEmpleadoRolVendedor2]
-    FOREIGN KEY ([IdGerente])
-    REFERENCES [dbo].[RolEmpleado]
-        ([IdRolEmpleado])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_RolEmpleadoRolVendedor2'
-CREATE INDEX [IX_FK_RolEmpleadoRolVendedor2]
-ON [dbo].[RolVendedor]
-    ([IdGerente]);
 GO
 
 -- Creating foreign key on [IdRolEmpleado] in table 'AsignacionReciboSet'

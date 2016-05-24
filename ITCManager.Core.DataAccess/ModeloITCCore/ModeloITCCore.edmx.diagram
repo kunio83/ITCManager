@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="26">
+      <Diagram DiagramId="4871e0571eea43b5a9d38b4d867fa14a" Name="Diagram1" ZoomLevel="72">
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolEmpleadoCondicion" Width="2.75" PointX="43.875" PointY="11.75" FillColor="255, 128, 128" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.EstadoAlumno" Width="1.5" PointX="33.625" PointY="21.375" FillColor="255, 128, 128" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Permiso" Width="1.5" PointX="43" PointY="15.625" FillColor="255, 128, 128" />
@@ -167,8 +167,6 @@
         <AssociationConnector Association="ITC_DBPOwerModel.FormaPagoLocalPagoLocal" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.GastoLocal" Width="1.875" PointX="53.5" PointY="25.75" FillColor="Green" />
         <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor" />
-        <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor1" />
-        <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor2" />
         <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoAsignacionRecibo" />
         <AssociationConnector Association="ITC_DBPOwerModel.RolEmpleadoRendicionPersonaCiudad" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.CondicionEmpleado" Width="2.125" PointX="47.375" PointY="11.125" FillColor="255, 128, 128" />

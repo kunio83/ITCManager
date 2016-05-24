@@ -78,29 +78,23 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.puestoSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.puestoSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolEmpleadoTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolEmpleadoTableAdapter();
-            this.puestoSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.puestoSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.PuestoSetTableAdapter();
-            this.fKPersonaRolEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.rolDocenteSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolDocenteSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolDocenteSetTableAdapter();
-            this.rolDocenteSetDataGridView = new System.Windows.Forms.DataGridView();
+            this.rolVendedorDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rolVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolVendedorTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolVendedorTableAdapter();
-            this.rolVendedorDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKRolEmpleadoRolVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolVendedorTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolVendedorTableAdapter();
             idPersonaLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
@@ -120,15 +114,12 @@
             this.personaBindingNavigator.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rolEmpleadoDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.puestoSetBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolEmpleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.puestoSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKPersonaRolEmpleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolEmpleadoBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rolDocenteSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolDocenteSetDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolVendedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolVendedorDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKRolEmpleadoRolVendedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolVendedorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idPersonaLabel
@@ -651,6 +642,7 @@
             this.rolEmpleadoDataGridView.Size = new System.Drawing.Size(431, 138);
             this.rolEmpleadoDataGridView.TabIndex = 0;
             this.rolEmpleadoDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.rolEmpleadoDataGridView_CellMouseClick);
+            this.rolEmpleadoDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.rolEmpleadoDataGridView_DataBindingComplete);
             this.rolEmpleadoDataGridView.MouseEnter += new System.EventHandler(this.rolEmpleadoDataGridView_MouseEnter);
             this.rolEmpleadoDataGridView.MouseLeave += new System.EventHandler(this.rolEmpleadoDataGridView_MouseLeave);
             // 
@@ -673,7 +665,7 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "IdPuesto";
-            this.dataGridViewTextBoxColumn3.DataSource = this.puestoSetBindingSource1;
+            this.dataGridViewTextBoxColumn3.DataSource = this.puestoSetBindingSource;
             this.dataGridViewTextBoxColumn3.DisplayMember = "DetallePuesto";
             this.dataGridViewTextBoxColumn3.HeaderText = "Puesto";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -682,10 +674,10 @@
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn3.ValueMember = "IdPuesto";
             // 
-            // puestoSetBindingSource1
+            // puestoSetBindingSource
             // 
-            this.puestoSetBindingSource1.DataMember = "PuestoSet";
-            this.puestoSetBindingSource1.DataSource = this.iTC_DBPOwerDataSet;
+            this.puestoSetBindingSource.DataMember = "PuestoSet";
+            this.puestoSetBindingSource.DataSource = this.iTC_DBPOwerDataSet;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -724,26 +716,15 @@
             // 
             this.rolEmpleadoTableAdapter.ClearBeforeFill = true;
             // 
-            // puestoSetBindingSource
-            // 
-            this.puestoSetBindingSource.DataMember = "PuestoSet";
-            this.puestoSetBindingSource.DataSource = this.iTC_DBPOwerDataSet;
-            // 
             // puestoSetTableAdapter
             // 
             this.puestoSetTableAdapter.ClearBeforeFill = true;
-            // 
-            // fKPersonaRolEmpleadoBindingSource
-            // 
-            this.fKPersonaRolEmpleadoBindingSource.DataMember = "FK_PersonaRolEmpleado";
-            this.fKPersonaRolEmpleadoBindingSource.DataSource = this.personaBindingSource;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.rolVendedorDataGridView, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.rolDocenteSetDataGridView, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.rolVendedorDataGridView, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.rolEmpleadoDataGridView, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(356, 85);
@@ -755,33 +736,26 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(437, 382);
             this.tableLayoutPanel1.TabIndex = 29;
             // 
-            // rolDocenteSetBindingSource
+            // rolVendedorDataGridView
             // 
-            this.rolDocenteSetBindingSource.DataMember = "FK_RolEmpleadoRolDocente";
-            this.rolDocenteSetBindingSource.DataSource = this.fKPersonaRolEmpleadoBindingSource;
-            // 
-            // rolDocenteSetTableAdapter
-            // 
-            this.rolDocenteSetTableAdapter.ClearBeforeFill = true;
-            // 
-            // rolDocenteSetDataGridView
-            // 
-            this.rolDocenteSetDataGridView.AutoGenerateColumns = false;
-            this.rolDocenteSetDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rolDocenteSetDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rolVendedorDataGridView.AutoGenerateColumns = false;
+            this.rolVendedorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rolVendedorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            this.rolDocenteSetDataGridView.DataSource = this.rolDocenteSetBindingSource;
-            this.rolDocenteSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rolDocenteSetDataGridView.Location = new System.Drawing.Point(3, 147);
-            this.rolDocenteSetDataGridView.Name = "rolDocenteSetDataGridView";
-            this.rolDocenteSetDataGridView.Size = new System.Drawing.Size(431, 113);
-            this.rolDocenteSetDataGridView.TabIndex = 1;
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.rolVendedorDataGridView.DataSource = this.fKRolEmpleadoRolVendedorBindingSource;
+            this.rolVendedorDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rolVendedorDataGridView.Location = new System.Drawing.Point(3, 147);
+            this.rolVendedorDataGridView.Name = "rolVendedorDataGridView";
+            this.rolVendedorDataGridView.Size = new System.Drawing.Size(431, 113);
+            this.rolVendedorDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "IdRolDocente";
-            this.dataGridViewTextBoxColumn8.HeaderText = "IdRolDocente";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "IdRolVendedor";
+            this.dataGridViewTextBoxColumn8.HeaderText = "IdRolVendedor";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
@@ -791,55 +765,31 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "IdRolEmpleado";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdSubgerente";
+            this.dataGridViewTextBoxColumn10.HeaderText = "IdSubgerente";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "IdGerente";
+            this.dataGridViewTextBoxColumn11.HeaderText = "IdGerente";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // fKRolEmpleadoRolVendedorBindingSource
+            // 
+            this.fKRolEmpleadoRolVendedorBindingSource.DataMember = "FK_RolEmpleadoRolVendedor";
+            this.fKRolEmpleadoRolVendedorBindingSource.DataSource = this.rolEmpleadoBindingSource;
+            // 
             // rolVendedorBindingSource
             // 
-            this.rolVendedorBindingSource.DataMember = "FK_RolEmpleadoRolVendedor";
-            this.rolVendedorBindingSource.DataSource = this.fKPersonaRolEmpleadoBindingSource;
+            this.rolVendedorBindingSource.DataMember = "RolVendedor";
+            this.rolVendedorBindingSource.DataSource = this.iTC_DBPOwerDataSet;
             // 
             // rolVendedorTableAdapter
             // 
             this.rolVendedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // rolVendedorDataGridView
-            // 
-            this.rolVendedorDataGridView.AutoGenerateColumns = false;
-            this.rolVendedorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rolVendedorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13});
-            this.rolVendedorDataGridView.DataSource = this.rolVendedorBindingSource;
-            this.rolVendedorDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rolVendedorDataGridView.Location = new System.Drawing.Point(3, 266);
-            this.rolVendedorDataGridView.Name = "rolVendedorDataGridView";
-            this.rolVendedorDataGridView.Size = new System.Drawing.Size(431, 113);
-            this.rolVendedorDataGridView.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdRolVendedor";
-            this.dataGridViewTextBoxColumn10.HeaderText = "IdRolVendedor";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "IdRolEmpleado";
-            this.dataGridViewTextBoxColumn11.HeaderText = "IdRolEmpleado";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "IdSubgerente";
-            this.dataGridViewTextBoxColumn12.HeaderText = "IdSubgerente";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "IdGerente";
-            this.dataGridViewTextBoxColumn13.HeaderText = "IdGerente";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
             // FrmCargaPersonal
             // 
@@ -864,15 +814,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rolEmpleadoDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.puestoSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolEmpleadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.puestoSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKPersonaRolEmpleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolEmpleadoBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rolDocenteSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolDocenteSetDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolVendedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolVendedorDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKRolEmpleadoRolVendedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolVendedorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -916,8 +863,7 @@
         private System.Windows.Forms.DataGridView rolEmpleadoDataGridView;
         private System.Windows.Forms.BindingSource puestoSetBindingSource;
         private ITC_DBPOwerDataSetTableAdapters.PuestoSetTableAdapter puestoSetTableAdapter;
-        private System.Windows.Forms.BindingSource puestoSetBindingSource1;
-        private System.Windows.Forms.BindingSource fKPersonaRolEmpleadoBindingSource;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
@@ -925,18 +871,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.BindingSource rolDocenteSetBindingSource;
-        private ITC_DBPOwerDataSetTableAdapters.RolDocenteSetTableAdapter rolDocenteSetTableAdapter;
-        private System.Windows.Forms.DataGridView rolDocenteSetDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.BindingSource rolVendedorBindingSource;
         private ITC_DBPOwerDataSetTableAdapters.RolVendedorTableAdapter rolVendedorTableAdapter;
         private System.Windows.Forms.DataGridView rolVendedorDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.BindingSource fKRolEmpleadoRolVendedorBindingSource;
     }
 }

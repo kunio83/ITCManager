@@ -21,12 +21,9 @@ namespace ITCManager.Core.UI.Forms
         private void personaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            iTC_DBPOwerDataSet.RolDocenteSet.EndInit();
             this.personaBindingSource.EndEdit();
             this.rolEmpleadoBindingSource.EndEdit();
-            this.rolDocenteSetBindingSource.EndEdit();
             this.rolEmpleadoTableAdapter.Update(iTC_DBPOwerDataSet.RolEmpleado);
-            this.rolDocenteSetTableAdapter.Update(iTC_DBPOwerDataSet.RolDocenteSet);
             this.rolVendedorTableAdapter.Update(iTC_DBPOwerDataSet.RolVendedor);
             this.tableAdapterManager.UpdateAll(this.iTC_DBPOwerDataSet);
 
@@ -36,8 +33,10 @@ namespace ITCManager.Core.UI.Forms
         {
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolVendedor' table. You can move, or remove it, as needed.
             this.rolVendedorTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolVendedor);
-            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolDocenteSet' table. You can move, or remove it, as needed.
-            this.rolDocenteSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolDocenteSet);
+            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolVendedor' table. You can move, or remove it, as needed.
+            this.rolVendedorTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolVendedor);
+            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolVendedor' table. You can move, or remove it, as needed.
+            this.rolVendedorTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolVendedor);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.PuestoSet' table. You can move, or remove it, as needed.
             this.puestoSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.PuestoSet);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolEmpleado' table. You can move, or remove it, as needed.
@@ -78,8 +77,28 @@ namespace ITCManager.Core.UI.Forms
 
         private void rolEmpleadoDataGridView_MouseEnter(object sender, EventArgs e)
         {
-            if(idPersonaTextBox.Text != "-1")
+            if(idPersonaTextBox.Text != String.Empty && Convert.ToInt32(idPersonaTextBox.Text) > 0)
                 ((DataGridView)sender).ReadOnly = false;
+        }
+
+        private void rolEmpleadoDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (rolEmpleadoDataGridView.Rows.Count > 0)
+            {
+                DataGridViewRow puestoSeleccionado = puestoSeleccionado = rolEmpleadoDataGridView.Rows[rolEmpleadoDataGridView.Rows.GetFirstRow(DataGridViewElementStates.Visible)];
+                var puestoActual = puestoSeleccionado.Cells["dataGridViewTextBoxColumn3"].EditedFormattedValue.ToString();
+                switch (puestoActual)
+                {
+                    case "Vendedor":
+                        {
+                            rolVendedorDataGridView.Visible = true;
+                        }; break;
+                    default:
+                        {
+                            rolVendedorDataGridView.Visible = false;
+                        }; break;
+                }
+            }
         }
     }
 }

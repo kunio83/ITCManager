@@ -437,14 +437,6 @@
       <End Role="RolEmpleado" EntitySet="RolEmpleado" />
       <End Role="RolVendedor" EntitySet="RolVendedor" />
     </AssociationSet>
-    <AssociationSet Name="RolEmpleadoRolVendedor1" Association="ITC_DBPOwerModel.Store.RolEmpleadoRolVendedor1">
-      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
-      <End Role="RolVendedor" EntitySet="RolVendedor" />
-    </AssociationSet>
-    <AssociationSet Name="RolEmpleadoRolVendedor2" Association="ITC_DBPOwerModel.Store.RolEmpleadoRolVendedor2">
-      <End Role="RolEmpleado" EntitySet="RolEmpleado" />
-      <End Role="RolVendedor" EntitySet="RolVendedor" />
-    </AssociationSet>
     <AssociationSet Name="RolEmpleadoAsignacionRecibo" Association="ITC_DBPOwerModel.Store.RolEmpleadoAsignacionRecibo">
       <End Role="RolEmpleado" EntitySet="RolEmpleado" />
       <End Role="AsignacionRecibo" EntitySet="AsignacionReciboSet" />
@@ -2466,30 +2458,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="RolEmpleadoRolVendedor1">
-    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
-    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="RolEmpleado">
-        <PropertyRef Name="IdRolEmpleado" />
-      </Principal>
-      <Dependent Role="RolVendedor">
-        <PropertyRef Name="IdSubgerente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="RolEmpleadoRolVendedor2">
-    <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
-    <End Role="RolVendedor" Type="ITC_DBPOwerModel.Store.RolVendedor" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="RolEmpleado">
-        <PropertyRef Name="IdRolEmpleado" />
-      </Principal>
-      <Dependent Role="RolVendedor">
-        <PropertyRef Name="IdGerente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="RolEmpleadoAsignacionRecibo">
     <End Role="RolEmpleado" Type="ITC_DBPOwerModel.Store.RolEmpleado" Multiplicity="1" />
     <End Role="AsignacionRecibo" Type="ITC_DBPOwerModel.Store.AsignacionReciboSet" Multiplicity="*" />
@@ -3291,14 +3259,6 @@
             <End Role="RolEmpleado" EntitySet="RolEmpleado" />
             <End Role="RolVendedor" EntitySet="RolVendedor" />
           </AssociationSet>
-          <AssociationSet Name="RolEmpleadoRolVendedor1" Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor1">
-            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
-            <End Role="RolVendedor" EntitySet="RolVendedor" />
-          </AssociationSet>
-          <AssociationSet Name="RolEmpleadoRolVendedor2" Association="ITC_DBPOwerModel.RolEmpleadoRolVendedor2">
-            <End Role="RolEmpleado" EntitySet="RolEmpleado" />
-            <End Role="RolVendedor" EntitySet="RolVendedor" />
-          </AssociationSet>
           <AssociationSet Name="RolEmpleadoAsignacionRecibo" Association="ITC_DBPOwerModel.RolEmpleadoAsignacionRecibo">
             <End Role="RolEmpleado" EntitySet="RolEmpleado" />
             <End Role="AsignacionRecibo" EntitySet="AsignacionReciboSet" />
@@ -3546,8 +3506,6 @@
           <NavigationProperty Name="Persona" Relationship="ITC_DBPOwerModel.FK_PersonaRolEmpleado" FromRole="RolEmpleado" ToRole="Persona" />
           <NavigationProperty Name="CiudadPersonal" Relationship="ITC_DBPOwerModel.RolEmpleadoCiudadPersonal" FromRole="RolEmpleado" ToRole="CiudadPersonal" />
           <NavigationProperty Name="RolVendedor" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor" FromRole="RolEmpleado" ToRole="RolVendedor" />
-          <NavigationProperty Name="RolVendedor1" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor1" FromRole="RolEmpleado" ToRole="RolVendedor" />
-          <NavigationProperty Name="RolVendedor2" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor2" FromRole="RolEmpleado" ToRole="RolVendedor" />
           <NavigationProperty Name="AsignacionRecibo" Relationship="ITC_DBPOwerModel.RolEmpleadoAsignacionRecibo" FromRole="RolEmpleado" ToRole="AsignacionRecibo" />
           <NavigationProperty Name="RendicionPersonaCiudad" Relationship="ITC_DBPOwerModel.RolEmpleadoRendicionPersonaCiudad" FromRole="RolEmpleado" ToRole="RendicionPersonaCiudad" />
           <NavigationProperty Name="RolDocente" Relationship="ITC_DBPOwerModel.RolEmpleadoRolDocente" FromRole="RolEmpleado" ToRole="RolDocente" />
@@ -3568,8 +3526,6 @@
           <Property Name="IdGerente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="PlanVendedorAlumno" Relationship="ITC_DBPOwerModel.RolVendedorPlanVendedorAlumno" FromRole="RolVendedor" ToRole="PlanVendedorAlumno" />
           <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor" FromRole="RolVendedor" ToRole="RolEmpleado" />
-          <NavigationProperty Name="RolEmpleado1" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor1" FromRole="RolVendedor" ToRole="RolEmpleado" />
-          <NavigationProperty Name="RolEmpleado2" Relationship="ITC_DBPOwerModel.RolEmpleadoRolVendedor2" FromRole="RolVendedor" ToRole="RolEmpleado" />
         </EntityType>
         <EntityType Name="AsignacionRecibo">
           <Key>
@@ -5384,30 +5340,6 @@
             </Principal>
             <Dependent Role="RolVendedor">
               <PropertyRef Name="IdRolEmpleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="RolEmpleadoRolVendedor1">
-          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RolEmpleado">
-              <PropertyRef Name="IdRolEmpleado" />
-            </Principal>
-            <Dependent Role="RolVendedor">
-              <PropertyRef Name="IdSubgerente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="RolEmpleadoRolVendedor2">
-          <End Type="ITC_DBPOwerModel.RolEmpleado" Role="RolEmpleado" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.RolVendedor" Role="RolVendedor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RolEmpleado">
-              <PropertyRef Name="IdRolEmpleado" />
-            </Principal>
-            <Dependent Role="RolVendedor">
-              <PropertyRef Name="IdGerente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
