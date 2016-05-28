@@ -43,6 +43,12 @@
             System.Windows.Forms.Label estadoCivilLabel;
             System.Windows.Forms.Label mailLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCargaPersonal));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.iTC_DBPOwerDataSet = new ITCManager.Core.UI.ITC_DBPOwerDataSet();
             this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personaTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.PersonaTableAdapter();
@@ -88,13 +94,16 @@
             this.puestoSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.PuestoSetTableAdapter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rolVendedorDataGridView = new System.Windows.Forms.DataGridView();
+            this.fKRolEmpleadoRolVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolVendedorTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolVendedorTableAdapter();
+            this.fKPersonaRolEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fKRolEmpleadoRolVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolVendedorTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolVendedorTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.SubGerente = new System.Windows.Forms.DataGridViewComboBoxColumn();
             idPersonaLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
@@ -120,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolVendedorDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKRolEmpleadoRolVendedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolVendedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKPersonaRolEmpleadoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idPersonaLabel
@@ -385,14 +395,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.personaBindingNavigatorSaveItem});
-            this.personaBindingNavigator.Location = new System.Drawing.Point(20, 60);
+            this.personaBindingNavigator.Location = new System.Drawing.Point(10, 60);
             this.personaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.personaBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.personaBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.personaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.personaBindingNavigator.Name = "personaBindingNavigator";
             this.personaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.personaBindingNavigator.Size = new System.Drawing.Size(773, 25);
+            this.personaBindingNavigator.Size = new System.Drawing.Size(793, 25);
             this.personaBindingNavigator.TabIndex = 0;
             this.personaBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -623,7 +633,7 @@
             this.panel1.Controls.Add(this.barrioTextBox);
             this.panel1.Controls.Add(barrioLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(20, 85);
+            this.panel1.Location = new System.Drawing.Point(10, 85);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(336, 382);
             this.panel1.TabIndex = 27;
@@ -631,6 +641,14 @@
             // rolEmpleadoDataGridView
             // 
             this.rolEmpleadoDataGridView.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rolEmpleadoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.rolEmpleadoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rolEmpleadoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -641,11 +659,27 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.rolEmpleadoDataGridView.DataSource = this.rolEmpleadoBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.rolEmpleadoDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.rolEmpleadoDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rolEmpleadoDataGridView.Location = new System.Drawing.Point(3, 3);
             this.rolEmpleadoDataGridView.Name = "rolEmpleadoDataGridView";
             this.rolEmpleadoDataGridView.ReadOnly = true;
-            this.rolEmpleadoDataGridView.Size = new System.Drawing.Size(431, 138);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rolEmpleadoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.rolEmpleadoDataGridView.Size = new System.Drawing.Size(451, 138);
             this.rolEmpleadoDataGridView.TabIndex = 0;
             this.rolEmpleadoDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.rolEmpleadoDataGridView_CellMouseClick);
             this.rolEmpleadoDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.rolEmpleadoDataGridView_DataBindingComplete);
@@ -733,30 +767,75 @@
             this.tableLayoutPanel1.Controls.Add(this.rolVendedorDataGridView, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.rolEmpleadoDataGridView, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(356, 85);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(346, 85);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.60993F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.39007F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 118F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(437, 382);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(457, 382);
             this.tableLayoutPanel1.TabIndex = 29;
             // 
             // rolVendedorDataGridView
             // 
             this.rolVendedorDataGridView.AutoGenerateColumns = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rolVendedorDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.rolVendedorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rolVendedorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
+            this.dataGridViewTextBoxColumn11,
+            this.Column1,
+            this.SubGerente});
             this.rolVendedorDataGridView.DataSource = this.fKRolEmpleadoRolVendedorBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.rolVendedorDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.rolVendedorDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rolVendedorDataGridView.Location = new System.Drawing.Point(3, 147);
             this.rolVendedorDataGridView.Name = "rolVendedorDataGridView";
-            this.rolVendedorDataGridView.Size = new System.Drawing.Size(431, 113);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rolVendedorDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.rolVendedorDataGridView.Size = new System.Drawing.Size(451, 113);
             this.rolVendedorDataGridView.TabIndex = 1;
+            // 
+            // fKRolEmpleadoRolVendedorBindingSource
+            // 
+            this.fKRolEmpleadoRolVendedorBindingSource.DataMember = "FK_RolEmpleadoRolVendedor";
+            this.fKRolEmpleadoRolVendedorBindingSource.DataSource = this.rolEmpleadoBindingSource;
+            // 
+            // rolVendedorBindingSource
+            // 
+            this.rolVendedorBindingSource.DataMember = "RolVendedor";
+            this.rolVendedorBindingSource.DataSource = this.iTC_DBPOwerDataSet;
+            // 
+            // rolVendedorTableAdapter
+            // 
+            this.rolVendedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // fKPersonaRolEmpleadoBindingSource
+            // 
+            this.fKPersonaRolEmpleadoBindingSource.DataMember = "FK_PersonaRolEmpleado";
+            this.fKPersonaRolEmpleadoBindingSource.DataSource = this.personaBindingSource;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -783,19 +862,18 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "IdGerente";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
-            // fKRolEmpleadoRolVendedorBindingSource
+            // Column1
             // 
-            this.fKRolEmpleadoRolVendedorBindingSource.DataMember = "FK_RolEmpleadoRolVendedor";
-            this.fKRolEmpleadoRolVendedorBindingSource.DataSource = this.rolEmpleadoBindingSource;
+            this.Column1.DataSource = this.personaBindingSource;
+            this.Column1.DisplayMember = "Apellido";
+            this.Column1.HeaderText = "Gerente";
+            this.Column1.Name = "Column1";
+            this.Column1.ValueMember = "IdPersona";
             // 
-            // rolVendedorBindingSource
+            // SubGerente
             // 
-            this.rolVendedorBindingSource.DataMember = "RolVendedor";
-            this.rolVendedorBindingSource.DataSource = this.iTC_DBPOwerDataSet;
-            // 
-            // rolVendedorTableAdapter
-            // 
-            this.rolVendedorTableAdapter.ClearBeforeFill = true;
+            this.SubGerente.HeaderText = "Column2";
+            this.SubGerente.Name = "SubGerente";
             // 
             // FrmCargaPersonal
             // 
@@ -805,7 +883,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.personaBindingNavigator);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "FrmCargaPersonal";
             this.Text = "Carga  de Personal";
             this.Load += new System.EventHandler(this.FrmCargaPersonal_Load);
@@ -826,6 +903,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolVendedorDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKRolEmpleadoRolVendedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolVendedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKPersonaRolEmpleadoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -880,10 +958,13 @@
         private System.Windows.Forms.BindingSource rolVendedorBindingSource;
         private ITC_DBPOwerDataSetTableAdapters.RolVendedorTableAdapter rolVendedorTableAdapter;
         private System.Windows.Forms.DataGridView rolVendedorDataGridView;
+        private System.Windows.Forms.BindingSource fKRolEmpleadoRolVendedorBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.BindingSource fKRolEmpleadoRolVendedorBindingSource;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn SubGerente;
+        private System.Windows.Forms.BindingSource fKPersonaRolEmpleadoBindingSource;
     }
 }

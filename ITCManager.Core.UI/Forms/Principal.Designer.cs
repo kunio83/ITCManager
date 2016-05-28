@@ -33,11 +33,11 @@
             this.metroTile6 = new MetroFramework.Controls.MetroTile();
             this.metroTile5 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
-            this.tabHerram = new MetroFramework.Controls.MetroTabPage();
-            this.tabConfig = new MetroFramework.Controls.MetroTabPage();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.mtiCargarDatos = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.tabHerram = new MetroFramework.Controls.MetroTabPage();
+            this.tabConfig = new MetroFramework.Controls.MetroTabPage();
             this.tabInicio.SuspendLayout();
             this.mtp.SuspendLayout();
             this.SuspendLayout();
@@ -48,10 +48,10 @@
             this.tabInicio.Controls.Add(this.tabHerram);
             this.tabInicio.Controls.Add(this.tabConfig);
             this.tabInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabInicio.Location = new System.Drawing.Point(20, 60);
+            this.tabInicio.Location = new System.Drawing.Point(10, 60);
             this.tabInicio.Name = "tabInicio";
             this.tabInicio.SelectedIndex = 0;
-            this.tabInicio.Size = new System.Drawing.Size(955, 500);
+            this.tabInicio.Size = new System.Drawing.Size(975, 500);
             this.tabInicio.TabIndex = 1;
             this.tabInicio.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -67,7 +67,7 @@
             this.mtp.HorizontalScrollbarBarColor = true;
             this.mtp.Location = new System.Drawing.Point(4, 35);
             this.mtp.Name = "mtp";
-            this.mtp.Size = new System.Drawing.Size(947, 461);
+            this.mtp.Size = new System.Drawing.Size(967, 461);
             this.mtp.Style = MetroFramework.MetroColorStyle.Blue;
             this.mtp.TabIndex = 0;
             this.mtp.Text = "Inicio";
@@ -106,30 +106,7 @@
             this.metroTile4.Text = "metroTile4";
             this.metroTile4.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile4.UseTileImage = true;
-            // 
-            // tabHerram
-            // 
-            this.tabHerram.HorizontalScrollbarBarColor = true;
-            this.tabHerram.Location = new System.Drawing.Point(4, 35);
-            this.tabHerram.Name = "tabHerram";
-            this.tabHerram.Size = new System.Drawing.Size(947, 461);
-            this.tabHerram.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tabHerram.TabIndex = 1;
-            this.tabHerram.Text = "Herramientas";
-            this.tabHerram.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.tabHerram.VerticalScrollbarBarColor = true;
-            // 
-            // tabConfig
-            // 
-            this.tabConfig.HorizontalScrollbarBarColor = true;
-            this.tabConfig.Location = new System.Drawing.Point(4, 35);
-            this.tabConfig.Name = "tabConfig";
-            this.tabConfig.Size = new System.Drawing.Size(947, 461);
-            this.tabConfig.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tabConfig.TabIndex = 2;
-            this.tabConfig.Text = "Configuración";
-            this.tabConfig.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.tabConfig.VerticalScrollbarBarColor = true;
+            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
             // 
             // metroTile3
             // 
@@ -172,16 +149,38 @@
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.UseTileImage = true;
             // 
+            // tabHerram
+            // 
+            this.tabHerram.HorizontalScrollbarBarColor = true;
+            this.tabHerram.Location = new System.Drawing.Point(4, 35);
+            this.tabHerram.Name = "tabHerram";
+            this.tabHerram.Size = new System.Drawing.Size(947, 461);
+            this.tabHerram.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tabHerram.TabIndex = 1;
+            this.tabHerram.Text = "Herramientas";
+            this.tabHerram.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabHerram.VerticalScrollbarBarColor = true;
+            // 
+            // tabConfig
+            // 
+            this.tabConfig.HorizontalScrollbarBarColor = true;
+            this.tabConfig.Location = new System.Drawing.Point(4, 35);
+            this.tabConfig.Name = "tabConfig";
+            this.tabConfig.Size = new System.Drawing.Size(947, 461);
+            this.tabConfig.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tabConfig.TabIndex = 2;
+            this.tabConfig.Text = "Configuración";
+            this.tabConfig.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabConfig.VerticalScrollbarBarColor = true;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 588);
             this.Controls.Add(this.tabInicio);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Principal";
             this.Text = "Principal";
-            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.Controls.SetChildIndex(this.tabInicio, 0);
             this.tabInicio.ResumeLayout(false);
             this.mtp.ResumeLayout(false);

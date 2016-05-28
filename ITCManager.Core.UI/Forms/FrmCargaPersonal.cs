@@ -24,8 +24,8 @@ namespace ITCManager.Core.UI.Forms
             this.personaBindingSource.EndEdit();
             this.rolEmpleadoBindingSource.EndEdit();
             this.rolVendedorBindingSource.EndEdit();
-            //this.rolEmpleadoTableAdapter.Update(iTC_DBPOwerDataSet.RolEmpleado);
-            //this.rolVendedorTableAdapter.Update(iTC_DBPOwerDataSet.RolVendedor);
+            this.rolEmpleadoTableAdapter.Update(iTC_DBPOwerDataSet.RolEmpleado);
+            this.rolVendedorTableAdapter.Update(iTC_DBPOwerDataSet.RolVendedor);
             this.tableAdapterManager.UpdateAll(this.iTC_DBPOwerDataSet);
 
         }
