@@ -15,7 +15,6 @@
     <EntitySet Name="RolEmpleado" EntityType="ITC_DBPOwerModel.Store.RolEmpleado" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RolVendedor" EntityType="ITC_DBPOwerModel.Store.RolVendedor" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="AsignacionReciboSet" EntityType="ITC_DBPOwerModel.Store.AsignacionReciboSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="LineaSet" EntityType="ITC_DBPOwerModel.Store.LineaSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="LineaCiudadSet" EntityType="ITC_DBPOwerModel.Store.LineaCiudadSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CiudadSet" EntityType="ITC_DBPOwerModel.Store.CiudadSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="LocalidadSet" EntityType="ITC_DBPOwerModel.Store.LocalidadSet" store:Type="Tables" Schema="dbo" />
@@ -124,10 +123,6 @@
     <AssociationSet Name="PersonaRolLocador" Association="ITC_DBPOwerModel.Store.PersonaRolLocador">
       <End Role="Persona" EntitySet="Persona" />
       <End Role="RolLocador" EntitySet="RolLocadorSet" />
-    </AssociationSet>
-    <AssociationSet Name="LineaLineaCiudad" Association="ITC_DBPOwerModel.Store.LineaLineaCiudad">
-      <End Role="Linea" EntitySet="LineaSet" />
-      <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
     </AssociationSet>
     <AssociationSet Name="CiudadLineaCiudad" Association="ITC_DBPOwerModel.Store.CiudadLineaCiudad">
       <End Role="Ciudad" EntitySet="CiudadSet" />
@@ -656,12 +651,6 @@
     <Property Name="Fecha" Type="datetime" Nullable="false" />
     <Property Name="IdRecibo" Type="int" Nullable="false" />
     <Property Name="IdRolEmpleado" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="LineaSet">
-    <Key>
-      <PropertyRef Name="IdLinea" />
-    </Key>
-    <Property Name="IdLinea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="LineaCiudadSet">
     <Key>
@@ -1519,18 +1508,6 @@
       </Principal>
       <Dependent Role="RolLocador">
         <PropertyRef Name="IdPersona" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="LineaLineaCiudad">
-    <End Role="Linea" Type="ITC_DBPOwerModel.Store.LineaSet" Multiplicity="1" />
-    <End Role="LineaCiudad" Type="ITC_DBPOwerModel.Store.LineaCiudadSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Linea">
-        <PropertyRef Name="IdLinea" />
-      </Principal>
-      <Dependent Role="LineaCiudad">
-        <PropertyRef Name="IdLinea" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2856,7 +2833,6 @@
           <EntitySet Name="RolEmpleado" EntityType="ITC_DBPOwerModel.RolEmpleado" />
           <EntitySet Name="RolVendedor" EntityType="ITC_DBPOwerModel.RolVendedor" />
           <EntitySet Name="AsignacionReciboSet" EntityType="ITC_DBPOwerModel.AsignacionRecibo" />
-          <EntitySet Name="LineaSet" EntityType="ITC_DBPOwerModel.Linea" />
           <EntitySet Name="LineaCiudadSet" EntityType="ITC_DBPOwerModel.LineaCiudad" />
           <EntitySet Name="CiudadSet" EntityType="ITC_DBPOwerModel.Ciudad" />
           <EntitySet Name="LocalidadSet" EntityType="ITC_DBPOwerModel.Localidad" />
@@ -2889,10 +2865,6 @@
           <AssociationSet Name="PersonaRolLocador" Association="ITC_DBPOwerModel.PersonaRolLocador">
             <End Role="Persona" EntitySet="Persona" />
             <End Role="RolLocador" EntitySet="RolLocadorSet" />
-          </AssociationSet>
-          <AssociationSet Name="LineaLineaCiudad" Association="ITC_DBPOwerModel.LineaLineaCiudad">
-            <End Role="Linea" EntitySet="LineaSet" />
-            <End Role="LineaCiudad" EntitySet="LineaCiudadSet" />
           </AssociationSet>
           <AssociationSet Name="CiudadLineaCiudad" Association="ITC_DBPOwerModel.CiudadLineaCiudad">
             <End Role="Ciudad" EntitySet="CiudadSet" />
@@ -3538,13 +3510,6 @@
           <NavigationProperty Name="Recibo" Relationship="ITC_DBPOwerModel.ReciboAsignacionRecibo" FromRole="AsignacionRecibo" ToRole="Recibo" />
           <NavigationProperty Name="RolEmpleado" Relationship="ITC_DBPOwerModel.RolEmpleadoAsignacionRecibo" FromRole="AsignacionRecibo" ToRole="RolEmpleado" />
         </EntityType>
-        <EntityType Name="Linea">
-          <Key>
-            <PropertyRef Name="IdLinea" />
-          </Key>
-          <Property Name="IdLinea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="LineaCiudad" Relationship="ITC_DBPOwerModel.LineaLineaCiudad" FromRole="Linea" ToRole="LineaCiudad" />
-        </EntityType>
         <EntityType Name="LineaCiudad">
           <Key>
             <PropertyRef Name="IdLineaCiudad" />
@@ -3552,7 +3517,6 @@
           <Property Name="IdLineaCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdLinea" Type="Int32" Nullable="false" />
           <Property Name="IdCiudad" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Linea" Relationship="ITC_DBPOwerModel.LineaLineaCiudad" FromRole="LineaCiudad" ToRole="Linea" />
           <NavigationProperty Name="Ciudad" Relationship="ITC_DBPOwerModel.CiudadLineaCiudad" FromRole="LineaCiudad" ToRole="Ciudad" />
           <NavigationProperty Name="CiudadPersonal" Relationship="ITC_DBPOwerModel.LineaCiudadCiudadPersonal" FromRole="LineaCiudad" ToRole="CiudadPersonal" />
         </EntityType>
@@ -3722,18 +3686,6 @@
             </Principal>
             <Dependent Role="RolLocador">
               <PropertyRef Name="IdPersona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="LineaLineaCiudad">
-          <End Type="ITC_DBPOwerModel.Linea" Role="Linea" Multiplicity="1" />
-          <End Type="ITC_DBPOwerModel.LineaCiudad" Role="LineaCiudad" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Linea">
-              <PropertyRef Name="IdLinea" />
-            </Principal>
-            <Dependent Role="LineaCiudad">
-              <PropertyRef Name="IdLinea" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -6057,13 +6009,6 @@
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="IdRecibo" ColumnName="IdRecibo" />
           <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="LineaSet">
-      <EntityTypeMapping TypeName="IsTypeOf(ITC_DBPOwerModel.Linea)">
-        <MappingFragment StoreEntitySet="LineaSet">
-          <ScalarProperty Name="IdLinea" ColumnName="IdLinea" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

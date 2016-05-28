@@ -14,7 +14,6 @@
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolEmpleado" Width="1.75" PointX="40.75" PointY="13.875" FillColor="192, 0, 0" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.RolVendedor" Width="1.5" PointX="29.25" PointY="15.25" FillColor="192, 0, 0" IsExpanded="true" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.AsignacionRecibo" Width="1.875" PointX="38.125" PointY="10.875" />
-        <EntityTypeShape EntityType="ITC_DBPOwerModel.Linea" Width="1.5" PointX="47.5" PointY="16.75" FillColor="255, 255, 128" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.LineaCiudad" Width="1.5" PointX="49.875" PointY="17.625" FillColor="255, 255, 128" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Ciudad" Width="1.5" PointX="46.875" PointY="18.5" FillColor="Yellow" />
         <EntityTypeShape EntityType="ITC_DBPOwerModel.Localidad" Width="1.5" PointX="49.75" PointY="20.375" FillColor="255, 255, 128" />
@@ -30,7 +29,6 @@
         <AssociationConnector Association="ITC_DBPOwerModel.FK_RolEmpleadoPermiso" />
         <AssociationConnector Association="ITC_DBPOwerModel.FK_PersonaRolEmpleado" />
         <AssociationConnector Association="ITC_DBPOwerModel.PersonaRolLocador" />
-        <AssociationConnector Association="ITC_DBPOwerModel.LineaLineaCiudad" />
         <AssociationConnector Association="ITC_DBPOwerModel.CiudadLineaCiudad" />
         <AssociationConnector Association="ITC_DBPOwerModel.LocalidadCiudad" />
         <AssociationConnector Association="ITC_DBPOwerModel.CiudadRolCiudadEnProceso" />
