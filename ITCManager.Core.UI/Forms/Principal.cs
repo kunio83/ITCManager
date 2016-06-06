@@ -32,5 +32,10 @@ namespace ITCManager.Core.UI.Forms
         {
             FormRepository<FrmCargaCiudad>.Open(this.MdiParent);
         }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

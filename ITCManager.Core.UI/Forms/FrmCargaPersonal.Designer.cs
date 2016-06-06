@@ -43,18 +43,16 @@
             System.Windows.Forms.Label estadoCivilLabel;
             System.Windows.Forms.Label mailLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCargaPersonal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.iTC_DBPOwerDataSet = new ITCManager.Core.UI.ITC_DBPOwerDataSet();
-            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.personaTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.PersonaTableAdapter();
-            this.tableAdapterManager = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.personaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iTC_DBPOwerDataSet = new ITCManager.Core.UI.ITC_DBPOwerDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -81,29 +79,35 @@
             this.mailTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rolEmpleadoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.puestoSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolEmpleadoTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolEmpleadoTableAdapter();
-            this.puestoSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.PuestoSetTableAdapter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rolVendedorDataGridView = new System.Windows.Forms.DataGridView();
+            this.getJefesVentasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.getJefesVentasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fKRolEmpleadoRolVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getJefesVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fKPersonaRolEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personaTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.PersonaTableAdapter();
+            this.tableAdapterManager = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
+            this.rolEmpleadoTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolEmpleadoTableAdapter();
+            this.puestoSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.PuestoSetTableAdapter();
             this.rolVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolVendedorTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolVendedorTableAdapter();
-            this.fKPersonaRolEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getJefesVentasTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.getJefesVentasTableAdapter();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.SubGerente = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Gerente = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idPersonaLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
@@ -117,19 +121,22 @@
             telAlternativoLabel = new System.Windows.Forms.Label();
             estadoCivilLabel = new System.Windows.Forms.Label();
             mailLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personaBindingNavigator)).BeginInit();
             this.personaBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rolEmpleadoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.puestoSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolEmpleadoBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rolVendedorDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getJefesVentasBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getJefesVentasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKRolEmpleadoRolVendedorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolVendedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getJefesVentasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKPersonaRolEmpleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolVendedorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idPersonaLabel
@@ -262,120 +269,6 @@
             mailLabel.TabIndex = 25;
             mailLabel.Text = "Mail:";
             // 
-            // iTC_DBPOwerDataSet
-            // 
-            this.iTC_DBPOwerDataSet.DataSetName = "ITC_DBPOwerDataSet";
-            this.iTC_DBPOwerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // personaBindingSource
-            // 
-            this.personaBindingSource.DataMember = "Persona";
-            this.personaBindingSource.DataSource = this.iTC_DBPOwerDataSet;
-            // 
-            // personaTableAdapter
-            // 
-            this.personaTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AlumnoHorarioSetTableAdapter = null;
-            this.tableAdapterManager.ArmadoEquipoSetTableAdapter = null;
-            this.tableAdapterManager.AsignacionCiudadEquiposSetTableAdapter = null;
-            this.tableAdapterManager.AsignacionReciboSetTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CajaEfectivoSetTableAdapter = null;
-            this.tableAdapterManager.CapacitacionSetTableAdapter = null;
-            this.tableAdapterManager.ChequePropioSetTableAdapter = null;
-            this.tableAdapterManager.ChequeSetTableAdapter = null;
-            this.tableAdapterManager.CiudadActivaLocacionesSetTableAdapter = null;
-            this.tableAdapterManager.CiudadEquiposSetTableAdapter = null;
-            this.tableAdapterManager.CiudadFechasHorariosSetTableAdapter = null;
-            this.tableAdapterManager.CiudadPersonalSetTableAdapter = null;
-            this.tableAdapterManager.CiudadProductosSetTableAdapter = null;
-            this.tableAdapterManager.CiudadSetTableAdapter = null;
-            this.tableAdapterManager.CoeficTarjetasSetTableAdapter = null;
-            this.tableAdapterManager.CompraSetTableAdapter = null;
-            this.tableAdapterManager.CondicionEmpleadoSetTableAdapter = null;
-            this.tableAdapterManager.CuentaBancoSetTableAdapter = null;
-            this.tableAdapterManager.CuentaBancoTerceroSetTableAdapter = null;
-            this.tableAdapterManager.DepositoSetTableAdapter = null;
-            this.tableAdapterManager.DetalleArmadoEquipoSetTableAdapter = null;
-            this.tableAdapterManager.DetalleCompraSetTableAdapter = null;
-            this.tableAdapterManager.DetalleCondicionEmpleadoTableAdapter = null;
-            this.tableAdapterManager.DiaSetTableAdapter = null;
-            this.tableAdapterManager.EnvioCiudadEquiposSetTableAdapter = null;
-            this.tableAdapterManager.EnvioSetTableAdapter = null;
-            this.tableAdapterManager.EstadoAlumnoTableAdapter = null;
-            this.tableAdapterManager.EstadoAsignacionEquipoSetTableAdapter = null;
-            this.tableAdapterManager.EstadoChequeSetTableAdapter = null;
-            this.tableAdapterManager.EstadoCompraSetTableAdapter = null;
-            this.tableAdapterManager.EstadoDepositoSetTableAdapter = null;
-            this.tableAdapterManager.EstadoPagoTarjetaSetTableAdapter = null;
-            this.tableAdapterManager.EstadoRendicionSetTableAdapter = null;
-            this.tableAdapterManager.EstadoTransferenciaSetTableAdapter = null;
-            this.tableAdapterManager.EstadoVentaSetTableAdapter = null;
-            this.tableAdapterManager.FormaPagoLocalSetTableAdapter = null;
-            this.tableAdapterManager.FormaPagoSetTableAdapter = null;
-            this.tableAdapterManager.GastoBaseSetTableAdapter = null;
-            this.tableAdapterManager.GastoChequeSetTableAdapter = null;
-            this.tableAdapterManager.GastoLocalSetTableAdapter = null;
-            this.tableAdapterManager.HorarioSetTableAdapter = null;
-            this.tableAdapterManager.ItemPagadoSetTableAdapter = null;
-            this.tableAdapterManager.LineaCiudadSetTableAdapter = null;
-            this.tableAdapterManager.LineaSetTableAdapter = null;
-            this.tableAdapterManager.LocacionRolLocadorSetTableAdapter = null;
-            this.tableAdapterManager.LocacionSetTableAdapter = null;
-            this.tableAdapterManager.LocalidadSetTableAdapter = null;
-            this.tableAdapterManager.MovimientoInternoEfectivoSetTableAdapter = null;
-            this.tableAdapterManager.PagoChequeSetTableAdapter = null;
-            this.tableAdapterManager.PagoLocalCajaEfectivoSetTableAdapter = null;
-            this.tableAdapterManager.PagoLocalChequePropioSetTableAdapter = null;
-            this.tableAdapterManager.PagoLocalChequeSetTableAdapter = null;
-            this.tableAdapterManager.PagoLocalEnvioSetTableAdapter = null;
-            this.tableAdapterManager.PagoLocalSetTableAdapter = null;
-            this.tableAdapterManager.PagoLocalSueldoSetTableAdapter = null;
-            this.tableAdapterManager.PagoLocalTarjetaSetTableAdapter = null;
-            this.tableAdapterManager.PagoLocalTransferenciaSetTableAdapter = null;
-            this.tableAdapterManager.PagoSetTableAdapter = null;
-            this.tableAdapterManager.PagoTarjetaSetTableAdapter = null;
-            this.tableAdapterManager.PermisoAccesoTableAdapter = null;
-            this.tableAdapterManager.PermisoTableAdapter = null;
-            this.tableAdapterManager.PersonaTableAdapter = this.personaTableAdapter;
-            this.tableAdapterManager.PlanBaseSetTableAdapter = null;
-            this.tableAdapterManager.PlanVendedorAlumnoSetTableAdapter = null;
-            this.tableAdapterManager.ProductosSetTableAdapter = null;
-            this.tableAdapterManager.ProveedorSetTableAdapter = null;
-            this.tableAdapterManager.PuestoSetTableAdapter = null;
-            this.tableAdapterManager.ReciboSetTableAdapter = null;
-            this.tableAdapterManager.RendicionDepositoSetTableAdapter = null;
-            this.tableAdapterManager.RendicionGastoSetTableAdapter = null;
-            this.tableAdapterManager.RendicionPagoSetTableAdapter = null;
-            this.tableAdapterManager.RendicionPersonaCiudadSetTableAdapter = null;
-            this.tableAdapterManager.RendicionSueldoSetTableAdapter = null;
-            this.tableAdapterManager.RendicionValeSetTableAdapter = null;
-            this.tableAdapterManager.RendicionVentaEquipoSetTableAdapter = null;
-            this.tableAdapterManager.RolAlumnoPracticasSetTableAdapter = null;
-            this.tableAdapterManager.RolAlumnoPresentismoSetTableAdapter = null;
-            this.tableAdapterManager.RolAlumnoTableAdapter = null;
-            this.tableAdapterManager.RolCiudadActivaGastosSetTableAdapter = null;
-            this.tableAdapterManager.RolCiudadActivaHorarioSetTableAdapter = null;
-            this.tableAdapterManager.RolCiudadActivaPlanSetTableAdapter = null;
-            this.tableAdapterManager.RolCiudadActivaSetTableAdapter = null;
-            this.tableAdapterManager.RolCiudadEnProcesoSetTableAdapter = null;
-            this.tableAdapterManager.RolDocenteSetTableAdapter = null;
-            this.tableAdapterManager.RolEmpleadoTableAdapter = null;
-            this.tableAdapterManager.RolLocacionAlojamientoSetTableAdapter = null;
-            this.tableAdapterManager.RolLocacionSalonSetTableAdapter = null;
-            this.tableAdapterManager.RolLocadorSetTableAdapter = null;
-            this.tableAdapterManager.RolVendedorTableAdapter = null;
-            this.tableAdapterManager.SueldoPagoSetTableAdapter = null;
-            this.tableAdapterManager.TarjetaPropiaSetTableAdapter = null;
-            this.tableAdapterManager.TipoChequeSetTableAdapter = null;
-            this.tableAdapterManager.TransferenciaSetTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ValeFinanciacionSetTableAdapter = null;
-            this.tableAdapterManager.ValeSetTableAdapter = null;
-            // 
             // personaBindingNavigator
             // 
             this.personaBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -414,6 +307,16 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // personaBindingSource
+            // 
+            this.personaBindingSource.DataMember = "Persona";
+            this.personaBindingSource.DataSource = this.iTC_DBPOwerDataSet;
+            // 
+            // iTC_DBPOwerDataSet
+            // 
+            this.iTC_DBPOwerDataSet.DataSetName = "ITC_DBPOwerDataSet";
+            this.iTC_DBPOwerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -641,14 +544,14 @@
             // rolEmpleadoDataGridView
             // 
             this.rolEmpleadoDataGridView.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.rolEmpleadoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rolEmpleadoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.rolEmpleadoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rolEmpleadoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -659,32 +562,294 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.rolEmpleadoDataGridView.DataSource = this.rolEmpleadoBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.rolEmpleadoDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.rolEmpleadoDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.rolEmpleadoDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rolEmpleadoDataGridView.Location = new System.Drawing.Point(3, 3);
             this.rolEmpleadoDataGridView.Name = "rolEmpleadoDataGridView";
             this.rolEmpleadoDataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.rolEmpleadoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rolEmpleadoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.rolEmpleadoDataGridView.Size = new System.Drawing.Size(451, 138);
             this.rolEmpleadoDataGridView.TabIndex = 0;
             this.rolEmpleadoDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.rolEmpleadoDataGridView_CellMouseClick);
             this.rolEmpleadoDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.rolEmpleadoDataGridView_DataBindingComplete);
             this.rolEmpleadoDataGridView.MouseEnter += new System.EventHandler(this.rolEmpleadoDataGridView_MouseEnter);
             this.rolEmpleadoDataGridView.MouseLeave += new System.EventHandler(this.rolEmpleadoDataGridView_MouseLeave);
+            // 
+            // puestoSetBindingSource
+            // 
+            this.puestoSetBindingSource.DataMember = "PuestoSet";
+            this.puestoSetBindingSource.DataSource = this.iTC_DBPOwerDataSet;
+            // 
+            // rolEmpleadoBindingSource
+            // 
+            this.rolEmpleadoBindingSource.DataMember = "FK_PersonaRolEmpleado";
+            this.rolEmpleadoBindingSource.DataSource = this.personaBindingSource;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.rolVendedorDataGridView, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.rolEmpleadoDataGridView, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(346, 85);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.60993F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.39007F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 118F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(457, 382);
+            this.tableLayoutPanel1.TabIndex = 29;
+            // 
+            // rolVendedorDataGridView
+            // 
+            this.rolVendedorDataGridView.AutoGenerateColumns = false;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rolVendedorDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.rolVendedorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rolVendedorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.SubGerente,
+            this.Gerente});
+            this.rolVendedorDataGridView.DataSource = this.fKRolEmpleadoRolVendedorBindingSource;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.rolVendedorDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            this.rolVendedorDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rolVendedorDataGridView.Location = new System.Drawing.Point(3, 147);
+            this.rolVendedorDataGridView.Name = "rolVendedorDataGridView";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rolVendedorDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.rolVendedorDataGridView.Size = new System.Drawing.Size(451, 113);
+            this.rolVendedorDataGridView.TabIndex = 1;
+            // 
+            // getJefesVentasBindingSource2
+            // 
+            this.getJefesVentasBindingSource2.DataMember = "getJefesVentas";
+            this.getJefesVentasBindingSource2.DataSource = this.iTC_DBPOwerDataSet;
+            // 
+            // getJefesVentasBindingSource1
+            // 
+            this.getJefesVentasBindingSource1.DataMember = "getJefesVentas";
+            this.getJefesVentasBindingSource1.DataSource = this.iTC_DBPOwerDataSet;
+            // 
+            // fKRolEmpleadoRolVendedorBindingSource
+            // 
+            this.fKRolEmpleadoRolVendedorBindingSource.DataMember = "FK_RolEmpleadoRolVendedor";
+            this.fKRolEmpleadoRolVendedorBindingSource.DataSource = this.rolEmpleadoBindingSource;
+            // 
+            // getJefesVentasBindingSource
+            // 
+            this.getJefesVentasBindingSource.DataMember = "getJefesVentas";
+            // 
+            // fKPersonaRolEmpleadoBindingSource
+            // 
+            this.fKPersonaRolEmpleadoBindingSource.DataMember = "FK_PersonaRolEmpleado";
+            this.fKPersonaRolEmpleadoBindingSource.DataSource = this.personaBindingSource;
+            // 
+            // personaTableAdapter
+            // 
+            this.personaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AlumnoHorarioSetTableAdapter = null;
+            this.tableAdapterManager.ArmadoEquipoSetTableAdapter = null;
+            this.tableAdapterManager.AsignacionCiudadEquiposSetTableAdapter = null;
+            this.tableAdapterManager.AsignacionReciboSetTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CajaEfectivoSetTableAdapter = null;
+            this.tableAdapterManager.CapacitacionSetTableAdapter = null;
+            this.tableAdapterManager.ChequePropioSetTableAdapter = null;
+            this.tableAdapterManager.ChequeSetTableAdapter = null;
+            this.tableAdapterManager.CiudadActivaLocacionesSetTableAdapter = null;
+            this.tableAdapterManager.CiudadEquiposSetTableAdapter = null;
+            this.tableAdapterManager.CiudadFechasHorariosSetTableAdapter = null;
+            this.tableAdapterManager.CiudadPersonalSetTableAdapter = null;
+            this.tableAdapterManager.CiudadProductosSetTableAdapter = null;
+            this.tableAdapterManager.CiudadSetTableAdapter = null;
+            this.tableAdapterManager.CoeficTarjetasSetTableAdapter = null;
+            this.tableAdapterManager.CompraSetTableAdapter = null;
+            this.tableAdapterManager.CondicionEmpleadoSetTableAdapter = null;
+            this.tableAdapterManager.CuentaBancoSetTableAdapter = null;
+            this.tableAdapterManager.CuentaBancoTerceroSetTableAdapter = null;
+            this.tableAdapterManager.DepositoSetTableAdapter = null;
+            this.tableAdapterManager.DetalleArmadoEquipoSetTableAdapter = null;
+            this.tableAdapterManager.DetalleCompraSetTableAdapter = null;
+            this.tableAdapterManager.DetalleCondicionEmpleadoTableAdapter = null;
+            this.tableAdapterManager.DiaSetTableAdapter = null;
+            this.tableAdapterManager.EnvioCiudadEquiposSetTableAdapter = null;
+            this.tableAdapterManager.EnvioSetTableAdapter = null;
+            this.tableAdapterManager.EstadoAlumnoTableAdapter = null;
+            this.tableAdapterManager.EstadoAsignacionEquipoSetTableAdapter = null;
+            this.tableAdapterManager.EstadoChequeSetTableAdapter = null;
+            this.tableAdapterManager.EstadoCompraSetTableAdapter = null;
+            this.tableAdapterManager.EstadoDepositoSetTableAdapter = null;
+            this.tableAdapterManager.EstadoPagoTarjetaSetTableAdapter = null;
+            this.tableAdapterManager.EstadoRendicionSetTableAdapter = null;
+            this.tableAdapterManager.EstadoTransferenciaSetTableAdapter = null;
+            this.tableAdapterManager.EstadoVentaSetTableAdapter = null;
+            this.tableAdapterManager.FormaPagoLocalSetTableAdapter = null;
+            this.tableAdapterManager.FormaPagoSetTableAdapter = null;
+            this.tableAdapterManager.GastoBaseSetTableAdapter = null;
+            this.tableAdapterManager.GastoChequeSetTableAdapter = null;
+            this.tableAdapterManager.GastoLocalSetTableAdapter = null;
+            this.tableAdapterManager.HorarioSetTableAdapter = null;
+            this.tableAdapterManager.ItemPagadoSetTableAdapter = null;
+            this.tableAdapterManager.LineaCiudadSetTableAdapter = null;
+            this.tableAdapterManager.LineaSetTableAdapter = null;
+            this.tableAdapterManager.LocacionRolLocadorSetTableAdapter = null;
+            this.tableAdapterManager.LocacionSetTableAdapter = null;
+            this.tableAdapterManager.LocalidadSetTableAdapter = null;
+            this.tableAdapterManager.MovimientoInternoEfectivoSetTableAdapter = null;
+            this.tableAdapterManager.PagoChequeSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalCajaEfectivoSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalChequePropioSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalChequeSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalEnvioSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalSueldoSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalTarjetaSetTableAdapter = null;
+            this.tableAdapterManager.PagoLocalTransferenciaSetTableAdapter = null;
+            this.tableAdapterManager.PagoSetTableAdapter = null;
+            this.tableAdapterManager.PagoTarjetaSetTableAdapter = null;
+            this.tableAdapterManager.PermisoAccesoTableAdapter = null;
+            this.tableAdapterManager.PermisoTableAdapter = null;
+            this.tableAdapterManager.PersonaTableAdapter = this.personaTableAdapter;
+            this.tableAdapterManager.PlanBaseSetTableAdapter = null;
+            this.tableAdapterManager.PlanVendedorAlumnoSetTableAdapter = null;
+            this.tableAdapterManager.ProductosSetTableAdapter = null;
+            this.tableAdapterManager.ProveedorSetTableAdapter = null;
+            this.tableAdapterManager.PuestoSetTableAdapter = null;
+            this.tableAdapterManager.ReciboSetTableAdapter = null;
+            this.tableAdapterManager.RendicionDepositoSetTableAdapter = null;
+            this.tableAdapterManager.RendicionGastoSetTableAdapter = null;
+            this.tableAdapterManager.RendicionPagoSetTableAdapter = null;
+            this.tableAdapterManager.RendicionPersonaCiudadSetTableAdapter = null;
+            this.tableAdapterManager.RendicionSueldoSetTableAdapter = null;
+            this.tableAdapterManager.RendicionValeSetTableAdapter = null;
+            this.tableAdapterManager.RendicionVentaEquipoSetTableAdapter = null;
+            this.tableAdapterManager.RolAlumnoPracticasSetTableAdapter = null;
+            this.tableAdapterManager.RolAlumnoPresentismoSetTableAdapter = null;
+            this.tableAdapterManager.RolAlumnoTableAdapter = null;
+            this.tableAdapterManager.RolCiudadActivaGastosSetTableAdapter = null;
+            this.tableAdapterManager.RolCiudadActivaHorarioSetTableAdapter = null;
+            this.tableAdapterManager.RolCiudadActivaPlanSetTableAdapter = null;
+            this.tableAdapterManager.RolCiudadActivaSetTableAdapter = null;
+            this.tableAdapterManager.RolCiudadEnProcesoSetTableAdapter = null;
+            this.tableAdapterManager.RolDocenteSetTableAdapter = null;
+            this.tableAdapterManager.RolEmpleadoTableAdapter = null;
+            this.tableAdapterManager.RolLocacionAlojamientoSetTableAdapter = null;
+            this.tableAdapterManager.RolLocacionSalonSetTableAdapter = null;
+            this.tableAdapterManager.RolLocadorSetTableAdapter = null;
+            this.tableAdapterManager.RolVendedorTableAdapter = null;
+            this.tableAdapterManager.SueldoPagoSetTableAdapter = null;
+            this.tableAdapterManager.TarjetaPropiaSetTableAdapter = null;
+            this.tableAdapterManager.TipoChequeSetTableAdapter = null;
+            this.tableAdapterManager.TransferenciaSetTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ValeFinanciacionSetTableAdapter = null;
+            this.tableAdapterManager.ValeSetTableAdapter = null;
+            // 
+            // rolEmpleadoTableAdapter
+            // 
+            this.rolEmpleadoTableAdapter.ClearBeforeFill = true;
+            // 
+            // puestoSetTableAdapter
+            // 
+            this.puestoSetTableAdapter.ClearBeforeFill = true;
+            // 
+            // rolVendedorBindingSource
+            // 
+            this.rolVendedorBindingSource.DataMember = "RolVendedor";
+            this.rolVendedorBindingSource.DataSource = this.iTC_DBPOwerDataSet;
+            // 
+            // rolVendedorTableAdapter
+            // 
+            this.rolVendedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // getJefesVentasTableAdapter
+            // 
+            this.getJefesVentasTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "IdRolVendedor";
+            this.dataGridViewTextBoxColumn8.HeaderText = "IdRolVendedor";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "IdRolEmpleado";
+            this.dataGridViewTextBoxColumn9.HeaderText = "IdRolEmpleado";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdSubgerente";
+            this.dataGridViewTextBoxColumn10.HeaderText = "IdSubgerente";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "IdGerente";
+            this.dataGridViewTextBoxColumn11.HeaderText = "IdGerente";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // SubGerente
+            // 
+            this.SubGerente.DataPropertyName = "IdSubgerente";
+            this.SubGerente.DataSource = this.getJefesVentasBindingSource2;
+            this.SubGerente.DisplayMember = "Apellido";
+            this.SubGerente.HeaderText = "Subgerente";
+            this.SubGerente.Name = "SubGerente";
+            this.SubGerente.ValueMember = "IdRolEmpleado";
+            // 
+            // Gerente
+            // 
+            this.Gerente.DataPropertyName = "IdGerente";
+            this.Gerente.DataSource = this.getJefesVentasBindingSource1;
+            this.Gerente.DisplayMember = "Apellido";
+            this.Gerente.HeaderText = "Gerente";
+            this.Gerente.Name = "Gerente";
+            this.Gerente.ValueMember = "IdRolEmpleado";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -714,11 +879,6 @@
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn3.ValueMember = "IdPuesto";
             // 
-            // puestoSetBindingSource
-            // 
-            this.puestoSetBindingSource.DataMember = "PuestoSet";
-            this.puestoSetBindingSource.DataSource = this.iTC_DBPOwerDataSet;
-            // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "CelCorp";
@@ -747,134 +907,6 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // rolEmpleadoBindingSource
-            // 
-            this.rolEmpleadoBindingSource.DataMember = "FK_PersonaRolEmpleado";
-            this.rolEmpleadoBindingSource.DataSource = this.personaBindingSource;
-            // 
-            // rolEmpleadoTableAdapter
-            // 
-            this.rolEmpleadoTableAdapter.ClearBeforeFill = true;
-            // 
-            // puestoSetTableAdapter
-            // 
-            this.puestoSetTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.rolVendedorDataGridView, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.rolEmpleadoDataGridView, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(346, 85);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.60993F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.39007F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 118F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(457, 382);
-            this.tableLayoutPanel1.TabIndex = 29;
-            // 
-            // rolVendedorDataGridView
-            // 
-            this.rolVendedorDataGridView.AutoGenerateColumns = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.rolVendedorDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.rolVendedorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rolVendedorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.Column1,
-            this.SubGerente});
-            this.rolVendedorDataGridView.DataSource = this.fKRolEmpleadoRolVendedorBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.rolVendedorDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
-            this.rolVendedorDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rolVendedorDataGridView.Location = new System.Drawing.Point(3, 147);
-            this.rolVendedorDataGridView.Name = "rolVendedorDataGridView";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.rolVendedorDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.rolVendedorDataGridView.Size = new System.Drawing.Size(451, 113);
-            this.rolVendedorDataGridView.TabIndex = 1;
-            // 
-            // fKRolEmpleadoRolVendedorBindingSource
-            // 
-            this.fKRolEmpleadoRolVendedorBindingSource.DataMember = "FK_RolEmpleadoRolVendedor";
-            this.fKRolEmpleadoRolVendedorBindingSource.DataSource = this.rolEmpleadoBindingSource;
-            // 
-            // rolVendedorBindingSource
-            // 
-            this.rolVendedorBindingSource.DataMember = "RolVendedor";
-            this.rolVendedorBindingSource.DataSource = this.iTC_DBPOwerDataSet;
-            // 
-            // rolVendedorTableAdapter
-            // 
-            this.rolVendedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // fKPersonaRolEmpleadoBindingSource
-            // 
-            this.fKPersonaRolEmpleadoBindingSource.DataMember = "FK_PersonaRolEmpleado";
-            this.fKPersonaRolEmpleadoBindingSource.DataSource = this.personaBindingSource;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "IdRolVendedor";
-            this.dataGridViewTextBoxColumn8.HeaderText = "IdRolVendedor";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "IdRolEmpleado";
-            this.dataGridViewTextBoxColumn9.HeaderText = "IdRolEmpleado";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdSubgerente";
-            this.dataGridViewTextBoxColumn10.HeaderText = "IdSubgerente";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "IdGerente";
-            this.dataGridViewTextBoxColumn11.HeaderText = "IdGerente";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // Column1
-            // 
-            this.Column1.DataSource = this.personaBindingSource;
-            this.Column1.DisplayMember = "Apellido";
-            this.Column1.HeaderText = "Gerente";
-            this.Column1.Name = "Column1";
-            this.Column1.ValueMember = "IdPersona";
-            // 
-            // SubGerente
-            // 
-            this.SubGerente.HeaderText = "Column2";
-            this.SubGerente.Name = "SubGerente";
-            // 
             // FrmCargaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -889,11 +921,11 @@
             this.Controls.SetChildIndex(this.personaBindingNavigator, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personaBindingNavigator)).EndInit();
             this.personaBindingNavigator.ResumeLayout(false);
             this.personaBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rolEmpleadoDataGridView)).EndInit();
@@ -901,9 +933,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolEmpleadoBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rolVendedorDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getJefesVentasBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getJefesVentasBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKRolEmpleadoRolVendedorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolVendedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getJefesVentasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKPersonaRolEmpleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolVendedorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -948,6 +983,15 @@
         private System.Windows.Forms.BindingSource puestoSetBindingSource;
         private ITC_DBPOwerDataSetTableAdapters.PuestoSetTableAdapter puestoSetTableAdapter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.BindingSource rolVendedorBindingSource;
+        private ITC_DBPOwerDataSetTableAdapters.RolVendedorTableAdapter rolVendedorTableAdapter;
+        private System.Windows.Forms.DataGridView rolVendedorDataGridView;
+        private System.Windows.Forms.BindingSource fKRolEmpleadoRolVendedorBindingSource;
+        private System.Windows.Forms.BindingSource fKPersonaRolEmpleadoBindingSource;
+        private System.Windows.Forms.BindingSource getJefesVentasBindingSource;
+        private System.Windows.Forms.BindingSource getJefesVentasBindingSource1;
+        private ITC_DBPOwerDataSetTableAdapters.getJefesVentasTableAdapter getJefesVentasTableAdapter;
+        private System.Windows.Forms.BindingSource getJefesVentasBindingSource2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
@@ -955,16 +999,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingSource rolVendedorBindingSource;
-        private ITC_DBPOwerDataSetTableAdapters.RolVendedorTableAdapter rolVendedorTableAdapter;
-        private System.Windows.Forms.DataGridView rolVendedorDataGridView;
-        private System.Windows.Forms.BindingSource fKRolEmpleadoRolVendedorBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
         private System.Windows.Forms.DataGridViewComboBoxColumn SubGerente;
-        private System.Windows.Forms.BindingSource fKPersonaRolEmpleadoBindingSource;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Gerente;
     }
 }

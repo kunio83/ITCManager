@@ -669,6 +669,7 @@
     <Property Name="IdLocalidad" Type="int" Nullable="false" />
     <Property Name="PeriodoApertura" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CantidadMeses" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Activa" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="LocalidadSet">
     <Key>
@@ -3533,6 +3534,7 @@
           <NavigationProperty Name="Localidad" Relationship="ITC_DBPOwerModel.LocalidadCiudad" FromRole="Ciudad" ToRole="Localidad" />
           <NavigationProperty Name="RolCiudadEnProceso" Relationship="ITC_DBPOwerModel.CiudadRolCiudadEnProceso" FromRole="Ciudad" ToRole="RolCiudadEnProceso" />
           <NavigationProperty Name="RolCiudadActiva" Relationship="ITC_DBPOwerModel.CiudadRolCiudadActiva" FromRole="Ciudad" ToRole="RolCiudadActiva" />
+          <Property Name="Activa" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Localidad">
           <Key>
@@ -6029,6 +6031,7 @@
           <ScalarProperty Name="IdLocalidad" ColumnName="IdLocalidad" />
           <ScalarProperty Name="PeriodoApertura" ColumnName="PeriodoApertura" />
           <ScalarProperty Name="CantidadMeses" ColumnName="CantidadMeses" />
+          <ScalarProperty Name="Activa" ColumnName="Activa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

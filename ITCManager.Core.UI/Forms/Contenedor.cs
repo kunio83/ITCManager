@@ -11,7 +11,7 @@ using MetroFramework.Forms;
 
 namespace ITCManager.Core.UI.Forms
 {
-    public partial class Contenedor : MetroForm
+    public partial class Contenedor : Form
     {
         public Contenedor()
         {

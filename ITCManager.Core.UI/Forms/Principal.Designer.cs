@@ -48,10 +48,10 @@
             this.tabInicio.Controls.Add(this.tabHerram);
             this.tabInicio.Controls.Add(this.tabConfig);
             this.tabInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabInicio.Location = new System.Drawing.Point(10, 60);
+            this.tabInicio.Location = new System.Drawing.Point(10, 30);
             this.tabInicio.Name = "tabInicio";
             this.tabInicio.SelectedIndex = 0;
-            this.tabInicio.Size = new System.Drawing.Size(975, 500);
+            this.tabInicio.Size = new System.Drawing.Size(975, 530);
             this.tabInicio.TabIndex = 1;
             this.tabInicio.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -67,7 +67,7 @@
             this.mtp.HorizontalScrollbarBarColor = true;
             this.mtp.Location = new System.Drawing.Point(4, 35);
             this.mtp.Name = "mtp";
-            this.mtp.Size = new System.Drawing.Size(967, 461);
+            this.mtp.Size = new System.Drawing.Size(967, 491);
             this.mtp.Style = MetroFramework.MetroColorStyle.Blue;
             this.mtp.TabIndex = 0;
             this.mtp.Text = "Inicio";
@@ -82,7 +82,10 @@
             this.metroTile6.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile6.TabIndex = 7;
             this.metroTile6.Text = "metroTile6";
+            this.metroTile6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroTile6.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile6.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile6.UseTileImage = true;
             // 
             // metroTile5
@@ -93,7 +96,10 @@
             this.metroTile5.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile5.TabIndex = 6;
             this.metroTile5.Text = "metroTile5";
+            this.metroTile5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroTile5.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile5.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile5.UseTileImage = true;
             // 
             // metroTile4
@@ -103,8 +109,11 @@
             this.metroTile4.Size = new System.Drawing.Size(150, 150);
             this.metroTile4.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile4.TabIndex = 5;
-            this.metroTile4.Text = "metroTile4";
+            this.metroTile4.Text = "Carga Linea";
+            this.metroTile4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroTile4.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile4.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile4.UseTileImage = true;
             this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
             // 
@@ -115,10 +124,12 @@
             this.metroTile3.Size = new System.Drawing.Size(150, 150);
             this.metroTile3.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile3.TabIndex = 4;
-            this.metroTile3.Text = "metroTile3";
+            this.metroTile3.Text = "Carga Personal";
+            this.metroTile3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroTile3.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTile3.TileImage = global::ITCManager.Core.UI.Properties.Resources._1460619074_conference_call;
+            this.metroTile3.TileImage = global::ITCManager.Core.UI.Properties.Resources._1463636823_conference;
             this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile3.UseTileImage = true;
             this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
@@ -130,9 +141,11 @@
             this.mtiCargarDatos.Style = MetroFramework.MetroColorStyle.Red;
             this.mtiCargarDatos.TabIndex = 3;
             this.mtiCargarDatos.Text = "Cargar Datos";
+            this.mtiCargarDatos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.mtiCargarDatos.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.mtiCargarDatos.TileImage = global::ITCManager.Core.UI.Properties.Resources._1460763548_database;
             this.mtiCargarDatos.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mtiCargarDatos.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mtiCargarDatos.UseTileImage = true;
             this.mtiCargarDatos.Click += new System.EventHandler(this.mtiCargarDatos_Click);
             // 
@@ -143,18 +156,21 @@
             this.metroTile1.Size = new System.Drawing.Size(150, 150);
             this.metroTile1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile1.TabIndex = 2;
-            this.metroTile1.Text = "metroTile1";
+            this.metroTile1.Text = "Alumnos";
+            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTile1.TileImage = global::ITCManager.Core.UI.Properties.Resources._1460763318_student;
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile1.UseTileImage = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
             // tabHerram
             // 
             this.tabHerram.HorizontalScrollbarBarColor = true;
             this.tabHerram.Location = new System.Drawing.Point(4, 35);
             this.tabHerram.Name = "tabHerram";
-            this.tabHerram.Size = new System.Drawing.Size(947, 461);
+            this.tabHerram.Size = new System.Drawing.Size(967, 461);
             this.tabHerram.Style = MetroFramework.MetroColorStyle.Blue;
             this.tabHerram.TabIndex = 1;
             this.tabHerram.Text = "Herramientas";
@@ -166,7 +182,7 @@
             this.tabConfig.HorizontalScrollbarBarColor = true;
             this.tabConfig.Location = new System.Drawing.Point(4, 35);
             this.tabConfig.Name = "tabConfig";
-            this.tabConfig.Size = new System.Drawing.Size(947, 461);
+            this.tabConfig.Size = new System.Drawing.Size(967, 461);
             this.tabConfig.Style = MetroFramework.MetroColorStyle.Blue;
             this.tabConfig.TabIndex = 2;
             this.tabConfig.Text = "Configuración";

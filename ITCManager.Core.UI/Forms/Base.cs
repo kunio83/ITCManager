@@ -35,11 +35,11 @@ namespace ITCManager.Core.UI.Forms
 
         private void Base_Load(object sender, EventArgs e)
         {
-            if (this.Name != "Base")
-            {
-                this.ControlBox = true;
-                MessageBox.Show("soy: " + this.Name);
-            }
+            //if (this.Name != "Base")
+            //{
+            //    this.ControlBox = true;
+            //    MessageBox.Show("soy: " + this.Name);
+            //}
         }
     }
 }

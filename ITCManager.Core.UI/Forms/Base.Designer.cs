@@ -44,10 +44,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 368);
-            this.ControlBox = false;
             this.Controls.Add(this.bottomBar1);
+            this.DisplayHeader = false;
             this.Name = "Base";
-            this.Padding = new System.Windows.Forms.Padding(10, 60, 10, 0);
+            this.Padding = new System.Windows.Forms.Padding(10, 30, 10, 0);
             this.Style = MetroFramework.MetroColorStyle.Blue;
             this.Text = "Base";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

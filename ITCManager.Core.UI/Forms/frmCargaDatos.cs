@@ -31,6 +31,7 @@ namespace ITCManager.Core.UI.Forms
             if (args.Count() > 0)
             {
                 String nombreTabla = args[0].ToString();
+                cmbTablas.BeginUpdate();
                 cmbTablas.Text = nombreTabla;
                 mtileAgregarGrid_Click(null, null);
             }

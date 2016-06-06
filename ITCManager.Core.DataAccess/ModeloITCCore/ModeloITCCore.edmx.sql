@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/23/2016 23:52:49
+-- Date Created: 06/05/2016 00:13:32
 -- Generated from EDMX file: C:\Users\ThinkPadW7\Documents\Visual Studio 2015\Projects\ITCManager\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 
@@ -34,9 +34,6 @@ IF OBJECT_ID(N'[dbo].[FK_PersonaRolEmpleado]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_PersonaRolLocador]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RolLocadorSet] DROP CONSTRAINT [FK_PersonaRolLocador];
-GO
-IF OBJECT_ID(N'[dbo].[FK_LineaLineaCiudad]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[LineaCiudadSet] DROP CONSTRAINT [FK_LineaLineaCiudad];
 GO
 IF OBJECT_ID(N'[dbo].[FK_CiudadLineaCiudad]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[LineaCiudadSet] DROP CONSTRAINT [FK_CiudadLineaCiudad];
@@ -269,12 +266,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoRolVendedor]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RolVendedor] DROP CONSTRAINT [FK_RolEmpleadoRolVendedor];
 GO
-IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoRolVendedor1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[RolVendedor] DROP CONSTRAINT [FK_RolEmpleadoRolVendedor1];
-GO
-IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoRolVendedor2]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[RolVendedor] DROP CONSTRAINT [FK_RolEmpleadoRolVendedor2];
-GO
 IF OBJECT_ID(N'[dbo].[FK_RolEmpleadoAsignacionRecibo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AsignacionReciboSet] DROP CONSTRAINT [FK_RolEmpleadoAsignacionRecibo];
 GO
@@ -402,9 +393,6 @@ IF OBJECT_ID(N'[dbo].[RolVendedor]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[AsignacionReciboSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[AsignacionReciboSet];
-GO
-IF OBJECT_ID(N'[dbo].[LineaSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[LineaSet];
 GO
 IF OBJECT_ID(N'[dbo].[LineaCiudadSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[LineaCiudadSet];
@@ -757,12 +745,6 @@ CREATE TABLE [dbo].[AsignacionReciboSet] (
 );
 GO
 
--- Creating table 'LineaSet'
-CREATE TABLE [dbo].[LineaSet] (
-    [IdLinea] int IDENTITY(1,1) NOT NULL
-);
-GO
-
 -- Creating table 'LineaCiudadSet'
 CREATE TABLE [dbo].[LineaCiudadSet] (
     [IdLineaCiudad] int IDENTITY(1,1) NOT NULL,
@@ -777,7 +759,8 @@ CREATE TABLE [dbo].[CiudadSet] (
     [DesignacionCiudad] nvarchar(max)  NOT NULL,
     [IdLocalidad] int  NOT NULL,
     [PeriodoApertura] nvarchar(max)  NOT NULL,
-    [CantidadMeses] nvarchar(max)  NOT NULL
+    [CantidadMeses] nvarchar(max)  NOT NULL,
+    [Activa] bit  NOT NULL
 );
 GO
 
@@ -1608,12 +1591,6 @@ ADD CONSTRAINT [PK_AsignacionReciboSet]
     PRIMARY KEY CLUSTERED ([IdAsignacionRecibo] ASC);
 GO
 
--- Creating primary key on [IdLinea] in table 'LineaSet'
-ALTER TABLE [dbo].[LineaSet]
-ADD CONSTRAINT [PK_LineaSet]
-    PRIMARY KEY CLUSTERED ([IdLinea] ASC);
-GO
-
 -- Creating primary key on [IdLineaCiudad] in table 'LineaCiudadSet'
 ALTER TABLE [dbo].[LineaCiudadSet]
 ADD CONSTRAINT [PK_LineaCiudadSet]
@@ -2216,21 +2193,6 @@ GO
 CREATE INDEX [IX_FK_PersonaRolLocador]
 ON [dbo].[RolLocadorSet]
     ([IdPersona]);
-GO
-
--- Creating foreign key on [IdLinea] in table 'LineaCiudadSet'
-ALTER TABLE [dbo].[LineaCiudadSet]
-ADD CONSTRAINT [FK_LineaLineaCiudad]
-    FOREIGN KEY ([IdLinea])
-    REFERENCES [dbo].[LineaSet]
-        ([IdLinea])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_LineaLineaCiudad'
-CREATE INDEX [IX_FK_LineaLineaCiudad]
-ON [dbo].[LineaCiudadSet]
-    ([IdLinea]);
 GO
 
 -- Creating foreign key on [IdCiudad] in table 'LineaCiudadSet'

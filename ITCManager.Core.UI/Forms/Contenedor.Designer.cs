@@ -43,9 +43,9 @@
             this.comenzarToolStripMenuItem,
             this.mostrarFormToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStrip1.Location = new System.Drawing.Point(10, 30);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(976, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(996, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,18 +83,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(996, 605);
             this.Controls.Add(this.menuStrip1);
-            this.DisplayHeader = false;
             this.IsMdiContainer = true;
             this.Name = "Contenedor";
-            this.Padding = new System.Windows.Forms.Padding(10, 30, 10, 10);
-            this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.Flat;
-            this.Style = MetroFramework.MetroColorStyle.Blue;
             this.Text = "Inicio";
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -50,6 +50,26 @@ namespace ITCManager.Core.UI.Forms
 
     public static class FormRepository
     {
+        private static ContextMenu _menu;
+
+        internal static void CreateCellContMenuEditor(Form mdiParent, DataGridView dgv, String table, Point pos)
+        {
+            if (_menu == null)
+            {
+                _menu = new ContextMenu();
+                MenuItem item = new MenuItem("Editar Valores");
+                item.Click += (sender, e) => Item_Click(sender, e, mdiParent, table);
+                _menu.MenuItems.Add(item);
+            }
+            _menu.Show(dgv, pos);
+        }
+
+        private static void Item_Click(object sender, EventArgs e, Form mdiParent, String table)
+        {
+            //Aca ser va a abrir el form de carga de datos, parametrizando la tabla que quiero editar
+            FormRepository<FrmCargaDatos>.Open(mdiParent, new object[1] { table });
+        }
+
         //internal static void ColorearImagen(Control control, Color target)
         //{
 

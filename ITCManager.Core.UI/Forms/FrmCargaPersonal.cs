@@ -32,15 +32,16 @@ namespace ITCManager.Core.UI.Forms
 
         private void FrmCargaPersonal_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolVendedor' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet4.getJefesVentas' table. You can move, or remove it, as needed.
             this.rolVendedorTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolVendedor);
+            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.getJefesVentas' table. You can move, or remove it, as needed.
+            this.getJefesVentasTableAdapter.Fill(this.iTC_DBPOwerDataSet.getJefesVentas);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.PuestoSet' table. You can move, or remove it, as needed.
             this.puestoSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.PuestoSet);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolEmpleado' table. You can move, or remove it, as needed.
             this.rolEmpleadoTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolEmpleado);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.Persona' table. You can move, or remove it, as needed.
             this.personaTableAdapter.Fill(this.iTC_DBPOwerDataSet.Persona);
-
         }
 
         private void rolEmpleadoDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -49,17 +50,8 @@ namespace ITCManager.Core.UI.Forms
             {
                 if (e.ColumnIndex == rolEmpleadoDataGridView.Columns["dataGridViewTextBoxColumn3"].Index)
                 {
-                    if (contextMenu == null)
-                    {
-                        contextMenu = new ContextMenu();
-                        MenuItem item = new MenuItem("Editar Valores");
-                        item.Click += Item_Click;
-                        contextMenu.MenuItems.Add(item);
-                    }
-                    else
-                    {
-                        contextMenu.Show(rolEmpleadoDataGridView, e.Location);
-                    }
+                    FormRepository.CreateCellContMenuEditor(this.MdiParent, rolEmpleadoDataGridView, "Puesto", e.Location);
+
                 }
             }
         }
@@ -67,7 +59,7 @@ namespace ITCManager.Core.UI.Forms
         private void Item_Click(object sender, EventArgs e)
         {
             //Aca ser va a abrir el form de carga de datos, parametrizando la tabla que quiero editar
-            FormRepository<FrmCargaDatos>.Open(this.MdiParent,new object[1] { "Puesto" });
+            FormRepository<FrmCargaDatos>.Open(this.MdiParent, new object[1] { "Puesto" });
         }
 
         private void rolEmpleadoDataGridView_MouseLeave(object sender, EventArgs e)
@@ -77,7 +69,7 @@ namespace ITCManager.Core.UI.Forms
 
         private void rolEmpleadoDataGridView_MouseEnter(object sender, EventArgs e)
         {
-            if(idPersonaTextBox.Text != String.Empty && Convert.ToInt32(idPersonaTextBox.Text) > 0)
+            if (idPersonaTextBox.Text != String.Empty && Convert.ToInt32(idPersonaTextBox.Text) > 0)
                 ((DataGridView)sender).ReadOnly = false;
         }
 
@@ -100,5 +92,6 @@ namespace ITCManager.Core.UI.Forms
                 }
             }
         }
+
     }
 }

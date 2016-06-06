@@ -165,9 +165,6 @@
     <Compile Include="ItemPagado.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
-    <Compile Include="Linea.cs">
-      <DependentUpon>ModeloITCCore.tt</DependentUpon>
-    </Compile>
     <Compile Include="LineaCiudad.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
