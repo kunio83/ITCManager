@@ -1,3 +1,5 @@
+USE [ITC_DBPOwer]
+GO
 CREATE PROCEDURE getJefesVentas
 AS
 BEGIN

@@ -51,7 +51,7 @@
             this.tabInicio.Location = new System.Drawing.Point(10, 30);
             this.tabInicio.Name = "tabInicio";
             this.tabInicio.SelectedIndex = 0;
-            this.tabInicio.Size = new System.Drawing.Size(975, 530);
+            this.tabInicio.Size = new System.Drawing.Size(807, 409);
             this.tabInicio.TabIndex = 1;
             this.tabInicio.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -67,7 +67,7 @@
             this.mtp.HorizontalScrollbarBarColor = true;
             this.mtp.Location = new System.Drawing.Point(4, 35);
             this.mtp.Name = "mtp";
-            this.mtp.Size = new System.Drawing.Size(967, 491);
+            this.mtp.Size = new System.Drawing.Size(799, 370);
             this.mtp.Style = MetroFramework.MetroColorStyle.Blue;
             this.mtp.TabIndex = 0;
             this.mtp.Text = "Inicio";
@@ -170,7 +170,7 @@
             this.tabHerram.HorizontalScrollbarBarColor = true;
             this.tabHerram.Location = new System.Drawing.Point(4, 35);
             this.tabHerram.Name = "tabHerram";
-            this.tabHerram.Size = new System.Drawing.Size(967, 461);
+            this.tabHerram.Size = new System.Drawing.Size(967, 491);
             this.tabHerram.Style = MetroFramework.MetroColorStyle.Blue;
             this.tabHerram.TabIndex = 1;
             this.tabHerram.Text = "Herramientas";
@@ -182,7 +182,7 @@
             this.tabConfig.HorizontalScrollbarBarColor = true;
             this.tabConfig.Location = new System.Drawing.Point(4, 35);
             this.tabConfig.Name = "tabConfig";
-            this.tabConfig.Size = new System.Drawing.Size(967, 461);
+            this.tabConfig.Size = new System.Drawing.Size(967, 491);
             this.tabConfig.Style = MetroFramework.MetroColorStyle.Blue;
             this.tabConfig.TabIndex = 2;
             this.tabConfig.Text = "Configuración";
@@ -193,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 588);
+            this.ClientSize = new System.Drawing.Size(827, 467);
             this.Controls.Add(this.tabInicio);
             this.Name = "Principal";
             this.Text = "Principal";
