@@ -102,7 +102,6 @@
             this.tableAdapterManager.HorarioSetTableAdapter = null;
             this.tableAdapterManager.ItemPagadoSetTableAdapter = null;
             this.tableAdapterManager.LineaCiudadSetTableAdapter = null;
-            this.tableAdapterManager.LineaSetTableAdapter = null;
             this.tableAdapterManager.LocacionRolLocadorSetTableAdapter = null;
             this.tableAdapterManager.LocacionSetTableAdapter = null;
             this.tableAdapterManager.LocalidadSetTableAdapter = null;

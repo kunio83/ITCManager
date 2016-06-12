@@ -312,6 +312,9 @@
     <Compile Include="RolVendedor.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Setting.cs">
+      <DependentUpon>ModeloITCCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="SueldoPago.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>

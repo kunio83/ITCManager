@@ -17,6 +17,7 @@ namespace ITCManager.Core.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Ciudad()
         {
+            this.Activa = false;
             this.LineaCiudad = new HashSet<LineaCiudad>();
             this.RolCiudadEnProceso = new HashSet<RolCiudadEnProceso>();
             this.RolCiudadActiva = new HashSet<RolCiudadActiva>();
@@ -27,6 +28,7 @@ namespace ITCManager.Core.Entities
         public int IdLocalidad { get; set; }
         public string PeriodoApertura { get; set; }
         public string CantidadMeses { get; set; }
+        public bool Activa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LineaCiudad> LineaCiudad { get; set; }

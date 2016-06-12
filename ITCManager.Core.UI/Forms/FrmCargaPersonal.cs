@@ -12,7 +12,6 @@ namespace ITCManager.Core.UI.Forms
 {
     public partial class FrmCargaPersonal : Base
     {
-        private ContextMenu contextMenu;
         public FrmCargaPersonal()
         {
             InitializeComponent();
@@ -79,10 +78,15 @@ namespace ITCManager.Core.UI.Forms
             {
                 DataGridViewRow puestoSeleccionado = puestoSeleccionado = rolEmpleadoDataGridView.Rows[rolEmpleadoDataGridView.Rows.GetFirstRow(DataGridViewElementStates.Visible)];
                 var puestoActual = puestoSeleccionado.Cells["dataGridViewTextBoxColumn3"].EditedFormattedValue.ToString();
-                switch (puestoActual)
+                switch (puestoActual.ToUpper())
                 {
-                    case "Vendedor":
+                    case "VENDEDOR":
                         {
+                            rolVendedorDataGridView.Visible = true;
+                        }; break;
+                    case "SUBGERENTE DE VENTA":
+                        {
+                            rolVendedorDataGridView.Columns[4].Visible = false;
                             rolVendedorDataGridView.Visible = true;
                         }; break;
                     default:

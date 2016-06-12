@@ -32,7 +32,7 @@ namespace ITCManager.Core.UI.Forms
             {
                 String nombreTabla = args[0].ToString();
                 cmbTablas.BeginUpdate();
-                cmbTablas.Text = nombreTabla;
+                cmbTablas.SelectedIndex = cmbTablas.FindString(nombreTabla);
                 mtileAgregarGrid_Click(null, null);
             }
         }

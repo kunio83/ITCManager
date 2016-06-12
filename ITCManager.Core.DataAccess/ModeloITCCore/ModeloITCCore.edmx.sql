@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/05/2016 00:13:32
+-- Date Created: 06/11/2016 12:08:04
 -- Generated from EDMX file: C:\Users\ThinkPadW7\Documents\Visual Studio 2015\Projects\ITCManager\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 

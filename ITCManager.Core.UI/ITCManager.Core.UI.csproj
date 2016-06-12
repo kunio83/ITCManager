@@ -86,6 +86,12 @@
     <Compile Include="Forms\Controles\BottomBar.Designer.cs">
       <DependentUpon>BottomBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Controles\Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Controles\Calendar.Designer.cs">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmCargaCiudad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controles\BottomBar.resx">
       <DependentUpon>BottomBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controles\Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCargaCiudad.resx">
       <DependentUpon>FrmCargaCiudad.cs</DependentUpon>
@@ -185,7 +194,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MetroFramework.txt" />
     <None Include="Resources\LOGO BCO VERT png.png" />
     <None Include="Resources\ISO BLANCO PNG.png" />
     <None Include="Resources\1460619074_conference_call.png" />
@@ -209,6 +217,12 @@
       <Project>{c495ebb2-39ff-45db-821e-cc578e91ae89}</Project>
       <Name>ITCManager.Core.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\ControlesResources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

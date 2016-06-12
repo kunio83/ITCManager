@@ -3,13 +3,14 @@ GO
 CREATE PROCEDURE getJefesVentas
 AS
 BEGIN
-	SELECT 
-		re.idRolEmpleado,
-		p.Apellido
-	FROM
-		RolEmpleado RE
-		LEFT JOIN RolVendedor RV ON RE.IdRolEmpleado = RV.IdRolEmpleado
-		LEFT JOIN PERSONA P ON P.IDPERSONA = RE.IdPersona
+ SELECT 
+	re.IdRolEmpleado,
+	p.Apellido
+ FROM 
+	RolEmpleado re
+	left join Persona p on re.IdPersona = p.IdPersona
+	left join RolVendedor rv on re.IdRolEmpleado = rv.IdRolEmpleado
+ where re.IdPuesto in (select IdPuesto from PuestoSet where DetallePuesto like '%gerente%')
 	
 END
 GO

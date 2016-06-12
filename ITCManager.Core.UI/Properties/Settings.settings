@@ -5,26 +5,13 @@
     <Setting Name="ITC_DBPOwerConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.12\LAVENCIDA;Initial Catalog=ITC_DBPOwer;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=(local)\SQLEXPRESS;Initial Catalog=ITC_DBPOwer;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.12\LAVENCIDA;Initial Catalog=ITC_DBPOwer;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework</Value>
+      <Value Profile="(Default)">Data Source=(local)\SQLEXPRESS;Initial Catalog=ITC_DBPOwer;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework</Value>
     </Setting>
-    <Setting Name="ITC_DBPOwerConnecString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.12\lavencida;Initial Catalog=ITC_DBPOwer;Persist Security Info=True;User ID=marcos;Password=Passw0rd&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.12\lavencida;Initial Catalog=ITC_DBPOwer;Persist Security Info=True;User ID=marcos;Password=Passw0rd</Value>
-    </Setting>
-    <Setting Name="ConStrLAVENCIDA" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.12\lavencida;Persist Security Info=True;User ID=marcos;Password=Passw0rd&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.12\lavencida;Persist Security Info=True;User ID=marcos;Password=Passw0rd</Value>
+    <Setting Name="pathServerInformes" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\192.168.1.12\Users\marcos\Desktop\ArchivosInformes\</Value>
     </Setting>
   </Settings>
 </SettingsFile>
