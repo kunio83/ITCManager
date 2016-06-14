@@ -145,8 +145,9 @@ namespace ITCManager.Core.UI.Forms
             if (e.ColumnIndex == 2 || e.ColumnIndex == 3)
             {
                 DateTime fechaActual = DateTime.Today;
-                if(DateTime.TryParse(rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(),out fechaActual))
-                    rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = FormRepository.GetCalendarDate(Cursor.Position,fechaActual);
+                if (!DateTime.TryParse(rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), out fechaActual))
+                    fechaActual = DateTime.Today;
+                rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = FormRepository.GetCalendarDate(Cursor.Position,fechaActual);
             }
         }
 
@@ -155,11 +156,12 @@ namespace ITCManager.Core.UI.Forms
             if (e.ColumnIndex == 3)
             {
                 DateTime nuevaFecha;
-                DateTime fechaActual = DateTime.Today;
+                DateTime fechaActual;
                 CultureInfo provider = CultureInfo.InvariantCulture;
                 try
                 {
-                    fechaActual = DateTime.ParseExact(ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), "yyMM", provider);
+                    if(!DateTime.TryParseExact(ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), "yyMM", provider,DateTimeStyles.AssumeLocal,out fechaActual))
+                        fechaActual = DateTime.ParseExact(DateTime.Today.ToString(),"yyMM",provider);
                     nuevaFecha = DateTime.Parse(FormRepository.GetCalendarDate(Cursor.Position, fechaActual));
                     ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = nuevaFecha.ToString("yyMM");
                 }
