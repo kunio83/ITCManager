@@ -12,37 +12,37 @@ namespace ITCManager.Core.UI.Forms.Controles
 {
     public partial class Calendar : Form
     {
-        public String FechaSeleccionada { get; set; }
-        FrmCargaCiudad _frm;
+        public String _FechaSeleccionada { get; set; }
+        public DateTime _FechaActual { get; set; }
+
         public Calendar()
         {
             InitializeComponent();
         }
 
-        public Calendar(FrmCargaCiudad frm)
+        public String GetCalendarDate()
         {
-            InitializeComponent();
-            this._frm = frm;
+            return this._FechaSeleccionada;
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void Calendar_KeyDown(object sender, KeyEventArgs e)
         {
-            try
+            if (e.KeyCode == Keys.Escape)
             {
-                FechaSeleccionada = dateTimePicker1.Value.ToShortDateString();
-            }
-            catch (Exception ex)
-            {
-                FechaSeleccionada = DateTime.Now.ToShortDateString();
-                throw new Exception(ex.Message);
+                this._FechaSeleccionada = dateTimePicker1.Value.ToShortDateString();
+                this.Hide();
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void Calendar_Shown(object sender, EventArgs e)
         {
-            this._frm.FechaCalendar = dateTimePicker1.Value.ToShortDateString();
+            dateTimePicker1.Value = _FechaActual;
+        }
+
+        private void dateTimePicker1_CloseUp(object sender, EventArgs e)
+        {
+            this._FechaSeleccionada = dateTimePicker1.Value.ToShortDateString();
             this.Hide();
-            //this.Close();
         }
     }
 }

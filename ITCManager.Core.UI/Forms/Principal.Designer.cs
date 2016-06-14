@@ -95,12 +95,13 @@
             this.metroTile5.Size = new System.Drawing.Size(150, 150);
             this.metroTile5.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile5.TabIndex = 6;
-            this.metroTile5.Text = "metroTile5";
+            this.metroTile5.Text = "Carga Linea Ciudad";
             this.metroTile5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroTile5.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile5.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile5.UseTileImage = true;
+            this.metroTile5.Click += new System.EventHandler(this.metroTile5_Click);
             // 
             // metroTile4
             // 
@@ -170,7 +171,7 @@
             this.tabHerram.HorizontalScrollbarBarColor = true;
             this.tabHerram.Location = new System.Drawing.Point(4, 35);
             this.tabHerram.Name = "tabHerram";
-            this.tabHerram.Size = new System.Drawing.Size(967, 491);
+            this.tabHerram.Size = new System.Drawing.Size(799, 370);
             this.tabHerram.Style = MetroFramework.MetroColorStyle.Blue;
             this.tabHerram.TabIndex = 1;
             this.tabHerram.Text = "Herramientas";
@@ -182,7 +183,7 @@
             this.tabConfig.HorizontalScrollbarBarColor = true;
             this.tabConfig.Location = new System.Drawing.Point(4, 35);
             this.tabConfig.Name = "tabConfig";
-            this.tabConfig.Size = new System.Drawing.Size(967, 491);
+            this.tabConfig.Size = new System.Drawing.Size(799, 370);
             this.tabConfig.Style = MetroFramework.MetroColorStyle.Blue;
             this.tabConfig.TabIndex = 2;
             this.tabConfig.Text = "Configuración";

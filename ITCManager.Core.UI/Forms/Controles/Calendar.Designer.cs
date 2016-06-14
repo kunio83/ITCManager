@@ -38,7 +38,7 @@
             // 
             resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker1.CloseUp += new System.EventHandler(this.dateTimePicker1_CloseUp);
             // 
             // panel1
             // 
@@ -54,7 +54,10 @@
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "Calendar";
+            this.Shown += new System.EventHandler(this.Calendar_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Calendar_KeyDown);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

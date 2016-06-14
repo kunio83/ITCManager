@@ -75,6 +75,7 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.rolCiudadEnProcesoSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.ciudadPersonalSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.ciudadSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadSetTableAdapter();
             this.tableAdapterManager = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
@@ -82,6 +83,7 @@
             this.localidadSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.LocalidadSetTableAdapter();
             this.rolCiudadEnProcesoSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolCiudadEnProcesoSetTableAdapter();
             this.rolCiudadActivaSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolCiudadActivaSetTableAdapter();
+            this.ciudadPersonalSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadPersonalSetTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingNavigator)).BeginInit();
             this.ciudadSetBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingSource)).BeginInit();
@@ -96,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadActivaSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadEnProcesoSetDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadEnProcesoSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadPersonalSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ciudadSetBindingNavigator
@@ -125,7 +128,7 @@
             this.ciudadSetBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.ciudadSetBindingNavigator.Name = "ciudadSetBindingNavigator";
             this.ciudadSetBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ciudadSetBindingNavigator.Size = new System.Drawing.Size(875, 25);
+            this.ciudadSetBindingNavigator.Size = new System.Drawing.Size(881, 25);
             this.ciudadSetBindingNavigator.TabIndex = 1;
             this.ciudadSetBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -259,10 +262,11 @@
             this.ciudadSetDataGridView.Location = new System.Drawing.Point(3, 3);
             this.ciudadSetDataGridView.MultiSelect = false;
             this.ciudadSetDataGridView.Name = "ciudadSetDataGridView";
-            this.ciudadSetDataGridView.Size = new System.Drawing.Size(593, 309);
+            this.ciudadSetDataGridView.Size = new System.Drawing.Size(598, 309);
             this.ciudadSetDataGridView.TabIndex = 2;
             this.ciudadSetDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ciudadSetDataGridView_CellClick);
             this.ciudadSetDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ciudadSetDataGridView_CellContentClick_1);
+            this.ciudadSetDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ciudadSetDataGridView_CellMouseClick);
             this.ciudadSetDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ciudadSetDataGridView_MouseClick);
             // 
             // dataGridViewTextBoxColumn1
@@ -327,11 +331,11 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.57143F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.42857F));
-            this.tableLayoutPanel1.Controls.Add(this.lineaCiudadSetDataGridView, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lineaCiudadSetDataGridView, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.rolCiudadActivaSetDataGridView, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.ciudadSetDataGridView, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.rolCiudadEnProcesoSetDataGridView, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.metroTile1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.metroTile1, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 55);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -339,7 +343,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.75F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(875, 509);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(881, 509);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // lineaCiudadSetDataGridView
@@ -352,9 +356,9 @@
             this.dataGridViewTextBoxColumn8});
             this.lineaCiudadSetDataGridView.DataSource = this.lineaCiudadSetBindingSource1;
             this.lineaCiudadSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lineaCiudadSetDataGridView.Location = new System.Drawing.Point(602, 403);
+            this.lineaCiudadSetDataGridView.Location = new System.Drawing.Point(607, 318);
             this.lineaCiudadSetDataGridView.Name = "lineaCiudadSetDataGridView";
-            this.lineaCiudadSetDataGridView.Size = new System.Drawing.Size(270, 103);
+            this.lineaCiudadSetDataGridView.Size = new System.Drawing.Size(271, 79);
             this.lineaCiudadSetDataGridView.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn6
@@ -395,7 +399,7 @@
             this.rolCiudadActivaSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rolCiudadActivaSetDataGridView.Location = new System.Drawing.Point(3, 403);
             this.rolCiudadActivaSetDataGridView.Name = "rolCiudadActivaSetDataGridView";
-            this.rolCiudadActivaSetDataGridView.Size = new System.Drawing.Size(593, 103);
+            this.rolCiudadActivaSetDataGridView.Size = new System.Drawing.Size(598, 103);
             this.rolCiudadActivaSetDataGridView.TabIndex = 3;
             this.rolCiudadActivaSetDataGridView.Visible = false;
             this.rolCiudadActivaSetDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.rolCiudadActivaSetDataGridView_CellMouseClick);
@@ -451,7 +455,7 @@
             this.rolCiudadEnProcesoSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rolCiudadEnProcesoSetDataGridView.Location = new System.Drawing.Point(3, 318);
             this.rolCiudadEnProcesoSetDataGridView.Name = "rolCiudadEnProcesoSetDataGridView";
-            this.rolCiudadEnProcesoSetDataGridView.Size = new System.Drawing.Size(593, 79);
+            this.rolCiudadEnProcesoSetDataGridView.Size = new System.Drawing.Size(598, 79);
             this.rolCiudadEnProcesoSetDataGridView.TabIndex = 3;
             this.rolCiudadEnProcesoSetDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rolCiudadEnProcesoSetDataGridView_CellContentClick);
             // 
@@ -489,13 +493,18 @@
             // metroTile1
             // 
             this.metroTile1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTile1.Location = new System.Drawing.Point(602, 3);
+            this.metroTile1.Location = new System.Drawing.Point(607, 403);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(270, 309);
+            this.metroTile1.Size = new System.Drawing.Size(271, 103);
             this.metroTile1.TabIndex = 4;
             this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.UseTileImage = true;
+            // 
+            // ciudadPersonalSetBindingSource
+            // 
+            this.ciudadPersonalSetBindingSource.DataMember = "CiudadPersonalSet";
+            this.ciudadPersonalSetBindingSource.DataSource = this.iTC_DBPOwerDataSet;
             // 
             // openFileDialog1
             // 
@@ -620,11 +629,15 @@
             // 
             this.rolCiudadActivaSetTableAdapter.ClearBeforeFill = true;
             // 
+            // ciudadPersonalSetTableAdapter
+            // 
+            this.ciudadPersonalSetTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmCargaCiudad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 592);
+            this.ClientSize = new System.Drawing.Size(901, 592);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.ciudadSetBindingNavigator);
             this.Name = "FrmCargaCiudad";
@@ -647,6 +660,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadActivaSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadEnProcesoSetDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadEnProcesoSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadPersonalSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -705,5 +719,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.BindingSource lineaCiudadSetBindingSource1;
         private MetroFramework.Controls.MetroTile metroTile1;
+        private System.Windows.Forms.BindingSource ciudadPersonalSetBindingSource;
+        private ITC_DBPOwerDataSetTableAdapters.CiudadPersonalSetTableAdapter ciudadPersonalSetTableAdapter;
     }
 }

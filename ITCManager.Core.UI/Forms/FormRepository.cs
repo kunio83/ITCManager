@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using System.Drawing;
 using MetroFramework.Controls;
+using ITCManager.Core.UI.Forms.Controles;
 
 namespace ITCManager.Core.UI.Forms
 {
@@ -51,6 +52,7 @@ namespace ITCManager.Core.UI.Forms
     public static class FormRepository
     {
         private static ContextMenu _menu;
+        private static Calendar _calendar;
 
         internal static void CreateCellContMenuEditor(Form mdiParent, DataGridView dgv, String table, Point pos)
         {
@@ -62,6 +64,16 @@ namespace ITCManager.Core.UI.Forms
                 _menu.MenuItems.Add(item);
             }
             _menu.Show(dgv, pos);
+        }
+
+        internal static String GetCalendarDate(Point pos,DateTime fechaActual)
+        {
+            if (_calendar == null) _calendar = new Calendar();
+            _calendar.Location = pos;
+            _calendar._FechaActual = fechaActual;
+            _calendar.ShowDialog();
+            
+            return _calendar.GetCalendarDate();
         }
 
         private static void Item_Click(object sender, EventArgs e, Form mdiParent, String table)

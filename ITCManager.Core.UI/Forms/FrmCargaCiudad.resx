@@ -233,7 +233,7 @@
   <data name="metroTile1.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAEQiAABEIgHAZIDPAAAAGXRFWHRTb2Z0d2FyZQB3d3cu
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAEQgAABEIAG/mkNGAAAAGXRFWHRTb2Z0d2FyZQB3d3cu
         aW5rc2NhcGUub3Jnm+48GgAAE3tJREFUeF7lnQewJEUZx0E8SUqOJtKVWB7c3bu7d8fjBA5EQRCRcJKD
         lARJAoKASDxRSySHUkAKEAUko6KoIDkIqBhARSxAgpETESXe+fu/mtnq7f1md2ane3bm3av61dvt/r6v
         u7e/6ZnpuNDUqVPvh13gLfPnz19oQYHybgQ/XdDLrw/zE56D42EVS2GsQPnSik/LvUCX33WAlFfgMphu
@@ -320,6 +320,9 @@
         V/E+lK025TcDq4SCps3jk1UWvC4MtvzzF/o/86jvcvPFZoMAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="ciudadPersonalSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>919, 17</value>
   </metadata>
@@ -340,5 +343,8 @@
   </metadata>
   <metadata name="rolCiudadActivaSetTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>502, 95</value>
+  </metadata>
+  <metadata name="ciudadPersonalSetTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>248, 134</value>
   </metadata>
 </root>

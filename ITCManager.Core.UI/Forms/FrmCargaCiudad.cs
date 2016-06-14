@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,6 @@ namespace ITCManager.Core.UI.Forms
 {
     public partial class FrmCargaCiudad : Base
     {
-        public Calendar calendar;
         public String FechaCalendar { get; set; }
 
         public FrmCargaCiudad()
@@ -38,6 +38,8 @@ namespace ITCManager.Core.UI.Forms
 
         private void FrmCargaCiudad_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.CiudadPersonalSet' table. You can move, or remove it, as needed.
+            this.ciudadPersonalSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.CiudadPersonalSet);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolCiudadActivaSet' table. You can move, or remove it, as needed.
             this.rolCiudadActivaSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolCiudadActivaSet);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.RolCiudadEnProcesoSet' table. You can move, or remove it, as needed.
@@ -142,12 +144,30 @@ namespace ITCManager.Core.UI.Forms
         {
             if (e.ColumnIndex == 2 || e.ColumnIndex == 3)
             {
-                if (calendar == null)
-                    calendar = new Calendar(this);
-                calendar.StartPosition = FormStartPosition.Manual;
-                calendar.Location = Cursor.Position;
-                calendar.ShowDialog();
-                rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = this.FechaCalendar;
+                DateTime fechaActual = DateTime.Today;
+                if(DateTime.TryParse(rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(),out fechaActual))
+                    rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = FormRepository.GetCalendarDate(Cursor.Position,fechaActual);
+            }
+        }
+
+        private void ciudadSetDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                DateTime nuevaFecha;
+                DateTime fechaActual = DateTime.Today;
+                CultureInfo provider = CultureInfo.InvariantCulture;
+                try
+                {
+                    fechaActual = DateTime.ParseExact(ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), "yyMM", provider);
+                    nuevaFecha = DateTime.Parse(FormRepository.GetCalendarDate(Cursor.Position, fechaActual));
+                    ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = nuevaFecha.ToString("yyMM");
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                  
             }
         }
     }
