@@ -161,7 +161,7 @@ namespace ITCManager.Core.UI.Forms
                 try
                 {
                     if(!DateTime.TryParseExact(ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), "yyMM", provider,DateTimeStyles.AssumeLocal,out fechaActual))
-                        fechaActual = DateTime.ParseExact(DateTime.Today.ToString(),"yyMM",provider);
+                        fechaActual = DateTime.ParseExact(DateTime.Today.ToString("yyMM"),"yyMM",provider);
                     nuevaFecha = DateTime.Parse(FormRepository.GetCalendarDate(Cursor.Position, fechaActual));
                     ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = nuevaFecha.ToString("yyMM");
                 }
