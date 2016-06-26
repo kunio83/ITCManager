@@ -29,3 +29,16 @@ BEGIN
 	left join RolVendedor rv on re.IdRolEmpleado = rv.IdRolEmpleado	
 END
 GO
+
+/****** Script for SelectTopNRows command from SSMS  ******/
+CREATE PROCEDURE [dbo].getDetallePLan
+@IdPlanBase int
+AS
+BEGIN
+	SELECT 
+		DetallePlanBase
+	FROM 
+		[ITC_DBPOwer].[dbo].[PlanBaseSet]
+	WHERE
+		IdPlanBase = @IdPlanBase
+END

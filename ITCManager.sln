@@ -30,8 +30,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITCManager.Client.Entities_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITCManager.Core.Services", "ITCManager.Core.Services\ITCManager.Core.Services.csproj", "{0FA52151-EE56-44BC-8ECD-0AD2663B769B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication2", "WindowsFormsApplication2\WindowsFormsApplication2.csproj", "{15391F18-A253-467D-9A41-2D0EB9D17127}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,10 +76,6 @@ Global
 		{0FA52151-EE56-44BC-8ECD-0AD2663B769B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FA52151-EE56-44BC-8ECD-0AD2663B769B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FA52151-EE56-44BC-8ECD-0AD2663B769B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{15391F18-A253-467D-9A41-2D0EB9D17127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15391F18-A253-467D-9A41-2D0EB9D17127}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15391F18-A253-467D-9A41-2D0EB9D17127}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15391F18-A253-467D-9A41-2D0EB9D17127}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +91,5 @@ Global
 		{E0CA0BE7-C17C-4C93-BAF2-412F8220DF29} = {7DA4D071-4259-489C-BAFA-465B91E46603}
 		{973A863B-D7BE-4473-94FD-130CC78B1A65} = {7C8DF8E6-0B44-4533-9C30-9970A045DE6D}
 		{0FA52151-EE56-44BC-8ECD-0AD2663B769B} = {7DA4D071-4259-489C-BAFA-465B91E46603}
-		{15391F18-A253-467D-9A41-2D0EB9D17127} = {7DA4D071-4259-489C-BAFA-465B91E46603}
 	EndGlobalSection
 EndGlobal

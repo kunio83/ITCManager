@@ -31,9 +31,9 @@ namespace ITCManager.Core.UI.Forms
             this.rolCiudadEnProcesoSetBindingSource.EndEdit();
             this.rolCiudadActivaSetBindingSource.EndEdit();
             this.rolCiudadEnProcesoSetTableAdapter.Update(this.iTC_DBPOwerDataSet.RolCiudadEnProcesoSet);
+
             this.rolCiudadActivaSetTableAdapter.Update(this.iTC_DBPOwerDataSet.RolCiudadActivaSet);
             this.tableAdapterManager.UpdateAll(this.iTC_DBPOwerDataSet);
-
         }
 
         private void FrmCargaCiudad_Load(object sender, EventArgs e)
@@ -77,12 +77,6 @@ namespace ITCManager.Core.UI.Forms
             }
         }
 
-        private void ciudadSetDataGridView_MouseClick(object sender, MouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Right)
-                FormRepository.CreateCellContMenuEditor(this.MdiParent, (DataGridView)sender, "Localidad", e.Location);
-        }
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = null;
@@ -105,10 +99,13 @@ namespace ITCManager.Core.UI.Forms
 
         private void rolCiudadEnProcesoSetDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == rolCiudadEnProcesoSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn11"].ColumnIndex)
+            if (e.RowIndex >= 0)
             {
-                String pathArchivoAAbrir = rolCiudadEnProcesoSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                AbrirArchivo(pathArchivoAAbrir);
+                if (e.ColumnIndex == rolCiudadEnProcesoSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn11"].ColumnIndex)
+                {
+                    String pathArchivoAAbrir = rolCiudadEnProcesoSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    AbrirArchivo(pathArchivoAAbrir);
+                }
             }
         }
 
@@ -122,54 +119,87 @@ namespace ITCManager.Core.UI.Forms
 
         private void ciudadSetDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            ciudadSetDataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            
-            if (Boolean.Parse(ciudadSetDataGridView.CurrentRow.Cells["Activa"].Value.ToString()))
-                rolCiudadActivaSetDataGridView.Visible = true;
-            else
-                rolCiudadActivaSetDataGridView.Visible = false;
-            Application.DoEvents();
+            if (e.RowIndex >= 0)
+            {
+                ciudadSetDataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
+                if (Boolean.Parse(ciudadSetDataGridView.CurrentRow.Cells["Activa"].Value.ToString()))
+                    rolCiudadActivaSetDataGridView.Visible = true;
+                else
+                    rolCiudadActivaSetDataGridView.Visible = false;
+                Application.DoEvents();
+            }
         }
 
         private void ciudadSetDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (Boolean.Parse(ciudadSetDataGridView.CurrentRow.Cells["Activa"].Value.ToString()))
-                rolCiudadActivaSetDataGridView.Visible = true;
-            else
-                rolCiudadActivaSetDataGridView.Visible = false;
-            Thread.Sleep(500);
+            if (e.RowIndex >= 0)
+            {
+                if (Boolean.Parse(ciudadSetDataGridView.CurrentRow.Cells["Activa"].Value.ToString()))
+                    rolCiudadActivaSetDataGridView.Visible = true;
+                else
+                    rolCiudadActivaSetDataGridView.Visible = false;
+                Thread.Sleep(500);
+            }
         }
 
         private void rolCiudadActivaSetDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == 2 || e.ColumnIndex == 3)
+            if (e.RowIndex >= 0)
             {
-                DateTime fechaActual = DateTime.Today;
-                if (!DateTime.TryParse(rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), out fechaActual))
-                    fechaActual = DateTime.Today;
-                rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = FormRepository.GetCalendarDate(Cursor.Position,fechaActual);
+                if (e.ColumnIndex == 2 || e.ColumnIndex == 3)
+                {
+                    DateTime fechaActual = DateTime.Today;
+                    if (!DateTime.TryParse(rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), out fechaActual))
+                        fechaActual = DateTime.Today;
+                    rolCiudadActivaSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = FormRepository.GetCalendarDate(Cursor.Position, fechaActual);
+                }
             }
         }
 
         private void ciudadSetDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == 3)
+            if (e.RowIndex >= 0)
             {
-                DateTime nuevaFecha;
-                DateTime fechaActual;
-                CultureInfo provider = CultureInfo.InvariantCulture;
-                try
+                switch (e.ColumnIndex)
                 {
-                    if(!DateTime.TryParseExact(ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), "yyMM", provider,DateTimeStyles.AssumeLocal,out fechaActual))
-                        fechaActual = DateTime.ParseExact(DateTime.Today.ToString("yyMM"),"yyMM",provider);
-                    nuevaFecha = DateTime.Parse(FormRepository.GetCalendarDate(Cursor.Position, fechaActual));
-                    ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = nuevaFecha.ToString("yyMM");
+                    case 2:
+                        {
+                            if (e.Button == MouseButtons.Right)
+                            {
+                                FormRepository.CreateCellContMenuEditor(this.MdiParent, (DataGridView)sender, "Localidad", Cursor.Position);
+                            }
+                        }
+                        break;
+                    case 3:
+                        {
+                            DateTime nuevaFecha;
+                            DateTime fechaActual;
+                            CultureInfo provider = CultureInfo.InvariantCulture;
+                            try
+                            {
+                                if (!DateTime.TryParseExact(ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), "yyMM", provider, DateTimeStyles.AssumeLocal, out fechaActual))
+                                    fechaActual = DateTime.ParseExact(DateTime.Today.ToString("yyMM"), "yyMM", provider);
+                                nuevaFecha = DateTime.Parse(FormRepository.GetCalendarDate(Cursor.Position, fechaActual));
+                                ciudadSetDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = nuevaFecha.ToString("yyMM");
+                            }
+                            catch (Exception ex)
+                            {
+                                throw new Exception(ex.Message);
+                            }
+                        }
+                        break;
                 }
-                catch (Exception ex)
-                {
-                    throw new Exception(ex.Message);
-                }
-                  
+            }
+        }
+
+        private void btnVerPlanes_Click(object sender, EventArgs e)
+        {
+            if (rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value != null)
+            {
+                int idRolCiudadActiva = Convert.ToInt32(rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value);
+                FrmRolCiudadActivaPlan frmPlan = new FrmRolCiudadActivaPlan(idRolCiudadActiva);
+                frmPlan.ShowDialog();
             }
         }
     }
