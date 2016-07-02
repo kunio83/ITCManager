@@ -1,6 +1,6 @@
 ﻿namespace ITCManager.Client.Entities_Client
 {
-    public class Persona
+    public class Persona : IEntidadITC
     {
         public int IdPersona { get; set; }
         public string Apellido { get; set; }

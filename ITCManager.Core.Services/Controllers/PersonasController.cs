@@ -25,5 +25,10 @@ namespace ITCManager.Core.Services.Controllers
         {
             PersonaHelper.Save(persona);
         }
+
+        public void Put([FromBody]Persona persona)
+        {
+            PersonaHelper.Save(persona);
+        }
     }
 }
