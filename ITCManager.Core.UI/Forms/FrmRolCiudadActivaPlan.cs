@@ -55,8 +55,6 @@ namespace ITCManager.Core.UI.Forms
 
         private void LlenarDetallePLan()
         {
-            int position = 0;
-            
             foreach (DataGridViewRow r in rolCiudadActivaPlanSetDataGridView.Rows)
             {
                 foreach (ITC_DBPOwerDataSet.PlanBaseSetRow p in this.iTC_DBPOwerDataSet.PlanBaseSet.Rows)

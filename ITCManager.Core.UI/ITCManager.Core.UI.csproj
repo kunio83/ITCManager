@@ -98,6 +98,12 @@
     <Compile Include="Forms\FrmCargaCiudad.Designer.cs">
       <DependentUpon>FrmCargaCiudad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmCargaCiudadPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCargaCiudadPersonal.Designer.cs">
+      <DependentUpon>FrmCargaCiudadPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmCargaPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,12 +117,6 @@
       <DependentUpon>FrmCargaDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CargaDatosHelper.cs" />
-    <Compile Include="Forms\FrmLineaCiudad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmLineaCiudad.Designer.cs">
-      <DependentUpon>FrmLineaCiudad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmRolCiudadActivaPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,14 +158,14 @@
     <EmbeddedResource Include="Forms\FrmCargaCiudad.resx">
       <DependentUpon>FrmCargaCiudad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCargaCiudadPersonal.resx">
+      <DependentUpon>FrmCargaCiudadPersonal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCargaPersonal.resx">
       <DependentUpon>FrmCargaPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCargaDatos.resx">
       <DependentUpon>FrmCargaDatos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmLineaCiudad.resx">
-      <DependentUpon>FrmLineaCiudad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRolCiudadActivaPlan.resx">
       <DependentUpon>FrmRolCiudadActivaPlan.cs</DependentUpon>

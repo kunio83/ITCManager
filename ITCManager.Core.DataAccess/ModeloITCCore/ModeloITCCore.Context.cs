@@ -35,7 +35,6 @@ namespace ITCManager.Core.Entities
         public virtual DbSet<RolEmpleado> RolEmpleado { get; set; }
         public virtual DbSet<RolVendedor> RolVendedor { get; set; }
         public virtual DbSet<AsignacionRecibo> AsignacionReciboSet { get; set; }
-        public virtual DbSet<LineaCiudad> LineaCiudadSet { get; set; }
         public virtual DbSet<Ciudad> CiudadSet { get; set; }
         public virtual DbSet<Localidad> LocalidadSet { get; set; }
         public virtual DbSet<RolCiudadEnProceso> RolCiudadEnProcesoSet { get; set; }

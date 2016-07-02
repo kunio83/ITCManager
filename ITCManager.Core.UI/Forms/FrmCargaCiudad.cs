@@ -48,8 +48,6 @@ namespace ITCManager.Core.UI.Forms
             this.rolCiudadEnProcesoSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.RolCiudadEnProcesoSet);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.LocalidadSet' table. You can move, or remove it, as needed.
             this.localidadSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.LocalidadSet);
-            // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.LineaCiudadSet' table. You can move, or remove it, as needed.
-            this.lineaCiudadSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.LineaCiudadSet);
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.CiudadSet' table. You can move, or remove it, as needed.
             this.ciudadSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.CiudadSet);
 

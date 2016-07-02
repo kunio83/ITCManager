@@ -55,13 +55,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.lineaCiudadSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lineaCiudadSetDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lineaCiudadSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.rolCiudadActivaSetDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,25 +70,22 @@
             this.rolCiudadEnProcesoSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnVerPlanes = new MetroFramework.Controls.MetroButton();
-            this.ciudadPersonalSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ciudadPersonalSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ciudadSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadSetTableAdapter();
             this.tableAdapterManager = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
-            this.lineaCiudadSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.LineaCiudadSetTableAdapter();
             this.localidadSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.LocalidadSetTableAdapter();
             this.rolCiudadEnProcesoSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolCiudadEnProcesoSetTableAdapter();
             this.rolCiudadActivaSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolCiudadActivaSetTableAdapter();
             this.ciudadPersonalSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadPersonalSetTableAdapter();
+            this.NumeroLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingNavigator)).BeginInit();
             this.ciudadSetBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.localidadSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lineaCiudadSetBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lineaCiudadSetDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lineaCiudadSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadActivaSetDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadActivaSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadEnProcesoSetDataGridView)).BeginInit();
@@ -258,7 +249,8 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.Activa});
+            this.Activa,
+            this.NumeroLinea});
             this.ciudadSetDataGridView.DataSource = this.ciudadSetBindingSource;
             this.ciudadSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ciudadSetDataGridView.Location = new System.Drawing.Point(3, 3);
@@ -322,17 +314,11 @@
             this.Activa.Name = "Activa";
             this.Activa.TrueValue = true;
             // 
-            // lineaCiudadSetBindingSource
-            // 
-            this.lineaCiudadSetBindingSource.DataMember = "LineaCiudadSet";
-            this.lineaCiudadSetBindingSource.DataSource = this.iTC_DBPOwerDataSet;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.57143F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.42857F));
-            this.tableLayoutPanel1.Controls.Add(this.lineaCiudadSetDataGridView, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.rolCiudadActivaSetDataGridView, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.ciudadSetDataGridView, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.rolCiudadEnProcesoSetDataGridView, 0, 1);
@@ -346,45 +332,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 109F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(881, 509);
             this.tableLayoutPanel1.TabIndex = 4;
-            // 
-            // lineaCiudadSetDataGridView
-            // 
-            this.lineaCiudadSetDataGridView.AutoGenerateColumns = false;
-            this.lineaCiudadSetDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lineaCiudadSetDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.lineaCiudadSetDataGridView.DataSource = this.lineaCiudadSetBindingSource1;
-            this.lineaCiudadSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lineaCiudadSetDataGridView.Location = new System.Drawing.Point(607, 318);
-            this.lineaCiudadSetDataGridView.Name = "lineaCiudadSetDataGridView";
-            this.lineaCiudadSetDataGridView.Size = new System.Drawing.Size(271, 79);
-            this.lineaCiudadSetDataGridView.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "IdLineaCiudad";
-            this.dataGridViewTextBoxColumn6.HeaderText = "IdLineaCiudad";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "IdLinea";
-            this.dataGridViewTextBoxColumn7.HeaderText = "IdLinea";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "IdCiudad";
-            this.dataGridViewTextBoxColumn8.HeaderText = "IdCiudad";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // lineaCiudadSetBindingSource1
-            // 
-            this.lineaCiudadSetBindingSource1.DataMember = "FK_CiudadLineaCiudad";
-            this.lineaCiudadSetBindingSource1.DataSource = this.ciudadSetBindingSource;
             // 
             // rolCiudadActivaSetDataGridView
             // 
@@ -516,14 +463,14 @@
             this.btnVerPlanes.Text = "Ver Planes";
             this.btnVerPlanes.Click += new System.EventHandler(this.btnVerPlanes_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // ciudadPersonalSetBindingSource
             // 
             this.ciudadPersonalSetBindingSource.DataMember = "CiudadPersonalSet";
             this.ciudadPersonalSetBindingSource.DataSource = this.iTC_DBPOwerDataSet;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // ciudadSetTableAdapter
             // 
@@ -574,7 +521,6 @@
             this.tableAdapterManager.GastoLocalSetTableAdapter = null;
             this.tableAdapterManager.HorarioSetTableAdapter = null;
             this.tableAdapterManager.ItemPagadoSetTableAdapter = null;
-            this.tableAdapterManager.LineaCiudadSetTableAdapter = this.lineaCiudadSetTableAdapter;
             this.tableAdapterManager.LocacionRolLocadorSetTableAdapter = null;
             this.tableAdapterManager.LocacionSetTableAdapter = null;
             this.tableAdapterManager.LocalidadSetTableAdapter = null;
@@ -628,10 +574,6 @@
             this.tableAdapterManager.ValeFinanciacionSetTableAdapter = null;
             this.tableAdapterManager.ValeSetTableAdapter = null;
             // 
-            // lineaCiudadSetTableAdapter
-            // 
-            this.lineaCiudadSetTableAdapter.ClearBeforeFill = true;
-            // 
             // localidadSetTableAdapter
             // 
             this.localidadSetTableAdapter.ClearBeforeFill = true;
@@ -647,6 +589,12 @@
             // ciudadPersonalSetTableAdapter
             // 
             this.ciudadPersonalSetTableAdapter.ClearBeforeFill = true;
+            // 
+            // NumeroLinea
+            // 
+            this.NumeroLinea.DataPropertyName = "NumeroLinea";
+            this.NumeroLinea.HeaderText = "NumeroLinea";
+            this.NumeroLinea.Name = "NumeroLinea";
             // 
             // FrmCargaCiudad
             // 
@@ -667,10 +615,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.localidadSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lineaCiudadSetBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lineaCiudadSetDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lineaCiudadSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadActivaSetDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadActivaSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolCiudadEnProcesoSetDataGridView)).EndInit();
@@ -701,9 +646,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton ciudadSetBindingNavigatorSaveItem;
-        private ITC_DBPOwerDataSetTableAdapters.LineaCiudadSetTableAdapter lineaCiudadSetTableAdapter;
         private System.Windows.Forms.DataGridView ciudadSetDataGridView;
-        private System.Windows.Forms.BindingSource lineaCiudadSetBindingSource;
         private System.Windows.Forms.BindingSource localidadSetBindingSource;
         private ITC_DBPOwerDataSetTableAdapters.LocalidadSetTableAdapter localidadSetTableAdapter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -729,14 +672,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridView lineaCiudadSetDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.BindingSource lineaCiudadSetBindingSource1;
         private System.Windows.Forms.BindingSource ciudadPersonalSetBindingSource;
         private ITC_DBPOwerDataSetTableAdapters.CiudadPersonalSetTableAdapter ciudadPersonalSetTableAdapter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MetroFramework.Controls.MetroButton btnVerPlanes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroLinea;
     }
 }
