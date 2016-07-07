@@ -82,27 +82,6 @@ namespace ITCManager.Core.UI.Forms
             FormRepository<FrmCargaDatos>.Open(mdiParent, new object[1] { table });
         }
 
-        //internal static void ColorearImagen(Control control, Color target)
-        //{
-
-        //    var lstImagenes = control.Controls.OfType<MetroTile>().Where(z => z.TileImage != null);
-        //    Bitmap bmp2 = null;
-        //    Rectangle rect;
-
-        //    foreach (var i in lstImagenes)
-        //    {
-        //        ChangeColor(i.TileImage as Bitmap);
-        //        //bmp2 = new Bitmap(i.TileImage.Width, i.TileImage.Height);
-        //        //rect = new Rectangle(Point.Empty, i.TileImage.Size);
-        //        //using (Graphics G = Graphics.FromImage(bmp2))
-        //        //{
-        //        //    G.Clear(target);
-        //        //    G.DrawImageUnscaledAndClipped(i.TileImage, rect);
-        //        //}
-        //        //i.TileImage = bmp2;
-        //    }
-        //}
-
         public static void ChangeColor(Bitmap scrBitmap)
         {
             //You can change your new color here. Red,Green,LawnGreen any..

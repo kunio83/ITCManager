@@ -31,24 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCargaCiudadPersonal));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ciudadSetDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ciudadSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iTC_DBPOwerDataSet = new ITCManager.Core.UI.ITC_DBPOwerDataSet();
-            this.ciudadPersonalSetDataGridView = new System.Windows.Forms.DataGridView();
-            this.getPersonalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ciudadPersonalSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ciudadSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadSetTableAdapter();
-            this.tableAdapterManager = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
-            this.ciudadPersonalSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadPersonalSetTableAdapter();
             this.ciudadSetBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.ciudadSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iTC_DBPOwerDataSet = new ITCManager.Core.UI.ITC_DBPOwerDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -60,21 +46,46 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ciudadSetBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.getPersonalTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.getPersonalTableAdapter();
+            this.ciudadSetDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ciudadPersonalSetDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empleado = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.getPersonalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ciudadPersonalSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.ciudadSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadSetTableAdapter();
+            this.tableAdapterManager = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
+            this.ciudadPersonalSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadPersonalSetTableAdapter();
+            this.getPersonalTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.getPersonalTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadSetDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingNavigator)).BeginInit();
+            this.ciudadSetBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadSetDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadPersonalSetDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPersonalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadPersonalSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingNavigator)).BeginInit();
-            this.ciudadSetBindingNavigator.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -82,18 +93,156 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.778337F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.22166F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 315F));
+            this.tableLayoutPanel1.Controls.Add(this.ciudadSetBindingNavigator, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.ciudadSetDataGridView, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.ciudadPersonalSetDataGridView, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 30);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.27778F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.72222F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(834, 429);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 306F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(925, 482);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // ciudadSetBindingNavigator
+            // 
+            this.ciudadSetBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.ciudadSetBindingNavigator.BindingSource = this.ciudadSetBindingSource;
+            this.ciudadSetBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.ciudadSetBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.ciudadSetBindingNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ciudadSetBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.ciudadSetBindingNavigatorSaveItem});
+            this.ciudadSetBindingNavigator.Location = new System.Drawing.Point(23, 0);
+            this.ciudadSetBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.ciudadSetBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.ciudadSetBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.ciudadSetBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.ciudadSetBindingNavigator.Name = "ciudadSetBindingNavigator";
+            this.ciudadSetBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.ciudadSetBindingNavigator.Size = new System.Drawing.Size(586, 30);
+            this.ciudadSetBindingNavigator.TabIndex = 2;
+            this.ciudadSetBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 27);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // ciudadSetBindingSource
+            // 
+            this.ciudadSetBindingSource.DataMember = "CiudadSet";
+            this.ciudadSetBindingSource.DataSource = this.iTC_DBPOwerDataSet;
+            // 
+            // iTC_DBPOwerDataSet
+            // 
+            this.iTC_DBPOwerDataSet.DataSetName = "ITC_DBPOwerDataSet";
+            this.iTC_DBPOwerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 27);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 27);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 27);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 27);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 30);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 30);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 27);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 27);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 30);
+            // 
+            // ciudadSetBindingNavigatorSaveItem
+            // 
+            this.ciudadSetBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ciudadSetBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("ciudadSetBindingNavigatorSaveItem.Image")));
+            this.ciudadSetBindingNavigatorSaveItem.Name = "ciudadSetBindingNavigatorSaveItem";
+            this.ciudadSetBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 27);
+            this.ciudadSetBindingNavigatorSaveItem.Text = "Save Data";
+            this.ciudadSetBindingNavigatorSaveItem.Click += new System.EventHandler(this.ciudadSetBindingNavigatorSaveItem_Click);
             // 
             // ciudadSetDataGridView
             // 
@@ -109,9 +258,9 @@
             this.dataGridViewTextBoxColumn6});
             this.ciudadSetDataGridView.DataSource = this.ciudadSetBindingSource;
             this.ciudadSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ciudadSetDataGridView.Location = new System.Drawing.Point(32, 29);
+            this.ciudadSetDataGridView.Location = new System.Drawing.Point(26, 33);
             this.ciudadSetDataGridView.Name = "ciudadSetDataGridView";
-            this.ciudadSetDataGridView.Size = new System.Drawing.Size(756, 226);
+            this.ciudadSetDataGridView.Size = new System.Drawing.Size(580, 140);
             this.ciudadSetDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -157,18 +306,9 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "NumeroLinea";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // ciudadSetBindingSource
-            // 
-            this.ciudadSetBindingSource.DataMember = "CiudadSet";
-            this.ciudadSetBindingSource.DataSource = this.iTC_DBPOwerDataSet;
-            // 
-            // iTC_DBPOwerDataSet
-            // 
-            this.iTC_DBPOwerDataSet.DataSetName = "ITC_DBPOwerDataSet";
-            this.iTC_DBPOwerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // ciudadPersonalSetDataGridView
             // 
+            this.ciudadPersonalSetDataGridView.AllowUserToAddRows = false;
             this.ciudadPersonalSetDataGridView.AutoGenerateColumns = false;
             this.ciudadPersonalSetDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ciudadPersonalSetDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -179,21 +319,163 @@
             this.dataGridViewTextBoxColumn10});
             this.ciudadPersonalSetDataGridView.DataSource = this.ciudadPersonalSetBindingSource;
             this.ciudadPersonalSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ciudadPersonalSetDataGridView.Location = new System.Drawing.Point(32, 261);
+            this.ciudadPersonalSetDataGridView.Location = new System.Drawing.Point(26, 179);
             this.ciudadPersonalSetDataGridView.Name = "ciudadPersonalSetDataGridView";
-            this.ciudadPersonalSetDataGridView.Size = new System.Drawing.Size(756, 165);
+            this.ciudadPersonalSetDataGridView.Size = new System.Drawing.Size(580, 300);
             this.ciudadPersonalSetDataGridView.TabIndex = 1;
             this.ciudadPersonalSetDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ciudadPersonalSetDataGridView_CellClick);
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "IdCiudadPersonal";
+            this.dataGridViewTextBoxColumn7.HeaderText = "IdCiudadPersonal";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // Empleado
+            // 
+            this.Empleado.DataPropertyName = "IdRolEmpleado";
+            this.Empleado.DataSource = this.getPersonalBindingSource;
+            this.Empleado.DisplayMember = "Column1";
+            this.Empleado.HeaderText = "Empleado";
+            this.Empleado.Name = "Empleado";
+            this.Empleado.ValueMember = "IdRolEmpleado";
             // 
             // getPersonalBindingSource
             // 
             this.getPersonalBindingSource.DataMember = "getPersonal";
             this.getPersonalBindingSource.DataSource = this.iTC_DBPOwerDataSet;
             // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Periodo";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Periodo";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "IdRolEmpleado";
+            this.dataGridViewTextBoxColumn9.HeaderText = "IdRolEmpleado";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdCiudad";
+            this.dataGridViewTextBoxColumn10.HeaderText = "IdCiudad";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
             // ciudadPersonalSetBindingSource
             // 
             this.ciudadPersonalSetBindingSource.DataMember = "FK_CiudadCiudadPersonal";
             this.ciudadPersonalSetBindingSource.DataSource = this.ciudadSetBindingSource;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.02041F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.97959F));
+            this.tableLayoutPanel2.Controls.Add(this.numericUpDown1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(612, 33);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(310, 140);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            4000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(152, 44);
+            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.metroLabel2, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.metroLabel1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.metroComboBox1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.metroTextBox1, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.metroButton1, 0, 2);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(612, 179);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 236F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(310, 300);
+            this.tableLayoutPanel3.TabIndex = 4;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(158, 0);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLabel2.TabIndex = 1;
+            this.metroLabel2.Text = "Periodo";
+            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(3, 0);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLabel1.TabIndex = 0;
+            this.metroLabel1.Text = "Empleado";
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(3, 30);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(149, 29);
+            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroComboBox1.TabIndex = 2;
+            this.metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // metroTextBox1
+            // 
+            this.metroTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTextBox1.Location = new System.Drawing.Point(158, 30);
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.Size = new System.Drawing.Size(149, 30);
+            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.TabIndex = 3;
+            this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTextBox1.UseStyleColors = true;
+            this.metroTextBox1.Click += new System.EventHandler(this.metroTextBox1_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(3, 66);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(81, 44);
+            this.metroButton1.TabIndex = 4;
+            this.metroButton1.Text = "<-- +";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // ciudadSetTableAdapter
             // 
@@ -301,195 +583,36 @@
             // 
             this.ciudadPersonalSetTableAdapter.ClearBeforeFill = true;
             // 
-            // ciudadSetBindingNavigator
-            // 
-            this.ciudadSetBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.ciudadSetBindingNavigator.BindingSource = this.ciudadSetBindingSource;
-            this.ciudadSetBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.ciudadSetBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.ciudadSetBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.ciudadSetBindingNavigatorSaveItem});
-            this.ciudadSetBindingNavigator.Location = new System.Drawing.Point(10, 30);
-            this.ciudadSetBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.ciudadSetBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.ciudadSetBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.ciudadSetBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.ciudadSetBindingNavigator.Name = "ciudadSetBindingNavigator";
-            this.ciudadSetBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ciudadSetBindingNavigator.Size = new System.Drawing.Size(834, 25);
-            this.ciudadSetBindingNavigator.TabIndex = 2;
-            this.ciudadSetBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // ciudadSetBindingNavigatorSaveItem
-            // 
-            this.ciudadSetBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ciudadSetBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("ciudadSetBindingNavigatorSaveItem.Image")));
-            this.ciudadSetBindingNavigatorSaveItem.Name = "ciudadSetBindingNavigatorSaveItem";
-            this.ciudadSetBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.ciudadSetBindingNavigatorSaveItem.Text = "Save Data";
-            this.ciudadSetBindingNavigatorSaveItem.Click += new System.EventHandler(this.ciudadSetBindingNavigatorSaveItem_Click);
-            // 
             // getPersonalTableAdapter
             // 
             this.getPersonalTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "IdCiudadPersonal";
-            this.dataGridViewTextBoxColumn7.HeaderText = "IdCiudadPersonal";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // Empleado
-            // 
-            this.Empleado.DataPropertyName = "IdRolEmpleado";
-            this.Empleado.DataSource = this.getPersonalBindingSource;
-            this.Empleado.DisplayMember = "Column1";
-            this.Empleado.HeaderText = "Empleado";
-            this.Empleado.Name = "Empleado";
-            this.Empleado.ValueMember = "IdRolEmpleado";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Periodo";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Periodo";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "IdRolEmpleado";
-            this.dataGridViewTextBoxColumn9.HeaderText = "IdRolEmpleado";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdCiudad";
-            this.dataGridViewTextBoxColumn10.HeaderText = "IdCiudad";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
             // 
             // FrmCargaCiudadPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 487);
-            this.Controls.Add(this.ciudadSetBindingNavigator);
+            this.ClientSize = new System.Drawing.Size(945, 540);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmCargaCiudadPersonal";
             this.Text = "FrmCargaCiudadPersonal";
             this.Load += new System.EventHandler(this.FrmCargaCiudadPersonal_Load);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
-            this.Controls.SetChildIndex(this.ciudadSetBindingNavigator, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadSetDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadPersonalSetDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPersonalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadPersonalSetBindingSource)).EndInit();
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingNavigator)).EndInit();
             this.ciudadSetBindingNavigator.ResumeLayout(false);
             this.ciudadSetBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iTC_DBPOwerDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadSetDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadPersonalSetDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPersonalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadPersonalSetBindingSource)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -531,5 +654,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
     }
 }

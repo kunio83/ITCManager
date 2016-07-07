@@ -13,6 +13,8 @@ namespace ITCManager.Core.UI.Forms
 {
     public partial class FrmCargaCiudadPersonal : Base
     {
+        CurrencyManager _currencyManager1;
+
         public FrmCargaCiudadPersonal()
         {
             InitializeComponent();
@@ -35,6 +37,14 @@ namespace ITCManager.Core.UI.Forms
             // TODO: This line of code loads data into the 'iTC_DBPOwerDataSet.CiudadSet' table. You can move, or remove it, as needed.
             this.ciudadSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.CiudadSet);
 
+            //Completo el comboBox de empleados
+            this.metroComboBox1.DataSource = this.iTC_DBPOwerDataSet.getPersonal;
+            this.metroComboBox1.DisplayMember = "Column1";
+            this.metroComboBox1.ValueMember = "IdRolEmpleado";
+
+            //Por defecto el 1er valor del numeric es el periodo actual
+            numericUpDown1.Value = decimal.Parse(DateTime.Today.ToString("yyMM"));
+
         }
 
         private void ciudadPersonalSetDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -56,6 +66,54 @@ namespace ITCManager.Core.UI.Forms
                     throw new Exception(ex.Message);
                 }
             }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            if (this._currencyManager1 == null)
+                this._currencyManager1 = (CurrencyManager)BindingContext[ciudadPersonalSetDataGridView.DataSource];
+
+            this._currencyManager1.SuspendBinding();
+            if (numericUpDown1.Value != 0)
+            {
+                for (int i = 0; i < ciudadPersonalSetDataGridView.Rows.Count; i++)
+                {
+                    if (ciudadPersonalSetDataGridView.Rows[i].Cells["dataGridViewTextBoxColumn8"].Value != null &&
+                        ciudadPersonalSetDataGridView.Rows[i].Cells["dataGridViewTextBoxColumn8"].Value.ToString() == numericUpDown1.Value.ToString())
+                    {
+                        ciudadPersonalSetDataGridView.Rows[i].Visible = true;
+                    }
+                    else
+                    {
+                        ciudadPersonalSetDataGridView.Rows[i].Visible = false;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < ciudadPersonalSetDataGridView.Rows.Count; i++)
+                {
+                    ciudadPersonalSetDataGridView.Rows[i].Visible = true;
+                }
+            }
+            this._currencyManager1.ResumeBinding();
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (metroComboBox1.SelectedItem != null && metroTextBox1.Text != String.Empty)
+            {
+                int idCiudadActual = Convert.ToInt32(((DataRowView)ciudadSetBindingNavigator.BindingSource.Current)["IdCiudad"]);
+                ciudadPersonalSetTableAdapter.Insert(metroTextBox1.Text, (int)metroComboBox1.SelectedValue, idCiudadActual);
+            }
+            this.ciudadPersonalSetTableAdapter.Fill(this.iTC_DBPOwerDataSet.CiudadPersonalSet);
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+            string fechaSeleccionada = FormRepository.GetCalendarDate(new Point((int)(Cursor.Position.X * 0.7),Cursor.Position.Y), DateTime.Today);
+            metroTextBox1.Text = Convert.ToDateTime(fechaSeleccionada).ToString("yyMM");
         }
     }
 }
