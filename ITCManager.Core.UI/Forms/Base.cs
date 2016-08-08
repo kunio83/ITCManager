@@ -21,7 +21,7 @@ namespace ITCManager.Core.UI.Forms
 
         private void Base_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ((Form)sender).Dispose();
+            //((Form)sender).Dispose();
         }
 
         public virtual void CleanFormTextBoxs(Form frm)

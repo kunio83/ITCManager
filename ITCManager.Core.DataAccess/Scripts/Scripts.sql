@@ -22,11 +22,13 @@ AS
 BEGIN
  SELECT 
 	re.IdRolEmpleado,
-	p.Apellido + ' ' + p.Nombres
+	p.Apellido + ' ' + p.Nombres,
+	pu.DetallePuesto [Puesto]
  FROM 
 	RolEmpleado re
 	left join Persona p on re.IdPersona = p.IdPersona
-	left join RolVendedor rv on re.IdRolEmpleado = rv.IdRolEmpleado	
+	left join RolVendedor rv on re.IdRolEmpleado = rv.IdRolEmpleado
+	left join PuestoSet pu on pu.IdPuesto = re.IdPuesto
 END
 GO
 

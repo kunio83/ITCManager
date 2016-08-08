@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -117,6 +118,7 @@
     <Compile Include="EnvioCiudadEquipos.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="EstructuraVendedor.cs" />
     <Compile Include="EstadoAlumno.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
@@ -162,10 +164,8 @@
     <Compile Include="Horario.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="IEntidadITC.cs" />
     <Compile Include="ItemPagado.cs">
-      <DependentUpon>ModeloITCCore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LineaCiudad.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="Locacion.cs">
@@ -310,9 +310,6 @@
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RolVendedor.cs">
-      <DependentUpon>ModeloITCCore.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Setting.cs">
       <DependentUpon>ModeloITCCore.tt</DependentUpon>
     </Compile>
     <Compile Include="SueldoPago.cs">

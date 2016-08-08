@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ITCManager.Core.Entities;
 using ITCManager.Core.DataAccess;
+using System.Net.Http;
 
 namespace ITCManager.Core.Business
 {
@@ -30,6 +31,14 @@ namespace ITCManager.Core.Business
         }
 
         public static List<Persona> GetAll()
+        {
+            List<Persona> result;
+            personaRepository = unitOfWork.Repository<Persona>();
+            result = personaRepository.Table.ToList<Persona>();
+            return result;
+        }
+
+        public static List<Persona> GetAllByEmpleado(RolEmpleado empleado)
         {
             List<Persona> result;
             personaRepository = unitOfWork.Repository<Persona>();

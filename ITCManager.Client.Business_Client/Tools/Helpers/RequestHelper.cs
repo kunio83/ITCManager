@@ -14,9 +14,9 @@ namespace ITCManager.Client.Business_Client.Tools.Helpers
             IRestRequest request = new RestRequest(nombreMetodo, metodo);
             request.RequestFormat = DataFormat.Json;
 
-            //request.AddHeader("Authentication", token);
-            //request.AddHeader("User-Agent", "TiendaNubeCore (znube.com.ar)");
-            //request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Authentication", token);
+            request.AddHeader("User-Agent", "Personal ITC");
+            request.AddHeader("Content-Type", "application/json");
 
             return request;
         }

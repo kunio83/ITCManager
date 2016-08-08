@@ -55,6 +55,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.NumeroLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rolCiudadActivaSetDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +70,12 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.rolCiudadEnProcesoSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.btnVerPlanes = new MetroFramework.Controls.MetroButton();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroButton4 = new MetroFramework.Controls.MetroButton();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.ciudadPersonalSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ciudadSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadSetTableAdapter();
@@ -78,7 +84,6 @@
             this.rolCiudadEnProcesoSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolCiudadEnProcesoSetTableAdapter();
             this.rolCiudadActivaSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolCiudadActivaSetTableAdapter();
             this.ciudadPersonalSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadPersonalSetTableAdapter();
-            this.NumeroLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingNavigator)).BeginInit();
             this.ciudadSetBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingSource)).BeginInit();
@@ -147,8 +152,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
@@ -253,9 +258,11 @@
             this.NumeroLinea});
             this.ciudadSetDataGridView.DataSource = this.ciudadSetBindingSource;
             this.ciudadSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ciudadSetDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.ciudadSetDataGridView.Location = new System.Drawing.Point(3, 3);
             this.ciudadSetDataGridView.MultiSelect = false;
             this.ciudadSetDataGridView.Name = "ciudadSetDataGridView";
+            this.ciudadSetDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ciudadSetDataGridView.Size = new System.Drawing.Size(598, 309);
             this.ciudadSetDataGridView.TabIndex = 2;
             this.ciudadSetDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ciudadSetDataGridView_CellClick);
@@ -313,6 +320,12 @@
             this.Activa.IndeterminateValue = "";
             this.Activa.Name = "Activa";
             this.Activa.TrueValue = true;
+            // 
+            // NumeroLinea
+            // 
+            this.NumeroLinea.DataPropertyName = "NumeroLinea";
+            this.NumeroLinea.HeaderText = "NumeroLinea";
+            this.NumeroLinea.Name = "NumeroLinea";
             // 
             // tableLayoutPanel1
             // 
@@ -443,25 +456,96 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.02952F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.97048F));
+            this.tableLayoutPanel2.Controls.Add(this.metroButton1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnVerPlanes, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.metroButton3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.metroButton2, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.metroButton4, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.metroButton5, 1, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(607, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.56311F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.43689F));
+            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(271, 309);
             this.tableLayoutPanel2.TabIndex = 4;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroButton1.Location = new System.Drawing.Point(143, 3);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(125, 44);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroButton1.TabIndex = 1;
+            this.metroButton1.Text = "Ver Horarios";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // btnVerPlanes
             // 
             this.btnVerPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnVerPlanes.Location = new System.Drawing.Point(3, 3);
             this.btnVerPlanes.Name = "btnVerPlanes";
-            this.btnVerPlanes.Size = new System.Drawing.Size(134, 39);
+            this.btnVerPlanes.Size = new System.Drawing.Size(134, 44);
+            this.btnVerPlanes.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnVerPlanes.TabIndex = 0;
             this.btnVerPlanes.Text = "Ver Planes";
+            this.btnVerPlanes.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnVerPlanes.Click += new System.EventHandler(this.btnVerPlanes_Click);
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroButton3.Location = new System.Drawing.Point(3, 53);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(134, 44);
+            this.metroButton3.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroButton3.TabIndex = 3;
+            this.metroButton3.Text = "Ver Gastos";
+            this.metroButton3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroButton2.Location = new System.Drawing.Point(143, 53);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(125, 44);
+            this.metroButton2.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroButton2.TabIndex = 2;
+            this.metroButton2.Text = "Info de Equipos Asignados";
+            this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
+            // metroButton4
+            // 
+            this.metroButton4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroButton4.Location = new System.Drawing.Point(3, 103);
+            this.metroButton4.Name = "metroButton4";
+            this.metroButton4.Size = new System.Drawing.Size(134, 44);
+            this.metroButton4.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroButton4.TabIndex = 4;
+            this.metroButton4.Text = "Ver Envío";
+            this.metroButton4.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
+            // 
+            // metroButton5
+            // 
+            this.metroButton5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroButton5.Location = new System.Drawing.Point(143, 103);
+            this.metroButton5.Name = "metroButton5";
+            this.metroButton5.Size = new System.Drawing.Size(125, 44);
+            this.metroButton5.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroButton5.TabIndex = 5;
+            this.metroButton5.Text = "Ver ...";
+            this.metroButton5.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // openFileDialog1
             // 
@@ -590,12 +674,6 @@
             // 
             this.ciudadPersonalSetTableAdapter.ClearBeforeFill = true;
             // 
-            // NumeroLinea
-            // 
-            this.NumeroLinea.DataPropertyName = "NumeroLinea";
-            this.NumeroLinea.HeaderText = "NumeroLinea";
-            this.NumeroLinea.Name = "NumeroLinea";
-            // 
             // FrmCargaCiudad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,5 +755,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MetroFramework.Controls.MetroButton btnVerPlanes;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroLinea;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton metroButton4;
+        private MetroFramework.Controls.MetroButton metroButton5;
     }
 }

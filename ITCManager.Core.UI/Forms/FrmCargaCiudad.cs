@@ -165,7 +165,7 @@ namespace ITCManager.Core.UI.Forms
                         {
                             if (e.Button == MouseButtons.Right)
                             {
-                                FormRepository.CreateCellContMenuEditor(this.MdiParent, (DataGridView)sender, "Localidad", Cursor.Position);
+                                FormRepository.CreateCellContMenuEditor(this.MdiParent, (DataGridView)sender, "Localidad", e.Location);
                             }
                         }
                         break;
@@ -193,11 +193,59 @@ namespace ITCManager.Core.UI.Forms
 
         private void btnVerPlanes_Click(object sender, EventArgs e)
         {
-            if (rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value != null)
+            if (rolCiudadActivaSetDataGridView.Rows.Count > 0 && rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value != null)
             {
                 int idRolCiudadActiva = Convert.ToInt32(rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value);
+
+                //FormRepository<FrmRolCiudadActivaPlan>.Open(this.MdiParent,new object[] { idRolCiudadActiva });
+                
+                //no uso el FormRepository aca porque sino no me muestra las celdas completadas del grid de detallePLan
                 FrmRolCiudadActivaPlan frmPlan = new FrmRolCiudadActivaPlan(idRolCiudadActiva);
                 frmPlan.ShowDialog();
+            }
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (rolCiudadActivaSetDataGridView.Rows.Count > 0 && rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value != null)
+            {
+                int idRolCiudadActiva = Convert.ToInt32(rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value);
+
+                FormRepository<FrmRolCiudadActivaHorario>.Open(this.MdiParent, new object[] { idRolCiudadActiva });
+
+                //FrmRolCiudadActivaHorario frmPlan = new FrmRolCiudadActivaHorario(idRolCiudadActiva);
+                //frmPlan.ShowDialog();
+            }
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            if (rolCiudadActivaSetDataGridView.Rows.Count > 0 && rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value != null)
+            {
+                int idRolCiudadActiva = Convert.ToInt32(rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value);
+
+                FrmRolCiudadActivaGasto frm = new FrmRolCiudadActivaGasto(idRolCiudadActiva);
+                frm.ShowDialog();
+            }
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            if (rolCiudadActivaSetDataGridView.Rows.Count > 0 && rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value != null)
+            {
+                int idRolCiudadActiva = Convert.ToInt32(rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value);
+
+                FormRepository<FrmEnvioDetalle>.Open(this.MdiParent, new object[] { idRolCiudadActiva });
+            }
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            if (rolCiudadActivaSetDataGridView.Rows.Count > 0 && rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value != null)
+            {
+                int idRolCiudadActiva = Convert.ToInt32(rolCiudadActivaSetDataGridView.Rows[0].Cells["dataGridViewTextBoxColumn12"].Value);
+
+                FormRepository<FrmEquipos>.Open(this.MdiParent, new object[] { idRolCiudadActiva });
             }
         }
     }

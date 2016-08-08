@@ -55,12 +55,7 @@
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciudadPersonalSetDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empleado = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.getPersonalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciudadPersonalSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -74,6 +69,12 @@
             this.tableAdapterManager = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
             this.ciudadPersonalSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.CiudadPersonalSetTableAdapter();
             this.getPersonalTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.getPersonalTableAdapter();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleado = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Puesto = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadSetBindingNavigator)).BeginInit();
             this.ciudadSetBindingNavigator.SuspendLayout();
@@ -93,7 +94,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.778337F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.22166F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 315F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 322F));
             this.tableLayoutPanel1.Controls.Add(this.ciudadSetBindingNavigator, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.ciudadSetDataGridView, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.ciudadPersonalSetDataGridView, 1, 2);
@@ -129,14 +130,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.ciudadSetBindingNavigatorSaveItem});
-            this.ciudadSetBindingNavigator.Location = new System.Drawing.Point(23, 0);
+            this.ciudadSetBindingNavigator.Location = new System.Drawing.Point(22, 0);
             this.ciudadSetBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.ciudadSetBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.ciudadSetBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.ciudadSetBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.ciudadSetBindingNavigator.Name = "ciudadSetBindingNavigator";
             this.ciudadSetBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ciudadSetBindingNavigator.Size = new System.Drawing.Size(586, 30);
+            this.ciudadSetBindingNavigator.Size = new System.Drawing.Size(580, 30);
             this.ciudadSetBindingNavigator.TabIndex = 2;
             this.ciudadSetBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -162,8 +163,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 27);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 27);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
@@ -258,9 +259,9 @@
             this.dataGridViewTextBoxColumn6});
             this.ciudadSetDataGridView.DataSource = this.ciudadSetBindingSource;
             this.ciudadSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ciudadSetDataGridView.Location = new System.Drawing.Point(26, 33);
+            this.ciudadSetDataGridView.Location = new System.Drawing.Point(25, 33);
             this.ciudadSetDataGridView.Name = "ciudadSetDataGridView";
-            this.ciudadSetDataGridView.Size = new System.Drawing.Size(580, 140);
+            this.ciudadSetDataGridView.Size = new System.Drawing.Size(574, 140);
             this.ciudadSetDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -314,58 +315,23 @@
             this.ciudadPersonalSetDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
             this.Empleado,
+            this.Puesto,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.ciudadPersonalSetDataGridView.DataSource = this.ciudadPersonalSetBindingSource;
             this.ciudadPersonalSetDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ciudadPersonalSetDataGridView.Location = new System.Drawing.Point(26, 179);
+            this.ciudadPersonalSetDataGridView.Location = new System.Drawing.Point(25, 179);
             this.ciudadPersonalSetDataGridView.Name = "ciudadPersonalSetDataGridView";
-            this.ciudadPersonalSetDataGridView.Size = new System.Drawing.Size(580, 300);
+            this.ciudadPersonalSetDataGridView.Size = new System.Drawing.Size(574, 300);
             this.ciudadPersonalSetDataGridView.TabIndex = 1;
             this.ciudadPersonalSetDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ciudadPersonalSetDataGridView_CellClick);
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "IdCiudadPersonal";
-            this.dataGridViewTextBoxColumn7.HeaderText = "IdCiudadPersonal";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // Empleado
-            // 
-            this.Empleado.DataPropertyName = "IdRolEmpleado";
-            this.Empleado.DataSource = this.getPersonalBindingSource;
-            this.Empleado.DisplayMember = "Column1";
-            this.Empleado.HeaderText = "Empleado";
-            this.Empleado.Name = "Empleado";
-            this.Empleado.ValueMember = "IdRolEmpleado";
+            this.ciudadPersonalSetDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.ciudadPersonalSetDataGridView_DataBindingComplete);
             // 
             // getPersonalBindingSource
             // 
             this.getPersonalBindingSource.DataMember = "getPersonal";
             this.getPersonalBindingSource.DataSource = this.iTC_DBPOwerDataSet;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Periodo";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Periodo";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "IdRolEmpleado";
-            this.dataGridViewTextBoxColumn9.HeaderText = "IdRolEmpleado";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdCiudad";
-            this.dataGridViewTextBoxColumn10.HeaderText = "IdCiudad";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
             // 
             // ciudadPersonalSetBindingSource
             // 
@@ -374,17 +340,18 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.AutoScroll = true;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.02041F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.97959F));
             this.tableLayoutPanel2.Controls.Add(this.numericUpDown1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(612, 33);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(605, 33);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(310, 140);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(317, 140);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // numericUpDown1
@@ -398,7 +365,7 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(152, 44);
+            this.numericUpDown1.Size = new System.Drawing.Size(155, 44);
             this.numericUpDown1.TabIndex = 2;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
@@ -413,21 +380,21 @@
             this.tableLayoutPanel3.Controls.Add(this.metroTextBox1, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.metroButton1, 0, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(612, 179);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(605, 179);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 236F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(310, 300);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(317, 300);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(158, 0);
+            this.metroLabel2.Location = new System.Drawing.Point(161, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(55, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Periodo";
@@ -451,7 +418,7 @@
             this.metroComboBox1.ItemHeight = 23;
             this.metroComboBox1.Location = new System.Drawing.Point(3, 30);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(149, 29);
+            this.metroComboBox1.Size = new System.Drawing.Size(152, 29);
             this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroComboBox1.TabIndex = 2;
             this.metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -459,9 +426,9 @@
             // metroTextBox1
             // 
             this.metroTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTextBox1.Location = new System.Drawing.Point(158, 30);
+            this.metroTextBox1.Location = new System.Drawing.Point(161, 30);
             this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(149, 30);
+            this.metroTextBox1.Size = new System.Drawing.Size(153, 30);
             this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.TabIndex = 3;
             this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -587,6 +554,55 @@
             // 
             this.getPersonalTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "IdCiudadPersonal";
+            this.dataGridViewTextBoxColumn7.HeaderText = "IdCiudadPersonal";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // Empleado
+            // 
+            this.Empleado.DataPropertyName = "IdRolEmpleado";
+            this.Empleado.DataSource = this.getPersonalBindingSource;
+            this.Empleado.DisplayMember = "Column1";
+            this.Empleado.HeaderText = "Empleado";
+            this.Empleado.Name = "Empleado";
+            this.Empleado.ValueMember = "IdRolEmpleado";
+            // 
+            // Puesto
+            // 
+            this.Puesto.DataPropertyName = "IdRolEmpleado";
+            this.Puesto.DataSource = this.getPersonalBindingSource;
+            this.Puesto.DisplayMember = "Puesto";
+            this.Puesto.HeaderText = "Puesto";
+            this.Puesto.Name = "Puesto";
+            this.Puesto.ReadOnly = true;
+            this.Puesto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Puesto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Puesto.ValueMember = "IdRolEmpleado";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Periodo";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Periodo";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "IdRolEmpleado";
+            this.dataGridViewTextBoxColumn9.HeaderText = "IdRolEmpleado";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdCiudad";
+            this.dataGridViewTextBoxColumn10.HeaderText = "IdCiudad";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
             // FrmCargaCiudadPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,11 +665,6 @@
         private System.Windows.Forms.DataGridView ciudadPersonalSetDataGridView;
         private System.Windows.Forms.BindingSource getPersonalBindingSource;
         private ITC_DBPOwerDataSetTableAdapters.getPersonalTableAdapter getPersonalTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Empleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private MetroFramework.Controls.MetroButton metroButton1;
@@ -662,5 +673,11 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Empleado;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Puesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
     }
 }

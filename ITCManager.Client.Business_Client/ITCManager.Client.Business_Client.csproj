@@ -45,8 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tools\Acciones\AccionEstructuraVendedor.cs" />
     <Compile Include="Tools\Acciones\AccionPersona.cs" />
+    <Compile Include="Tools\Aprovisionador.cs" />
     <Compile Include="Tools\Gestores\GestorBase.cs" />
+    <Compile Include="Tools\Gestores\GestorEstructuraVendedor.cs" />
     <Compile Include="Tools\Gestores\GestorPersona.cs" />
     <Compile Include="Tools\Acciones\IAccionEntidad.cs" />
     <Compile Include="Tools\GestorITCApi.cs" />

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/02/2016 15:23:21
--- Generated from EDMX file: C:\Users\ThinkPadW7\Documents\Visual Studio 2015\Projects\ITCManager\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
+-- Date Created: 07/22/2016 16:18:52
+-- Generated from EDMX file: C:\Users\Kunio\Source\Repos\ITCManagerRepositorio\ITCManager.Core.DataAccess\ModeloITCCore\ModeloITCCore.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -1416,9 +1416,9 @@ GO
 -- Creating table 'EnvioSet'
 CREATE TABLE [dbo].[EnvioSet] (
     [IdEnvio] int IDENTITY(1,1) NOT NULL,
-    [FechaSolicitudEnvío] nvarchar(max)  NOT NULL,
-    [FechaSalidaEnvío] nvarchar(max)  NOT NULL,
-    [FechaEstimadaRecepción] nvarchar(max)  NOT NULL,
+    [FechaSolicitudEnvío] datetime  NOT NULL,
+    [FechaSalidaEnvío] datetime  NOT NULL,
+    [FechaEstimadaRecepción] datetime  NOT NULL,
     [IdProveedor] int  NOT NULL,
     [TipoRetiroEnvio] nvarchar(max)  NOT NULL,
     [TipoEntregaEnvio] nvarchar(max)  NOT NULL,
@@ -1431,7 +1431,8 @@ CREATE TABLE [dbo].[EnvioSet] (
     [TipoPago] nvarchar(max)  NOT NULL,
     [Monto] nvarchar(max)  NOT NULL,
     [EstadoEnvio] nvarchar(max)  NOT NULL,
-    [Observaciones] nvarchar(max)  NOT NULL
+    [Observaciones] nvarchar(max)  NOT NULL,
+    [NumeroGuia] nvarchar(max)  NOT NULL
 );
 GO
 

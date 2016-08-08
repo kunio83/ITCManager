@@ -18,6 +18,15 @@ namespace ITCManager.Core.Services.Controllers
 
         public IEnumerable<Persona> Get()
         {
+            var re = Request;
+            var headers = re.Headers;
+
+            if (headers.Contains("User-Agent"))
+            {
+                string token = headers.GetValues("User-Agent").First();
+            }
+
+
             return PersonaHelper.GetAll();
         }
 

@@ -67,11 +67,6 @@ namespace ITCManager.Core.UI.Forms
 
 
             }
-
-            foreach (ITC_DBPOwerDataSet.RolCiudadActivaPlanSetRow r in this.iTC_DBPOwerDataSet.RolCiudadActivaPlanSet.Rows)
-            {
-                
-            }
         }
         
 

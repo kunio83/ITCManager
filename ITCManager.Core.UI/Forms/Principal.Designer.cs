@@ -51,7 +51,7 @@
             this.tabInicio.Location = new System.Drawing.Point(10, 30);
             this.tabInicio.Name = "tabInicio";
             this.tabInicio.SelectedIndex = 0;
-            this.tabInicio.Size = new System.Drawing.Size(807, 409);
+            this.tabInicio.Size = new System.Drawing.Size(807, 437);
             this.tabInicio.TabIndex = 1;
             this.tabInicio.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -67,7 +67,7 @@
             this.mtp.HorizontalScrollbarBarColor = true;
             this.mtp.Location = new System.Drawing.Point(4, 35);
             this.mtp.Name = "mtp";
-            this.mtp.Size = new System.Drawing.Size(799, 370);
+            this.mtp.Size = new System.Drawing.Size(799, 398);
             this.mtp.Style = MetroFramework.MetroColorStyle.Blue;
             this.mtp.TabIndex = 0;
             this.mtp.Text = "Inicio";
@@ -76,21 +76,22 @@
             // 
             // metroTile6
             // 
-            this.metroTile6.Location = new System.Drawing.Point(347, 208);
+            this.metroTile6.Location = new System.Drawing.Point(478, 179);
             this.metroTile6.Name = "metroTile6";
             this.metroTile6.Size = new System.Drawing.Size(150, 150);
             this.metroTile6.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile6.TabIndex = 7;
-            this.metroTile6.Text = "metroTile6";
+            this.metroTile6.Text = "Preparar Ambientes";
             this.metroTile6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroTile6.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile6.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile6.UseTileImage = true;
+            this.metroTile6.Click += new System.EventHandler(this.metroTile6_Click);
             // 
             // metroTile5
             // 
-            this.metroTile5.Location = new System.Drawing.Point(347, 52);
+            this.metroTile5.Location = new System.Drawing.Point(478, 23);
             this.metroTile5.Name = "metroTile5";
             this.metroTile5.Size = new System.Drawing.Size(150, 150);
             this.metroTile5.Style = MetroFramework.MetroColorStyle.Blue;
@@ -105,7 +106,7 @@
             // 
             // metroTile4
             // 
-            this.metroTile4.Location = new System.Drawing.Point(191, 208);
+            this.metroTile4.Location = new System.Drawing.Point(322, 179);
             this.metroTile4.Name = "metroTile4";
             this.metroTile4.Size = new System.Drawing.Size(150, 150);
             this.metroTile4.Style = MetroFramework.MetroColorStyle.Blue;
@@ -120,7 +121,7 @@
             // 
             // metroTile3
             // 
-            this.metroTile3.Location = new System.Drawing.Point(191, 52);
+            this.metroTile3.Location = new System.Drawing.Point(322, 23);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(150, 150);
             this.metroTile3.Style = MetroFramework.MetroColorStyle.Blue;
@@ -136,7 +137,7 @@
             // 
             // mtiCargarDatos
             // 
-            this.mtiCargarDatos.Location = new System.Drawing.Point(35, 208);
+            this.mtiCargarDatos.Location = new System.Drawing.Point(166, 179);
             this.mtiCargarDatos.Name = "mtiCargarDatos";
             this.mtiCargarDatos.Size = new System.Drawing.Size(150, 150);
             this.mtiCargarDatos.Style = MetroFramework.MetroColorStyle.Red;
@@ -152,7 +153,7 @@
             // 
             // metroTile1
             // 
-            this.metroTile1.Location = new System.Drawing.Point(35, 52);
+            this.metroTile1.Location = new System.Drawing.Point(166, 23);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(150, 150);
             this.metroTile1.Style = MetroFramework.MetroColorStyle.Blue;
@@ -171,7 +172,7 @@
             this.tabHerram.HorizontalScrollbarBarColor = true;
             this.tabHerram.Location = new System.Drawing.Point(4, 35);
             this.tabHerram.Name = "tabHerram";
-            this.tabHerram.Size = new System.Drawing.Size(799, 370);
+            this.tabHerram.Size = new System.Drawing.Size(799, 398);
             this.tabHerram.Style = MetroFramework.MetroColorStyle.Blue;
             this.tabHerram.TabIndex = 1;
             this.tabHerram.Text = "Herramientas";

@@ -115,5 +115,14 @@ namespace ITCManager.Core.UI.Forms
             string fechaSeleccionada = FormRepository.GetCalendarDate(new Point((int)(Cursor.Position.X * 0.7),Cursor.Position.Y), DateTime.Today);
             metroTextBox1.Text = Convert.ToDateTime(fechaSeleccionada).ToString("yyMM");
         }
+
+        private void ciudadPersonalSetDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow r in ciudadPersonalSetDataGridView.Rows)
+            {
+                //r.Cells["Puesto"].Value = getPersonalBindingSource.curr
+            }
+            
+        }
     }
 }

@@ -11,14 +11,15 @@ namespace ITCManager.Client.Business_Client.Tools.Gestores
 {
     public class GestorPersona : GestorBase
     {
+        //private String _token;
         public GestorPersona(String direccion, String token) : base(direccion, token, new AccionPersona())
         {
-
+            this._token = token;
         }
 
         public List<Persona> TraerTodos()
         {
-            var request = _accion.ObtenerRequestGET(_token);
+            var request = _accion.ObtenerRequestGET(this._token);
 
             var resultadojSon = _restClient.Execute(request);
 
@@ -49,7 +50,7 @@ namespace ITCManager.Client.Business_Client.Tools.Gestores
             return resultado;
         }
 
-        public Int32 Crear(Persona persona)
+        public long Crear(Persona persona)
         {
             var request = _accion.ObtenerRequestPOST(_token, persona);
 

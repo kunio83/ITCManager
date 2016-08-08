@@ -12,6 +12,8 @@ namespace ITCManager.Core.UI.Forms
 {
     public partial class Principal : Base
     {
+        FrmCargaCiudadPersonal frmCargaCiudadPersonal;
+
         public Principal()
         {
             InitializeComponent();
@@ -40,7 +42,19 @@ namespace ITCManager.Core.UI.Forms
 
         private void metroTile5_Click(object sender, EventArgs e)
         {
-            FormRepository<FrmCargaCiudadPersonal>.Open(this.MdiParent);
+            if (frmCargaCiudadPersonal == null)
+                frmCargaCiudadPersonal = new FrmCargaCiudadPersonal();
+            if (frmCargaCiudadPersonal.Visible == false)
+                frmCargaCiudadPersonal.Visible = true;
+            //frmCargaCiudadPersonal.Show();
+            else
+                frmCargaCiudadPersonal.Hide();
+            //Revisar porque carancho no anda con este form
+            //FormRepository<FrmCargaCiudadPersonal>.Open(this.MdiParent);
+        }
+
+        private void metroTile6_Click(object sender, EventArgs e)
+        {
         }
     }
 }

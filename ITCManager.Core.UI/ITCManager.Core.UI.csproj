@@ -117,6 +117,36 @@
       <DependentUpon>FrmCargaDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CargaDatosHelper.cs" />
+    <Compile Include="Forms\FrmEnvio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEnvio.Designer.cs">
+      <DependentUpon>FrmEnvio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEnvioDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEnvioDetalle.Designer.cs">
+      <DependentUpon>FrmEnvioDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEquipos.Designer.cs">
+      <DependentUpon>FrmEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRolCiudadActivaGasto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRolCiudadActivaGasto.Designer.cs">
+      <DependentUpon>FrmRolCiudadActivaGasto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRolCiudadActivaHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRolCiudadActivaHorario.Designer.cs">
+      <DependentUpon>FrmRolCiudadActivaHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmRolCiudadActivaPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +196,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCargaDatos.resx">
       <DependentUpon>FrmCargaDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEnvio.resx">
+      <DependentUpon>FrmEnvio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEnvioDetalle.resx">
+      <DependentUpon>FrmEnvioDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEquipos.resx">
+      <DependentUpon>FrmEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRolCiudadActivaGasto.resx">
+      <DependentUpon>FrmRolCiudadActivaGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRolCiudadActivaHorario.resx">
+      <DependentUpon>FrmRolCiudadActivaHorario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRolCiudadActivaPlan.resx">
       <DependentUpon>FrmRolCiudadActivaPlan.cs</DependentUpon>
@@ -227,6 +272,10 @@
     <None Include="Resources\1460619161_multiply.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ITCManager.Client.UI_Client\ITCManager.Client.UI_Client.csproj">
+      <Project>{7ec73a84-cf3b-49f3-b375-a7d82aec6a6f}</Project>
+      <Name>ITCManager.Client.UI_Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ITCManager.Core.Business\ITCManager.Core.Business.csproj">
       <Project>{ad22b7df-4572-4fc3-8156-c20fddfdb39f}</Project>
       <Name>ITCManager.Core.Business</Name>

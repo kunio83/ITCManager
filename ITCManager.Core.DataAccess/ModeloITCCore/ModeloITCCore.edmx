@@ -1326,9 +1326,9 @@
       <PropertyRef Name="IdEnvio" />
     </Key>
     <Property Name="IdEnvio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FechaSolicitudEnvío" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FechaSalidaEnvío" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FechaEstimadaRecepción" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaSolicitudEnvío" Type="datetime" Nullable="false" />
+    <Property Name="FechaSalidaEnvío" Type="datetime" Nullable="false" />
+    <Property Name="FechaEstimadaRecepción" Type="datetime" Nullable="false" />
     <Property Name="IdProveedor" Type="int" Nullable="false" />
     <Property Name="TipoRetiroEnvio" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TipoEntregaEnvio" Type="nvarchar(max)" Nullable="false" />
@@ -1342,6 +1342,7 @@
     <Property Name="Monto" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EstadoEnvio" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Observaciones" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumeroGuia" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="EnvioCiudadEquiposSet">
     <Key>
@@ -5475,9 +5476,9 @@
             <PropertyRef Name="IdEnvio" />
           </Key>
           <Property Name="IdEnvio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FechaSolicitudEnvío" Type="String" Nullable="false" />
-          <Property Name="FechaSalidaEnvío" Type="String" Nullable="false" />
-          <Property Name="FechaEstimadaRecepción" Type="String" Nullable="false" />
+          <Property Name="FechaSolicitudEnvío" Type="DateTime" Nullable="false" />
+          <Property Name="FechaSalidaEnvío" Type="DateTime" Nullable="false" />
+          <Property Name="FechaEstimadaRecepción" Type="DateTime" Nullable="false" />
           <Property Name="IdProveedor" Type="Int32" Nullable="false" />
           <Property Name="TipoRetiroEnvio" Type="String" Nullable="false" />
           <Property Name="TipoEntregaEnvio" Type="String" Nullable="false" />
@@ -5498,6 +5499,7 @@
             </Documentation>
           </Property>
           <Property Name="Observaciones" Type="String" Nullable="false" />
+          <Property Name="NumeroGuia" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="ProveedorEnvio">
           <End Type="ITC_DBPOwerModel.Proveedor" Role="Proveedor" Multiplicity="1" />
@@ -6731,6 +6733,7 @@
           <ScalarProperty Name="Monto" ColumnName="Monto" />
           <ScalarProperty Name="EstadoEnvio" ColumnName="EstadoEnvio" />
           <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="NumeroGuia" ColumnName="NumeroGuia" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

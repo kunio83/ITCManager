@@ -26,7 +26,7 @@ namespace ITCManager.Core.UI.Forms
                 frm.StartPosition = FormStartPosition.Manual;
                 frm.Location = new Point(mdiParent.Location.X + (mdiParent.Width - frm.Width) / 2,
                                             mdiParent.Location.Y + (mdiParent.Height - frm.Height) / 2);
-                frm.WindowState = FormWindowState.Maximized;
+                //frm.WindowState = FormWindowState.Maximized;
                 frm.ControlBox = true;
 
             }
@@ -53,11 +53,13 @@ namespace ITCManager.Core.UI.Forms
     {
         private static ContextMenu _menu;
         private static Calendar _calendar;
+        private static String _actualTable;
 
         internal static void CreateCellContMenuEditor(Form mdiParent, DataGridView dgv, String table, Point pos)
         {
-            if (_menu == null)
+            if (_menu == null || _actualTable != table)
             {
+                _actualTable = table;
                 _menu = new ContextMenu();
                 MenuItem item = new MenuItem("Editar Valores");
                 item.Click += (sender, e) => Item_Click(sender, e, mdiParent, table);
@@ -80,34 +82,6 @@ namespace ITCManager.Core.UI.Forms
         {
             //Aca ser va a abrir el form de carga de datos, parametrizando la tabla que quiero editar
             FormRepository<FrmCargaDatos>.Open(mdiParent, new object[1] { table });
-        }
-
-        public static void ChangeColor(Bitmap scrBitmap)
-        {
-            //You can change your new color here. Red,Green,LawnGreen any..
-            Color newColor = Color.White;
-            Color actualColor;
-            //make an empty bitmap the same size as scrBitmap
-            Bitmap newBitmap = new Bitmap(scrBitmap.Width, scrBitmap.Height);
-            for (int i = 0; i < scrBitmap.Width; i++)
-            {
-                for (int j = 0; j < scrBitmap.Height; j++)
-                {
-                    //get the pixel from the scrBitmap image
-                    actualColor = scrBitmap.GetPixel(i, j);
-                    // > 150 because.. Images edges can be of low pixel colr. if we set all pixel color to new then there will be no smoothness left.
-                    if (actualColor.A > 150)
-                        newBitmap.SetPixel(i, j, newColor);
-                    else
-                        newBitmap.SetPixel(i, j, actualColor);
-                }
-            }
-            scrBitmap=  newBitmap;
-        }
-
-        internal static void ConvertControlsToMetro(MetroForm form)
-        {
-            
         }
     }
 }

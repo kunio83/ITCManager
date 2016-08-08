@@ -37,7 +37,6 @@
             this.tableAdapterManager = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.TableAdapterManager();
             this.rolCiudadActivaPlanSetTableAdapter = new ITCManager.Core.UI.ITC_DBPOwerDataSetTableAdapters.RolCiudadActivaPlanSetTableAdapter();
             this.rolCiudadActivaSetBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.rolCiudadActivaSetBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.idRolCiudadActivaTextBox = new System.Windows.Forms.TextBox();
@@ -205,10 +204,9 @@
             this.rolCiudadActivaSetBindingNavigator.AddNewItem = null;
             this.rolCiudadActivaSetBindingNavigator.BindingSource = this.rolCiudadActivaSetBindingSource;
             this.rolCiudadActivaSetBindingNavigator.CountItem = null;
-            this.rolCiudadActivaSetBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.rolCiudadActivaSetBindingNavigator.DeleteItem = null;
             this.rolCiudadActivaSetBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorSeparator,
-            this.bindingNavigatorDeleteItem,
             this.rolCiudadActivaSetBindingNavigatorSaveItem});
             this.rolCiudadActivaSetBindingNavigator.Location = new System.Drawing.Point(10, 30);
             this.rolCiudadActivaSetBindingNavigator.MoveFirstItem = null;
@@ -220,15 +218,6 @@
             this.rolCiudadActivaSetBindingNavigator.Size = new System.Drawing.Size(799, 25);
             this.rolCiudadActivaSetBindingNavigator.TabIndex = 1;
             this.rolCiudadActivaSetBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorSeparator
             // 
@@ -433,7 +422,6 @@
         private ITC_DBPOwerDataSetTableAdapters.RolCiudadActivaSetTableAdapter rolCiudadActivaSetTableAdapter;
         private ITC_DBPOwerDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator rolCiudadActivaSetBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
         private System.Windows.Forms.ToolStripButton rolCiudadActivaSetBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox idRolCiudadActivaTextBox;

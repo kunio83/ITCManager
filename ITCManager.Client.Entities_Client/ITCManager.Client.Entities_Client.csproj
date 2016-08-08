@@ -49,9 +49,293 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnoHorarioSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArmadoEquipoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AsignacionCiudadEquiposSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AsignacionReciboSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CajaEfectivoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CapacitacionSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChequePropioSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChequeSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CiudadActivaLocacionesSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CiudadEquiposSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CiudadFechasHorariosSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CiudadPersonalSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CiudadProductosSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CiudadSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoeficTarjetasSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompraSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CondicionEmpleadoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CuentaBancoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CuentaBancoTerceroSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepositoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleArmadoEquipoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleCompraSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleCondicionEmpleado.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DiaSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioCiudadEquiposSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoAlumno.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoAsignacionEquipoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoChequeSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoCompraSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoDepositoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoPagoTarjetaSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoRendicionSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoTransferenciaSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoVentaSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstructuraVendedor.cs" />
+    <Compile Include="FormaPagoLocalSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormaPagoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoBaseSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoChequeSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoLocalSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HorarioSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
     <Compile Include="IEntidadITC.cs" />
-    <Compile Include="Persona.cs" />
+    <Compile Include="ItemPagadoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocacionRolLocadorSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocacionSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocalidadSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelCliente.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MovimientoInternoEfectivoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoChequeSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalCajaEfectivoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalChequePropioSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalChequeSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalEnvioSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalSueldoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalTarjetaSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoLocalTransferenciaSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoTarjetaSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permiso.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PermisoAcceso.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persona.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanBaseSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanVendedorAlumnoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PuestoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReciboSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionDepositoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionGastoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionPagoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionPersonaCiudadSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionSueldoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionValeSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RendicionVentaEquipoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolAlumno.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolAlumnoPracticasSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolAlumnoPresentismoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolCiudadActivaGastosSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolCiudadActivaHorarioSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolCiudadActivaPlanSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolCiudadActivaSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolCiudadEnProcesoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolDocenteSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolEmpleado.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolLocacionAlojamientoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolLocacionSalonSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolLocadorSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolVendedor.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SueldoPagoSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TarjetaPropiaSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoChequeSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferenciaSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ValeFinanciacionSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ValeSet.cs">
+      <DependentUpon>ModelCliente.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -70,6 +354,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelCliente.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelCliente.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
