@@ -19,8 +19,5 @@ namespace ITCManager.Client.Entities_Client
         public System.DateTime Fecha { get; set; }
         public long IdCondicionEmpleado { get; set; }
         public string MontoCondicion { get; set; }
-    
-        public virtual CondicionEmpleadoSet CondicionEmpleadoSet { get; set; }
-        public virtual RolEmpleado RolEmpleado { get; set; }
     }
 }

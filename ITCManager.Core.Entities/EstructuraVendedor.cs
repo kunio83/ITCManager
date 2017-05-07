@@ -6,7 +6,8 @@ namespace ITCManager.Core.Entities
     {
         public RolEmpleado RolEmpledoActual { get; set; }
         public List<Persona> PersonaVendedores { get; set; }
-        public List<RolEmpleado> RolVendedores { get; set; }
+        public List<RolEmpleado> RolEmpleados { get; set; }
+        public List<RolVendedor> RolVendedores { get; set; }
         public RolCiudadActiva RolCiudadActiva { get; set; }
         public List<RolCiudadActivaPlan> RolCiudadActivaPlanes { get; set; }
         public List<RolCiudadActivaHorario> RolCiudadActivaHorarios { get; set; }
@@ -17,19 +18,17 @@ namespace ITCManager.Core.Entities
         public CiudadPersonal CiudadPersonal { get; set; }
         public Ciudad Ciudad { get; set; }
         public Localidad Localidad { get; set; }
+        public List<PlanBase> PlanesBase { get; set; }
+        public List<ItemPagado> ItemsPagado { get; set; }
+        public List<FormaPago> FormasPago { get; set; }
+        public List<Pago> Pagos { get; set; }
+        public List<PagoCheque> PagosCheque { get; set; }
+        public List<Cheque> Cheques { get; set; }
+        public List<EstadoCheque> EstadosCheque { get; set; }
+        public List<GastoCheque> GastosCheque { get; set; }
+        public List<RolAlumno> RolesAlumno { get; set; }
+        public List<Persona> PersonasAlumnos { get; set; }
+        public List<EstadoAlumno> EstadosAlumno { get; set; }
         //pagos, rendicion, cheques...
     }
-
-    public class EstructuraVendedorEnProceso : IEntidadITC
-    {
-        public List<Pago> Pagos { get; set; }
-        public RendicionPersonaCiudad RendicionPersonaCiudad { get; set; }
-        public List<EstadoRendicion> EstadoRendiciones { get; set; }
-        public List<RendicionPago> RendicionPagos { get; set; }
-        public List<RendicionDeposito> RendicionDeposito { get; set; }
-        public List<Persona> PersonaAlumnos { get; set; }
-        public List<RolAlumno> RolAlumnos { get; set; }
-        public List<AlumnoHorario> AlumnoHorarios { get; set; }
-    }
-
 }

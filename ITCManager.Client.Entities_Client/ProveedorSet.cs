@@ -14,23 +14,11 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class ProveedorSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProveedorSet()
-        {
-            this.CompraSet = new HashSet<CompraSet>();
-            this.EnvioSet = new HashSet<EnvioSet>();
-        }
-    
         public long IdProveedor { get; set; }
         public string RazonSocial { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Contacto { get; set; }
         public string TelefonoContacto { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CompraSet> CompraSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EnvioSet> EnvioSet { get; set; }
     }
 }

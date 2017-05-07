@@ -14,14 +14,6 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class ChequeSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ChequeSet()
-        {
-            this.GastoChequeSet = new HashSet<GastoChequeSet>();
-            this.PagoChequeSet = new HashSet<PagoChequeSet>();
-            this.PagoLocalChequeSet = new HashSet<PagoLocalChequeSet>();
-        }
-    
         public long IdCheque { get; set; }
         public string Banco { get; set; }
         public string Titular { get; set; }
@@ -31,14 +23,5 @@ namespace ITCManager.Client.Entities_Client
         public string Monto { get; set; }
         public long IdTipoCheque { get; set; }
         public long IdEstadoCheque { get; set; }
-    
-        public virtual TipoChequeSet TipoChequeSet { get; set; }
-        public virtual EstadoChequeSet EstadoChequeSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GastoChequeSet> GastoChequeSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoChequeSet> PagoChequeSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalChequeSet> PagoLocalChequeSet { get; set; }
     }
 }

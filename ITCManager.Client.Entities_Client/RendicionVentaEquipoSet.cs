@@ -18,9 +18,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdPago { get; set; }
         public long IdArmadoEquipo { get; set; }
         public long IdEstadoVenta { get; set; }
-    
-        public virtual ArmadoEquipoSet ArmadoEquipoSet { get; set; }
-        public virtual EstadoVentaSet EstadoVentaSet { get; set; }
-        public virtual PagoSet PagoSet { get; set; }
     }
 }

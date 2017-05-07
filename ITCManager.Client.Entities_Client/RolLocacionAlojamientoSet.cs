@@ -19,7 +19,5 @@ namespace ITCManager.Client.Entities_Client
         public string Dias { get; set; }
         public string CantDormitorios { get; set; }
         public string CantCamas { get; set; }
-    
-        public virtual LocacionSet LocacionSet { get; set; }
     }
 }

@@ -8,18 +8,18 @@ namespace ITCManager.Client.DataAccess_Client.DBTools
 {
     public class UnitOfWork : IDisposable
     {
-        private readonly SqliteClientDataBaseEntities1 context;
+        private readonly SqliteClientDataBaseEntitiesFinal context;
         private bool disposed;
         private Dictionary<string, object> repositories;
 
-        public UnitOfWork(SqliteClientDataBaseEntities1 context)
+        public UnitOfWork(SqliteClientDataBaseEntitiesFinal context)
         {
             this.context = context;
         }
 
         public UnitOfWork()
         {
-            context = new SqliteClientDataBaseEntities1();
+            context = new SqliteClientDataBaseEntitiesFinal();
         }
 
         public void Dispose()

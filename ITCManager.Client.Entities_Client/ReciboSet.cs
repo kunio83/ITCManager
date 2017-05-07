@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class ReciboSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ReciboSet()
-        {
-            this.AsignacionReciboSet = new HashSet<AsignacionReciboSet>();
-        }
-    
         public long IdRecibo { get; set; }
         public string Fecha { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AsignacionReciboSet> AsignacionReciboSet { get; set; }
     }
 }

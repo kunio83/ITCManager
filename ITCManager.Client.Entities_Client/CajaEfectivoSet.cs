@@ -14,22 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class CajaEfectivoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CajaEfectivoSet()
-        {
-            this.MovimientoInternoEfectivoSet = new HashSet<MovimientoInternoEfectivoSet>();
-            this.MovimientoInternoEfectivoSet1 = new HashSet<MovimientoInternoEfectivoSet>();
-            this.PagoLocalCajaEfectivoSet = new HashSet<PagoLocalCajaEfectivoSet>();
-        }
-    
         public long IdCajaEfectivo { get; set; }
         public string DetalleCajaEfectivo { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MovimientoInternoEfectivoSet> MovimientoInternoEfectivoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MovimientoInternoEfectivoSet> MovimientoInternoEfectivoSet1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalCajaEfectivoSet> PagoLocalCajaEfectivoSet { get; set; }
     }
 }

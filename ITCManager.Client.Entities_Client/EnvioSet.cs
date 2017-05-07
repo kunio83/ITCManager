@@ -14,12 +14,6 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class EnvioSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EnvioSet()
-        {
-            this.EnvioCiudadEquiposSet = new HashSet<EnvioCiudadEquiposSet>();
-        }
-    
         public long IdEnvio { get; set; }
         public System.DateTime FechaSolicitudEnvío { get; set; }
         public System.DateTime FechaSalidaEnvío { get; set; }
@@ -38,10 +32,5 @@ namespace ITCManager.Client.Entities_Client
         public string EstadoEnvio { get; set; }
         public string Observaciones { get; set; }
         public string NumeroGuia { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EnvioCiudadEquiposSet> EnvioCiudadEquiposSet { get; set; }
-        public virtual RolCiudadActivaSet RolCiudadActivaSet { get; set; }
-        public virtual ProveedorSet ProveedorSet { get; set; }
     }
 }

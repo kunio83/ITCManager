@@ -11,18 +11,9 @@ namespace ITCManager.Client.Entities_Client
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Persona :IEntidadITC
+
+    public partial class Persona : IEntidadITC
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Persona()
-        {
-            this.DepositoSet = new HashSet<DepositoSet>();
-            this.RolAlumno = new HashSet<RolAlumno>();
-            this.RolEmpleado = new HashSet<RolEmpleado>();
-            this.RolLocadorSet = new HashSet<RolLocadorSet>();
-        }
-    
         public long IdPersona { get; set; }
         public string Apellido { get; set; }
         public string Nombres { get; set; }
@@ -36,14 +27,13 @@ namespace ITCManager.Client.Entities_Client
         public string TelAlternativo { get; set; }
         public string EstadoCivil { get; set; }
         public string Mail { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DepositoSet> DepositoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolAlumno> RolAlumno { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolEmpleado> RolEmpleado { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolLocadorSet> RolLocadorSet { get; set; }
+
+        public string DisplayNombre
+        {
+            get
+            {
+                return this.Nombres + " " + this.Apellido;
+            }
+        }
     }
 }

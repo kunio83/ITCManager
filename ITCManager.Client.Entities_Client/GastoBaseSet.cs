@@ -14,19 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class GastoBaseSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GastoBaseSet()
-        {
-            this.RendicionGastoSet = new HashSet<RendicionGastoSet>();
-            this.RolCiudadActivaGastosSet = new HashSet<RolCiudadActivaGastosSet>();
-        }
-    
         public long IdGastoBase { get; set; }
         public string DetalleGastoBase { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionGastoSet> RendicionGastoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolCiudadActivaGastosSet> RolCiudadActivaGastosSet { get; set; }
     }
 }

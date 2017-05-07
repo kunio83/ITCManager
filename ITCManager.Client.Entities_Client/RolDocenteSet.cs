@@ -16,7 +16,5 @@ namespace ITCManager.Client.Entities_Client
     {
         public long IdRolDocente { get; set; }
         public long IdRolEmpleado { get; set; }
-    
-        public virtual RolEmpleado RolEmpleado { get; set; }
     }
 }

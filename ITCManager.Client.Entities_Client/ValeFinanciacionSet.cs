@@ -18,7 +18,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdVale { get; set; }
         public string Monto { get; set; }
         public string PeriodoDescuento { get; set; }
-    
-        public virtual ValeSet ValeSet { get; set; }
     }
 }

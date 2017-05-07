@@ -19,8 +19,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdTarjetaPropia { get; set; }
         public string CantCuotas { get; set; }
         public string Monto { get; set; }
-    
-        public virtual PagoLocalSet PagoLocalSet { get; set; }
-        public virtual TarjetaPropiaSet TarjetaPropiaSet { get; set; }
     }
 }

@@ -14,23 +14,8 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class ArmadoEquipoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ArmadoEquipoSet()
-        {
-            this.CiudadEquiposSet = new HashSet<CiudadEquiposSet>();
-            this.DetalleArmadoEquipoSet = new HashSet<DetalleArmadoEquipoSet>();
-            this.RendicionVentaEquipoSet = new HashSet<RendicionVentaEquipoSet>();
-        }
-    
         public long IdArmadoEquipo { get; set; }
         public string NumeroEquipo { get; set; }
         public string Observaciones { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadEquiposSet> CiudadEquiposSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleArmadoEquipoSet> DetalleArmadoEquipoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionVentaEquipoSet> RendicionVentaEquipoSet { get; set; }
     }
 }

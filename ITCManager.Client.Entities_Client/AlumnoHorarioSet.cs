@@ -18,8 +18,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdRolAlumno { get; set; }
         public long IdRolCiudadActivaHorario { get; set; }
         public string TipoHorario { get; set; }
-    
-        public virtual RolCiudadActivaHorarioSet RolCiudadActivaHorarioSet { get; set; }
-        public virtual RolAlumno RolAlumno { get; set; }
     }
 }

@@ -18,8 +18,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdArmadoEquipo { get; set; }
         public long IdProducto { get; set; }
         public string Cantidad { get; set; }
-    
-        public virtual ArmadoEquipoSet ArmadoEquipoSet { get; set; }
-        public virtual ProductosSet ProductosSet { get; set; }
     }
 }

@@ -17,8 +17,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdLocacionRolLocador { get; set; }
         public long IdLocacion { get; set; }
         public long IdRolLocador { get; set; }
-    
-        public virtual RolLocadorSet RolLocadorSet { get; set; }
-        public virtual LocacionSet LocacionSet { get; set; }
     }
 }

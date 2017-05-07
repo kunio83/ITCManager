@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class HorarioSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HorarioSet()
-        {
-            this.RolCiudadActivaHorarioSet = new HashSet<RolCiudadActivaHorarioSet>();
-        }
-    
         public long IdHorario { get; set; }
         public string DetalleHorario { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolCiudadActivaHorarioSet> RolCiudadActivaHorarioSet { get; set; }
     }
 }

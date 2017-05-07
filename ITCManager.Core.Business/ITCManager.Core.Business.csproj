@@ -50,7 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoginHelper.cs" />
     <Compile Include="EstructuraHelper.cs" />
+    <Compile Include="PuestoHelper.cs" />
+    <Compile Include="RolEmpleadoHelper.cs" />
     <Compile Include="RolHelper.cs" />
     <Compile Include="PersonaHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

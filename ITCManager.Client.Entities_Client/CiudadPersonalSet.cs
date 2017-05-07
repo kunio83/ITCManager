@@ -18,8 +18,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdCiudad { get; set; }
         public string Periodo { get; set; }
         public long IdRolEmpleado { get; set; }
-    
-        public virtual RolEmpleado RolEmpleado { get; set; }
-        public virtual CiudadSet CiudadSet { get; set; }
     }
 }

@@ -19,7 +19,5 @@ namespace ITCManager.Client.Entities_Client
         public string Fecha { get; set; }
         public string Detalle { get; set; }
         public string Observaciones { get; set; }
-    
-        public virtual PagoLocalSet PagoLocalSet { get; set; }
     }
 }

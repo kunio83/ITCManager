@@ -17,8 +17,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdPagoLocalCheque { get; set; }
         public long IdPagoLocal { get; set; }
         public long IdCheque { get; set; }
-    
-        public virtual ChequeSet ChequeSet { get; set; }
-        public virtual PagoLocalSet PagoLocalSet { get; set; }
     }
 }

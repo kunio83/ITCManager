@@ -14,17 +14,8 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class CapacitacionSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CapacitacionSet()
-        {
-            this.RolAlumno = new HashSet<RolAlumno>();
-        }
-    
         public long IdCapacitacion { get; set; }
         public string NombreCapacitacion { get; set; }
         public string Temario { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolAlumno> RolAlumno { get; set; }
     }
 }

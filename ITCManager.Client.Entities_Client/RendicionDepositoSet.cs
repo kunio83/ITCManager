@@ -17,8 +17,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdRendicionDeposito { get; set; }
         public long IdRendicionEmpleadoCiudad { get; set; }
         public long IdDeposito { get; set; }
-    
-        public virtual DepositoSet DepositoSet { get; set; }
-        public virtual RendicionPersonaCiudadSet RendicionPersonaCiudadSet { get; set; }
     }
 }

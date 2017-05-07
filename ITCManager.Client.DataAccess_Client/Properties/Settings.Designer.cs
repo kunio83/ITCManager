@@ -26,8 +26,7 @@ namespace ITCManager.Client.DataAccess_Client.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("data source=C:\\Users\\Kunio\\Source\\Repos\\ITCManagerRepositorio\\ITCManager.Client.D" +
-            "ataAccess_Client\\SqliteClientDataBase.db")]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=SqliteClientDataBase.db")]
         public string SqliteClientDataBaseConnectionString {
             get {
                 return ((string)(this["SqliteClientDataBaseConnectionString"]));

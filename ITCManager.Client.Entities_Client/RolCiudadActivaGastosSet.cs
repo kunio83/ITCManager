@@ -19,8 +19,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdGastoBase { get; set; }
         public string ValorEstimMensual { get; set; }
         public string Observaciones { get; set; }
-    
-        public virtual GastoBaseSet GastoBaseSet { get; set; }
-        public virtual RolCiudadActivaSet RolCiudadActivaSet { get; set; }
     }
 }

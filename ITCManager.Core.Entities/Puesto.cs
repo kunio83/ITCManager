@@ -11,7 +11,8 @@ namespace ITCManager.Core.Entities
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class Puesto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,7 +24,8 @@ namespace ITCManager.Core.Entities
         public int IdPuesto { get; set; }
         public string DetallePuesto { get; set; }
         public decimal SueldoBasico { get; set; }
-    
+
+        [IgnoreDataMember]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RolEmpleado> RolEmpleado { get; set; }
     }

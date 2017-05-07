@@ -14,12 +14,6 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class RolCiudadActivaPlanSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RolCiudadActivaPlanSet()
-        {
-            this.PlanVendedorAlumnoSet = new HashSet<PlanVendedorAlumnoSet>();
-        }
-    
         public long IdRolCiudadActivaPlan { get; set; }
         public long IdRolCiudadActiva { get; set; }
         public long IdPlanBase { get; set; }
@@ -31,10 +25,5 @@ namespace ITCManager.Client.Entities_Client
         public string ComisionIda { get; set; }
         public string ComisionVuelta { get; set; }
         public string ComisionCertificado { get; set; }
-    
-        public virtual PlanBaseSet PlanBaseSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PlanVendedorAlumnoSet> PlanVendedorAlumnoSet { get; set; }
-        public virtual RolCiudadActivaSet RolCiudadActivaSet { get; set; }
     }
 }

@@ -14,23 +14,11 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class DepositoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DepositoSet()
-        {
-            this.RendicionDepositoSet = new HashSet<RendicionDepositoSet>();
-        }
-    
         public long IdDeposito { get; set; }
         public long IdPersona { get; set; }
         public string Fecha { get; set; }
         public string Monto { get; set; }
         public long IdCuentaBanco { get; set; }
         public long IdEstadoDeposito { get; set; }
-    
-        public virtual CuentaBancoSet CuentaBancoSet { get; set; }
-        public virtual Persona Persona { get; set; }
-        public virtual EstadoDepositoSet EstadoDepositoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionDepositoSet> RendicionDepositoSet { get; set; }
     }
 }

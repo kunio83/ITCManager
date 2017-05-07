@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class EstadoAsignacionEquipoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EstadoAsignacionEquipoSet()
-        {
-            this.AsignacionCiudadEquiposSet = new HashSet<AsignacionCiudadEquiposSet>();
-        }
-    
         public long IdEstadoAsignacionEquipo { get; set; }
         public string DetalleEstadoASignacionEquipo { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AsignacionCiudadEquiposSet> AsignacionCiudadEquiposSet { get; set; }
     }
 }

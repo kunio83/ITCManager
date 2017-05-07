@@ -14,26 +14,11 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class ProductosSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProductosSet()
-        {
-            this.CiudadProductosSet = new HashSet<CiudadProductosSet>();
-            this.DetalleArmadoEquipoSet = new HashSet<DetalleArmadoEquipoSet>();
-            this.DetalleCompraSet = new HashSet<DetalleCompraSet>();
-        }
-    
         public long IdProducto { get; set; }
         public string DetalleProducto { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Observaciones { get; set; }
         public string TipoProducto { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadProductosSet> CiudadProductosSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleArmadoEquipoSet> DetalleArmadoEquipoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleCompraSet> DetalleCompraSet { get; set; }
     }
 }

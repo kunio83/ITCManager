@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class EstadoVentaSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EstadoVentaSet()
-        {
-            this.RendicionVentaEquipoSet = new HashSet<RendicionVentaEquipoSet>();
-        }
-    
         public long IdEstadoVenta { get; set; }
         public string DetalleEstadoVenta { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionVentaEquipoSet> RendicionVentaEquipoSet { get; set; }
     }
 }

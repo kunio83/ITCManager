@@ -11,7 +11,8 @@ namespace ITCManager.Core.Entities
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class RolEmpleado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -35,26 +36,37 @@ namespace ITCManager.Core.Entities
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
         public decimal SueldoBasico { get; set; }
-    
+        
+        [IgnoreDataMember]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RolEmpleadoCondicion> DetalleCondicionEmpleado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<Permiso> Permiso { get; set; }
+        [IgnoreDataMember]
         public virtual Persona Persona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<CiudadPersonal> CiudadPersonal { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<RolVendedor> RolVendedor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<AsignacionRecibo> AsignacionRecibo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<RendicionPersonaCiudad> RendicionPersonaCiudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<RolDocente> RolDocente { get; set; }
+        [IgnoreDataMember]
         public virtual Puesto Puesto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<Vale> Vale { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<SueldoPago> SueldoTransferencia { get; set; }
     }
 }

@@ -19,8 +19,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdProducto { get; set; }
         public string Cantidad { get; set; }
         public string Precio { get; set; }
-    
-        public virtual CompraSet CompraSet { get; set; }
-        public virtual ProductosSet ProductosSet { get; set; }
     }
 }

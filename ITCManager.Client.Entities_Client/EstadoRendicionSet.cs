@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class EstadoRendicionSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EstadoRendicionSet()
-        {
-            this.RendicionPersonaCiudadSet = new HashSet<RendicionPersonaCiudadSet>();
-        }
-    
         public long IdEstadoRendicion { get; set; }
         public string DetalleEstadoRednicion { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionPersonaCiudadSet> RendicionPersonaCiudadSet { get; set; }
     }
 }

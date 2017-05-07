@@ -10,11 +10,11 @@ namespace ITCManager.Client.DataAccess_Client.DBTools
 {
     public class Repository<T> where T : class
     {
-        private readonly SqliteClientDataBaseEntities1 context;
+        private readonly SqliteClientDataBaseEntitiesFinal context;
         private IDbSet<T> entities;
         string errorMessage = string.Empty;
 
-        public Repository(SqliteClientDataBaseEntities1 context)
+        public Repository(SqliteClientDataBaseEntitiesFinal context)
         {
             this.context = context;
             context.Configuration.ProxyCreationEnabled = false;
@@ -27,27 +27,32 @@ namespace ITCManager.Client.DataAccess_Client.DBTools
 
         public void Insert(T entity)
         {
-            try
-            {
-                if (entity == null)
+                try
                 {
-                    throw new ArgumentNullException("entity");
+
+                    if (entity == null)
+                    {
+                        throw new ArgumentNullException("entity");
+                    }
+
+                    this.context.Entry(entity).State = EntityState.Added;
+                    this.Entities.Add(entity);
+                    this.context.SaveChanges();
                 }
-                this.Entities.Add(entity);
-                this.context.SaveChanges();
-            }
-            catch (DbEntityValidationException dbEx)
-            {
+                catch (DbEntityValidationException dbEx)
+                {
+
+
 
                 foreach (var validationErrors in dbEx.EntityValidationErrors)
-                {
-                    foreach (var validationError in validationErrors.ValidationErrors)
                     {
-                        errorMessage += string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage) + Environment.NewLine;
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            errorMessage += string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage) + Environment.NewLine;
+                        }
                     }
+                    throw new Exception(errorMessage, dbEx);
                 }
-                throw new Exception(errorMessage, dbEx);
-            }
         }
 
         public void Update(T entity)

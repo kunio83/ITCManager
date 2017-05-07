@@ -14,18 +14,8 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class RolLocadorSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RolLocadorSet()
-        {
-            this.LocacionRolLocadorSet = new HashSet<LocacionRolLocadorSet>();
-        }
-    
         public long IdRolLocador { get; set; }
         public long IdPersona { get; set; }
         public string Condicion { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LocacionRolLocadorSet> LocacionRolLocadorSet { get; set; }
-        public virtual Persona Persona { get; set; }
     }
 }

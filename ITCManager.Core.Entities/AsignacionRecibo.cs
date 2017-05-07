@@ -11,15 +11,18 @@ namespace ITCManager.Core.Entities
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class AsignacionRecibo
     {
         public int IdAsignacionRecibo { get; set; }
         public System.DateTime Fecha { get; set; }
         public int IdRecibo { get; set; }
         public int IdRolEmpleado { get; set; }
-    
+
+        [IgnoreDataMember]
         public virtual Recibo Recibo { get; set; }
+        [IgnoreDataMember]
         public virtual RolEmpleado RolEmpleado { get; set; }
     }
 }

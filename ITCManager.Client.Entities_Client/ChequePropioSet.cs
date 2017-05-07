@@ -14,12 +14,6 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class ChequePropioSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ChequePropioSet()
-        {
-            this.PagoLocalChequePropioSet = new HashSet<PagoLocalChequePropioSet>();
-        }
-    
         public long IdChequePropio { get; set; }
         public string NroCheque { get; set; }
         public string FechaEmision { get; set; }
@@ -28,9 +22,5 @@ namespace ITCManager.Client.Entities_Client
         public string Destinatario { get; set; }
         public long IdEstadoCheque { get; set; }
         public long IdCuentaBanco { get; set; }
-    
-        public virtual CuentaBancoSet CuentaBancoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalChequePropioSet> PagoLocalChequePropioSet { get; set; }
     }
 }

@@ -14,22 +14,9 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class SueldoPagoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SueldoPagoSet()
-        {
-            this.PagoLocalSueldoSet = new HashSet<PagoLocalSueldoSet>();
-            this.RendicionSueldoSet = new HashSet<RendicionSueldoSet>();
-        }
-    
         public long IdSueldoPago { get; set; }
         public long IdRolEmpleado { get; set; }
         public string Periodo { get; set; }
         public string Monto { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalSueldoSet> PagoLocalSueldoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionSueldoSet> RendicionSueldoSet { get; set; }
-        public virtual RolEmpleado RolEmpleado { get; set; }
     }
 }

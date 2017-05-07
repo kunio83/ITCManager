@@ -9,9 +9,9 @@
 
 namespace ITCManager.Core.Entities
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class RendicionPersonaCiudad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -28,18 +28,25 @@ namespace ITCManager.Core.Entities
         public int IdRolEmpleado { get; set; }
         public int IdRolCiudadActiva { get; set; }
         public int IdEstadoRendicion { get; set; }
-    
+
+        [IgnoreDataMember]
         public virtual EstadoRendicion EstadoRendicion { get; set; }
+        [IgnoreDataMember]
         public virtual RolCiudadActiva RolCiudadActiva { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<RendicionPago> RendicionPago { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<RendicionGasto> RendicionGasto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [IgnoreDataMember]
         public virtual ICollection<RendicionDeposito> RendicionDeposito { get; set; }
         public virtual RolEmpleado RolEmpleado { get; set; }
+        [IgnoreDataMember]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RendicionVale> RendicionVale { get; set; }
+        [IgnoreDataMember]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RendicionSueldo> RendicionSueldo { get; set; }
     }

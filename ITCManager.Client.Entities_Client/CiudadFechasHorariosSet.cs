@@ -14,19 +14,9 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class CiudadFechasHorariosSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CiudadFechasHorariosSet()
-        {
-            this.RolAlumnoPracticasSet = new HashSet<RolAlumnoPracticasSet>();
-        }
-    
         public long IdCiudadFechasHorarios { get; set; }
         public long IdRolCiudadActiva { get; set; }
         public string Fecha { get; set; }
         public string IdRolCiudadActivaHorarios { get; set; }
-    
-        public virtual RolCiudadActivaSet RolCiudadActivaSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolAlumnoPracticasSet> RolAlumnoPracticasSet { get; set; }
     }
 }

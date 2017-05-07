@@ -14,12 +14,6 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class CuentaBancoTerceroSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CuentaBancoTerceroSet()
-        {
-            this.TransferenciaSet = new HashSet<TransferenciaSet>();
-        }
-    
         public long IdCuentaBanco { get; set; }
         public string Banco { get; set; }
         public string NroCuenta { get; set; }
@@ -29,8 +23,5 @@ namespace ITCManager.Client.Entities_Client
         public string Cuit { get; set; }
         public string Observaciones { get; set; }
         public bool CuentaActiva { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TransferenciaSet> TransferenciaSet { get; set; }
     }
 }

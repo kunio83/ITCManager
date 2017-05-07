@@ -14,18 +14,8 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class Permiso
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Permiso()
-        {
-            this.PermisoAcceso = new HashSet<PermisoAcceso>();
-        }
-    
         public long IdPermiso { get; set; }
         public long IdRolEmpleado { get; set; }
         public string DetallePermiso { get; set; }
-    
-        public virtual RolEmpleado RolEmpleado { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PermisoAcceso> PermisoAcceso { get; set; }
     }
 }

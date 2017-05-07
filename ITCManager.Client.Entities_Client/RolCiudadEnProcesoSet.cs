@@ -17,7 +17,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdRolCiudadEnProceso { get; set; }
         public long IdCiudad { get; set; }
         public string InformeCiudad { get; set; }
-    
-        public virtual CiudadSet CiudadSet { get; set; }
     }
 }

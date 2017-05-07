@@ -18,7 +18,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdPermiso { get; set; }
         public string DetalleAcceso { get; set; }
         public bool PermisoActivo { get; set; }
-    
-        public virtual Permiso Permiso { get; set; }
     }
 }

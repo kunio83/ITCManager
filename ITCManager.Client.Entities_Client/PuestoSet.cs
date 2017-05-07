@@ -12,19 +12,10 @@ namespace ITCManager.Client.Entities_Client
     using System;
     using System.Collections.Generic;
     
-    public partial class PuestoSet
+    public partial class PuestoSet : IEntidadITC
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PuestoSet()
-        {
-            this.RolEmpleado = new HashSet<RolEmpleado>();
-        }
-    
         public long IdPuesto { get; set; }
         public string DetallePuesto { get; set; }
         public decimal SueldoBasico { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolEmpleado> RolEmpleado { get; set; }
     }
 }

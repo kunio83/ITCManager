@@ -14,12 +14,6 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class TarjetaPropiaSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TarjetaPropiaSet()
-        {
-            this.PagoLocalTarjetaSet = new HashSet<PagoLocalTarjetaSet>();
-        }
-    
         public long IdTarjetaPropia { get; set; }
         public string Emsior { get; set; }
         public string NroTarjeta { get; set; }
@@ -27,8 +21,5 @@ namespace ITCManager.Client.Entities_Client
         public string CodSeguridad { get; set; }
         public string Titular { get; set; }
         public string DNI { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalTarjetaSet> PagoLocalTarjetaSet { get; set; }
     }
 }

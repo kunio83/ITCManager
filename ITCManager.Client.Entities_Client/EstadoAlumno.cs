@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class EstadoAlumno
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EstadoAlumno()
-        {
-            this.RolAlumno = new HashSet<RolAlumno>();
-        }
-    
         public long IdEstadoAlumno { get; set; }
         public string DetalleEstadoAlumno { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolAlumno> RolAlumno { get; set; }
     }
 }

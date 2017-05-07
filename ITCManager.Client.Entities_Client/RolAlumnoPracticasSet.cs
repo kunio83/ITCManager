@@ -19,8 +19,5 @@ namespace ITCManager.Client.Entities_Client
         public string TipoPractica { get; set; }
         public string EstadoPractica { get; set; }
         public long IdRolAlumno { get; set; }
-    
-        public virtual CiudadFechasHorariosSet CiudadFechasHorariosSet { get; set; }
-        public virtual RolAlumno RolAlumno { get; set; }
     }
 }

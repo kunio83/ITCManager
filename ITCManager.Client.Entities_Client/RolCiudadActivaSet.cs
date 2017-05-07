@@ -14,41 +14,10 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class RolCiudadActivaSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RolCiudadActivaSet()
-        {
-            this.AsignacionCiudadEquiposSet = new HashSet<AsignacionCiudadEquiposSet>();
-            this.CiudadActivaLocacionesSet = new HashSet<CiudadActivaLocacionesSet>();
-            this.CiudadFechasHorariosSet = new HashSet<CiudadFechasHorariosSet>();
-            this.EnvioSet = new HashSet<EnvioSet>();
-            this.RendicionPersonaCiudadSet = new HashSet<RendicionPersonaCiudadSet>();
-            this.RolCiudadActivaGastosSet = new HashSet<RolCiudadActivaGastosSet>();
-            this.RolCiudadActivaHorarioSet = new HashSet<RolCiudadActivaHorarioSet>();
-            this.RolCiudadActivaPlanSet = new HashSet<RolCiudadActivaPlanSet>();
-        }
-    
         public long IdRolCiudadActiva { get; set; }
         public long IdCiudad { get; set; }
         public string FechaInicioVenta { get; set; }
         public string FechaInicioDictado { get; set; }
         public string CantidadClases { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AsignacionCiudadEquiposSet> AsignacionCiudadEquiposSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadActivaLocacionesSet> CiudadActivaLocacionesSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadFechasHorariosSet> CiudadFechasHorariosSet { get; set; }
-        public virtual CiudadSet CiudadSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EnvioSet> EnvioSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionPersonaCiudadSet> RendicionPersonaCiudadSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolCiudadActivaGastosSet> RolCiudadActivaGastosSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolCiudadActivaHorarioSet> RolCiudadActivaHorarioSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolCiudadActivaPlanSet> RolCiudadActivaPlanSet { get; set; }
     }
 }

@@ -20,8 +20,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdcajaEfectivoDestino { get; set; }
         public string Monto { get; set; }
         public string Observaciones { get; set; }
-    
-        public virtual CajaEfectivoSet CajaEfectivoSet { get; set; }
-        public virtual CajaEfectivoSet CajaEfectivoSet1 { get; set; }
     }
 }

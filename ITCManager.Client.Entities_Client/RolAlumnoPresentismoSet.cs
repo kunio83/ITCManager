@@ -18,7 +18,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdRolAlumno { get; set; }
         public string NumeroClase { get; set; }
         public string EstadoClase { get; set; }
-    
-        public virtual RolAlumno RolAlumno { get; set; }
     }
 }

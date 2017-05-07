@@ -28,9 +28,5 @@ namespace ITCManager.Client.Entities_Client
         public string DNI { get; set; }
         public string CodAut { get; set; }
         public long IdEstadoPagoTarjeta { get; set; }
-    
-        public virtual CoeficTarjetasSet CoeficTarjetasSet { get; set; }
-        public virtual EstadoPagoTarjetaSet EstadoPagoTarjetaSet { get; set; }
-        public virtual PagoSet PagoSet { get; set; }
     }
 }

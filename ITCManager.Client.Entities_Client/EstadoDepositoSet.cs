@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class EstadoDepositoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EstadoDepositoSet()
-        {
-            this.DepositoSet = new HashSet<DepositoSet>();
-        }
-    
         public long IdEstadoDeposito { get; set; }
         public string DetalleEstado { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DepositoSet> DepositoSet { get; set; }
     }
 }

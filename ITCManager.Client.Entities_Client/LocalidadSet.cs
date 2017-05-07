@@ -14,18 +14,9 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class LocalidadSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LocalidadSet()
-        {
-            this.CiudadSet = new HashSet<CiudadSet>();
-        }
-    
         public long IdLocalidad { get; set; }
         public string NombreLocalidad { get; set; }
         public string Provincia { get; set; }
         public string Pais { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadSet> CiudadSet { get; set; }
     }
 }

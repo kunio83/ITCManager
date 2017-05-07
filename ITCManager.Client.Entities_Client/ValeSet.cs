@@ -14,23 +14,10 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class ValeSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ValeSet()
-        {
-            this.RendicionValeSet = new HashSet<RendicionValeSet>();
-            this.ValeFinanciacionSet = new HashSet<ValeFinanciacionSet>();
-        }
-    
         public long IdVale { get; set; }
         public string Fecha { get; set; }
         public long IdRolEmpleado { get; set; }
         public string Monto { get; set; }
         public string Observaciones { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionValeSet> RendicionValeSet { get; set; }
-        public virtual RolEmpleado RolEmpleado { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ValeFinanciacionSet> ValeFinanciacionSet { get; set; }
     }
 }

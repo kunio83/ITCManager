@@ -14,42 +14,8 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class PagoLocalSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PagoLocalSet()
-        {
-            this.CompraSet = new HashSet<CompraSet>();
-            this.GastoLocalSet = new HashSet<GastoLocalSet>();
-            this.PagoLocalCajaEfectivoSet = new HashSet<PagoLocalCajaEfectivoSet>();
-            this.PagoLocalChequePropioSet = new HashSet<PagoLocalChequePropioSet>();
-            this.PagoLocalChequeSet = new HashSet<PagoLocalChequeSet>();
-            this.PagoLocalEnvioSet = new HashSet<PagoLocalEnvioSet>();
-            this.PagoLocalSueldoSet = new HashSet<PagoLocalSueldoSet>();
-            this.PagoLocalTarjetaSet = new HashSet<PagoLocalTarjetaSet>();
-            this.PagoLocalTransferenciaSet = new HashSet<PagoLocalTransferenciaSet>();
-        }
-    
         public long IdPagoLocal { get; set; }
         public string FechaPago { get; set; }
         public long IdFormaPagoLocal { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CompraSet> CompraSet { get; set; }
-        public virtual FormaPagoLocalSet FormaPagoLocalSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GastoLocalSet> GastoLocalSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalCajaEfectivoSet> PagoLocalCajaEfectivoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalChequePropioSet> PagoLocalChequePropioSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalChequeSet> PagoLocalChequeSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalEnvioSet> PagoLocalEnvioSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalSueldoSet> PagoLocalSueldoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalTarjetaSet> PagoLocalTarjetaSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalTransferenciaSet> PagoLocalTransferenciaSet { get; set; }
     }
 }

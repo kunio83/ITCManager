@@ -14,32 +14,11 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class PagoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PagoSet()
-        {
-            this.PagoChequeSet = new HashSet<PagoChequeSet>();
-            this.PagoTarjetaSet = new HashSet<PagoTarjetaSet>();
-            this.RendicionPagoSet = new HashSet<RendicionPagoSet>();
-            this.RendicionVentaEquipoSet = new HashSet<RendicionVentaEquipoSet>();
-        }
-    
         public long IdPago { get; set; }
         public long IdPlanVendedorAlumno { get; set; }
         public string MontoPagado { get; set; }
         public long IdFormaPago { get; set; }
         public long IdItemPagado { get; set; }
         public string NroRecibo { get; set; }
-    
-        public virtual FormaPagoSet FormaPagoSet { get; set; }
-        public virtual ItemPagadoSet ItemPagadoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoChequeSet> PagoChequeSet { get; set; }
-        public virtual PlanVendedorAlumnoSet PlanVendedorAlumnoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoTarjetaSet> PagoTarjetaSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionPagoSet> RendicionPagoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RendicionVentaEquipoSet> RendicionVentaEquipoSet { get; set; }
     }
 }

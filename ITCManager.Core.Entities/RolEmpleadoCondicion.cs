@@ -11,7 +11,8 @@ namespace ITCManager.Core.Entities
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class RolEmpleadoCondicion
     {
         public int IdRolEmpleadoCondicion { get; set; }
@@ -19,8 +20,10 @@ namespace ITCManager.Core.Entities
         public System.DateTime Fecha { get; set; }
         public int IdCondicionEmpleado { get; set; }
         public string MontoCondicion { get; set; }
-    
+
+        [IgnoreDataMember]
         public virtual RolEmpleado RolEmpleado { get; set; }
+        [IgnoreDataMember]
         public virtual CondicionEmpleado CondicionEmpleado { get; set; }
     }
 }

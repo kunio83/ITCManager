@@ -17,8 +17,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdCiudadActivaLocaciones { get; set; }
         public long IdRolCiudadActiva { get; set; }
         public long IdLocacion { get; set; }
-    
-        public virtual RolCiudadActivaSet RolCiudadActivaSet { get; set; }
-        public virtual LocacionSet LocacionSet { get; set; }
     }
 }

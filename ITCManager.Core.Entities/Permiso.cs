@@ -9,9 +9,9 @@
 
 namespace ITCManager.Core.Entities
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class Permiso
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,9 +23,11 @@ namespace ITCManager.Core.Entities
         public int IdPermiso { get; set; }
         public int IdRolEmpleado { get; set; }
         public string DetallePermiso { get; set; }
-    
+
+        [IgnoreDataMember]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PermisoAcceso> PermisoAcceso { get; set; }
+        [IgnoreDataMember]
         public virtual RolEmpleado RolEmpleado { get; set; }
     }
 }

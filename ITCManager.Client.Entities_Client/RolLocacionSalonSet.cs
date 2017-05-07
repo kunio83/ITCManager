@@ -21,7 +21,5 @@ namespace ITCManager.Client.Entities_Client
         public string Sillas { get; set; }
         public string AireAcondicionado { get; set; }
         public string Calefaccion { get; set; }
-    
-        public virtual LocacionSet LocacionSet { get; set; }
     }
 }

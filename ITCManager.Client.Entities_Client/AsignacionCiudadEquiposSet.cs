@@ -14,26 +14,9 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class AsignacionCiudadEquiposSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AsignacionCiudadEquiposSet()
-        {
-            this.CiudadEquiposSet = new HashSet<CiudadEquiposSet>();
-            this.CiudadProductosSet = new HashSet<CiudadProductosSet>();
-            this.EnvioCiudadEquiposSet = new HashSet<EnvioCiudadEquiposSet>();
-        }
-    
         public long IdAsignacionCiudadEquipo { get; set; }
         public string Fecha { get; set; }
         public long IdRolCiudadActiva { get; set; }
         public long IdEstadoAsignacionEquipo { get; set; }
-    
-        public virtual RolCiudadActivaSet RolCiudadActivaSet { get; set; }
-        public virtual EstadoAsignacionEquipoSet EstadoAsignacionEquipoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadEquiposSet> CiudadEquiposSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadProductosSet> CiudadProductosSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EnvioCiudadEquiposSet> EnvioCiudadEquiposSet { get; set; }
     }
 }

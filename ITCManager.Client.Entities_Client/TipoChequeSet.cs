@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class TipoChequeSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TipoChequeSet()
-        {
-            this.ChequeSet = new HashSet<ChequeSet>();
-        }
-    
         public long IdTipoCheque { get; set; }
         public string DetalleTipoCheque { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChequeSet> ChequeSet { get; set; }
     }
 }

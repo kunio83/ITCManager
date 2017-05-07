@@ -14,12 +14,6 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class PlanVendedorAlumnoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PlanVendedorAlumnoSet()
-        {
-            this.PagoSet = new HashSet<PagoSet>();
-        }
-    
         public long IdPlanVendedorAlumno { get; set; }
         public string NroRecibo { get; set; }
         public long IdRolCiudadActivaPlan { get; set; }
@@ -27,11 +21,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdRolVendedor { get; set; }
         public string ObservacionGerente { get; set; }
         public string ObservacionOficinaBaires { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoSet> PagoSet { get; set; }
-        public virtual RolVendedor RolVendedor { get; set; }
-        public virtual RolCiudadActivaPlanSet RolCiudadActivaPlanSet { get; set; }
-        public virtual RolAlumno RolAlumno { get; set; }
     }
 }

@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class DiaSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DiaSet()
-        {
-            this.RolCiudadActivaHorarioSet = new HashSet<RolCiudadActivaHorarioSet>();
-        }
-    
         public long IdDia { get; set; }
         public string DetalleDia { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolCiudadActivaHorarioSet> RolCiudadActivaHorarioSet { get; set; }
     }
 }

@@ -11,6 +11,8 @@ namespace ITCManager.Client.Business_Client.Tools
     {
         public GestorPersona Persona { get; set; }
         public GestorEstructuraVendedor EstructuraVendedor { get; set; }
+        public GestorRolEmpleado GestorRolEmpleado { get; set; }
+        public GestorPuesto GestorPuesto { get; set; }
 
         public GestorITCApi(string token)
         {
@@ -20,6 +22,9 @@ namespace ITCManager.Client.Business_Client.Tools
 
             this.Persona = new GestorPersona(endpoint, token);
             this.EstructuraVendedor = new GestorEstructuraVendedor(endpoint, token);
+            this.GestorRolEmpleado = new GestorRolEmpleado(endpoint, token);
+            this.GestorPuesto = new GestorPuesto(endpoint, token);
+
         }
 
 

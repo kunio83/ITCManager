@@ -9,9 +9,9 @@
 
 namespace ITCManager.Core.Entities
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class RolVendedor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -27,6 +27,7 @@ namespace ITCManager.Core.Entities
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlanVendedorAlumno> PlanVendedorAlumno { get; set; }
+        [IgnoreDataMember]
         public virtual RolEmpleado RolEmpleado { get; set; }
     }
 }

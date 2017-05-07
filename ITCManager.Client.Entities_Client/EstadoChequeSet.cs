@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class EstadoChequeSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EstadoChequeSet()
-        {
-            this.ChequeSet = new HashSet<ChequeSet>();
-        }
-    
         public long IdEstadoCheque { get; set; }
         public string DetalleEstadoCheque { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChequeSet> ChequeSet { get; set; }
     }
 }

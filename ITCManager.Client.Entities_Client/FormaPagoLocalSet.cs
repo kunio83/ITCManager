@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class FormaPagoLocalSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public FormaPagoLocalSet()
-        {
-            this.PagoLocalSet = new HashSet<PagoLocalSet>();
-        }
-    
         public long IdFormaPagoLocal { get; set; }
         public string DetalleFormaPagoLocal { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoLocalSet> PagoLocalSet { get; set; }
     }
 }

@@ -14,23 +14,11 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class RendicionGastoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RendicionGastoSet()
-        {
-            this.GastoChequeSet = new HashSet<GastoChequeSet>();
-        }
-    
         public long IdRendicionGasto { get; set; }
         public long IdRendicionEmpleadoCiudad { get; set; }
         public long IdGastoBase { get; set; }
         public string Monto { get; set; }
         public long IdFormaPago { get; set; }
         public string Observaciones { get; set; }
-    
-        public virtual FormaPagoSet FormaPagoSet { get; set; }
-        public virtual GastoBaseSet GastoBaseSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GastoChequeSet> GastoChequeSet { get; set; }
-        public virtual RendicionPersonaCiudadSet RendicionPersonaCiudadSet { get; set; }
     }
 }

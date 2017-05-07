@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class CondicionEmpleadoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CondicionEmpleadoSet()
-        {
-            this.DetalleCondicionEmpleado1 = new HashSet<DetalleCondicionEmpleado>();
-        }
-    
         public long IdCondicionEmpleado { get; set; }
         public string DetalleCOndicionEmpleado { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleCondicionEmpleado> DetalleCondicionEmpleado1 { get; set; }
     }
 }

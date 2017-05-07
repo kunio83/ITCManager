@@ -23,15 +23,24 @@ namespace ITCManager.Client.UI_Client.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\ItcClientDataBase.db")]
-        public string Setting {
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=SqliteClientDataBase.db")]
+        public string SqliteClientDataBaseConnectionString {
             get {
-                return ((string)(this["Setting"]));
+                return ((string)(this["SqliteClientDataBaseConnectionString"]));
             }
-            set {
-                this["Setting"] = value;
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=C:\\Users\\Kunio\\Source\\Repos\\ITCManagerRepositorio\\ITCManager.Client.U" +
+            "I_Client\\bin\\Debug\\SqliteClientDataBase.db")]
+        public string SqliteClientDataBaseConnectionString1 {
+            get {
+                return ((string)(this["SqliteClientDataBaseConnectionString1"]));
             }
         }
     }

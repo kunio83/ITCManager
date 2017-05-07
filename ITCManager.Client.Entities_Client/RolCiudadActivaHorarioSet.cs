@@ -14,21 +14,9 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class RolCiudadActivaHorarioSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RolCiudadActivaHorarioSet()
-        {
-            this.AlumnoHorarioSet = new HashSet<AlumnoHorarioSet>();
-        }
-    
         public long IdRolCiudadActivaHorario { get; set; }
         public long IdDia { get; set; }
         public long IdHorario { get; set; }
         public long IdRolCiudadActiva { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AlumnoHorarioSet> AlumnoHorarioSet { get; set; }
-        public virtual DiaSet DiaSet { get; set; }
-        public virtual HorarioSet HorarioSet { get; set; }
-        public virtual RolCiudadActivaSet RolCiudadActivaSet { get; set; }
     }
 }

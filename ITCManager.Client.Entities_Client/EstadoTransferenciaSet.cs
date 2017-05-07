@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class EstadoTransferenciaSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EstadoTransferenciaSet()
-        {
-            this.TransferenciaSet = new HashSet<TransferenciaSet>();
-        }
-    
         public long IdEstadoTransferencia { get; set; }
         public string DetalleEstadoTransferencia { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TransferenciaSet> TransferenciaSet { get; set; }
     }
 }

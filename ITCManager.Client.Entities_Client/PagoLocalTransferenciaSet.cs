@@ -17,8 +17,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdPagoLocalTransferencia { get; set; }
         public long IdPagoLocal { get; set; }
         public long IdTransferencia { get; set; }
-    
-        public virtual PagoLocalSet PagoLocalSet { get; set; }
-        public virtual TransferenciaSet TransferenciaSet { get; set; }
     }
 }

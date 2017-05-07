@@ -14,28 +14,10 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class LocacionSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LocacionSet()
-        {
-            this.CiudadActivaLocacionesSet = new HashSet<CiudadActivaLocacionesSet>();
-            this.LocacionRolLocadorSet = new HashSet<LocacionRolLocadorSet>();
-            this.RolLocacionAlojamientoSet = new HashSet<RolLocacionAlojamientoSet>();
-            this.RolLocacionSalonSet = new HashSet<RolLocacionSalonSet>();
-        }
-    
         public long IdLocacion { get; set; }
         public string DetalleLocacion { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Observaciones { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadActivaLocacionesSet> CiudadActivaLocacionesSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LocacionRolLocadorSet> LocacionRolLocadorSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolLocacionAlojamientoSet> RolLocacionAlojamientoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolLocacionSalonSet> RolLocacionSalonSet { get; set; }
     }
 }

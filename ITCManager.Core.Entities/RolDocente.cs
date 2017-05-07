@@ -9,14 +9,14 @@
 
 namespace ITCManager.Core.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class RolDocente
     {
         public int IdRolDocente { get; set; }
         public int IdRolEmpleado { get; set; }
-    
+
+        [IgnoreDataMember]
         public virtual RolEmpleado RolEmpleado { get; set; }
     }
 }

@@ -17,8 +17,5 @@ namespace ITCManager.Client.Entities_Client
         public long IdCiudadEquipos { get; set; }
         public long IdAsignacionCiudadEquipo { get; set; }
         public long IdArmadoEquipo { get; set; }
-    
-        public virtual ArmadoEquipoSet ArmadoEquipoSet { get; set; }
-        public virtual AsignacionCiudadEquiposSet AsignacionCiudadEquiposSet { get; set; }
     }
 }

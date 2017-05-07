@@ -68,15 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBTools\DBHelper.cs" />
-    <Compile Include="ModelCliente.Context.cs">
+    <Compile Include="ModeloCliente.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelCliente.Context.tt</DependentUpon>
+      <DependentUpon>ModeloCliente.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelCliente.Designer.cs">
+    <Compile Include="ModeloCliente.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelCliente.edmx</DependentUpon>
+      <DependentUpon>ModeloCliente.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -91,19 +91,19 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="ModelCliente.edmx">
+    <EntityDeploy Include="ModeloCliente.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelCliente.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModeloCliente.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelCliente.edmx.diagram">
-      <DependentUpon>ModelCliente.edmx</DependentUpon>
+    <None Include="ModeloCliente.edmx.diagram">
+      <DependentUpon>ModeloCliente.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="SqliteClientDataBase.db" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -115,9 +115,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModelCliente.Context.tt">
+    <Content Include="ModeloCliente.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelCliente.Context.cs</LastGenOutput>
+      <DependentUpon>ModeloCliente.edmx</DependentUpon>
+      <LastGenOutput>ModeloCliente.Context.cs</LastGenOutput>
       <CustomToolNamespace>ITCManager.Client.Entities_Client</CustomToolNamespace>
     </Content>
   </ItemGroup>

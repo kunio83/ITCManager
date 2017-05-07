@@ -1,0 +1,2967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SqliteClientDataBaseModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\Kunio\Source\Repos\ITCManagerRepositorio\ITCManager.Client.UI_Client\bin\Debug\SqliteClientDataBase.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AlumnoHorarioSet">
+          <Key>
+            <PropertyRef Name="IdAlumnoHorario" />
+          </Key>
+          <Property Name="IdAlumnoHorario" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolAlumno" Type="integer" Nullable="false" />
+          <Property Name="IdRolCiudadActivaHorario" Type="integer" Nullable="false" />
+          <Property Name="TipoHorario" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArmadoEquipoSet">
+          <Key>
+            <PropertyRef Name="IdArmadoEquipo" />
+          </Key>
+          <Property Name="IdArmadoEquipo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumeroEquipo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AsignacionCiudadEquiposSet">
+          <Key>
+            <PropertyRef Name="IdAsignacionCiudadEquipo" />
+          </Key>
+          <Property Name="IdAsignacionCiudadEquipo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdRolCiudadActiva" Type="integer" Nullable="false" />
+          <Property Name="IdEstadoAsignacionEquipo" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AsignacionReciboSet">
+          <Key>
+            <PropertyRef Name="IdAsignacionRecibo" />
+          </Key>
+          <Property Name="IdAsignacionRecibo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="IdRecibo" Type="integer" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CajaEfectivoSet">
+          <Key>
+            <PropertyRef Name="IdCajaEfectivo" />
+          </Key>
+          <Property Name="IdCajaEfectivo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleCajaEfectivo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CapacitacionSet">
+          <Key>
+            <PropertyRef Name="IdCapacitacion" />
+          </Key>
+          <Property Name="IdCapacitacion" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreCapacitacion" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Temario" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChequePropioSet">
+          <Key>
+            <PropertyRef Name="IdChequePropio" />
+          </Key>
+          <Property Name="IdChequePropio" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NroCheque" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="FechaEmision" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="FechaPago" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Destinatario" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdEstadoCheque" Type="integer" Nullable="false" />
+          <Property Name="IdCuentaBanco" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChequeSet">
+          <Key>
+            <PropertyRef Name="IdCheque" />
+          </Key>
+          <Property Name="IdCheque" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Banco" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Titular" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="NroCheque" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="FechaEmision" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="FechaPago" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdTipoCheque" Type="integer" Nullable="false" />
+          <Property Name="IdEstadoCheque" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadActivaLocacionesSet">
+          <Key>
+            <PropertyRef Name="IdCiudadActivaLocaciones" />
+          </Key>
+          <Property Name="IdCiudadActivaLocaciones" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolCiudadActiva" Type="integer" Nullable="false" />
+          <Property Name="IdLocacion" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadEquiposSet">
+          <Key>
+            <PropertyRef Name="IdCiudadEquipos" />
+          </Key>
+          <Property Name="IdCiudadEquipos" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAsignacionCiudadEquipo" Type="integer" Nullable="false" />
+          <Property Name="IdArmadoEquipo" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadFechasHorariosSet">
+          <Key>
+            <PropertyRef Name="IdCiudadFechasHorarios" />
+          </Key>
+          <Property Name="IdCiudadFechasHorarios" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolCiudadActiva" Type="integer" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdRolCiudadActivaHorarios" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadPersonalSet">
+          <Key>
+            <PropertyRef Name="IdCiudadPersonal" />
+          </Key>
+          <Property Name="IdCiudadPersonal" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCiudad" Type="integer" Nullable="false" />
+          <Property Name="Periodo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadProductosSet">
+          <Key>
+            <PropertyRef Name="IdCiudadProductos" />
+          </Key>
+          <Property Name="IdCiudadProductos" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAsignacionCiudadEquipo" Type="integer" Nullable="false" />
+          <Property Name="IdProducto" Type="integer" Nullable="false" />
+          <Property Name="Cantidad" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadSet">
+          <Key>
+            <PropertyRef Name="IdCiudad" />
+          </Key>
+          <Property Name="IdCiudad" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DesignacionCiudad" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdLocalidad" Type="integer" Nullable="false" />
+          <Property Name="PeriodoApertura" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CantidadMeses" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Activa" Type="bit" Nullable="false" />
+          <Property Name="NumeroLinea" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CoeficTarjetasSet">
+          <Key>
+            <PropertyRef Name="IdCuotas" />
+          </Key>
+          <Property Name="IdCuotas" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Coeficiente" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CompraSet">
+          <Key>
+            <PropertyRef Name="IdCompra" />
+          </Key>
+          <Property Name="IdCompra" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdProveedor" Type="integer" Nullable="false" />
+          <Property Name="IdEstadoCompra" Type="integer" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CondicionEmpleadoSet">
+          <Key>
+            <PropertyRef Name="IdCondicionEmpleado" />
+          </Key>
+          <Property Name="IdCondicionEmpleado" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleCOndicionEmpleado" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CuentaBancoSet">
+          <Key>
+            <PropertyRef Name="IdCuentaBanco" />
+          </Key>
+          <Property Name="IdCuentaBanco" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Banco" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="NroCuenta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="TipoCuenta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CBU" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Titular" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Cuit" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CuentaActiva" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CuentaBancoTerceroSet">
+          <Key>
+            <PropertyRef Name="IdCuentaBanco" />
+          </Key>
+          <Property Name="IdCuentaBanco" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Banco" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="NroCuenta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="TipoCuenta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CBU" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Titular" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Cuit" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CuentaActiva" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepositoSet">
+          <Key>
+            <PropertyRef Name="IdDeposito" />
+          </Key>
+          <Property Name="IdDeposito" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPersona" Type="integer" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdCuentaBanco" Type="integer" Nullable="false" />
+          <Property Name="IdEstadoDeposito" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleArmadoEquipoSet">
+          <Key>
+            <PropertyRef Name="IdDetalleArmadoEquipo" />
+          </Key>
+          <Property Name="IdDetalleArmadoEquipo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdArmadoEquipo" Type="integer" Nullable="false" />
+          <Property Name="IdProducto" Type="integer" Nullable="false" />
+          <Property Name="Cantidad" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleCompraSet">
+          <Key>
+            <PropertyRef Name="IdDetalleCompra" />
+          </Key>
+          <Property Name="IdDetalleCompra" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCompra" Type="integer" Nullable="false" />
+          <Property Name="IdProducto" Type="integer" Nullable="false" />
+          <Property Name="Cantidad" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Precio" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleCondicionEmpleado">
+          <Key>
+            <PropertyRef Name="IdRolEmpleadoCondicion" />
+          </Key>
+          <Property Name="IdRolEmpleadoCondicion" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="IdCondicionEmpleado" Type="integer" Nullable="false" />
+          <Property Name="MontoCondicion" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DiaSet">
+          <Key>
+            <PropertyRef Name="IdDia" />
+          </Key>
+          <Property Name="IdDia" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleDia" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EnvioCiudadEquiposSet">
+          <Key>
+            <PropertyRef Name="IdEnvioCiudadEquipos" />
+          </Key>
+          <Property Name="IdEnvioCiudadEquipos" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEnvio" Type="integer" Nullable="false" />
+          <Property Name="IdAsignacionCiudadEquipo" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EnvioSet">
+          <Key>
+            <PropertyRef Name="IdEnvio" />
+          </Key>
+          <Property Name="IdEnvio" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaSolicitudEnvío" Type="datetime" Nullable="false" />
+          <Property Name="FechaSalidaEnvío" Type="datetime" Nullable="false" />
+          <Property Name="FechaEstimadaRecepción" Type="datetime" Nullable="false" />
+          <Property Name="IdProveedor" Type="integer" Nullable="false" />
+          <Property Name="TipoRetiroEnvio" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="TipoEntregaEnvio" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CantidadBultos" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CiudadOrigenEnvio" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CiudadDestinoEnvio" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdRolCiudadActiva" Type="integer" Nullable="false" />
+          <Property Name="Remitente" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Destinatarios" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="TipoPago" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="EstadoEnvio" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="NumeroGuia" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoAlumno">
+          <Key>
+            <PropertyRef Name="IdEstadoAlumno" />
+          </Key>
+          <Property Name="IdEstadoAlumno" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleEstadoAlumno" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoAsignacionEquipoSet">
+          <Key>
+            <PropertyRef Name="IdEstadoAsignacionEquipo" />
+          </Key>
+          <Property Name="IdEstadoAsignacionEquipo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleEstadoASignacionEquipo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoChequeSet">
+          <Key>
+            <PropertyRef Name="IdEstadoCheque" />
+          </Key>
+          <Property Name="IdEstadoCheque" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleEstadoCheque" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoCompraSet">
+          <Key>
+            <PropertyRef Name="IdEstadoCompra" />
+          </Key>
+          <Property Name="IdEstadoCompra" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleEstadoCompra" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoDepositoSet">
+          <Key>
+            <PropertyRef Name="IdEstadoDeposito" />
+          </Key>
+          <Property Name="IdEstadoDeposito" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleEstado" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoPagoTarjetaSet">
+          <Key>
+            <PropertyRef Name="IdEstadoPagoTarjeta" />
+          </Key>
+          <Property Name="IdEstadoPagoTarjeta" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleEstadoPagoTarjeta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoRendicionSet">
+          <Key>
+            <PropertyRef Name="IdEstadoRendicion" />
+          </Key>
+          <Property Name="IdEstadoRendicion" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleEstadoRednicion" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoTransferenciaSet">
+          <Key>
+            <PropertyRef Name="IdEstadoTransferencia" />
+          </Key>
+          <Property Name="IdEstadoTransferencia" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleEstadoTransferencia" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoVentaSet">
+          <Key>
+            <PropertyRef Name="IdEstadoVenta" />
+          </Key>
+          <Property Name="IdEstadoVenta" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleEstadoVenta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormaPagoLocalSet">
+          <Key>
+            <PropertyRef Name="IdFormaPagoLocal" />
+          </Key>
+          <Property Name="IdFormaPagoLocal" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleFormaPagoLocal" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormaPagoSet">
+          <Key>
+            <PropertyRef Name="IdFormaPago" />
+          </Key>
+          <Property Name="IdFormaPago" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleFormaPago" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GastoBaseSet">
+          <Key>
+            <PropertyRef Name="IdGastoBase" />
+          </Key>
+          <Property Name="IdGastoBase" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleGastoBase" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GastoChequeSet">
+          <Key>
+            <PropertyRef Name="IdGastoCheque" />
+          </Key>
+          <Property Name="IdGastoCheque" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRendicionGasto" Type="integer" Nullable="false" />
+          <Property Name="IdCheque" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GastoLocalSet">
+          <Key>
+            <PropertyRef Name="IdGastoLocal" />
+          </Key>
+          <Property Name="IdGastoLocal" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="integer" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Detalle" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HorarioSet">
+          <Key>
+            <PropertyRef Name="IdHorario" />
+          </Key>
+          <Property Name="IdHorario" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleHorario" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemPagadoSet">
+          <Key>
+            <PropertyRef Name="IdItemPagado" />
+          </Key>
+          <Property Name="IdItemPagado" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleItemPagado" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LocacionRolLocadorSet">
+          <Key>
+            <PropertyRef Name="IdLocacionRolLocador" />
+          </Key>
+          <Property Name="IdLocacionRolLocador" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdLocacion" Type="integer" Nullable="false" />
+          <Property Name="IdRolLocador" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LocacionSet">
+          <Key>
+            <PropertyRef Name="IdLocacion" />
+          </Key>
+          <Property Name="IdLocacion" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleLocacion" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LocalidadSet">
+          <Key>
+            <PropertyRef Name="IdLocalidad" />
+          </Key>
+          <Property Name="IdLocalidad" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreLocalidad" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Pais" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MovimientoInternoEfectivoSet">
+          <Key>
+            <PropertyRef Name="IdMovimientoInternoEfectivo" />
+          </Key>
+          <Property Name="IdMovimientoInternoEfectivo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCajaEfectivoOrigen" Type="integer" Nullable="false" />
+          <Property Name="FechaMovimientoInternoEfectivo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdcajaEfectivoDestino" Type="integer" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoChequeSet">
+          <Key>
+            <PropertyRef Name="IdPagoCheque" />
+          </Key>
+          <Property Name="IdPagoCheque" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPago" Type="integer" Nullable="false" />
+          <Property Name="IdCheque" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalCajaEfectivoSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalCajaEfectivo" />
+          </Key>
+          <Property Name="IdPagoLocalCajaEfectivo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="integer" Nullable="false" />
+          <Property Name="FechaPagoCajaEfectivo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdCajaEfectivo" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalChequePropioSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalChequePropio" />
+          </Key>
+          <Property Name="IdPagoLocalChequePropio" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="integer" Nullable="false" />
+          <Property Name="IdChequePropio" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalChequeSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalCheque" />
+          </Key>
+          <Property Name="IdPagoLocalCheque" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="integer" Nullable="false" />
+          <Property Name="IdCheque" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalEnvioSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalEnvio" />
+          </Key>
+          <Property Name="IdPagoLocalEnvio" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEnvio" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="integer" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocal" />
+          </Key>
+          <Property Name="IdPagoLocal" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaPago" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdFormaPagoLocal" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalSueldoSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalSueldo" />
+          </Key>
+          <Property Name="IdPagoLocalSueldo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSueldoPago" Type="integer" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalTarjetaSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalTarjeta" />
+          </Key>
+          <Property Name="IdPagoLocalTarjeta" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="integer" Nullable="false" />
+          <Property Name="IdTarjetaPropia" Type="integer" Nullable="false" />
+          <Property Name="CantCuotas" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalTransferenciaSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalTransferencia" />
+          </Key>
+          <Property Name="IdPagoLocalTransferencia" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="integer" Nullable="false" />
+          <Property Name="IdTransferencia" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoSet">
+          <Key>
+            <PropertyRef Name="IdPago" />
+          </Key>
+          <Property Name="IdPago" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPlanVendedorAlumno" Type="integer" Nullable="false" />
+          <Property Name="MontoPagado" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdFormaPago" Type="integer" Nullable="false" />
+          <Property Name="IdItemPagado" Type="integer" Nullable="false" />
+          <Property Name="NroRecibo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoTarjetaSet">
+          <Key>
+            <PropertyRef Name="IdPagoTarjeta" />
+          </Key>
+          <Property Name="IdPagoTarjeta" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPago" Type="integer" Nullable="false" />
+          <Property Name="MontoAPagar" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdCuotas" Type="integer" Nullable="false" />
+          <Property Name="Recargo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="MontoTotal" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="NumeroTarjeta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="EmisorTarjeta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CodSeguridad" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Vencimiento" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="TitularTarjeta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="DNI" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CodAut" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdEstadoPagoTarjeta" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Permiso">
+          <Key>
+            <PropertyRef Name="IdPermiso" />
+          </Key>
+          <Property Name="IdPermiso" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+          <Property Name="DetallePermiso" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermisoAcceso">
+          <Key>
+            <PropertyRef Name="IdPermisoAcceso" />
+          </Key>
+          <Property Name="IdPermisoAcceso" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPermiso" Type="integer" Nullable="false" />
+          <Property Name="DetalleAcceso" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="PermisoActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="IdPersona" />
+          </Key>
+          <Property Name="IdPersona" Type="integer" StoreGeneratedPattern="None" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Nombres" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="FechaNac" Type="datetime" Nullable="false" />
+          <Property Name="DNI" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Barrio" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Ciudad" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Celular" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="TelAlternativo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="EstadoCivil" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlanBaseSet">
+          <Key>
+            <PropertyRef Name="IdPlanBase" />
+          </Key>
+          <Property Name="IdPlanBase" Type="integer" StoreGeneratedPattern="None" Nullable="false" />
+          <Property Name="DetallePlanBase" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlanVendedorAlumnoSet">
+          <Key>
+            <PropertyRef Name="IdPlanVendedorAlumno" />
+          </Key>
+          <Property Name="IdPlanVendedorAlumno" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NroRecibo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdRolCiudadActivaPlan" Type="integer" Nullable="false" />
+          <Property Name="IdRolAlumno" Type="integer" Nullable="false" />
+          <Property Name="IdRolVendedor" Type="integer" Nullable="false" />
+          <Property Name="ObservacionGerente" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ObservacionOficinaBaires" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductosSet">
+          <Key>
+            <PropertyRef Name="IdProducto" />
+          </Key>
+          <Property Name="IdProducto" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleProducto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Modelo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="TipoProducto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProveedorSet">
+          <Key>
+            <PropertyRef Name="IdProveedor" />
+          </Key>
+          <Property Name="IdProveedor" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RazonSocial" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Contacto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="TelefonoContacto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PuestoSet">
+          <Key>
+            <PropertyRef Name="IdPuesto" />
+          </Key>
+          <Property Name="IdPuesto" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetallePuesto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="SueldoBasico" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReciboSet">
+          <Key>
+            <PropertyRef Name="IdRecibo" />
+          </Key>
+          <Property Name="IdRecibo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionDepositoSet">
+          <Key>
+            <PropertyRef Name="IdRendicionDeposito" />
+          </Key>
+          <Property Name="IdRendicionDeposito" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="integer" Nullable="false" />
+          <Property Name="IdDeposito" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionGastoSet">
+          <Key>
+            <PropertyRef Name="IdRendicionGasto" />
+          </Key>
+          <Property Name="IdRendicionGasto" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="integer" Nullable="false" />
+          <Property Name="IdGastoBase" Type="integer" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdFormaPago" Type="integer" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionPagoSet">
+          <Key>
+            <PropertyRef Name="IdRendicionPago" />
+          </Key>
+          <Property Name="IdRendicionPago" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="integer" Nullable="false" />
+          <Property Name="IdPago" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionPersonaCiudadSet">
+          <Key>
+            <PropertyRef Name="IdRendicionEmpleadoCiudad" />
+          </Key>
+          <Property Name="IdRendicionEmpleadoCiudad" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+          <Property Name="IdRolCiudadActiva" Type="integer" Nullable="false" />
+          <Property Name="IdEstadoRendicion" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionSueldoSet">
+          <Key>
+            <PropertyRef Name="IdRendicionSueldo" />
+          </Key>
+          <Property Name="IdRendicionSueldo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="integer" Nullable="false" />
+          <Property Name="IdSueldoPago" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionValeSet">
+          <Key>
+            <PropertyRef Name="IdRendicionVale" />
+          </Key>
+          <Property Name="IdRendicionVale" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="integer" Nullable="false" />
+          <Property Name="IdVale" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionVentaEquipoSet">
+          <Key>
+            <PropertyRef Name="IdRendicionVentaEquipo" />
+          </Key>
+          <Property Name="IdRendicionVentaEquipo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPago" Type="integer" Nullable="false" />
+          <Property Name="IdArmadoEquipo" Type="integer" Nullable="false" />
+          <Property Name="IdEstadoVenta" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolAlumno">
+          <Key>
+            <PropertyRef Name="IdRolAlumno" />
+          </Key>
+          <Property Name="IdRolAlumno" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPersona" Type="integer" Nullable="false" />
+          <Property Name="IdCapacitacion" Type="integer" Nullable="false" />
+          <Property Name="IdEstadoAlumno" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolAlumnoPracticasSet">
+          <Key>
+            <PropertyRef Name="IdRolAlumnoPracticas" />
+          </Key>
+          <Property Name="IdRolAlumnoPracticas" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCiudadFechasHorarios" Type="integer" Nullable="false" />
+          <Property Name="TipoPractica" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="EstadoPractica" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdRolAlumno" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolAlumnoPresentismoSet">
+          <Key>
+            <PropertyRef Name="IdRolAlumnoPresentismo" />
+          </Key>
+          <Property Name="IdRolAlumnoPresentismo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolAlumno" Type="integer" Nullable="false" />
+          <Property Name="NumeroClase" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="EstadoClase" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolCiudadActivaGastosSet">
+          <Key>
+            <PropertyRef Name="IdRolCiudadActivaGastos" />
+          </Key>
+          <Property Name="IdRolCiudadActivaGastos" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolCiudadActiva" Type="integer" Nullable="false" />
+          <Property Name="IdGastoBase" Type="integer" Nullable="false" />
+          <Property Name="ValorEstimMensual" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolCiudadActivaHorarioSet">
+          <Key>
+            <PropertyRef Name="IdRolCiudadActivaHorario" />
+          </Key>
+          <Property Name="IdRolCiudadActivaHorario" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdDia" Type="integer" Nullable="false" />
+          <Property Name="IdHorario" Type="integer" Nullable="false" />
+          <Property Name="IdRolCiudadActiva" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolCiudadActivaPlanSet">
+          <Key>
+            <PropertyRef Name="IdRolCiudadActivaPlan" />
+          </Key>
+          <Property Name="IdRolCiudadActivaPlan" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolCiudadActiva" Type="integer" Nullable="false" />
+          <Property Name="IdPlanBase" Type="integer" Nullable="false" />
+          <Property Name="ValorMatricula" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CantCuotas" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ValorCuota" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ValorDescuento" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ValorCertificado" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ComisionIda" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ComisionVuelta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ComisionCertificado" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolCiudadActivaSet">
+          <Key>
+            <PropertyRef Name="IdRolCiudadActiva" />
+          </Key>
+          <Property Name="IdRolCiudadActiva" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCiudad" Type="integer" Nullable="false" />
+          <Property Name="FechaInicioVenta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="FechaInicioDictado" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CantidadClases" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolCiudadEnProcesoSet">
+          <Key>
+            <PropertyRef Name="IdRolCiudadEnProceso" />
+          </Key>
+          <Property Name="IdRolCiudadEnProceso" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCiudad" Type="integer" Nullable="false" />
+          <Property Name="InformeCiudad" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolDocenteSet">
+          <Key>
+            <PropertyRef Name="IdRolDocente" />
+          </Key>
+          <Property Name="IdRolDocente" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolEmpleado">
+          <Key>
+            <PropertyRef Name="IdRolEmpleado" />
+          </Key>
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+          <Property Name="IdPersona" Type="integer" Nullable="false" />
+          <Property Name="IdPuesto" Type="integer" Nullable="false" />
+          <Property Name="CelCorp" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Usuario" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Contraseña" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="SueldoBasico" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolEmpleadoActual">
+          <Key>
+            <PropertyRef Name="IdRolEmpleadoActual" />
+          </Key>
+          <Property Name="IdRolEmpleadoActual" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolLocacionAlojamientoSet">
+          <Key>
+            <PropertyRef Name="IdRolLocacionAlojamiento" />
+          </Key>
+          <Property Name="IdRolLocacionAlojamiento" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdLocacion" Type="integer" Nullable="false" />
+          <Property Name="Dias" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CantDormitorios" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CantCamas" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolLocacionSalonSet">
+          <Key>
+            <PropertyRef Name="IdRolLocacionSalon" />
+          </Key>
+          <Property Name="IdRolLocacionSalon" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdLocacion" Type="integer" Nullable="false" />
+          <Property Name="Tamaño" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Mesas" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Sillas" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="AireAcondicionado" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Calefaccion" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolLocadorSet">
+          <Key>
+            <PropertyRef Name="IdRolLocador" />
+          </Key>
+          <Property Name="IdRolLocador" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPersona" Type="integer" Nullable="false" />
+          <Property Name="Condicion" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolVendedor">
+          <Key>
+            <PropertyRef Name="IdRolVendedor" />
+          </Key>
+          <Property Name="IdRolVendedor" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+          <Property Name="IdSubgerente" Type="integer" Nullable="false" />
+          <Property Name="IdGerente" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SueldoPagoSet">
+          <Key>
+            <PropertyRef Name="IdSueldoPago" />
+          </Key>
+          <Property Name="IdSueldoPago" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+          <Property Name="Periodo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TarjetaPropiaSet">
+          <Key>
+            <PropertyRef Name="IdTarjetaPropia" />
+          </Key>
+          <Property Name="IdTarjetaPropia" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emsior" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="NroTarjeta" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="FechaVto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CodSeguridad" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Titular" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="DNI" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoChequeSet">
+          <Key>
+            <PropertyRef Name="IdTipoCheque" />
+          </Key>
+          <Property Name="IdTipoCheque" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetalleTipoCheque" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TransferenciaSet">
+          <Key>
+            <PropertyRef Name="IdTransferencia" />
+          </Key>
+          <Property Name="IdTransferencia" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCuentaBanco" Type="integer" Nullable="false" />
+          <Property Name="IdCuentaBancoTercero" Type="integer" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdEstadoTransferencia" Type="integer" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ValeFinanciacionSet">
+          <Key>
+            <PropertyRef Name="IdValeFinanciacion" />
+          </Key>
+          <Property Name="IdValeFinanciacion" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdVale" Type="integer" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="PeriodoDescuento" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ValeSet">
+          <Key>
+            <PropertyRef Name="IdVale" />
+          </Key>
+          <Property Name="IdVale" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="integer" Nullable="false" />
+          <Property Name="Monto" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SqliteClientDataBaseModelStoreContainer">
+          <EntitySet Name="AlumnoHorarioSet" EntityType="Self.AlumnoHorarioSet" store:Type="Tables" />
+          <EntitySet Name="ArmadoEquipoSet" EntityType="Self.ArmadoEquipoSet" store:Type="Tables" />
+          <EntitySet Name="AsignacionCiudadEquiposSet" EntityType="Self.AsignacionCiudadEquiposSet" store:Type="Tables" />
+          <EntitySet Name="AsignacionReciboSet" EntityType="Self.AsignacionReciboSet" store:Type="Tables" />
+          <EntitySet Name="CajaEfectivoSet" EntityType="Self.CajaEfectivoSet" store:Type="Tables" />
+          <EntitySet Name="CapacitacionSet" EntityType="Self.CapacitacionSet" store:Type="Tables" />
+          <EntitySet Name="ChequePropioSet" EntityType="Self.ChequePropioSet" store:Type="Tables" />
+          <EntitySet Name="ChequeSet" EntityType="Self.ChequeSet" store:Type="Tables" />
+          <EntitySet Name="CiudadActivaLocacionesSet" EntityType="Self.CiudadActivaLocacionesSet" store:Type="Tables" />
+          <EntitySet Name="CiudadEquiposSet" EntityType="Self.CiudadEquiposSet" store:Type="Tables" />
+          <EntitySet Name="CiudadFechasHorariosSet" EntityType="Self.CiudadFechasHorariosSet" store:Type="Tables" />
+          <EntitySet Name="CiudadPersonalSet" EntityType="Self.CiudadPersonalSet" store:Type="Tables" />
+          <EntitySet Name="CiudadProductosSet" EntityType="Self.CiudadProductosSet" store:Type="Tables" />
+          <EntitySet Name="CiudadSet" EntityType="Self.CiudadSet" store:Type="Tables" />
+          <EntitySet Name="CoeficTarjetasSet" EntityType="Self.CoeficTarjetasSet" store:Type="Tables" />
+          <EntitySet Name="CompraSet" EntityType="Self.CompraSet" store:Type="Tables" />
+          <EntitySet Name="CondicionEmpleadoSet" EntityType="Self.CondicionEmpleadoSet" store:Type="Tables" />
+          <EntitySet Name="CuentaBancoSet" EntityType="Self.CuentaBancoSet" store:Type="Tables" />
+          <EntitySet Name="CuentaBancoTerceroSet" EntityType="Self.CuentaBancoTerceroSet" store:Type="Tables" />
+          <EntitySet Name="DepositoSet" EntityType="Self.DepositoSet" store:Type="Tables" />
+          <EntitySet Name="DetalleArmadoEquipoSet" EntityType="Self.DetalleArmadoEquipoSet" store:Type="Tables" />
+          <EntitySet Name="DetalleCompraSet" EntityType="Self.DetalleCompraSet" store:Type="Tables" />
+          <EntitySet Name="DetalleCondicionEmpleado" EntityType="Self.DetalleCondicionEmpleado" store:Type="Tables" />
+          <EntitySet Name="DiaSet" EntityType="Self.DiaSet" store:Type="Tables" />
+          <EntitySet Name="EnvioCiudadEquiposSet" EntityType="Self.EnvioCiudadEquiposSet" store:Type="Tables" />
+          <EntitySet Name="EnvioSet" EntityType="Self.EnvioSet" store:Type="Tables" />
+          <EntitySet Name="EstadoAlumno" EntityType="Self.EstadoAlumno" store:Type="Tables" />
+          <EntitySet Name="EstadoAsignacionEquipoSet" EntityType="Self.EstadoAsignacionEquipoSet" store:Type="Tables" />
+          <EntitySet Name="EstadoChequeSet" EntityType="Self.EstadoChequeSet" store:Type="Tables" />
+          <EntitySet Name="EstadoCompraSet" EntityType="Self.EstadoCompraSet" store:Type="Tables" />
+          <EntitySet Name="EstadoDepositoSet" EntityType="Self.EstadoDepositoSet" store:Type="Tables" />
+          <EntitySet Name="EstadoPagoTarjetaSet" EntityType="Self.EstadoPagoTarjetaSet" store:Type="Tables" />
+          <EntitySet Name="EstadoRendicionSet" EntityType="Self.EstadoRendicionSet" store:Type="Tables" />
+          <EntitySet Name="EstadoTransferenciaSet" EntityType="Self.EstadoTransferenciaSet" store:Type="Tables" />
+          <EntitySet Name="EstadoVentaSet" EntityType="Self.EstadoVentaSet" store:Type="Tables" />
+          <EntitySet Name="FormaPagoLocalSet" EntityType="Self.FormaPagoLocalSet" store:Type="Tables" />
+          <EntitySet Name="FormaPagoSet" EntityType="Self.FormaPagoSet" store:Type="Tables" />
+          <EntitySet Name="GastoBaseSet" EntityType="Self.GastoBaseSet" store:Type="Tables" />
+          <EntitySet Name="GastoChequeSet" EntityType="Self.GastoChequeSet" store:Type="Tables" />
+          <EntitySet Name="GastoLocalSet" EntityType="Self.GastoLocalSet" store:Type="Tables" />
+          <EntitySet Name="HorarioSet" EntityType="Self.HorarioSet" store:Type="Tables" />
+          <EntitySet Name="ItemPagadoSet" EntityType="Self.ItemPagadoSet" store:Type="Tables" />
+          <EntitySet Name="LocacionRolLocadorSet" EntityType="Self.LocacionRolLocadorSet" store:Type="Tables" />
+          <EntitySet Name="LocacionSet" EntityType="Self.LocacionSet" store:Type="Tables" />
+          <EntitySet Name="LocalidadSet" EntityType="Self.LocalidadSet" store:Type="Tables" />
+          <EntitySet Name="MovimientoInternoEfectivoSet" EntityType="Self.MovimientoInternoEfectivoSet" store:Type="Tables" />
+          <EntitySet Name="PagoChequeSet" EntityType="Self.PagoChequeSet" store:Type="Tables" />
+          <EntitySet Name="PagoLocalCajaEfectivoSet" EntityType="Self.PagoLocalCajaEfectivoSet" store:Type="Tables" />
+          <EntitySet Name="PagoLocalChequePropioSet" EntityType="Self.PagoLocalChequePropioSet" store:Type="Tables" />
+          <EntitySet Name="PagoLocalChequeSet" EntityType="Self.PagoLocalChequeSet" store:Type="Tables" />
+          <EntitySet Name="PagoLocalEnvioSet" EntityType="Self.PagoLocalEnvioSet" store:Type="Tables" />
+          <EntitySet Name="PagoLocalSet" EntityType="Self.PagoLocalSet" store:Type="Tables" />
+          <EntitySet Name="PagoLocalSueldoSet" EntityType="Self.PagoLocalSueldoSet" store:Type="Tables" />
+          <EntitySet Name="PagoLocalTarjetaSet" EntityType="Self.PagoLocalTarjetaSet" store:Type="Tables" />
+          <EntitySet Name="PagoLocalTransferenciaSet" EntityType="Self.PagoLocalTransferenciaSet" store:Type="Tables" />
+          <EntitySet Name="PagoSet" EntityType="Self.PagoSet" store:Type="Tables" />
+          <EntitySet Name="PagoTarjetaSet" EntityType="Self.PagoTarjetaSet" store:Type="Tables" />
+          <EntitySet Name="Permiso" EntityType="Self.Permiso" store:Type="Tables" />
+          <EntitySet Name="PermisoAcceso" EntityType="Self.PermisoAcceso" store:Type="Tables" />
+          <EntitySet Name="Persona" EntityType="Self.Persona" store:Type="Tables" />
+          <EntitySet Name="PlanBaseSet" EntityType="Self.PlanBaseSet" store:Type="Tables" />
+          <EntitySet Name="PlanVendedorAlumnoSet" EntityType="Self.PlanVendedorAlumnoSet" store:Type="Tables" />
+          <EntitySet Name="ProductosSet" EntityType="Self.ProductosSet" store:Type="Tables" />
+          <EntitySet Name="ProveedorSet" EntityType="Self.ProveedorSet" store:Type="Tables" />
+          <EntitySet Name="PuestoSet" EntityType="Self.PuestoSet" store:Type="Tables" />
+          <EntitySet Name="ReciboSet" EntityType="Self.ReciboSet" store:Type="Tables" />
+          <EntitySet Name="RendicionDepositoSet" EntityType="Self.RendicionDepositoSet" store:Type="Tables" />
+          <EntitySet Name="RendicionGastoSet" EntityType="Self.RendicionGastoSet" store:Type="Tables" />
+          <EntitySet Name="RendicionPagoSet" EntityType="Self.RendicionPagoSet" store:Type="Tables" />
+          <EntitySet Name="RendicionPersonaCiudadSet" EntityType="Self.RendicionPersonaCiudadSet" store:Type="Tables" />
+          <EntitySet Name="RendicionSueldoSet" EntityType="Self.RendicionSueldoSet" store:Type="Tables" />
+          <EntitySet Name="RendicionValeSet" EntityType="Self.RendicionValeSet" store:Type="Tables" />
+          <EntitySet Name="RendicionVentaEquipoSet" EntityType="Self.RendicionVentaEquipoSet" store:Type="Tables" />
+          <EntitySet Name="RolAlumno" EntityType="Self.RolAlumno" store:Type="Tables" />
+          <EntitySet Name="RolAlumnoPracticasSet" EntityType="Self.RolAlumnoPracticasSet" store:Type="Tables" />
+          <EntitySet Name="RolAlumnoPresentismoSet" EntityType="Self.RolAlumnoPresentismoSet" store:Type="Tables" />
+          <EntitySet Name="RolCiudadActivaGastosSet" EntityType="Self.RolCiudadActivaGastosSet" store:Type="Tables" />
+          <EntitySet Name="RolCiudadActivaHorarioSet" EntityType="Self.RolCiudadActivaHorarioSet" store:Type="Tables" />
+          <EntitySet Name="RolCiudadActivaPlanSet" EntityType="Self.RolCiudadActivaPlanSet" store:Type="Tables" />
+          <EntitySet Name="RolCiudadActivaSet" EntityType="Self.RolCiudadActivaSet" store:Type="Tables" />
+          <EntitySet Name="RolCiudadEnProcesoSet" EntityType="Self.RolCiudadEnProcesoSet" store:Type="Tables" />
+          <EntitySet Name="RolDocenteSet" EntityType="Self.RolDocenteSet" store:Type="Tables" />
+          <EntitySet Name="RolEmpleado" EntityType="Self.RolEmpleado" store:Type="Tables" />
+          <EntitySet Name="RolEmpleadoActual" EntityType="Self.RolEmpleadoActual" store:Type="Tables" />
+          <EntitySet Name="RolLocacionAlojamientoSet" EntityType="Self.RolLocacionAlojamientoSet" store:Type="Tables" />
+          <EntitySet Name="RolLocacionSalonSet" EntityType="Self.RolLocacionSalonSet" store:Type="Tables" />
+          <EntitySet Name="RolLocadorSet" EntityType="Self.RolLocadorSet" store:Type="Tables" />
+          <EntitySet Name="RolVendedor" EntityType="Self.RolVendedor" store:Type="Tables" />
+          <EntitySet Name="SueldoPagoSet" EntityType="Self.SueldoPagoSet" store:Type="Tables" />
+          <EntitySet Name="TarjetaPropiaSet" EntityType="Self.TarjetaPropiaSet" store:Type="Tables" />
+          <EntitySet Name="TipoChequeSet" EntityType="Self.TipoChequeSet" store:Type="Tables" />
+          <EntitySet Name="TransferenciaSet" EntityType="Self.TransferenciaSet" store:Type="Tables" />
+          <EntitySet Name="ValeFinanciacionSet" EntityType="Self.ValeFinanciacionSet" store:Type="Tables" />
+          <EntitySet Name="ValeSet" EntityType="Self.ValeSet" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SqliteClientDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SqliteClientDataBaseEntitiesFinal" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AlumnoHorarioSet" EntityType="SqliteClientDataBaseModel.AlumnoHorarioSet" />
+          <EntitySet Name="ArmadoEquipoSet" EntityType="SqliteClientDataBaseModel.ArmadoEquipoSet" />
+          <EntitySet Name="AsignacionCiudadEquiposSet" EntityType="SqliteClientDataBaseModel.AsignacionCiudadEquiposSet" />
+          <EntitySet Name="AsignacionReciboSet" EntityType="SqliteClientDataBaseModel.AsignacionReciboSet" />
+          <EntitySet Name="CajaEfectivoSet" EntityType="SqliteClientDataBaseModel.CajaEfectivoSet" />
+          <EntitySet Name="CapacitacionSet" EntityType="SqliteClientDataBaseModel.CapacitacionSet" />
+          <EntitySet Name="ChequePropioSet" EntityType="SqliteClientDataBaseModel.ChequePropioSet" />
+          <EntitySet Name="ChequeSet" EntityType="SqliteClientDataBaseModel.ChequeSet" />
+          <EntitySet Name="CiudadActivaLocacionesSet" EntityType="SqliteClientDataBaseModel.CiudadActivaLocacionesSet" />
+          <EntitySet Name="CiudadEquiposSet" EntityType="SqliteClientDataBaseModel.CiudadEquiposSet" />
+          <EntitySet Name="CiudadFechasHorariosSet" EntityType="SqliteClientDataBaseModel.CiudadFechasHorariosSet" />
+          <EntitySet Name="CiudadPersonalSet" EntityType="SqliteClientDataBaseModel.CiudadPersonalSet" />
+          <EntitySet Name="CiudadProductosSet" EntityType="SqliteClientDataBaseModel.CiudadProductosSet" />
+          <EntitySet Name="CiudadSet" EntityType="SqliteClientDataBaseModel.CiudadSet" />
+          <EntitySet Name="CoeficTarjetasSet" EntityType="SqliteClientDataBaseModel.CoeficTarjetasSet" />
+          <EntitySet Name="CompraSet" EntityType="SqliteClientDataBaseModel.CompraSet" />
+          <EntitySet Name="CondicionEmpleadoSet" EntityType="SqliteClientDataBaseModel.CondicionEmpleadoSet" />
+          <EntitySet Name="CuentaBancoSet" EntityType="SqliteClientDataBaseModel.CuentaBancoSet" />
+          <EntitySet Name="CuentaBancoTerceroSet" EntityType="SqliteClientDataBaseModel.CuentaBancoTerceroSet" />
+          <EntitySet Name="DepositoSet" EntityType="SqliteClientDataBaseModel.DepositoSet" />
+          <EntitySet Name="DetalleArmadoEquipoSet" EntityType="SqliteClientDataBaseModel.DetalleArmadoEquipoSet" />
+          <EntitySet Name="DetalleCompraSet" EntityType="SqliteClientDataBaseModel.DetalleCompraSet" />
+          <EntitySet Name="DetalleCondicionEmpleado" EntityType="SqliteClientDataBaseModel.DetalleCondicionEmpleado" />
+          <EntitySet Name="DiaSet" EntityType="SqliteClientDataBaseModel.DiaSet" />
+          <EntitySet Name="EnvioCiudadEquiposSet" EntityType="SqliteClientDataBaseModel.EnvioCiudadEquiposSet" />
+          <EntitySet Name="EnvioSet" EntityType="SqliteClientDataBaseModel.EnvioSet" />
+          <EntitySet Name="EstadoAlumno" EntityType="SqliteClientDataBaseModel.EstadoAlumno" />
+          <EntitySet Name="EstadoAsignacionEquipoSet" EntityType="SqliteClientDataBaseModel.EstadoAsignacionEquipoSet" />
+          <EntitySet Name="EstadoChequeSet" EntityType="SqliteClientDataBaseModel.EstadoChequeSet" />
+          <EntitySet Name="EstadoCompraSet" EntityType="SqliteClientDataBaseModel.EstadoCompraSet" />
+          <EntitySet Name="EstadoDepositoSet" EntityType="SqliteClientDataBaseModel.EstadoDepositoSet" />
+          <EntitySet Name="EstadoPagoTarjetaSet" EntityType="SqliteClientDataBaseModel.EstadoPagoTarjetaSet" />
+          <EntitySet Name="EstadoRendicionSet" EntityType="SqliteClientDataBaseModel.EstadoRendicionSet" />
+          <EntitySet Name="EstadoTransferenciaSet" EntityType="SqliteClientDataBaseModel.EstadoTransferenciaSet" />
+          <EntitySet Name="EstadoVentaSet" EntityType="SqliteClientDataBaseModel.EstadoVentaSet" />
+          <EntitySet Name="FormaPagoLocalSet" EntityType="SqliteClientDataBaseModel.FormaPagoLocalSet" />
+          <EntitySet Name="FormaPagoSet" EntityType="SqliteClientDataBaseModel.FormaPagoSet" />
+          <EntitySet Name="GastoBaseSet" EntityType="SqliteClientDataBaseModel.GastoBaseSet" />
+          <EntitySet Name="GastoChequeSet" EntityType="SqliteClientDataBaseModel.GastoChequeSet" />
+          <EntitySet Name="GastoLocalSet" EntityType="SqliteClientDataBaseModel.GastoLocalSet" />
+          <EntitySet Name="HorarioSet" EntityType="SqliteClientDataBaseModel.HorarioSet" />
+          <EntitySet Name="ItemPagadoSet" EntityType="SqliteClientDataBaseModel.ItemPagadoSet" />
+          <EntitySet Name="LocacionRolLocadorSet" EntityType="SqliteClientDataBaseModel.LocacionRolLocadorSet" />
+          <EntitySet Name="LocacionSet" EntityType="SqliteClientDataBaseModel.LocacionSet" />
+          <EntitySet Name="LocalidadSet" EntityType="SqliteClientDataBaseModel.LocalidadSet" />
+          <EntitySet Name="MovimientoInternoEfectivoSet" EntityType="SqliteClientDataBaseModel.MovimientoInternoEfectivoSet" />
+          <EntitySet Name="PagoChequeSet" EntityType="SqliteClientDataBaseModel.PagoChequeSet" />
+          <EntitySet Name="PagoLocalCajaEfectivoSet" EntityType="SqliteClientDataBaseModel.PagoLocalCajaEfectivoSet" />
+          <EntitySet Name="PagoLocalChequePropioSet" EntityType="SqliteClientDataBaseModel.PagoLocalChequePropioSet" />
+          <EntitySet Name="PagoLocalChequeSet" EntityType="SqliteClientDataBaseModel.PagoLocalChequeSet" />
+          <EntitySet Name="PagoLocalEnvioSet" EntityType="SqliteClientDataBaseModel.PagoLocalEnvioSet" />
+          <EntitySet Name="PagoLocalSet" EntityType="SqliteClientDataBaseModel.PagoLocalSet" />
+          <EntitySet Name="PagoLocalSueldoSet" EntityType="SqliteClientDataBaseModel.PagoLocalSueldoSet" />
+          <EntitySet Name="PagoLocalTarjetaSet" EntityType="SqliteClientDataBaseModel.PagoLocalTarjetaSet" />
+          <EntitySet Name="PagoLocalTransferenciaSet" EntityType="SqliteClientDataBaseModel.PagoLocalTransferenciaSet" />
+          <EntitySet Name="PagoSet" EntityType="SqliteClientDataBaseModel.PagoSet" />
+          <EntitySet Name="PagoTarjetaSet" EntityType="SqliteClientDataBaseModel.PagoTarjetaSet" />
+          <EntitySet Name="Permiso" EntityType="SqliteClientDataBaseModel.Permiso" />
+          <EntitySet Name="PermisoAcceso" EntityType="SqliteClientDataBaseModel.PermisoAcceso" />
+          <EntitySet Name="Persona" EntityType="SqliteClientDataBaseModel.Persona" />
+          <EntitySet Name="PlanBaseSet" EntityType="SqliteClientDataBaseModel.PlanBaseSet" />
+          <EntitySet Name="PlanVendedorAlumnoSet" EntityType="SqliteClientDataBaseModel.PlanVendedorAlumnoSet" />
+          <EntitySet Name="ProductosSet" EntityType="SqliteClientDataBaseModel.ProductosSet" />
+          <EntitySet Name="ProveedorSet" EntityType="SqliteClientDataBaseModel.ProveedorSet" />
+          <EntitySet Name="PuestoSet" EntityType="SqliteClientDataBaseModel.PuestoSet" />
+          <EntitySet Name="ReciboSet" EntityType="SqliteClientDataBaseModel.ReciboSet" />
+          <EntitySet Name="RendicionDepositoSet" EntityType="SqliteClientDataBaseModel.RendicionDepositoSet" />
+          <EntitySet Name="RendicionGastoSet" EntityType="SqliteClientDataBaseModel.RendicionGastoSet" />
+          <EntitySet Name="RendicionPagoSet" EntityType="SqliteClientDataBaseModel.RendicionPagoSet" />
+          <EntitySet Name="RendicionPersonaCiudadSet" EntityType="SqliteClientDataBaseModel.RendicionPersonaCiudadSet" />
+          <EntitySet Name="RendicionSueldoSet" EntityType="SqliteClientDataBaseModel.RendicionSueldoSet" />
+          <EntitySet Name="RendicionValeSet" EntityType="SqliteClientDataBaseModel.RendicionValeSet" />
+          <EntitySet Name="RendicionVentaEquipoSet" EntityType="SqliteClientDataBaseModel.RendicionVentaEquipoSet" />
+          <EntitySet Name="RolAlumno" EntityType="SqliteClientDataBaseModel.RolAlumno" />
+          <EntitySet Name="RolAlumnoPracticasSet" EntityType="SqliteClientDataBaseModel.RolAlumnoPracticasSet" />
+          <EntitySet Name="RolAlumnoPresentismoSet" EntityType="SqliteClientDataBaseModel.RolAlumnoPresentismoSet" />
+          <EntitySet Name="RolCiudadActivaGastosSet" EntityType="SqliteClientDataBaseModel.RolCiudadActivaGastosSet" />
+          <EntitySet Name="RolCiudadActivaHorarioSet" EntityType="SqliteClientDataBaseModel.RolCiudadActivaHorarioSet" />
+          <EntitySet Name="RolCiudadActivaPlanSet" EntityType="SqliteClientDataBaseModel.RolCiudadActivaPlanSet" />
+          <EntitySet Name="RolCiudadActivaSet" EntityType="SqliteClientDataBaseModel.RolCiudadActivaSet" />
+          <EntitySet Name="RolCiudadEnProcesoSet" EntityType="SqliteClientDataBaseModel.RolCiudadEnProcesoSet" />
+          <EntitySet Name="RolDocenteSet" EntityType="SqliteClientDataBaseModel.RolDocenteSet" />
+          <EntitySet Name="RolEmpleado" EntityType="SqliteClientDataBaseModel.RolEmpleado" />
+          <EntitySet Name="RolEmpleadoActual" EntityType="SqliteClientDataBaseModel.RolEmpleadoActual" />
+          <EntitySet Name="RolLocacionAlojamientoSet" EntityType="SqliteClientDataBaseModel.RolLocacionAlojamientoSet" />
+          <EntitySet Name="RolLocacionSalonSet" EntityType="SqliteClientDataBaseModel.RolLocacionSalonSet" />
+          <EntitySet Name="RolLocadorSet" EntityType="SqliteClientDataBaseModel.RolLocadorSet" />
+          <EntitySet Name="RolVendedor" EntityType="SqliteClientDataBaseModel.RolVendedor" />
+          <EntitySet Name="SueldoPagoSet" EntityType="SqliteClientDataBaseModel.SueldoPagoSet" />
+          <EntitySet Name="TarjetaPropiaSet" EntityType="SqliteClientDataBaseModel.TarjetaPropiaSet" />
+          <EntitySet Name="TipoChequeSet" EntityType="SqliteClientDataBaseModel.TipoChequeSet" />
+          <EntitySet Name="TransferenciaSet" EntityType="SqliteClientDataBaseModel.TransferenciaSet" />
+          <EntitySet Name="ValeFinanciacionSet" EntityType="SqliteClientDataBaseModel.ValeFinanciacionSet" />
+          <EntitySet Name="ValeSet" EntityType="SqliteClientDataBaseModel.ValeSet" />
+        </EntityContainer>
+        <EntityType Name="AlumnoHorarioSet">
+          <Key>
+            <PropertyRef Name="IdAlumnoHorario" />
+          </Key>
+          <Property Name="IdAlumnoHorario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolAlumno" Type="Int64" Nullable="false" />
+          <Property Name="IdRolCiudadActivaHorario" Type="Int64" Nullable="false" />
+          <Property Name="TipoHorario" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ArmadoEquipoSet">
+          <Key>
+            <PropertyRef Name="IdArmadoEquipo" />
+          </Key>
+          <Property Name="IdArmadoEquipo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroEquipo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AsignacionCiudadEquiposSet">
+          <Key>
+            <PropertyRef Name="IdAsignacionCiudadEquipo" />
+          </Key>
+          <Property Name="IdAsignacionCiudadEquipo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdRolCiudadActiva" Type="Int64" Nullable="false" />
+          <Property Name="IdEstadoAsignacionEquipo" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AsignacionReciboSet">
+          <Key>
+            <PropertyRef Name="IdAsignacionRecibo" />
+          </Key>
+          <Property Name="IdAsignacionRecibo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="IdRecibo" Type="Int64" Nullable="false" />
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CajaEfectivoSet">
+          <Key>
+            <PropertyRef Name="IdCajaEfectivo" />
+          </Key>
+          <Property Name="IdCajaEfectivo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleCajaEfectivo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CapacitacionSet">
+          <Key>
+            <PropertyRef Name="IdCapacitacion" />
+          </Key>
+          <Property Name="IdCapacitacion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreCapacitacion" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Temario" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ChequePropioSet">
+          <Key>
+            <PropertyRef Name="IdChequePropio" />
+          </Key>
+          <Property Name="IdChequePropio" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NroCheque" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="FechaEmision" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="FechaPago" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Destinatario" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdEstadoCheque" Type="Int64" Nullable="false" />
+          <Property Name="IdCuentaBanco" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChequeSet">
+          <Key>
+            <PropertyRef Name="IdCheque" />
+          </Key>
+          <Property Name="IdCheque" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Banco" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Titular" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="NroCheque" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="FechaEmision" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="FechaPago" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdTipoCheque" Type="Int64" Nullable="false" />
+          <Property Name="IdEstadoCheque" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadActivaLocacionesSet">
+          <Key>
+            <PropertyRef Name="IdCiudadActivaLocaciones" />
+          </Key>
+          <Property Name="IdCiudadActivaLocaciones" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolCiudadActiva" Type="Int64" Nullable="false" />
+          <Property Name="IdLocacion" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadEquiposSet">
+          <Key>
+            <PropertyRef Name="IdCiudadEquipos" />
+          </Key>
+          <Property Name="IdCiudadEquipos" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAsignacionCiudadEquipo" Type="Int64" Nullable="false" />
+          <Property Name="IdArmadoEquipo" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadFechasHorariosSet">
+          <Key>
+            <PropertyRef Name="IdCiudadFechasHorarios" />
+          </Key>
+          <Property Name="IdCiudadFechasHorarios" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolCiudadActiva" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdRolCiudadActivaHorarios" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CiudadPersonalSet">
+          <Key>
+            <PropertyRef Name="IdCiudadPersonal" />
+          </Key>
+          <Property Name="IdCiudadPersonal" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCiudad" Type="Int64" Nullable="false" />
+          <Property Name="Periodo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadProductosSet">
+          <Key>
+            <PropertyRef Name="IdCiudadProductos" />
+          </Key>
+          <Property Name="IdCiudadProductos" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAsignacionCiudadEquipo" Type="Int64" Nullable="false" />
+          <Property Name="IdProducto" Type="Int64" Nullable="false" />
+          <Property Name="Cantidad" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CiudadSet">
+          <Key>
+            <PropertyRef Name="IdCiudad" />
+          </Key>
+          <Property Name="IdCiudad" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DesignacionCiudad" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdLocalidad" Type="Int64" Nullable="false" />
+          <Property Name="PeriodoApertura" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CantidadMeses" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Activa" Type="Boolean" Nullable="false" />
+          <Property Name="NumeroLinea" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CoeficTarjetasSet">
+          <Key>
+            <PropertyRef Name="IdCuotas" />
+          </Key>
+          <Property Name="IdCuotas" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Coeficiente" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CompraSet">
+          <Key>
+            <PropertyRef Name="IdCompra" />
+          </Key>
+          <Property Name="IdCompra" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdProveedor" Type="Int64" Nullable="false" />
+          <Property Name="IdEstadoCompra" Type="Int64" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CondicionEmpleadoSet">
+          <Key>
+            <PropertyRef Name="IdCondicionEmpleado" />
+          </Key>
+          <Property Name="IdCondicionEmpleado" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleCOndicionEmpleado" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CuentaBancoSet">
+          <Key>
+            <PropertyRef Name="IdCuentaBanco" />
+          </Key>
+          <Property Name="IdCuentaBanco" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Banco" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="NroCuenta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TipoCuenta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CBU" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Titular" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Cuit" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CuentaActiva" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CuentaBancoTerceroSet">
+          <Key>
+            <PropertyRef Name="IdCuentaBanco" />
+          </Key>
+          <Property Name="IdCuentaBanco" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Banco" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="NroCuenta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TipoCuenta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CBU" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Titular" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Cuit" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CuentaActiva" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepositoSet">
+          <Key>
+            <PropertyRef Name="IdDeposito" />
+          </Key>
+          <Property Name="IdDeposito" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPersona" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdCuentaBanco" Type="Int64" Nullable="false" />
+          <Property Name="IdEstadoDeposito" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleArmadoEquipoSet">
+          <Key>
+            <PropertyRef Name="IdDetalleArmadoEquipo" />
+          </Key>
+          <Property Name="IdDetalleArmadoEquipo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdArmadoEquipo" Type="Int64" Nullable="false" />
+          <Property Name="IdProducto" Type="Int64" Nullable="false" />
+          <Property Name="Cantidad" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DetalleCompraSet">
+          <Key>
+            <PropertyRef Name="IdDetalleCompra" />
+          </Key>
+          <Property Name="IdDetalleCompra" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCompra" Type="Int64" Nullable="false" />
+          <Property Name="IdProducto" Type="Int64" Nullable="false" />
+          <Property Name="Cantidad" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Precio" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DetalleCondicionEmpleado">
+          <Key>
+            <PropertyRef Name="IdRolEmpleadoCondicion" />
+          </Key>
+          <Property Name="IdRolEmpleadoCondicion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="IdCondicionEmpleado" Type="Int64" Nullable="false" />
+          <Property Name="MontoCondicion" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DiaSet">
+          <Key>
+            <PropertyRef Name="IdDia" />
+          </Key>
+          <Property Name="IdDia" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleDia" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EnvioCiudadEquiposSet">
+          <Key>
+            <PropertyRef Name="IdEnvioCiudadEquipos" />
+          </Key>
+          <Property Name="IdEnvioCiudadEquipos" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEnvio" Type="Int64" Nullable="false" />
+          <Property Name="IdAsignacionCiudadEquipo" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EnvioSet">
+          <Key>
+            <PropertyRef Name="IdEnvio" />
+          </Key>
+          <Property Name="IdEnvio" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaSolicitudEnvío" Type="DateTime" Nullable="false" />
+          <Property Name="FechaSalidaEnvío" Type="DateTime" Nullable="false" />
+          <Property Name="FechaEstimadaRecepción" Type="DateTime" Nullable="false" />
+          <Property Name="IdProveedor" Type="Int64" Nullable="false" />
+          <Property Name="TipoRetiroEnvio" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TipoEntregaEnvio" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CantidadBultos" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CiudadOrigenEnvio" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CiudadDestinoEnvio" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdRolCiudadActiva" Type="Int64" Nullable="false" />
+          <Property Name="Remitente" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Destinatarios" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TipoPago" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="EstadoEnvio" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="NumeroGuia" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EstadoAlumno">
+          <Key>
+            <PropertyRef Name="IdEstadoAlumno" />
+          </Key>
+          <Property Name="IdEstadoAlumno" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleEstadoAlumno" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EstadoAsignacionEquipoSet">
+          <Key>
+            <PropertyRef Name="IdEstadoAsignacionEquipo" />
+          </Key>
+          <Property Name="IdEstadoAsignacionEquipo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleEstadoASignacionEquipo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EstadoChequeSet">
+          <Key>
+            <PropertyRef Name="IdEstadoCheque" />
+          </Key>
+          <Property Name="IdEstadoCheque" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleEstadoCheque" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EstadoCompraSet">
+          <Key>
+            <PropertyRef Name="IdEstadoCompra" />
+          </Key>
+          <Property Name="IdEstadoCompra" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleEstadoCompra" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EstadoDepositoSet">
+          <Key>
+            <PropertyRef Name="IdEstadoDeposito" />
+          </Key>
+          <Property Name="IdEstadoDeposito" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleEstado" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EstadoPagoTarjetaSet">
+          <Key>
+            <PropertyRef Name="IdEstadoPagoTarjeta" />
+          </Key>
+          <Property Name="IdEstadoPagoTarjeta" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleEstadoPagoTarjeta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EstadoRendicionSet">
+          <Key>
+            <PropertyRef Name="IdEstadoRendicion" />
+          </Key>
+          <Property Name="IdEstadoRendicion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleEstadoRednicion" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EstadoTransferenciaSet">
+          <Key>
+            <PropertyRef Name="IdEstadoTransferencia" />
+          </Key>
+          <Property Name="IdEstadoTransferencia" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleEstadoTransferencia" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EstadoVentaSet">
+          <Key>
+            <PropertyRef Name="IdEstadoVenta" />
+          </Key>
+          <Property Name="IdEstadoVenta" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleEstadoVenta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FormaPagoLocalSet">
+          <Key>
+            <PropertyRef Name="IdFormaPagoLocal" />
+          </Key>
+          <Property Name="IdFormaPagoLocal" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleFormaPagoLocal" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FormaPagoSet">
+          <Key>
+            <PropertyRef Name="IdFormaPago" />
+          </Key>
+          <Property Name="IdFormaPago" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleFormaPago" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GastoBaseSet">
+          <Key>
+            <PropertyRef Name="IdGastoBase" />
+          </Key>
+          <Property Name="IdGastoBase" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleGastoBase" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GastoChequeSet">
+          <Key>
+            <PropertyRef Name="IdGastoCheque" />
+          </Key>
+          <Property Name="IdGastoCheque" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRendicionGasto" Type="Int64" Nullable="false" />
+          <Property Name="IdCheque" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GastoLocalSet">
+          <Key>
+            <PropertyRef Name="IdGastoLocal" />
+          </Key>
+          <Property Name="IdGastoLocal" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPagoLocal" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Detalle" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HorarioSet">
+          <Key>
+            <PropertyRef Name="IdHorario" />
+          </Key>
+          <Property Name="IdHorario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleHorario" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ItemPagadoSet">
+          <Key>
+            <PropertyRef Name="IdItemPagado" />
+          </Key>
+          <Property Name="IdItemPagado" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleItemPagado" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LocacionRolLocadorSet">
+          <Key>
+            <PropertyRef Name="IdLocacionRolLocador" />
+          </Key>
+          <Property Name="IdLocacionRolLocador" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLocacion" Type="Int64" Nullable="false" />
+          <Property Name="IdRolLocador" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LocacionSet">
+          <Key>
+            <PropertyRef Name="IdLocacion" />
+          </Key>
+          <Property Name="IdLocacion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleLocacion" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LocalidadSet">
+          <Key>
+            <PropertyRef Name="IdLocalidad" />
+          </Key>
+          <Property Name="IdLocalidad" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreLocalidad" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Pais" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MovimientoInternoEfectivoSet">
+          <Key>
+            <PropertyRef Name="IdMovimientoInternoEfectivo" />
+          </Key>
+          <Property Name="IdMovimientoInternoEfectivo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCajaEfectivoOrigen" Type="Int64" Nullable="false" />
+          <Property Name="FechaMovimientoInternoEfectivo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdcajaEfectivoDestino" Type="Int64" Nullable="false" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PagoChequeSet">
+          <Key>
+            <PropertyRef Name="IdPagoCheque" />
+          </Key>
+          <Property Name="IdPagoCheque" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPago" Type="Int64" Nullable="false" />
+          <Property Name="IdCheque" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalCajaEfectivoSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalCajaEfectivo" />
+          </Key>
+          <Property Name="IdPagoLocalCajaEfectivo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPagoLocal" Type="Int64" Nullable="false" />
+          <Property Name="FechaPagoCajaEfectivo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdCajaEfectivo" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalChequePropioSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalChequePropio" />
+          </Key>
+          <Property Name="IdPagoLocalChequePropio" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPagoLocal" Type="Int64" Nullable="false" />
+          <Property Name="IdChequePropio" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalChequeSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalCheque" />
+          </Key>
+          <Property Name="IdPagoLocalCheque" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPagoLocal" Type="Int64" Nullable="false" />
+          <Property Name="IdCheque" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalEnvioSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalEnvio" />
+          </Key>
+          <Property Name="IdPagoLocalEnvio" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEnvio" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdPagoLocal" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PagoLocalSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocal" />
+          </Key>
+          <Property Name="IdPagoLocal" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaPago" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdFormaPagoLocal" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalSueldoSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalSueldo" />
+          </Key>
+          <Property Name="IdPagoLocalSueldo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSueldoPago" Type="Int64" Nullable="false" />
+          <Property Name="IdPagoLocal" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoLocalTarjetaSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalTarjeta" />
+          </Key>
+          <Property Name="IdPagoLocalTarjeta" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPagoLocal" Type="Int64" Nullable="false" />
+          <Property Name="IdTarjetaPropia" Type="Int64" Nullable="false" />
+          <Property Name="CantCuotas" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PagoLocalTransferenciaSet">
+          <Key>
+            <PropertyRef Name="IdPagoLocalTransferencia" />
+          </Key>
+          <Property Name="IdPagoLocalTransferencia" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPagoLocal" Type="Int64" Nullable="false" />
+          <Property Name="IdTransferencia" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoSet">
+          <Key>
+            <PropertyRef Name="IdPago" />
+          </Key>
+          <Property Name="IdPago" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPlanVendedorAlumno" Type="Int64" Nullable="false" />
+          <Property Name="MontoPagado" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdFormaPago" Type="Int64" Nullable="false" />
+          <Property Name="IdItemPagado" Type="Int64" Nullable="false" />
+          <Property Name="NroRecibo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PagoTarjetaSet">
+          <Key>
+            <PropertyRef Name="IdPagoTarjeta" />
+          </Key>
+          <Property Name="IdPagoTarjeta" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPago" Type="Int64" Nullable="false" />
+          <Property Name="MontoAPagar" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdCuotas" Type="Int64" Nullable="false" />
+          <Property Name="Recargo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="MontoTotal" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="NumeroTarjeta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="EmisorTarjeta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CodSeguridad" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Vencimiento" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TitularTarjeta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="DNI" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CodAut" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdEstadoPagoTarjeta" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Permiso">
+          <Key>
+            <PropertyRef Name="IdPermiso" />
+          </Key>
+          <Property Name="IdPermiso" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+          <Property Name="DetallePermiso" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PermisoAcceso">
+          <Key>
+            <PropertyRef Name="IdPermisoAcceso" />
+          </Key>
+          <Property Name="IdPermisoAcceso" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPermiso" Type="Int64" Nullable="false" />
+          <Property Name="DetalleAcceso" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="PermisoActivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="IdPersona" />
+          </Key>
+          <Property Name="IdPersona" Type="Int64" annotation:StoreGeneratedPattern="None" Nullable="false" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Nombres" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNac" Type="DateTime" Nullable="false" />
+          <Property Name="DNI" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Barrio" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Ciudad" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Celular" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TelAlternativo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="EstadoCivil" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PlanBaseSet">
+          <Key>
+            <PropertyRef Name="IdPlanBase" />
+          </Key>
+          <Property Name="IdPlanBase" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="DetallePlanBase" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PlanVendedorAlumnoSet">
+          <Key>
+            <PropertyRef Name="IdPlanVendedorAlumno" />
+          </Key>
+          <Property Name="IdPlanVendedorAlumno" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NroRecibo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdRolCiudadActivaPlan" Type="Int64" Nullable="false" />
+          <Property Name="IdRolAlumno" Type="Int64" Nullable="false" />
+          <Property Name="IdRolVendedor" Type="Int64" Nullable="false" />
+          <Property Name="ObservacionGerente" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ObservacionOficinaBaires" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductosSet">
+          <Key>
+            <PropertyRef Name="IdProducto" />
+          </Key>
+          <Property Name="IdProducto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleProducto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Modelo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TipoProducto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProveedorSet">
+          <Key>
+            <PropertyRef Name="IdProveedor" />
+          </Key>
+          <Property Name="IdProveedor" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RazonSocial" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Contacto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TelefonoContacto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PuestoSet">
+          <Key>
+            <PropertyRef Name="IdPuesto" />
+          </Key>
+          <Property Name="IdPuesto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetallePuesto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="SueldoBasico" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+        </EntityType>
+        <EntityType Name="ReciboSet">
+          <Key>
+            <PropertyRef Name="IdRecibo" />
+          </Key>
+          <Property Name="IdRecibo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RendicionDepositoSet">
+          <Key>
+            <PropertyRef Name="IdRendicionDeposito" />
+          </Key>
+          <Property Name="IdRendicionDeposito" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="Int64" Nullable="false" />
+          <Property Name="IdDeposito" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionGastoSet">
+          <Key>
+            <PropertyRef Name="IdRendicionGasto" />
+          </Key>
+          <Property Name="IdRendicionGasto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="Int64" Nullable="false" />
+          <Property Name="IdGastoBase" Type="Int64" Nullable="false" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdFormaPago" Type="Int64" Nullable="false" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RendicionPagoSet">
+          <Key>
+            <PropertyRef Name="IdRendicionPago" />
+          </Key>
+          <Property Name="IdRendicionPago" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="Int64" Nullable="false" />
+          <Property Name="IdPago" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionPersonaCiudadSet">
+          <Key>
+            <PropertyRef Name="IdRendicionEmpleadoCiudad" />
+          </Key>
+          <Property Name="IdRendicionEmpleadoCiudad" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+          <Property Name="IdRolCiudadActiva" Type="Int64" Nullable="false" />
+          <Property Name="IdEstadoRendicion" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionSueldoSet">
+          <Key>
+            <PropertyRef Name="IdRendicionSueldo" />
+          </Key>
+          <Property Name="IdRendicionSueldo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="Int64" Nullable="false" />
+          <Property Name="IdSueldoPago" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionValeSet">
+          <Key>
+            <PropertyRef Name="IdRendicionVale" />
+          </Key>
+          <Property Name="IdRendicionVale" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRendicionEmpleadoCiudad" Type="Int64" Nullable="false" />
+          <Property Name="IdVale" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RendicionVentaEquipoSet">
+          <Key>
+            <PropertyRef Name="IdRendicionVentaEquipo" />
+          </Key>
+          <Property Name="IdRendicionVentaEquipo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPago" Type="Int64" Nullable="false" />
+          <Property Name="IdArmadoEquipo" Type="Int64" Nullable="false" />
+          <Property Name="IdEstadoVenta" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolAlumno">
+          <Key>
+            <PropertyRef Name="IdRolAlumno" />
+          </Key>
+          <Property Name="IdRolAlumno" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPersona" Type="Int64" Nullable="false" />
+          <Property Name="IdCapacitacion" Type="Int64" Nullable="false" />
+          <Property Name="IdEstadoAlumno" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolAlumnoPracticasSet">
+          <Key>
+            <PropertyRef Name="IdRolAlumnoPracticas" />
+          </Key>
+          <Property Name="IdRolAlumnoPracticas" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCiudadFechasHorarios" Type="Int64" Nullable="false" />
+          <Property Name="TipoPractica" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="EstadoPractica" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdRolAlumno" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolAlumnoPresentismoSet">
+          <Key>
+            <PropertyRef Name="IdRolAlumnoPresentismo" />
+          </Key>
+          <Property Name="IdRolAlumnoPresentismo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolAlumno" Type="Int64" Nullable="false" />
+          <Property Name="NumeroClase" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="EstadoClase" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RolCiudadActivaGastosSet">
+          <Key>
+            <PropertyRef Name="IdRolCiudadActivaGastos" />
+          </Key>
+          <Property Name="IdRolCiudadActivaGastos" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolCiudadActiva" Type="Int64" Nullable="false" />
+          <Property Name="IdGastoBase" Type="Int64" Nullable="false" />
+          <Property Name="ValorEstimMensual" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RolCiudadActivaHorarioSet">
+          <Key>
+            <PropertyRef Name="IdRolCiudadActivaHorario" />
+          </Key>
+          <Property Name="IdRolCiudadActivaHorario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdDia" Type="Int64" Nullable="false" />
+          <Property Name="IdHorario" Type="Int64" Nullable="false" />
+          <Property Name="IdRolCiudadActiva" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolCiudadActivaPlanSet">
+          <Key>
+            <PropertyRef Name="IdRolCiudadActivaPlan" />
+          </Key>
+          <Property Name="IdRolCiudadActivaPlan" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolCiudadActiva" Type="Int64" Nullable="false" />
+          <Property Name="IdPlanBase" Type="Int64" Nullable="false" />
+          <Property Name="ValorMatricula" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CantCuotas" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ValorCuota" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ValorDescuento" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ValorCertificado" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ComisionIda" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ComisionVuelta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ComisionCertificado" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RolCiudadActivaSet">
+          <Key>
+            <PropertyRef Name="IdRolCiudadActiva" />
+          </Key>
+          <Property Name="IdRolCiudadActiva" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCiudad" Type="Int64" Nullable="false" />
+          <Property Name="FechaInicioVenta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="FechaInicioDictado" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CantidadClases" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RolCiudadEnProcesoSet">
+          <Key>
+            <PropertyRef Name="IdRolCiudadEnProceso" />
+          </Key>
+          <Property Name="IdRolCiudadEnProceso" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCiudad" Type="Int64" Nullable="false" />
+          <Property Name="InformeCiudad" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RolDocenteSet">
+          <Key>
+            <PropertyRef Name="IdRolDocente" />
+          </Key>
+          <Property Name="IdRolDocente" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolEmpleado">
+          <Key>
+            <PropertyRef Name="IdRolEmpleado" />
+          </Key>
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+          <Property Name="IdPersona" Type="Int64" Nullable="false" />
+          <Property Name="IdPuesto" Type="Int64" Nullable="false" />
+          <Property Name="CelCorp" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Usuario" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="SueldoBasico" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+        </EntityType>
+        <EntityType Name="RolEmpleadoActual">
+          <Key>
+            <PropertyRef Name="IdRolEmpleadoActual" />
+          </Key>
+          <Property Name="IdRolEmpleadoActual" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolLocacionAlojamientoSet">
+          <Key>
+            <PropertyRef Name="IdRolLocacionAlojamiento" />
+          </Key>
+          <Property Name="IdRolLocacionAlojamiento" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLocacion" Type="Int64" Nullable="false" />
+          <Property Name="Dias" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CantDormitorios" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CantCamas" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RolLocacionSalonSet">
+          <Key>
+            <PropertyRef Name="IdRolLocacionSalon" />
+          </Key>
+          <Property Name="IdRolLocacionSalon" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLocacion" Type="Int64" Nullable="false" />
+          <Property Name="Tamaño" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Mesas" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Sillas" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AireAcondicionado" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Calefaccion" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RolLocadorSet">
+          <Key>
+            <PropertyRef Name="IdRolLocador" />
+          </Key>
+          <Property Name="IdRolLocador" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPersona" Type="Int64" Nullable="false" />
+          <Property Name="Condicion" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RolVendedor">
+          <Key>
+            <PropertyRef Name="IdRolVendedor" />
+          </Key>
+          <Property Name="IdRolVendedor" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+          <Property Name="IdSubgerente" Type="Int64" Nullable="false" />
+          <Property Name="IdGerente" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SueldoPagoSet">
+          <Key>
+            <PropertyRef Name="IdSueldoPago" />
+          </Key>
+          <Property Name="IdSueldoPago" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+          <Property Name="Periodo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TarjetaPropiaSet">
+          <Key>
+            <PropertyRef Name="IdTarjetaPropia" />
+          </Key>
+          <Property Name="IdTarjetaPropia" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emsior" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="NroTarjeta" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="FechaVto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CodSeguridad" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Titular" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="DNI" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TipoChequeSet">
+          <Key>
+            <PropertyRef Name="IdTipoCheque" />
+          </Key>
+          <Property Name="IdTipoCheque" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetalleTipoCheque" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TransferenciaSet">
+          <Key>
+            <PropertyRef Name="IdTransferencia" />
+          </Key>
+          <Property Name="IdTransferencia" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCuentaBanco" Type="Int64" Nullable="false" />
+          <Property Name="IdCuentaBancoTercero" Type="Int64" Nullable="false" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdEstadoTransferencia" Type="Int64" Nullable="false" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ValeFinanciacionSet">
+          <Key>
+            <PropertyRef Name="IdValeFinanciacion" />
+          </Key>
+          <Property Name="IdValeFinanciacion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdVale" Type="Int64" Nullable="false" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="PeriodoDescuento" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ValeSet">
+          <Key>
+            <PropertyRef Name="IdVale" />
+          </Key>
+          <Property Name="IdVale" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdRolEmpleado" Type="Int64" Nullable="false" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SqliteClientDataBaseModelStoreContainer" CdmEntityContainer="SqliteClientDataBaseEntitiesFinal">
+          <EntitySetMapping Name="AlumnoHorarioSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.AlumnoHorarioSet">
+              <MappingFragment StoreEntitySet="AlumnoHorarioSet">
+                <ScalarProperty Name="TipoHorario" ColumnName="TipoHorario" />
+                <ScalarProperty Name="IdRolCiudadActivaHorario" ColumnName="IdRolCiudadActivaHorario" />
+                <ScalarProperty Name="IdRolAlumno" ColumnName="IdRolAlumno" />
+                <ScalarProperty Name="IdAlumnoHorario" ColumnName="IdAlumnoHorario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArmadoEquipoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.ArmadoEquipoSet">
+              <MappingFragment StoreEntitySet="ArmadoEquipoSet">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="NumeroEquipo" ColumnName="NumeroEquipo" />
+                <ScalarProperty Name="IdArmadoEquipo" ColumnName="IdArmadoEquipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AsignacionCiudadEquiposSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.AsignacionCiudadEquiposSet">
+              <MappingFragment StoreEntitySet="AsignacionCiudadEquiposSet">
+                <ScalarProperty Name="IdEstadoAsignacionEquipo" ColumnName="IdEstadoAsignacionEquipo" />
+                <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdAsignacionCiudadEquipo" ColumnName="IdAsignacionCiudadEquipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AsignacionReciboSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.AsignacionReciboSet">
+              <MappingFragment StoreEntitySet="AsignacionReciboSet">
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+                <ScalarProperty Name="IdRecibo" ColumnName="IdRecibo" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdAsignacionRecibo" ColumnName="IdAsignacionRecibo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CajaEfectivoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CajaEfectivoSet">
+              <MappingFragment StoreEntitySet="CajaEfectivoSet">
+                <ScalarProperty Name="DetalleCajaEfectivo" ColumnName="DetalleCajaEfectivo" />
+                <ScalarProperty Name="IdCajaEfectivo" ColumnName="IdCajaEfectivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CapacitacionSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CapacitacionSet">
+              <MappingFragment StoreEntitySet="CapacitacionSet">
+                <ScalarProperty Name="Temario" ColumnName="Temario" />
+                <ScalarProperty Name="NombreCapacitacion" ColumnName="NombreCapacitacion" />
+                <ScalarProperty Name="IdCapacitacion" ColumnName="IdCapacitacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChequePropioSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.ChequePropioSet">
+              <MappingFragment StoreEntitySet="ChequePropioSet">
+                <ScalarProperty Name="IdCuentaBanco" ColumnName="IdCuentaBanco" />
+                <ScalarProperty Name="IdEstadoCheque" ColumnName="IdEstadoCheque" />
+                <ScalarProperty Name="Destinatario" ColumnName="Destinatario" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+                <ScalarProperty Name="NroCheque" ColumnName="NroCheque" />
+                <ScalarProperty Name="IdChequePropio" ColumnName="IdChequePropio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChequeSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.ChequeSet">
+              <MappingFragment StoreEntitySet="ChequeSet">
+                <ScalarProperty Name="IdEstadoCheque" ColumnName="IdEstadoCheque" />
+                <ScalarProperty Name="IdTipoCheque" ColumnName="IdTipoCheque" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+                <ScalarProperty Name="NroCheque" ColumnName="NroCheque" />
+                <ScalarProperty Name="Titular" ColumnName="Titular" />
+                <ScalarProperty Name="Banco" ColumnName="Banco" />
+                <ScalarProperty Name="IdCheque" ColumnName="IdCheque" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CiudadActivaLocacionesSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CiudadActivaLocacionesSet">
+              <MappingFragment StoreEntitySet="CiudadActivaLocacionesSet">
+                <ScalarProperty Name="IdLocacion" ColumnName="IdLocacion" />
+                <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+                <ScalarProperty Name="IdCiudadActivaLocaciones" ColumnName="IdCiudadActivaLocaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CiudadEquiposSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CiudadEquiposSet">
+              <MappingFragment StoreEntitySet="CiudadEquiposSet">
+                <ScalarProperty Name="IdArmadoEquipo" ColumnName="IdArmadoEquipo" />
+                <ScalarProperty Name="IdAsignacionCiudadEquipo" ColumnName="IdAsignacionCiudadEquipo" />
+                <ScalarProperty Name="IdCiudadEquipos" ColumnName="IdCiudadEquipos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CiudadFechasHorariosSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CiudadFechasHorariosSet">
+              <MappingFragment StoreEntitySet="CiudadFechasHorariosSet">
+                <ScalarProperty Name="IdRolCiudadActivaHorarios" ColumnName="IdRolCiudadActivaHorarios" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+                <ScalarProperty Name="IdCiudadFechasHorarios" ColumnName="IdCiudadFechasHorarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CiudadPersonalSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CiudadPersonalSet">
+              <MappingFragment StoreEntitySet="CiudadPersonalSet">
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+                <ScalarProperty Name="IdCiudadPersonal" ColumnName="IdCiudadPersonal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CiudadProductosSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CiudadProductosSet">
+              <MappingFragment StoreEntitySet="CiudadProductosSet">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="IdAsignacionCiudadEquipo" ColumnName="IdAsignacionCiudadEquipo" />
+                <ScalarProperty Name="IdCiudadProductos" ColumnName="IdCiudadProductos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CiudadSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CiudadSet">
+              <MappingFragment StoreEntitySet="CiudadSet">
+                <ScalarProperty Name="NumeroLinea" ColumnName="NumeroLinea" />
+                <ScalarProperty Name="Activa" ColumnName="Activa" />
+                <ScalarProperty Name="CantidadMeses" ColumnName="CantidadMeses" />
+                <ScalarProperty Name="PeriodoApertura" ColumnName="PeriodoApertura" />
+                <ScalarProperty Name="IdLocalidad" ColumnName="IdLocalidad" />
+                <ScalarProperty Name="DesignacionCiudad" ColumnName="DesignacionCiudad" />
+                <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoeficTarjetasSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CoeficTarjetasSet">
+              <MappingFragment StoreEntitySet="CoeficTarjetasSet">
+                <ScalarProperty Name="Coeficiente" ColumnName="Coeficiente" />
+                <ScalarProperty Name="IdCuotas" ColumnName="IdCuotas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompraSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CompraSet">
+              <MappingFragment StoreEntitySet="CompraSet">
+                <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+                <ScalarProperty Name="IdEstadoCompra" ColumnName="IdEstadoCompra" />
+                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CondicionEmpleadoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CondicionEmpleadoSet">
+              <MappingFragment StoreEntitySet="CondicionEmpleadoSet">
+                <ScalarProperty Name="DetalleCOndicionEmpleado" ColumnName="DetalleCOndicionEmpleado" />
+                <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CuentaBancoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CuentaBancoSet">
+              <MappingFragment StoreEntitySet="CuentaBancoSet">
+                <ScalarProperty Name="CuentaActiva" ColumnName="CuentaActiva" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Cuit" ColumnName="Cuit" />
+                <ScalarProperty Name="Titular" ColumnName="Titular" />
+                <ScalarProperty Name="CBU" ColumnName="CBU" />
+                <ScalarProperty Name="TipoCuenta" ColumnName="TipoCuenta" />
+                <ScalarProperty Name="NroCuenta" ColumnName="NroCuenta" />
+                <ScalarProperty Name="Banco" ColumnName="Banco" />
+                <ScalarProperty Name="IdCuentaBanco" ColumnName="IdCuentaBanco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CuentaBancoTerceroSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.CuentaBancoTerceroSet">
+              <MappingFragment StoreEntitySet="CuentaBancoTerceroSet">
+                <ScalarProperty Name="CuentaActiva" ColumnName="CuentaActiva" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Cuit" ColumnName="Cuit" />
+                <ScalarProperty Name="Titular" ColumnName="Titular" />
+                <ScalarProperty Name="CBU" ColumnName="CBU" />
+                <ScalarProperty Name="TipoCuenta" ColumnName="TipoCuenta" />
+                <ScalarProperty Name="NroCuenta" ColumnName="NroCuenta" />
+                <ScalarProperty Name="Banco" ColumnName="Banco" />
+                <ScalarProperty Name="IdCuentaBanco" ColumnName="IdCuentaBanco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepositoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.DepositoSet">
+              <MappingFragment StoreEntitySet="DepositoSet">
+                <ScalarProperty Name="IdEstadoDeposito" ColumnName="IdEstadoDeposito" />
+                <ScalarProperty Name="IdCuentaBanco" ColumnName="IdCuentaBanco" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+                <ScalarProperty Name="IdDeposito" ColumnName="IdDeposito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleArmadoEquipoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.DetalleArmadoEquipoSet">
+              <MappingFragment StoreEntitySet="DetalleArmadoEquipoSet">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="IdArmadoEquipo" ColumnName="IdArmadoEquipo" />
+                <ScalarProperty Name="IdDetalleArmadoEquipo" ColumnName="IdDetalleArmadoEquipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleCompraSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.DetalleCompraSet">
+              <MappingFragment StoreEntitySet="DetalleCompraSet">
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+                <ScalarProperty Name="IdDetalleCompra" ColumnName="IdDetalleCompra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleCondicionEmpleado">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.DetalleCondicionEmpleado">
+              <MappingFragment StoreEntitySet="DetalleCondicionEmpleado">
+                <ScalarProperty Name="MontoCondicion" ColumnName="MontoCondicion" />
+                <ScalarProperty Name="IdCondicionEmpleado" ColumnName="IdCondicionEmpleado" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+                <ScalarProperty Name="IdRolEmpleadoCondicion" ColumnName="IdRolEmpleadoCondicion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiaSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.DiaSet">
+              <MappingFragment StoreEntitySet="DiaSet">
+                <ScalarProperty Name="DetalleDia" ColumnName="DetalleDia" />
+                <ScalarProperty Name="IdDia" ColumnName="IdDia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnvioCiudadEquiposSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EnvioCiudadEquiposSet">
+              <MappingFragment StoreEntitySet="EnvioCiudadEquiposSet">
+                <ScalarProperty Name="IdAsignacionCiudadEquipo" ColumnName="IdAsignacionCiudadEquipo" />
+                <ScalarProperty Name="IdEnvio" ColumnName="IdEnvio" />
+                <ScalarProperty Name="IdEnvioCiudadEquipos" ColumnName="IdEnvioCiudadEquipos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnvioSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EnvioSet">
+              <MappingFragment StoreEntitySet="EnvioSet">
+                <ScalarProperty Name="NumeroGuia" ColumnName="NumeroGuia" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="EstadoEnvio" ColumnName="EstadoEnvio" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="TipoPago" ColumnName="TipoPago" />
+                <ScalarProperty Name="Destinatarios" ColumnName="Destinatarios" />
+                <ScalarProperty Name="Remitente" ColumnName="Remitente" />
+                <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+                <ScalarProperty Name="CiudadDestinoEnvio" ColumnName="CiudadDestinoEnvio" />
+                <ScalarProperty Name="CiudadOrigenEnvio" ColumnName="CiudadOrigenEnvio" />
+                <ScalarProperty Name="CantidadBultos" ColumnName="CantidadBultos" />
+                <ScalarProperty Name="TipoEntregaEnvio" ColumnName="TipoEntregaEnvio" />
+                <ScalarProperty Name="TipoRetiroEnvio" ColumnName="TipoRetiroEnvio" />
+                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+                <ScalarProperty Name="FechaEstimadaRecepción" ColumnName="FechaEstimadaRecepción" />
+                <ScalarProperty Name="FechaSalidaEnvío" ColumnName="FechaSalidaEnvío" />
+                <ScalarProperty Name="FechaSolicitudEnvío" ColumnName="FechaSolicitudEnvío" />
+                <ScalarProperty Name="IdEnvio" ColumnName="IdEnvio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoAlumno">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EstadoAlumno">
+              <MappingFragment StoreEntitySet="EstadoAlumno">
+                <ScalarProperty Name="DetalleEstadoAlumno" ColumnName="DetalleEstadoAlumno" />
+                <ScalarProperty Name="IdEstadoAlumno" ColumnName="IdEstadoAlumno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoAsignacionEquipoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EstadoAsignacionEquipoSet">
+              <MappingFragment StoreEntitySet="EstadoAsignacionEquipoSet">
+                <ScalarProperty Name="DetalleEstadoASignacionEquipo" ColumnName="DetalleEstadoASignacionEquipo" />
+                <ScalarProperty Name="IdEstadoAsignacionEquipo" ColumnName="IdEstadoAsignacionEquipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoChequeSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EstadoChequeSet">
+              <MappingFragment StoreEntitySet="EstadoChequeSet">
+                <ScalarProperty Name="DetalleEstadoCheque" ColumnName="DetalleEstadoCheque" />
+                <ScalarProperty Name="IdEstadoCheque" ColumnName="IdEstadoCheque" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoCompraSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EstadoCompraSet">
+              <MappingFragment StoreEntitySet="EstadoCompraSet">
+                <ScalarProperty Name="DetalleEstadoCompra" ColumnName="DetalleEstadoCompra" />
+                <ScalarProperty Name="IdEstadoCompra" ColumnName="IdEstadoCompra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoDepositoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EstadoDepositoSet">
+              <MappingFragment StoreEntitySet="EstadoDepositoSet">
+                <ScalarProperty Name="DetalleEstado" ColumnName="DetalleEstado" />
+                <ScalarProperty Name="IdEstadoDeposito" ColumnName="IdEstadoDeposito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoPagoTarjetaSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EstadoPagoTarjetaSet">
+              <MappingFragment StoreEntitySet="EstadoPagoTarjetaSet">
+                <ScalarProperty Name="DetalleEstadoPagoTarjeta" ColumnName="DetalleEstadoPagoTarjeta" />
+                <ScalarProperty Name="IdEstadoPagoTarjeta" ColumnName="IdEstadoPagoTarjeta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoRendicionSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EstadoRendicionSet">
+              <MappingFragment StoreEntitySet="EstadoRendicionSet">
+                <ScalarProperty Name="DetalleEstadoRednicion" ColumnName="DetalleEstadoRednicion" />
+                <ScalarProperty Name="IdEstadoRendicion" ColumnName="IdEstadoRendicion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoTransferenciaSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EstadoTransferenciaSet">
+              <MappingFragment StoreEntitySet="EstadoTransferenciaSet">
+                <ScalarProperty Name="DetalleEstadoTransferencia" ColumnName="DetalleEstadoTransferencia" />
+                <ScalarProperty Name="IdEstadoTransferencia" ColumnName="IdEstadoTransferencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoVentaSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.EstadoVentaSet">
+              <MappingFragment StoreEntitySet="EstadoVentaSet">
+                <ScalarProperty Name="DetalleEstadoVenta" ColumnName="DetalleEstadoVenta" />
+                <ScalarProperty Name="IdEstadoVenta" ColumnName="IdEstadoVenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormaPagoLocalSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.FormaPagoLocalSet">
+              <MappingFragment StoreEntitySet="FormaPagoLocalSet">
+                <ScalarProperty Name="DetalleFormaPagoLocal" ColumnName="DetalleFormaPagoLocal" />
+                <ScalarProperty Name="IdFormaPagoLocal" ColumnName="IdFormaPagoLocal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormaPagoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.FormaPagoSet">
+              <MappingFragment StoreEntitySet="FormaPagoSet">
+                <ScalarProperty Name="DetalleFormaPago" ColumnName="DetalleFormaPago" />
+                <ScalarProperty Name="IdFormaPago" ColumnName="IdFormaPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GastoBaseSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.GastoBaseSet">
+              <MappingFragment StoreEntitySet="GastoBaseSet">
+                <ScalarProperty Name="DetalleGastoBase" ColumnName="DetalleGastoBase" />
+                <ScalarProperty Name="IdGastoBase" ColumnName="IdGastoBase" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GastoChequeSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.GastoChequeSet">
+              <MappingFragment StoreEntitySet="GastoChequeSet">
+                <ScalarProperty Name="IdCheque" ColumnName="IdCheque" />
+                <ScalarProperty Name="IdRendicionGasto" ColumnName="IdRendicionGasto" />
+                <ScalarProperty Name="IdGastoCheque" ColumnName="IdGastoCheque" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GastoLocalSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.GastoLocalSet">
+              <MappingFragment StoreEntitySet="GastoLocalSet">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+                <ScalarProperty Name="IdGastoLocal" ColumnName="IdGastoLocal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HorarioSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.HorarioSet">
+              <MappingFragment StoreEntitySet="HorarioSet">
+                <ScalarProperty Name="DetalleHorario" ColumnName="DetalleHorario" />
+                <ScalarProperty Name="IdHorario" ColumnName="IdHorario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemPagadoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.ItemPagadoSet">
+              <MappingFragment StoreEntitySet="ItemPagadoSet">
+                <ScalarProperty Name="DetalleItemPagado" ColumnName="DetalleItemPagado" />
+                <ScalarProperty Name="IdItemPagado" ColumnName="IdItemPagado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocacionRolLocadorSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.LocacionRolLocadorSet">
+              <MappingFragment StoreEntitySet="LocacionRolLocadorSet">
+                <ScalarProperty Name="IdRolLocador" ColumnName="IdRolLocador" />
+                <ScalarProperty Name="IdLocacion" ColumnName="IdLocacion" />
+                <ScalarProperty Name="IdLocacionRolLocador" ColumnName="IdLocacionRolLocador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocacionSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.LocacionSet">
+              <MappingFragment StoreEntitySet="LocacionSet">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="DetalleLocacion" ColumnName="DetalleLocacion" />
+                <ScalarProperty Name="IdLocacion" ColumnName="IdLocacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocalidadSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.LocalidadSet">
+              <MappingFragment StoreEntitySet="LocalidadSet">
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="NombreLocalidad" ColumnName="NombreLocalidad" />
+                <ScalarProperty Name="IdLocalidad" ColumnName="IdLocalidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovimientoInternoEfectivoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.MovimientoInternoEfectivoSet">
+              <MappingFragment StoreEntitySet="MovimientoInternoEfectivoSet">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="IdcajaEfectivoDestino" ColumnName="IdcajaEfectivoDestino" />
+                <ScalarProperty Name="FechaMovimientoInternoEfectivo" ColumnName="FechaMovimientoInternoEfectivo" />
+                <ScalarProperty Name="IdCajaEfectivoOrigen" ColumnName="IdCajaEfectivoOrigen" />
+                <ScalarProperty Name="IdMovimientoInternoEfectivo" ColumnName="IdMovimientoInternoEfectivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoChequeSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoChequeSet">
+              <MappingFragment StoreEntitySet="PagoChequeSet">
+                <ScalarProperty Name="IdCheque" ColumnName="IdCheque" />
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+                <ScalarProperty Name="IdPagoCheque" ColumnName="IdPagoCheque" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoLocalCajaEfectivoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoLocalCajaEfectivoSet">
+              <MappingFragment StoreEntitySet="PagoLocalCajaEfectivoSet">
+                <ScalarProperty Name="IdCajaEfectivo" ColumnName="IdCajaEfectivo" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="FechaPagoCajaEfectivo" ColumnName="FechaPagoCajaEfectivo" />
+                <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+                <ScalarProperty Name="IdPagoLocalCajaEfectivo" ColumnName="IdPagoLocalCajaEfectivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoLocalChequePropioSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoLocalChequePropioSet">
+              <MappingFragment StoreEntitySet="PagoLocalChequePropioSet">
+                <ScalarProperty Name="IdChequePropio" ColumnName="IdChequePropio" />
+                <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+                <ScalarProperty Name="IdPagoLocalChequePropio" ColumnName="IdPagoLocalChequePropio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoLocalChequeSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoLocalChequeSet">
+              <MappingFragment StoreEntitySet="PagoLocalChequeSet">
+                <ScalarProperty Name="IdCheque" ColumnName="IdCheque" />
+                <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+                <ScalarProperty Name="IdPagoLocalCheque" ColumnName="IdPagoLocalCheque" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoLocalEnvioSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoLocalEnvioSet">
+              <MappingFragment StoreEntitySet="PagoLocalEnvioSet">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+                <ScalarProperty Name="IdEnvio" ColumnName="IdEnvio" />
+                <ScalarProperty Name="IdPagoLocalEnvio" ColumnName="IdPagoLocalEnvio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoLocalSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoLocalSet">
+              <MappingFragment StoreEntitySet="PagoLocalSet">
+                <ScalarProperty Name="IdFormaPagoLocal" ColumnName="IdFormaPagoLocal" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoLocalSueldoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoLocalSueldoSet">
+              <MappingFragment StoreEntitySet="PagoLocalSueldoSet">
+                <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+                <ScalarProperty Name="IdSueldoPago" ColumnName="IdSueldoPago" />
+                <ScalarProperty Name="IdPagoLocalSueldo" ColumnName="IdPagoLocalSueldo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoLocalTarjetaSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoLocalTarjetaSet">
+              <MappingFragment StoreEntitySet="PagoLocalTarjetaSet">
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="CantCuotas" ColumnName="CantCuotas" />
+                <ScalarProperty Name="IdTarjetaPropia" ColumnName="IdTarjetaPropia" />
+                <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+                <ScalarProperty Name="IdPagoLocalTarjeta" ColumnName="IdPagoLocalTarjeta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoLocalTransferenciaSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoLocalTransferenciaSet">
+              <MappingFragment StoreEntitySet="PagoLocalTransferenciaSet">
+                <ScalarProperty Name="IdTransferencia" ColumnName="IdTransferencia" />
+                <ScalarProperty Name="IdPagoLocal" ColumnName="IdPagoLocal" />
+                <ScalarProperty Name="IdPagoLocalTransferencia" ColumnName="IdPagoLocalTransferencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoSet">
+              <MappingFragment StoreEntitySet="PagoSet">
+                <ScalarProperty Name="NroRecibo" ColumnName="NroRecibo" />
+                <ScalarProperty Name="IdItemPagado" ColumnName="IdItemPagado" />
+                <ScalarProperty Name="IdFormaPago" ColumnName="IdFormaPago" />
+                <ScalarProperty Name="MontoPagado" ColumnName="MontoPagado" />
+                <ScalarProperty Name="IdPlanVendedorAlumno" ColumnName="IdPlanVendedorAlumno" />
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoTarjetaSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PagoTarjetaSet">
+              <MappingFragment StoreEntitySet="PagoTarjetaSet">
+                <ScalarProperty Name="IdEstadoPagoTarjeta" ColumnName="IdEstadoPagoTarjeta" />
+                <ScalarProperty Name="CodAut" ColumnName="CodAut" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="TitularTarjeta" ColumnName="TitularTarjeta" />
+                <ScalarProperty Name="Vencimiento" ColumnName="Vencimiento" />
+                <ScalarProperty Name="CodSeguridad" ColumnName="CodSeguridad" />
+                <ScalarProperty Name="EmisorTarjeta" ColumnName="EmisorTarjeta" />
+                <ScalarProperty Name="NumeroTarjeta" ColumnName="NumeroTarjeta" />
+                <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
+                <ScalarProperty Name="Recargo" ColumnName="Recargo" />
+                <ScalarProperty Name="IdCuotas" ColumnName="IdCuotas" />
+                <ScalarProperty Name="MontoAPagar" ColumnName="MontoAPagar" />
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+                <ScalarProperty Name="IdPagoTarjeta" ColumnName="IdPagoTarjeta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permiso">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.Permiso">
+              <MappingFragment StoreEntitySet="Permiso">
+                <ScalarProperty Name="DetallePermiso" ColumnName="DetallePermiso" />
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+                <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisoAcceso">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PermisoAcceso">
+              <MappingFragment StoreEntitySet="PermisoAcceso">
+                <ScalarProperty Name="PermisoActivo" ColumnName="PermisoActivo" />
+                <ScalarProperty Name="DetalleAcceso" ColumnName="DetalleAcceso" />
+                <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
+                <ScalarProperty Name="IdPermisoAcceso" ColumnName="IdPermisoAcceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persona">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.Persona">
+              <MappingFragment StoreEntitySet="Persona">
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="TelAlternativo" ColumnName="TelAlternativo" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Barrio" ColumnName="Barrio" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanBaseSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PlanBaseSet">
+              <MappingFragment StoreEntitySet="PlanBaseSet">
+                <ScalarProperty Name="DetallePlanBase" ColumnName="DetallePlanBase" />
+                <ScalarProperty Name="IdPlanBase" ColumnName="IdPlanBase" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanVendedorAlumnoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PlanVendedorAlumnoSet">
+              <MappingFragment StoreEntitySet="PlanVendedorAlumnoSet">
+                <ScalarProperty Name="ObservacionOficinaBaires" ColumnName="ObservacionOficinaBaires" />
+                <ScalarProperty Name="ObservacionGerente" ColumnName="ObservacionGerente" />
+                <ScalarProperty Name="IdRolVendedor" ColumnName="IdRolVendedor" />
+                <ScalarProperty Name="IdRolAlumno" ColumnName="IdRolAlumno" />
+                <ScalarProperty Name="IdRolCiudadActivaPlan" ColumnName="IdRolCiudadActivaPlan" />
+                <ScalarProperty Name="NroRecibo" ColumnName="NroRecibo" />
+                <ScalarProperty Name="IdPlanVendedorAlumno" ColumnName="IdPlanVendedorAlumno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductosSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.ProductosSet">
+              <MappingFragment StoreEntitySet="ProductosSet">
+                <ScalarProperty Name="TipoProducto" ColumnName="TipoProducto" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="DetalleProducto" ColumnName="DetalleProducto" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProveedorSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.ProveedorSet">
+              <MappingFragment StoreEntitySet="ProveedorSet">
+                <ScalarProperty Name="TelefonoContacto" ColumnName="TelefonoContacto" />
+                <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PuestoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.PuestoSet">
+              <MappingFragment StoreEntitySet="PuestoSet">
+                <ScalarProperty Name="SueldoBasico" ColumnName="SueldoBasico" />
+                <ScalarProperty Name="DetallePuesto" ColumnName="DetallePuesto" />
+                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReciboSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.ReciboSet">
+              <MappingFragment StoreEntitySet="ReciboSet">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdRecibo" ColumnName="IdRecibo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RendicionDepositoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RendicionDepositoSet">
+              <MappingFragment StoreEntitySet="RendicionDepositoSet">
+                <ScalarProperty Name="IdDeposito" ColumnName="IdDeposito" />
+                <ScalarProperty Name="IdRendicionEmpleadoCiudad" ColumnName="IdRendicionEmpleadoCiudad" />
+                <ScalarProperty Name="IdRendicionDeposito" ColumnName="IdRendicionDeposito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RendicionGastoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RendicionGastoSet">
+              <MappingFragment StoreEntitySet="RendicionGastoSet">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="IdFormaPago" ColumnName="IdFormaPago" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="IdGastoBase" ColumnName="IdGastoBase" />
+                <ScalarProperty Name="IdRendicionEmpleadoCiudad" ColumnName="IdRendicionEmpleadoCiudad" />
+                <ScalarProperty Name="IdRendicionGasto" ColumnName="IdRendicionGasto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RendicionPagoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RendicionPagoSet">
+              <MappingFragment StoreEntitySet="RendicionPagoSet">
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+                <ScalarProperty Name="IdRendicionEmpleadoCiudad" ColumnName="IdRendicionEmpleadoCiudad" />
+                <ScalarProperty Name="IdRendicionPago" ColumnName="IdRendicionPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RendicionPersonaCiudadSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RendicionPersonaCiudadSet">
+              <MappingFragment StoreEntitySet="RendicionPersonaCiudadSet">
+                <ScalarProperty Name="IdEstadoRendicion" ColumnName="IdEstadoRendicion" />
+                <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+                <ScalarProperty Name="IdRendicionEmpleadoCiudad" ColumnName="IdRendicionEmpleadoCiudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RendicionSueldoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RendicionSueldoSet">
+              <MappingFragment StoreEntitySet="RendicionSueldoSet">
+                <ScalarProperty Name="IdSueldoPago" ColumnName="IdSueldoPago" />
+                <ScalarProperty Name="IdRendicionEmpleadoCiudad" ColumnName="IdRendicionEmpleadoCiudad" />
+                <ScalarProperty Name="IdRendicionSueldo" ColumnName="IdRendicionSueldo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RendicionValeSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RendicionValeSet">
+              <MappingFragment StoreEntitySet="RendicionValeSet">
+                <ScalarProperty Name="IdVale" ColumnName="IdVale" />
+                <ScalarProperty Name="IdRendicionEmpleadoCiudad" ColumnName="IdRendicionEmpleadoCiudad" />
+                <ScalarProperty Name="IdRendicionVale" ColumnName="IdRendicionVale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RendicionVentaEquipoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RendicionVentaEquipoSet">
+              <MappingFragment StoreEntitySet="RendicionVentaEquipoSet">
+                <ScalarProperty Name="IdEstadoVenta" ColumnName="IdEstadoVenta" />
+                <ScalarProperty Name="IdArmadoEquipo" ColumnName="IdArmadoEquipo" />
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+                <ScalarProperty Name="IdRendicionVentaEquipo" ColumnName="IdRendicionVentaEquipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolAlumno">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolAlumno">
+              <MappingFragment StoreEntitySet="RolAlumno">
+                <ScalarProperty Name="IdEstadoAlumno" ColumnName="IdEstadoAlumno" />
+                <ScalarProperty Name="IdCapacitacion" ColumnName="IdCapacitacion" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+                <ScalarProperty Name="IdRolAlumno" ColumnName="IdRolAlumno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolAlumnoPracticasSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolAlumnoPracticasSet">
+              <MappingFragment StoreEntitySet="RolAlumnoPracticasSet">
+                <ScalarProperty Name="IdRolAlumno" ColumnName="IdRolAlumno" />
+                <ScalarProperty Name="EstadoPractica" ColumnName="EstadoPractica" />
+                <ScalarProperty Name="TipoPractica" ColumnName="TipoPractica" />
+                <ScalarProperty Name="IdCiudadFechasHorarios" ColumnName="IdCiudadFechasHorarios" />
+                <ScalarProperty Name="IdRolAlumnoPracticas" ColumnName="IdRolAlumnoPracticas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolAlumnoPresentismoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolAlumnoPresentismoSet">
+              <MappingFragment StoreEntitySet="RolAlumnoPresentismoSet">
+                <ScalarProperty Name="EstadoClase" ColumnName="EstadoClase" />
+                <ScalarProperty Name="NumeroClase" ColumnName="NumeroClase" />
+                <ScalarProperty Name="IdRolAlumno" ColumnName="IdRolAlumno" />
+                <ScalarProperty Name="IdRolAlumnoPresentismo" ColumnName="IdRolAlumnoPresentismo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolCiudadActivaGastosSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolCiudadActivaGastosSet">
+              <MappingFragment StoreEntitySet="RolCiudadActivaGastosSet">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="ValorEstimMensual" ColumnName="ValorEstimMensual" />
+                <ScalarProperty Name="IdGastoBase" ColumnName="IdGastoBase" />
+                <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+                <ScalarProperty Name="IdRolCiudadActivaGastos" ColumnName="IdRolCiudadActivaGastos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolCiudadActivaHorarioSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolCiudadActivaHorarioSet">
+              <MappingFragment StoreEntitySet="RolCiudadActivaHorarioSet">
+                <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+                <ScalarProperty Name="IdHorario" ColumnName="IdHorario" />
+                <ScalarProperty Name="IdDia" ColumnName="IdDia" />
+                <ScalarProperty Name="IdRolCiudadActivaHorario" ColumnName="IdRolCiudadActivaHorario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolCiudadActivaPlanSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolCiudadActivaPlanSet">
+              <MappingFragment StoreEntitySet="RolCiudadActivaPlanSet">
+                <ScalarProperty Name="ComisionCertificado" ColumnName="ComisionCertificado" />
+                <ScalarProperty Name="ComisionVuelta" ColumnName="ComisionVuelta" />
+                <ScalarProperty Name="ComisionIda" ColumnName="ComisionIda" />
+                <ScalarProperty Name="ValorCertificado" ColumnName="ValorCertificado" />
+                <ScalarProperty Name="ValorDescuento" ColumnName="ValorDescuento" />
+                <ScalarProperty Name="ValorCuota" ColumnName="ValorCuota" />
+                <ScalarProperty Name="CantCuotas" ColumnName="CantCuotas" />
+                <ScalarProperty Name="ValorMatricula" ColumnName="ValorMatricula" />
+                <ScalarProperty Name="IdPlanBase" ColumnName="IdPlanBase" />
+                <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+                <ScalarProperty Name="IdRolCiudadActivaPlan" ColumnName="IdRolCiudadActivaPlan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolCiudadActivaSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolCiudadActivaSet">
+              <MappingFragment StoreEntitySet="RolCiudadActivaSet">
+                <ScalarProperty Name="CantidadClases" ColumnName="CantidadClases" />
+                <ScalarProperty Name="FechaInicioDictado" ColumnName="FechaInicioDictado" />
+                <ScalarProperty Name="FechaInicioVenta" ColumnName="FechaInicioVenta" />
+                <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+                <ScalarProperty Name="IdRolCiudadActiva" ColumnName="IdRolCiudadActiva" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolCiudadEnProcesoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolCiudadEnProcesoSet">
+              <MappingFragment StoreEntitySet="RolCiudadEnProcesoSet">
+                <ScalarProperty Name="InformeCiudad" ColumnName="InformeCiudad" />
+                <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+                <ScalarProperty Name="IdRolCiudadEnProceso" ColumnName="IdRolCiudadEnProceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolDocenteSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolDocenteSet">
+              <MappingFragment StoreEntitySet="RolDocenteSet">
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+                <ScalarProperty Name="IdRolDocente" ColumnName="IdRolDocente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolEmpleado">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolEmpleado">
+              <MappingFragment StoreEntitySet="RolEmpleado">
+                <ScalarProperty Name="SueldoBasico" ColumnName="SueldoBasico" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="CelCorp" ColumnName="CelCorp" />
+                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolEmpleadoActual">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolEmpleadoActual">
+              <MappingFragment StoreEntitySet="RolEmpleadoActual">
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+                <ScalarProperty Name="IdRolEmpleadoActual" ColumnName="IdRolEmpleadoActual" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolLocacionAlojamientoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolLocacionAlojamientoSet">
+              <MappingFragment StoreEntitySet="RolLocacionAlojamientoSet">
+                <ScalarProperty Name="CantCamas" ColumnName="CantCamas" />
+                <ScalarProperty Name="CantDormitorios" ColumnName="CantDormitorios" />
+                <ScalarProperty Name="Dias" ColumnName="Dias" />
+                <ScalarProperty Name="IdLocacion" ColumnName="IdLocacion" />
+                <ScalarProperty Name="IdRolLocacionAlojamiento" ColumnName="IdRolLocacionAlojamiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolLocacionSalonSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolLocacionSalonSet">
+              <MappingFragment StoreEntitySet="RolLocacionSalonSet">
+                <ScalarProperty Name="Calefaccion" ColumnName="Calefaccion" />
+                <ScalarProperty Name="AireAcondicionado" ColumnName="AireAcondicionado" />
+                <ScalarProperty Name="Sillas" ColumnName="Sillas" />
+                <ScalarProperty Name="Mesas" ColumnName="Mesas" />
+                <ScalarProperty Name="Tamaño" ColumnName="Tamaño" />
+                <ScalarProperty Name="IdLocacion" ColumnName="IdLocacion" />
+                <ScalarProperty Name="IdRolLocacionSalon" ColumnName="IdRolLocacionSalon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolLocadorSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolLocadorSet">
+              <MappingFragment StoreEntitySet="RolLocadorSet">
+                <ScalarProperty Name="Condicion" ColumnName="Condicion" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+                <ScalarProperty Name="IdRolLocador" ColumnName="IdRolLocador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolVendedor">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.RolVendedor">
+              <MappingFragment StoreEntitySet="RolVendedor">
+                <ScalarProperty Name="IdGerente" ColumnName="IdGerente" />
+                <ScalarProperty Name="IdSubgerente" ColumnName="IdSubgerente" />
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+                <ScalarProperty Name="IdRolVendedor" ColumnName="IdRolVendedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SueldoPagoSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.SueldoPagoSet">
+              <MappingFragment StoreEntitySet="SueldoPagoSet">
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+                <ScalarProperty Name="IdSueldoPago" ColumnName="IdSueldoPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TarjetaPropiaSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.TarjetaPropiaSet">
+              <MappingFragment StoreEntitySet="TarjetaPropiaSet">
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="Titular" ColumnName="Titular" />
+                <ScalarProperty Name="CodSeguridad" ColumnName="CodSeguridad" />
+                <ScalarProperty Name="FechaVto" ColumnName="FechaVto" />
+                <ScalarProperty Name="NroTarjeta" ColumnName="NroTarjeta" />
+                <ScalarProperty Name="Emsior" ColumnName="Emsior" />
+                <ScalarProperty Name="IdTarjetaPropia" ColumnName="IdTarjetaPropia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoChequeSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.TipoChequeSet">
+              <MappingFragment StoreEntitySet="TipoChequeSet">
+                <ScalarProperty Name="DetalleTipoCheque" ColumnName="DetalleTipoCheque" />
+                <ScalarProperty Name="IdTipoCheque" ColumnName="IdTipoCheque" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransferenciaSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.TransferenciaSet">
+              <MappingFragment StoreEntitySet="TransferenciaSet">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="IdEstadoTransferencia" ColumnName="IdEstadoTransferencia" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="IdCuentaBancoTercero" ColumnName="IdCuentaBancoTercero" />
+                <ScalarProperty Name="IdCuentaBanco" ColumnName="IdCuentaBanco" />
+                <ScalarProperty Name="IdTransferencia" ColumnName="IdTransferencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ValeFinanciacionSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.ValeFinanciacionSet">
+              <MappingFragment StoreEntitySet="ValeFinanciacionSet">
+                <ScalarProperty Name="PeriodoDescuento" ColumnName="PeriodoDescuento" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="IdVale" ColumnName="IdVale" />
+                <ScalarProperty Name="IdValeFinanciacion" ColumnName="IdValeFinanciacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ValeSet">
+            <EntityTypeMapping TypeName="SqliteClientDataBaseModel.ValeSet">
+              <MappingFragment StoreEntitySet="ValeSet">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdVale" ColumnName="IdVale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

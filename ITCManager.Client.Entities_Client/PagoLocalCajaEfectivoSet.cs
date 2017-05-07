@@ -19,8 +19,5 @@ namespace ITCManager.Client.Entities_Client
         public string FechaPagoCajaEfectivo { get; set; }
         public string Monto { get; set; }
         public long IdCajaEfectivo { get; set; }
-    
-        public virtual CajaEfectivoSet CajaEfectivoSet { get; set; }
-        public virtual PagoLocalSet PagoLocalSet { get; set; }
     }
 }

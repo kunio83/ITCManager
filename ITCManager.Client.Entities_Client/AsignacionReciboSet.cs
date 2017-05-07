@@ -18,8 +18,5 @@ namespace ITCManager.Client.Entities_Client
         public System.DateTime Fecha { get; set; }
         public long IdRecibo { get; set; }
         public long IdRolEmpleado { get; set; }
-    
-        public virtual RolEmpleado RolEmpleado { get; set; }
-        public virtual ReciboSet ReciboSet { get; set; }
     }
 }

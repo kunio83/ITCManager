@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8485b755769e4c7d9762c60dcac5e078" Name="Diagram1" ZoomLevel="75">
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.AlumnoHorarioSet" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.ArmadoEquipoSet" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.AsignacionCiudadEquiposSet" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.AsignacionReciboSet" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CajaEfectivoSet" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CapacitacionSet" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.ChequePropioSet" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.ChequeSet" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CiudadActivaLocacionesSet" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CiudadEquiposSet" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CiudadFechasHorariosSet" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CiudadPersonalSet" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CiudadProductosSet" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CiudadSet" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CoeficTarjetasSet" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CompraSet" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CondicionEmpleadoSet" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CuentaBancoSet" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.CuentaBancoTerceroSet" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.DepositoSet" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.DetalleArmadoEquipoSet" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.DetalleCompraSet" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.DetalleCondicionEmpleado" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.DiaSet" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EnvioCiudadEquiposSet" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EnvioSet" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EstadoAlumno" Width="1.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EstadoAsignacionEquipoSet" Width="1.5" PointX="12.75" PointY="12.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EstadoChequeSet" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EstadoCompraSet" Width="1.5" PointX="6.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EstadoDepositoSet" Width="1.5" PointX="8.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EstadoPagoTarjetaSet" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EstadoRendicionSet" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EstadoTransferenciaSet" Width="1.5" PointX="14.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.EstadoVentaSet" Width="1.5" PointX="14.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.FormaPagoLocalSet" Width="1.5" PointX="14.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.FormaPagoSet" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.GastoBaseSet" Width="1.5" PointX="10.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.GastoChequeSet" Width="1.5" PointX="12.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.GastoLocalSet" Width="1.5" PointX="14.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.HorarioSet" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.ItemPagadoSet" Width="1.5" PointX="2.75" PointY="16.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.LocacionRolLocadorSet" Width="1.5" PointX="16.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.LocacionSet" Width="1.5" PointX="4.75" PointY="16.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.LocalidadSet" Width="1.5" PointX="16.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.MovimientoInternoEfectivoSet" Width="1.5" PointX="6.75" PointY="16.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoChequeSet" Width="1.5" PointX="16.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoLocalCajaEfectivoSet" Width="1.5" PointX="16.75" PointY="12.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoLocalChequePropioSet" Width="1.5" PointX="16.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoLocalChequeSet" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoLocalEnvioSet" Width="1.5" PointX="18.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoLocalSet" Width="1.5" PointX="18.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoLocalSueldoSet" Width="1.5" PointX="8.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoLocalTarjetaSet" Width="1.5" PointX="18.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoLocalTransferenciaSet" Width="1.5" PointX="10.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoSet" Width="1.5" PointX="18.75" PointY="12.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PagoTarjetaSet" Width="1.5" PointX="12.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.Permiso" Width="1.5" PointX="14.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PermisoAcceso" Width="1.5" PointX="18.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.Persona" Width="1.5" PointX="16.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PlanBaseSet" Width="1.5" PointX="18.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PlanVendedorAlumnoSet" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.ProductosSet" Width="1.5" PointX="2.75" PointY="19.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.ProveedorSet" Width="1.5" PointX="4.75" PointY="19.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.PuestoSet" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.ReciboSet" Width="1.5" PointX="20.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RendicionDepositoSet" Width="1.5" PointX="20.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RendicionGastoSet" Width="1.5" PointX="20.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RendicionPagoSet" Width="1.5" PointX="20.75" PointY="12.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RendicionPersonaCiudadSet" Width="1.5" PointX="20.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RendicionSueldoSet" Width="1.5" PointX="20.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RendicionValeSet" Width="1.5" PointX="6.75" PointY="21.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RendicionVentaEquipoSet" Width="1.5" PointX="8.75" PointY="21.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolAlumno" Width="1.5" PointX="18.75" PointY="21.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolAlumnoPracticasSet" Width="1.5" PointX="20.75" PointY="21.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolAlumnoPresentismoSet" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolCiudadActivaGastosSet" Width="1.5" PointX="2.75" PointY="22.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolCiudadActivaHorarioSet" Width="1.5" PointX="22.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolCiudadActivaPlanSet" Width="1.5" PointX="22.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolCiudadActivaSet" Width="1.5" PointX="22.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolCiudadEnProcesoSet" Width="1.5" PointX="22.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolDocenteSet" Width="1.5" PointX="22.75" PointY="16.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolEmpleado" Width="1.5" PointX="22.75" PointY="19.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolEmpleadoActual" Width="1.5" PointX="10.75" PointY="23.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolLocacionAlojamientoSet" Width="1.5" PointX="12.75" PointY="23.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolLocacionSalonSet" Width="1.5" PointX="14.75" PointY="23.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolLocadorSet" Width="1.5" PointX="22.75" PointY="23.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.RolVendedor" Width="1.5" PointX="24.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.SueldoPagoSet" Width="1.5" PointX="24.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.TarjetaPropiaSet" Width="1.5" PointX="4.75" PointY="24.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.TipoChequeSet" Width="1.5" PointX="24.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.TransferenciaSet" Width="1.5" PointX="6.75" PointY="24.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.ValeFinanciacionSet" Width="1.5" PointX="24.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SqliteClientDataBaseModel.ValeSet" Width="1.5" PointX="24.75" PointY="12.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

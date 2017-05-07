@@ -14,14 +14,6 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class CiudadSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CiudadSet()
-        {
-            this.CiudadPersonalSet = new HashSet<CiudadPersonalSet>();
-            this.RolCiudadActivaSet = new HashSet<RolCiudadActivaSet>();
-            this.RolCiudadEnProcesoSet = new HashSet<RolCiudadEnProcesoSet>();
-        }
-    
         public long IdCiudad { get; set; }
         public string DesignacionCiudad { get; set; }
         public long IdLocalidad { get; set; }
@@ -29,13 +21,5 @@ namespace ITCManager.Client.Entities_Client
         public string CantidadMeses { get; set; }
         public bool Activa { get; set; }
         public string NumeroLinea { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CiudadPersonalSet> CiudadPersonalSet { get; set; }
-        public virtual LocalidadSet LocalidadSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolCiudadActivaSet> RolCiudadActivaSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolCiudadEnProcesoSet> RolCiudadEnProcesoSet { get; set; }
     }
 }

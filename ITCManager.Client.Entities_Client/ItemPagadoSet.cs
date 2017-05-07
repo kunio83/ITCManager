@@ -14,16 +14,7 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class ItemPagadoSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ItemPagadoSet()
-        {
-            this.PagoSet = new HashSet<PagoSet>();
-        }
-    
         public long IdItemPagado { get; set; }
         public string DetalleItemPagado { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagoSet> PagoSet { get; set; }
     }
 }

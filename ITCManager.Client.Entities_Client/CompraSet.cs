@@ -14,22 +14,10 @@ namespace ITCManager.Client.Entities_Client
     
     public partial class CompraSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CompraSet()
-        {
-            this.DetalleCompraSet = new HashSet<DetalleCompraSet>();
-        }
-    
         public long IdCompra { get; set; }
         public string Fecha { get; set; }
         public long IdProveedor { get; set; }
         public long IdEstadoCompra { get; set; }
         public long IdPagoLocal { get; set; }
-    
-        public virtual ProveedorSet ProveedorSet { get; set; }
-        public virtual PagoLocalSet PagoLocalSet { get; set; }
-        public virtual EstadoCompraSet EstadoCompraSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleCompraSet> DetalleCompraSet { get; set; }
     }
 }

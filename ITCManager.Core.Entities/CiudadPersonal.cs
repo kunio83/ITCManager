@@ -9,8 +9,6 @@
 
 namespace ITCManager.Core.Entities
 {
-    using System;
-    using System.Collections.Generic;
     using System.Runtime.Serialization;
 
     public partial class CiudadPersonal
