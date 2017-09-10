@@ -26,6 +26,25 @@ namespace ITCManager.Client.Business_Client.Tools.Helpers
 
             return result;
         }
+        public static RolVendedor GetRolVendedorById(long idRolVendedor)
+        {
+            Repository<RolVendedor> rolVendedorRepo;
+            using (UnitOfWork unit = new UnitOfWork())
+            {
+                rolVendedorRepo = unit.Repository<RolVendedor>();
+                return rolVendedorRepo.GetById(idRolVendedor);
+            }
+        }
+
+        public static RolEmpleado GetRolEmpleadoById(long idRolEmpleado)
+        {
+            Repository<RolEmpleado> rolEmpleadoRepo;
+            using (UnitOfWork unit = new UnitOfWork())
+            {
+                rolEmpleadoRepo = unit.Repository<RolEmpleado>();
+                return rolEmpleadoRepo.GetById(idRolEmpleado);
+            }
+        }
 
         public static Persona GetUltimaPersona(DataRowView personaActual)
         {
@@ -75,13 +94,25 @@ namespace ITCManager.Client.Business_Client.Tools.Helpers
             return horarioRepo.Table.ToList();
         }
 
-        public static RolCiudadActivaHorarioSet GuardarRolCiudadActivaHorarioSet(RolCiudadActivaHorarioSet rolCiudadActivaHorario)
+        public static RolCiudadActivaHorarioSet GetRolCiudadActivaHorarioSetByRolCiudadActiva(RolCiudadActivaSet rolCiudadActiva)
         {
             using (UnitOfWork unit = new UnitOfWork())
             {
                 Repository<RolCiudadActivaHorarioSet> rolCiudadActivaHorarioSetRepo = unit.Repository<RolCiudadActivaHorarioSet>();
-                rolCiudadActivaHorarioSetRepo.Insert(rolCiudadActivaHorario);
-                return rolCiudadActivaHorarioSetRepo.Table.OrderByDescending(e => e.IdRolCiudadActivaHorario).FirstOrDefault();
+                RolCiudadActivaHorarioSet rolCiudadActivaHorarioSet = rolCiudadActivaHorarioSetRepo.Table.FirstOrDefault(e => e.IdRolCiudadActiva == rolCiudadActiva.IdRolCiudadActiva);
+                
+                return rolCiudadActivaHorarioSet;
+            };
+        }
+
+        public static RolCiudadActivaPlanSet GetRolCiudadActivaPlanByPlanVendedorAlumno(PlanVendedorAlumnoSet planVendedorAlumno)
+        {
+            using (UnitOfWork unit = new UnitOfWork())
+            {
+                Repository<RolCiudadActivaPlanSet> rolCiudadActivaPlanSetRepo = unit.Repository<RolCiudadActivaPlanSet>();
+                RolCiudadActivaPlanSet rolCiudadActivaPlanSet = rolCiudadActivaPlanSetRepo.Table.FirstOrDefault(e => e.IdRolCiudadActivaPlan == planVendedorAlumno.IdRolCiudadActivaPlan);
+
+                return rolCiudadActivaPlanSet;
             };
         }
 
@@ -123,14 +154,6 @@ namespace ITCManager.Client.Business_Client.Tools.Helpers
             return planRepo.Table.First();
         }
 
-        public static RolAlumno GuardarRolAlumno(RolAlumno rolAlumno)
-        {
-            UnitOfWork unit = new UnitOfWork();
-            Repository<RolAlumno> rolAlumnoRepo = unit.Repository<RolAlumno>();
-            rolAlumnoRepo.Insert(rolAlumno);
-            return rolAlumnoRepo.Table.OrderByDescending(e => e.IdRolAlumno).FirstOrDefault();
-        }
-
         public static RolVendedor GetRolVendedorByPersona(Persona persona)
         {
             using (UnitOfWork unit = new UnitOfWork())
@@ -149,6 +172,15 @@ namespace ITCManager.Client.Business_Client.Tools.Helpers
             {
                 Repository<RolAlumno> rolAlumnoRepo = unit.Repository<RolAlumno>();
                 return rolAlumnoRepo.Table.FirstOrDefault(e => e.IdPersona == idPersona);
+            };
+        }
+
+        public static RolCiudadActivaHorarioSet GetRolCiudadActivaHorarioById(long idRolCiudadActivaHorario)
+        {
+            using (UnitOfWork unit = new UnitOfWork())
+            {
+                Repository<RolCiudadActivaHorarioSet> rolAlumnoRepo = unit.Repository<RolCiudadActivaHorarioSet>();
+                return rolAlumnoRepo.Table.FirstOrDefault(e => e.IdRolCiudadActivaHorario == idRolCiudadActivaHorario);
             };
         }
 
@@ -178,6 +210,88 @@ namespace ITCManager.Client.Business_Client.Tools.Helpers
             return null;
         }
 
+        #region Guardado
+
+        public static RolAlumno GuardarRolAlumno(RolAlumno rolAlumno)
+        {
+            //UnitOfWork unit = new UnitOfWork();
+            using (UnitOfWork unit = new UnitOfWork())
+            {
+                Repository<RolAlumno> rolAlumnoRepo = unit.Repository<RolAlumno>();
+                if (rolAlumno.IdRolAlumno == 0)
+                {
+                    rolAlumnoRepo.Insert(rolAlumno);
+                    return rolAlumnoRepo.Table.OrderByDescending(e => e.IdRolAlumno).FirstOrDefault();
+                }
+                else
+                {
+                    rolAlumnoRepo.Update(rolAlumno);
+                    return rolAlumno;
+                }
+                
+            }
+        }
+
+        public static RolCiudadActivaHorarioSet GuardarRolCiudadActivaHorarioSet(RolCiudadActivaHorarioSet rolCiudadActivaHorario)
+        {
+            using (UnitOfWork unit = new UnitOfWork())
+            {
+                Repository<RolCiudadActivaHorarioSet> rolCiudadActivaHorarioSetRepo = unit.Repository<RolCiudadActivaHorarioSet>();
+                if (rolCiudadActivaHorario.IdRolCiudadActivaHorario == 0)
+                {
+                    rolCiudadActivaHorarioSetRepo.Insert(rolCiudadActivaHorario);
+                    return rolCiudadActivaHorarioSetRepo.Table.OrderByDescending(e => e.IdRolCiudadActivaHorario).FirstOrDefault();
+                }
+                else
+                {
+                    rolCiudadActivaHorarioSetRepo.Update(rolCiudadActivaHorario);
+                    return rolCiudadActivaHorario;
+                }
+                
+            }
+        }
+
+        public static PlanVendedorAlumnoSet GuardarPlanvendedorAlumno(PlanVendedorAlumnoSet planVendedorAlumno)
+        {
+            using (UnitOfWork unit = new UnitOfWork())
+            {
+                Repository<PlanVendedorAlumnoSet> planVendedorAlumnoSetRepo = unit.Repository<PlanVendedorAlumnoSet>();
+                if (planVendedorAlumno.IdPlanVendedorAlumno == 0)
+                {
+                    planVendedorAlumnoSetRepo.Insert(planVendedorAlumno);
+                    return planVendedorAlumnoSetRepo.Table.OrderByDescending(e => e.IdPlanVendedorAlumno).FirstOrDefault();
+                }
+                else
+                {
+                    planVendedorAlumnoSetRepo.Update(planVendedorAlumno);
+                    return planVendedorAlumno;
+                }
+                
+            }
+        }
+
+        public static AlumnoHorarioSet GuardarAlumnoHoraio(AlumnoHorarioSet alumnoHorario)
+        {
+            using (UnitOfWork unit = new UnitOfWork())
+            {
+                Repository<AlumnoHorarioSet> alumnoHorarioRepo = unit.Repository<AlumnoHorarioSet>();
+                if (alumnoHorario.IdAlumnoHorario == 0)
+                {
+                    alumnoHorarioRepo.Insert(alumnoHorario);
+                    return alumnoHorarioRepo.Table.OrderByDescending(e => e.IdAlumnoHorario).FirstOrDefault();
+                }
+                else
+                {
+                    alumnoHorarioRepo.Update(alumnoHorario);
+                    return alumnoHorario;
+                }
+                
+            }
+        }
+
+
+
+        #endregion
         //public static RolCiudadActivaHorarioSet GetRolCiudadActivaHoraio(RolAlumno rolAlumno)
         //{
         //    using (UnitOfWork unit = new UnitOfWork())

@@ -9,73 +9,81 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ITCManager.Client.Business_Client.Tools.Helpers;
 using ITCManager.Client.Entities_Client;
-using FastMember;
 
 namespace ITCManager.Client.UI_Client.Forms
 {
-    public partial class FrmVendedor : Form
+    public partial class FrmGerenteVendedor : Form
     {
-        bool _CargaPlanActivada = false;
-        public FrmVendedor()
+        //bool _CargaPlanActivada = false;
+        public FrmGerenteVendedor()
         {
             InitializeComponent();
         }
 
         private void personaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            //Cosiñas de carga de datos y demas
             this.Validate();
             this.personaBindingSource.EndEdit();
-
             this.personaTableAdapter.Update(sqliteClientDataBaseDataSet.Persona);
             this.tableAdapterManager.UpdateAll(this.sqliteClientDataBaseDataSet);
-            //this.personaTableAdapter.Fill(this.sqliteClientDataBaseDataSet.Persona);
+            this.personaTableAdapter.Fill(this.sqliteClientDataBaseDataSet.Persona);
             //personaBindingSource.MoveLast();
-            //Debo crear o actualizar un RolAlumno
             this.personaBindingSource.DataSource = personaTableAdapter.GetData();
 
-            RolAlumno rolAlumno = new RolAlumno()
-            {
-                IdRolAlumno = 0,
-                IdCapacitacion = ((CapacitacionSet)cmbCapacitacion.SelectedItem).IdCapacitacion,
-                IdEstadoAlumno = ((EstadoAlumno)cmbEstadoAlumno.SelectedItem).IdEstadoAlumno,
-                IdPersona = Convert.ToInt32(idPersonaTextBox.Text)
-            };
-
-            Persona personaActual = FrmVendedorHelper.GetUltimaPersona((DataRowView)personaBindingSource.Current);
-            long idRolAlumno = FrmVendedorHelper.GuardarRolAlumno(rolAlumno).IdRolAlumno;
+            //Vars
+            RolCiudadActivaSet rolCiudadActiva = FrmVendedorHelper.GetRolCiudadActivaSet();
+            Persona personaActual = FrmVendedorHelper.GetUltimaPersona((DataRowView)personaBindingSource.Current);//pinche current siempre me trae el ultimo
             Int64 IdRolCiudadActivaPlan = (Int64)((DataRowView)rolCiudadActivaPlanSetBindingSource.Current)["IdRolCiudadActivaPlan"];
+
+            //Guardando/Actualizando RolAlumno
+            RolAlumno rolAlumno = FrmVendedorHelper.GetRolAlumnoByIdPersona(personaActual.IdPersona);
+            if (rolAlumno == null || rolAlumno.IdRolAlumno == 0)
+                rolAlumno = new RolAlumno() { IdRolAlumno = 0 };
+            rolAlumno.IdCapacitacion = ((CapacitacionSet)cmbCapacitacion.SelectedItem).IdCapacitacion;
+            rolAlumno.IdEstadoAlumno = ((EstadoAlumno)cmbEstadoAlumno.SelectedItem).IdEstadoAlumno;
+            rolAlumno.IdPersona = Convert.ToInt32(idPersonaTextBox.Text);
+            rolAlumno = FrmVendedorHelper.GuardarRolAlumno(rolAlumno);
+
+            //Debo crear o actualizar un PlanVendedorAlumno
+            PlanVendedorAlumnoSet planVendedorAlumno = FrmVendedorHelper.GetPlanVendedorAlumnoByRolAlumno(rolAlumno);
+            if (planVendedorAlumno == null || planVendedorAlumno.IdPlanVendedorAlumno == 0)
+                planVendedorAlumno = new PlanVendedorAlumnoSet() { IdPlanVendedorAlumno = 0};
+            planVendedorAlumno.IdRolAlumno = rolAlumno.IdRolAlumno;
+            planVendedorAlumno.IdRolCiudadActivaPlan = IdRolCiudadActivaPlan;
+            planVendedorAlumno.IdRolVendedor = FrmVendedorHelper.GetRolVendedorByPersona((Persona)cmbVendedor.SelectedItem).IdRolVendedor;
+            planVendedorAlumno.NroRecibo = txtNroRecibo.Text;
+            planVendedorAlumno.ObservacionGerente = txtObservacionGerente.Text;
+            planVendedorAlumno.ObservacionOficinaBaires = txtObservacionGerente.Text;
+            planVendedorAlumno = FrmVendedorHelper.GuardarPlanvendedorAlumno(planVendedorAlumno);
+
+            //Debo crear o actualizar un RolCiudadActivaHorario
+            AlumnoHorarioSet alumnoHorario = FrmVendedorHelper.GetAlumnoHorario(rolAlumno);
+            RolCiudadActivaHorarioSet rolCiudadActivaHorario;
+            if (alumnoHorario == null)
+            {
+                rolCiudadActivaHorario = new RolCiudadActivaHorarioSet();
+                alumnoHorario = new AlumnoHorarioSet();
+            }
+            else
+                rolCiudadActivaHorario = FrmVendedorHelper.GetRolCiudadActivaHorarioById(alumnoHorario.IdRolCiudadActivaHorario);
             
-             //Debo crear o actualizar un PlanVendedorAlumno
-            PlanVendedorAlumnoSet planVendedorAlumno = new PlanVendedorAlumnoSet()
-            {
-                IdPlanVendedorAlumno = 0,
-                IdRolAlumno = idRolAlumno,
-                IdRolCiudadActivaPlan = IdRolCiudadActivaPlan,
-                IdRolVendedor = FrmVendedorHelper.GetRolVendedorByPersona((Persona)cmbVendedor.SelectedItem).IdRolVendedor,
-                NroRecibo = txtNroRecibo.Text,
-                ObservacionGerente = txtObservacionGerente.Text
-            };
+            rolCiudadActivaHorario.IdDia = ((DiaSet)cmbDia.SelectedItem).IdDia;
+            rolCiudadActivaHorario.IdHorario = ((HorarioSet)cmbHorario.SelectedItem).IdHorario;
+            rolCiudadActivaHorario.IdRolCiudadActiva = rolCiudadActiva.IdRolCiudadActiva;
+            //Debo crear o actualizar un AlumnoHorarioSet
+            rolCiudadActivaHorario = FrmVendedorHelper.GuardarRolCiudadActivaHorarioSet(rolCiudadActivaHorario);
+            alumnoHorario.IdRolAlumno = rolAlumno.IdRolAlumno;
+            alumnoHorario.IdRolCiudadActivaHorario = rolCiudadActivaHorario.IdRolCiudadActivaHorario;
+            alumnoHorario.TipoHorario = cmbTipoHorario.Text;
+            alumnoHorario = FrmVendedorHelper.GuardarAlumnoHoraio(alumnoHorario);
 
-            RolCiudadActivaHorarioSet rolCiudadActivaHorario = new RolCiudadActivaHorarioSet()
-            {
-                IdDia = ((DiaSet)cmbDia.SelectedItem).IdDia,
-                IdHorario = ((HorarioSet)cmbHorario.SelectedItem).IdHorario,
-                IdRolCiudadActiva = FrmVendedorHelper.GetRolCiudadActivaSet().IdRolCiudadActiva
-            };
 
-            RolCiudadActivaHorarioSet rolCiudadActivaHorarioSetGuardado = FrmVendedorHelper.GuardarRolCiudadActivaHorarioSet(rolCiudadActivaHorario);
-
-            AlumnoHorarioSet alumnoHorario = new AlumnoHorarioSet()
-            {
-                IdRolAlumno = idRolAlumno,
-                IdRolCiudadActivaHorario = rolCiudadActivaHorarioSetGuardado.IdRolCiudadActivaHorario,
-                TipoHorario = cmbTipoHorario.Text
-            };
 
             
 
-            planVendedorAlumnoSetTableAdapter.Insert(planVendedorAlumno.NroRecibo, planVendedorAlumno.IdRolCiudadActivaPlan, planVendedorAlumno.IdRolAlumno, 
-                                                        planVendedorAlumno.IdRolVendedor, planVendedorAlumno.ObservacionGerente, "");
+            //planVendedorAlumnoSetTableAdapter.Insert(planVendedorAlumno.NroRecibo, planVendedorAlumno.IdRolCiudadActivaPlan, planVendedorAlumno.IdRolAlumno, 
+            //                                            planVendedorAlumno.IdRolVendedor, planVendedorAlumno.ObservacionGerente, "");
         }
 
         private void FrmVendedor_Load(object sender, EventArgs e)
@@ -90,22 +98,6 @@ namespace ITCManager.Client.UI_Client.Forms
             this.alumnoHorarioSetTableAdapter.Fill(this.sqliteClientDataBaseDataSet.AlumnoHorarioSet);
             // TODO: esta línea de código carga datos en la tabla 'sqliteClientDataBaseDataSet.RolAlumno' Puede moverla o quitarla según sea necesario.
             this.rolAlumnoTableAdapter.Fill(this.sqliteClientDataBaseDataSet.RolAlumno);
-
-            //Preparo una query para filtrar solo los alumnos en el bindingSource de Persona
-            //List<Persona> personasAlumnos = FrmVendedorHelper.GetPersonasRolAlumnos();
-            //if (personasAlumnos.Count > 0)
-            //{
-            //    String ids = "(";
-            //    foreach (Persona p in personasAlumnos)
-            //    {
-            //        ids += p.IdPersona + ",";
-            //    }
-            //    ids = ids.Substring(0, ids.Length - 1);
-            //    ids += ")";
-            //    this.personaBindingSource.Filter = "IdPersona in " + ids;
-            //}
-            // TODO: esta línea de código carga datos en la tabla 'sqliteClientDataBaseDataSet.Persona' Puede moverla o quitarla según sea necesario.
-            this.personaTableAdapter.Fill(this.sqliteClientDataBaseDataSet.Persona);
 
             //Lleno el combo con los datos del personal
             cmbVendedor.DataSource = FrmVendedorHelper.GetPersonasRolEmpeados();
@@ -137,6 +129,22 @@ namespace ITCManager.Client.UI_Client.Forms
             cmbEstadoAlumno.DataSource = FrmVendedorHelper.GetEstadosAlumno();
             cmbEstadoAlumno.DisplayMember = "DetalleEstadoAlumno";
             cmbEstadoAlumno.ValueMember = "IdEstadoAlumno";
+
+            //Preparo una query para filtrar solo los alumnos en el bindingSource de Persona
+            List<Persona> personasAlumnos = FrmVendedorHelper.GetPersonasRolAlumnos();
+            if (personasAlumnos.Count > 0)
+            {
+                String ids = "(";
+                foreach (Persona p in personasAlumnos)
+                {
+                    ids += p.IdPersona + ",";
+                }
+                ids = ids.Substring(0, ids.Length - 1);
+                ids += ")";
+                this.personaBindingSource.Filter = "IdPersona in " + ids;
+            }
+            // TODO: esta línea de código carga datos en la tabla 'sqliteClientDataBaseDataSet.Persona' Puede moverla o quitarla según sea necesario.
+            this.personaTableAdapter.Fill(this.sqliteClientDataBaseDataSet.Persona);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -215,12 +223,37 @@ namespace ITCManager.Client.UI_Client.Forms
 
         private void personaBindingSource_PositionChanged(object sender, EventArgs e)
         {
-            Int64 idPersonaActual = (Int64)((DataRowView)personaBindingSource.Current)["IdPersona"];
-            RolAlumno rolAlumnoActual = FrmVendedorHelper.GetRolAlumnoByIdPersona(idPersonaActual);
-            //(Int64)((DataRowView)rolCiudadActivaPlanSetBindingSource.Current)["IdRolCiudadActivaPlan"]
-            PlanVendedorAlumnoSet planVendedorAlumno = FrmVendedorHelper.GetPlanVendedorAlumnoByRolAlumno(rolAlumnoActual);
-            AlumnoHorarioSet alumnoHorarioSet = FrmVendedorHelper.GetAlumnoHorario(rolAlumnoActual);
-            //RolCiudadActivaHorarioSet rolCiudadActivaHorarioSet 
+            if (personaBindingSource.Current != null)
+            {
+                Int64 idPersonaActual = (Int64)((DataRowView)personaBindingSource.Current)["IdPersona"];
+                RolAlumno rolAlumnoActual = FrmVendedorHelper.GetRolAlumnoByIdPersona(idPersonaActual);
+                //(Int64)((DataRowView)rolCiudadActivaPlanSetBindingSource.Current)["IdRolCiudadActivaPlan"]
+                PlanVendedorAlumnoSet planVendedorAlumno = FrmVendedorHelper.GetPlanVendedorAlumnoByRolAlumno(rolAlumnoActual);
+
+                AlumnoHorarioSet alumnoHorario = FrmVendedorHelper.GetAlumnoHorario(rolAlumnoActual);
+                RolCiudadActivaHorarioSet rolCiudadActivaHorario = FrmVendedorHelper.GetRolCiudadActivaHorarioById(alumnoHorario.IdRolCiudadActivaHorario);
+                RolVendedor rolVendedor = FrmVendedorHelper.GetRolVendedorById(planVendedorAlumno.IdRolVendedor);
+                RolEmpleado rolEmpleadoVendedor = FrmVendedorHelper.GetRolEmpleadoById(rolVendedor.IdRolEmpleado);
+                Persona personaVendedor = FrmVendedorHelper.GetPersonasRolEmpeados().FirstOrDefault(z => z.IdPersona == rolEmpleadoVendedor.IdPersona);
+                RolCiudadActivaPlanSet rolCiudadActivaPlan = FrmVendedorHelper.GetRolCiudadActivaPlanByPlanVendedorAlumno(planVendedorAlumno);
+                AlumnoHorarioSet alumnoHorarioSet = FrmVendedorHelper.GetAlumnoHorario(rolAlumnoActual);
+                //RolCiudadActivaHorarioSet rolCiudadActivaHorarioSet 
+
+                /*
+                 para conmtinuar con esto me falta que se filtren bien los alumnos en el bindingsourcePersona
+                 */
+
+                //Updateo el UI
+                cmbVendedor.SelectedValue = personaVendedor.IdPersona;
+                txtNroRecibo.Text = planVendedorAlumno.NroRecibo;
+                cmbEstadoAlumno.SelectedValue = rolAlumnoActual.IdEstadoAlumno;
+                txtObservacionGerente.Text = planVendedorAlumno.ObservacionGerente;
+                cmbCapacitacion.SelectedValue = rolAlumnoActual.IdCapacitacion;
+                cmbDia.SelectedValue = rolCiudadActivaHorario.IdDia;
+                cmbHorario.SelectedValue = rolCiudadActivaHorario.IdHorario;
+                cmbTipoHorario.Text = alumnoHorario.TipoHorario;
+                cmbPlan.SelectedValue = rolCiudadActivaPlan.IdPlanBase;
+            }
         }
     }
 }

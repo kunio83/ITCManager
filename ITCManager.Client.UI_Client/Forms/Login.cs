@@ -90,7 +90,7 @@ namespace ITCManager.Client.UI_Client.Forms
 
             //Aca se debe abrir el formulario segun el empleado
             if (detallePuesto.ToUpper().Contains("GERENTE"))
-                this._frm = new FrmVendedor();
+                this._frm = new FrmGerenteVendedor();
             else if (detallePuesto.ToUpper().Contains("DOCENTE"))
                 this._frm = new FrmDocente();
             else if (detallePuesto.ToUpper().Contains("COBRADOR"))

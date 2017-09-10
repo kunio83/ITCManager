@@ -1,6 +1,6 @@
 ﻿namespace ITCManager.Client.UI_Client.Forms
 {
-    partial class FrmVendedor
+    partial class FrmGerenteVendedor
     {
         /// <summary>
         /// Required designer variable.
@@ -50,7 +50,7 @@
             System.Windows.Forms.Label comisionIdaLabel;
             System.Windows.Forms.Label comisionVueltaLabel;
             System.Windows.Forms.Label comisionCertificadoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVendedor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGerenteVendedor));
             this.sqliteClientDataBaseDataSet = new ITCManager.Client.UI_Client.SqliteClientDataBaseDataSet();
             this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personaTableAdapter = new ITCManager.Client.UI_Client.SqliteClientDataBaseDataSetTableAdapters.PersonaTableAdapter();
@@ -712,7 +712,7 @@
             // 
             // cmbVendedor
             // 
-            this.cmbVendedor.DataSource = this.rolEmpleadoBindingSource;
+            this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVendedor.FormattingEnabled = true;
             this.cmbVendedor.Location = new System.Drawing.Point(384, 57);
             this.cmbVendedor.Name = "cmbVendedor";
@@ -749,6 +749,7 @@
             // cmbDia
             // 
             this.cmbDia.DataSource = this.rolEmpleadoBindingSource;
+            this.cmbDia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDia.FormattingEnabled = true;
             this.cmbDia.Location = new System.Drawing.Point(658, 62);
             this.cmbDia.Name = "cmbDia";
@@ -767,6 +768,7 @@
             // cmbHorario
             // 
             this.cmbHorario.DataSource = this.rolEmpleadoBindingSource;
+            this.cmbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHorario.FormattingEnabled = true;
             this.cmbHorario.Location = new System.Drawing.Point(658, 87);
             this.cmbHorario.Name = "cmbHorario";
@@ -805,6 +807,7 @@
             // cmbCapacitacion
             // 
             this.cmbCapacitacion.DataSource = this.rolEmpleadoBindingSource;
+            this.cmbCapacitacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCapacitacion.FormattingEnabled = true;
             this.cmbCapacitacion.Location = new System.Drawing.Point(658, 37);
             this.cmbCapacitacion.Name = "cmbCapacitacion";
@@ -963,6 +966,7 @@
             // 
             // cmbEstadoAlumno
             // 
+            this.cmbEstadoAlumno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoAlumno.FormattingEnabled = true;
             this.cmbEstadoAlumno.Location = new System.Drawing.Point(384, 113);
             this.cmbEstadoAlumno.Name = "cmbEstadoAlumno";
@@ -990,7 +994,7 @@
             this.cmbTipoHorario.Size = new System.Drawing.Size(139, 21);
             this.cmbTipoHorario.TabIndex = 47;
             // 
-            // FrmVendedor
+            // FrmGerenteVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1042,7 +1046,7 @@
             this.Controls.Add(mailLabel);
             this.Controls.Add(this.mailTextBox);
             this.Controls.Add(this.personaBindingNavigator);
-            this.Name = "FrmVendedor";
+            this.Name = "FrmGerenteVendedor";
             this.Text = "FrmVendedor";
             this.Load += new System.EventHandler(this.FrmVendedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sqliteClientDataBaseDataSet)).EndInit();

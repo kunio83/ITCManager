@@ -63,6 +63,7 @@ namespace ITCManager.Client.DataAccess_Client.DBTools
                 {
                     throw new ArgumentNullException("entity");
                 }
+                this.context.Entry(entity).State = EntityState.Modified;
                 this.context.SaveChanges();
             }
             catch (DbEntityValidationException dbEx)
