@@ -77,13 +77,6 @@ namespace ITCManager.Client.UI_Client.Forms
             alumnoHorario.IdRolCiudadActivaHorario = rolCiudadActivaHorario.IdRolCiudadActivaHorario;
             alumnoHorario.TipoHorario = cmbTipoHorario.Text;
             alumnoHorario = FrmVendedorHelper.GuardarAlumnoHoraio(alumnoHorario);
-
-
-
-            
-
-            //planVendedorAlumnoSetTableAdapter.Insert(planVendedorAlumno.NroRecibo, planVendedorAlumno.IdRolCiudadActivaPlan, planVendedorAlumno.IdRolAlumno, 
-            //                                            planVendedorAlumno.IdRolVendedor, planVendedorAlumno.ObservacionGerente, "");
         }
 
         private void FrmVendedor_Load(object sender, EventArgs e)
@@ -237,11 +230,6 @@ namespace ITCManager.Client.UI_Client.Forms
                 Persona personaVendedor = FrmVendedorHelper.GetPersonasRolEmpeados().FirstOrDefault(z => z.IdPersona == rolEmpleadoVendedor.IdPersona);
                 RolCiudadActivaPlanSet rolCiudadActivaPlan = FrmVendedorHelper.GetRolCiudadActivaPlanByPlanVendedorAlumno(planVendedorAlumno);
                 AlumnoHorarioSet alumnoHorarioSet = FrmVendedorHelper.GetAlumnoHorario(rolAlumnoActual);
-                //RolCiudadActivaHorarioSet rolCiudadActivaHorarioSet 
-
-                /*
-                 para conmtinuar con esto me falta que se filtren bien los alumnos en el bindingsourcePersona
-                 */
 
                 //Updateo el UI
                 cmbVendedor.SelectedValue = personaVendedor.IdPersona;
